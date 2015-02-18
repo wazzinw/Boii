@@ -5,10 +5,10 @@ Order = new Mongo.Collection('order');
 Staff = new Mongo.Collection('staff');
 Restaurant = new Mongo.Collection('restaurant');
 
+
 HTTP.publish({collection: Customers}, function(data){
 	return Customers.find({});
 });
-
 
 
 HTTP.publish({collection: Order}, function(data){
@@ -16,7 +16,4 @@ HTTP.publish({collection: Order}, function(data){
 });
 
 
-/*HTTP.publish({collection: Restaurant}, function(data){
-	return Restaurant.find({});
-});*/
 
