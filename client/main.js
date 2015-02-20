@@ -1,8 +1,10 @@
 
-Meteor.subscribe('menus');
-Meteor.subscribe('restaurant');
-Meteor.subscribe('order');
-Meteor.subscribe('customers');
-Meteor.subscribe('staff');
+if(Meteor.isClient){
+    Meteor.subscribe("menus");
+    Meteor.subscribe("restaurant");
+    Meteor.subscribe("order");
+    Meteor.subscribe("customers");
+    Meteor.subscribe("staff");
 
- 
+}
+

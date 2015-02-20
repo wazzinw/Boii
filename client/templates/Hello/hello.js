@@ -1,7 +1,12 @@
 
- 
+Meteor.subscribe('menus');
+Meteor.subscribe('restaurants');
+Meteor.subscribe('orders');
+Meteor.subscribe('customers');
+Meteor.subscribe('staff');
 
-  Session.setDefault('counter', 0);
+
+Session.setDefault('counter', 0);
   
   Template.hello.helpers({
     counter: function () {

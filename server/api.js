@@ -1,9 +1,9 @@
 
-Customers = new Mongo.Collection('customers');
+/*Customers = new Mongo.Collection('customers');
 Menus = new Mongo.Collection('menus');
 Order = new Mongo.Collection('order');
 Staff = new Mongo.Collection('staff');
-Restaurant = new Mongo.Collection('restaurant');
+Restaurants = new Mongo.Collection('restaurant');*/
 
 
 HTTP.publish({collection: Customers}, function(data){
@@ -11,8 +11,8 @@ HTTP.publish({collection: Customers}, function(data){
 });
 
 
-HTTP.publish({collection: Order}, function(data){
-	return Order.find({});
+HTTP.publish({collection: Orders}, function(data){
+	return Orders.find({});
 });
 
 

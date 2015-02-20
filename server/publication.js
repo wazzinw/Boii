@@ -1,20 +1,23 @@
 
-Meteor.publish('customers', function() { 
-	return Customers.find();
-});
+if(Meteor.isServer){
+    Meteor.publish('customers', function() {
+        return Customers.find();
+    });
 
-Meteor.publish('staff', function() { 
-	return Staff.find();
-});
+    Meteor.publish('staff', function() {
+        return Staff.find();
+    });
 
-Meteor.publish('menus', function() { 
-	return Menus.find();
-});
+    Meteor.publish('menus', function() {
+        return Menus.find();
+    });
 
-Meteor.publish('restaurant', function() { 
-	return Restaurant.find();
-});
+    Meteor.publish('restaurants', function() {
+        return Restaurants.find();
+    });
 
-Meteor.publish('order', function() { 
-	return Order.find();
-});
+    Meteor.publish('orders', function() {
+        return Orders.find();
+    });
+
+}
