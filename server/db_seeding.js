@@ -230,30 +230,30 @@ if(Menus.find().count() == 0){
         console.log("Number of Menus: " + Menus.find().count());
     }
 
-
-
-
-
-
-
 }
 
 
+
 Restaurants.update({name: 'MK'},
-    {$addToSet: { menu : {$each: Menus.find({restName: 'MK'}).fetch()} } }
+    {$addToSet: { menu : {$each: Menus.find({restName: 'MK'},{fields: {name: 0, pic: 0, promotion: 0,
+                                valid_until: 0, price: 0, categ: 0, restName: 0}}).fetch()} } }
 );
 
 Restaurants.update({name: 'McDonald'},
-    {$addToSet: { menu : {$each: Menus.find({restName: 'McDonald'}).fetch()} } }
+    {$addToSet: { menu : {$each: Menus.find({restName: 'McDonald'}, {fields: {name: 0, pic: 0, promotion: 0,
+        valid_until: 0, price: 0, categ: 0, restName: 0}}).fetch()} } }
 );
 
 Restaurants.update({name: 'KFC'},
-    {$addToSet: { menu : {$each: Menus.find({restName: 'KFC'}).fetch()} } }
+    {$addToSet: { menu : {$each: Menus.find({restName: 'KFC'}, {fields: {name: 0, pic: 0, promotion: 0,
+        valid_until: 0, price: 0, categ: 0, restName: 0}}).fetch()} } }
 );
 
 //Order
 
-/*_id: ,
+/*
+{
+_id: ,
 custID: ,
 paymentInfo: ,
 total: ,
@@ -262,6 +262,7 @@ date: ,
 time: ,
 confirm_code: ,
 orderItems: [ ObjectID: ,ObjectID: ]
+}
 
 orderItems
 {
@@ -270,6 +271,8 @@ orderItems
   quantity: ,
   price:
 
-}*/
+}
+
+*/
 
 //Customers

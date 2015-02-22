@@ -1,0 +1,25 @@
+
+.center{
+    height: 1000px;
+    background-color: lightgrey
+}
+
+.pageheader{
+    position: relative;
+    left: 220px;
+    top: -600px;
+    border: 1px solid black;
+    max-width: 150px;
+}
+.pageheader h1{
+    padding-left: 30px;
+}
+
+.showorder{
+    position: relative;
+    left: 220px;
+    top: -600px;
+    height: 800px;
+    max-width: 650px;
+    border: 1px solid black;
+}
