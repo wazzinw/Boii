@@ -4,13 +4,13 @@
 
 //Restaurants
 /*
-_id: ,
-name: ,
-beaconID: ,
-email: ,
-address: ,
-menu: [ObjectID()]
-phone: [{ type: , number: }]*/
+ _id: ,
+ name: ,
+ beaconID: ,
+ email: ,
+ address: ,
+ menu: [ObjectID()]
+ phone: [{ type: , number: }]*/
 
 if(Restaurants.find().count() == 0) {
     Restaurants.insert(
@@ -27,16 +27,16 @@ if(Restaurants.find().count() == 0) {
     );
     Restaurants.insert(
 
-    {
+        {
 
-        name: 'McDonald',
-        beaconID: '123456',
-        email: "mcD@gmail.com",
-        address: 'Siam Center' ,
-        phone: [{type: 'work', number: '021678345'}],
-        menu: []
+            name: 'McDonald',
+            beaconID: '123456',
+            email: "mcD@gmail.com",
+            address: 'Siam Center' ,
+            phone: [{type: 'work', number: '021678345'}],
+            menu: []
 
-    }
+        }
     );
 
     Restaurants.insert(
@@ -48,7 +48,7 @@ if(Restaurants.find().count() == 0) {
             email: 'kfc@gmail.com',
             address: 'Siam Center' ,
             phone:
-            [{ type: 'work' , number: '021678345' }],
+                [{ type: 'work' , number: '021678345' }],
             menu : []
         }
 
@@ -61,30 +61,31 @@ if(Restaurants.find().count() == 0) {
 //Menu
 
 /*_id: ,
-name: ,
-pic_url: ,
-promotion: ,
-valid_until: ,
-price: ,
-type: ,
-*/
+ name: ,
+ pic_url: ,
+ promotion: ,
+ valid_until: ,
+ price: ,
+ type:
+ restaurant_name:,
+ */
 
 if(Menus.find().count() == 0){
 
-       data =  [{
-            //_id: ObjectID('AAAA'),
-            name: 'McChicken',
-            pic_url: null,
-            promotion: true,
-            valid_until: new Date(2015,2,3).toJSON(),
-            price: 20 ,
-            type: 'food',
-            restaurant_name: 'McDonald'
+    data =  [{
+        //_id: ObjectID('AAAA'),
+        name: 'McChicken',
+        pic_url: null,
+        promotion: true,
+        valid_until: new Date(2015,2,3).toJSON(),
+        price: 20 ,
+        type: 'food',
+        restaurant_name: 'McDonald'
 
-        },
+    },
 
         {
-           // _id: ObjectID('BBBB'),
+            // _id: ObjectID('BBBB'),
             name: 'McFish',
             pic_url: null,
             promotion: false,
@@ -236,7 +237,7 @@ if(Menus.find().count() == 0){
 
 Restaurants.update({name: 'MK'},
     {$addToSet: { menu : {$each: Menus.find({restaurant_name: 'MK'},{fields: {name: 0, pic_url: 0, promotion: 0,
-                                valid_until: 0, price: 0, type: 0, restaurant_name: 0}}).fetch()} } }
+        valid_until: 0, price: 0, type: 0, restaurant_name: 0}}).fetch()} } }
 );
 
 Restaurants.update({name: 'McDonald'},
@@ -252,27 +253,27 @@ Restaurants.update({name: 'KFC'},
 //Order
 
 /*
-{
-_id: ,
-custID: ,
-paymentInfo: ,
-total: ,
-status: ,
-date: ,
-time: ,
-confirm_code: ,
-orderItems: [ ObjectID: ,ObjectID: ]
-}
+ {
+ _id: ,
+ custID: ,
+ paymentInfo: ,
+ total: ,
+ status: ,
+ date: ,
+ time: ,
+ confirm_code: ,
+ orderItems: [ ObjectID: ,ObjectID: ]
+ }
 
-orderItems
-{
-  _id: ,
-  name: ,
-  quantity: ,
-  price:
+ orderItems
+ {
+ _id: ,
+ name: ,
+ quantity: ,
+ price:
 
-}
+ }
 
-*/
+ */
 
 //Customers

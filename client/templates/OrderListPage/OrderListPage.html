@@ -1,5 +1,41 @@
 <template name = "orderList">
 
+    <div class="center">
+        <div class="pageheader">
+            <h1>Order</h1>
+        </div>
 
+        <div class="showorder">
+            <table class="order_table">
+                <tr>
+                    <th class="order_no">Order No</th>
+                    <th class="order_code">Code</th>
+                    <th class="order_time">Time</th>
+                    <th class="order_date">Date</th>
+                    <th class="order_items">Items</th>
+                    <th class="order_quan">Qty</th>
+                    <th class="order_action">Action</th>
+                </tr>
+                <tr>
+                    <td><p id="order_no">1</p></td>
+                    <td><p id="order_code">678</p></td>
+                    <td><p id="time">12.00.00</p></td>
+                    <td><p id="date">01/01/2015</p></td>
+                    <td>
+                        <p id="item1_name">Espresso</p>
+                        <p id="item2_name">Cappucino</p>
+                    </td>
+                    <td>
+                        <p id="item1_num">1</p>
+                        <p id="item2_num">1</p>
+                    </td>
+                    <td><div class="item1_button">
+                        <button type="button" id="accept_but">Accept</button>
+                        <button type="button" id="reject_but">Reject</button>
+                    </div></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
 </template>
