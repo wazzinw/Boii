@@ -20,7 +20,7 @@ if(Restaurants.find().count() == 0) {
             beaconID: '123456',
             email: 'mk@gmail.com',
             address: 'Siam Center',
-            phone: [{type: 'work', number: '021678345'}],
+            phone_numbers: [{type: 'work', number: '021678345'}],
             menu: []
 
         }
@@ -33,7 +33,7 @@ if(Restaurants.find().count() == 0) {
             beaconID: '123456',
             email: "mcD@gmail.com",
             address: 'Siam Center' ,
-            phone: [{type: 'work', number: '021678345'}],
+            phone_numbers: [{type: 'work', number: '021678345'}],
             menu: []
 
         }
@@ -47,7 +47,7 @@ if(Restaurants.find().count() == 0) {
             beaconID: '235656',
             email: 'kfc@gmail.com',
             address: 'Siam Center' ,
-            phone:
+            phone_numbers:
                 [{ type: 'work' , number: '021678345' }],
             menu : []
         }
@@ -255,8 +255,8 @@ Restaurants.update({name: 'KFC'},
 /*
  {
  _id: ,
- custID: ,
- paymentInfo: ,
+ customer_id: ,
+ payment_info: ,
  total: ,
  status: ,
  date: ,

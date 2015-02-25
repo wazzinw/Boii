@@ -8,3 +8,4 @@ meteor-platform
 insecure
 cfs:http-publish
 iron:router
+aldeed:collection2
