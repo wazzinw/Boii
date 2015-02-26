@@ -2,6 +2,8 @@
  * Created by wazzinw on 2/18/15 AD.
  */
 
+
+
 //Restaurants
 /*
  _id: ,
@@ -234,10 +236,9 @@ if(Menus.find().count() == 0){
 }
 
 
-
 Restaurants.update({name: 'MK'},
     {$addToSet: { menu : {$each: Menus.find({restaurant_name: 'MK'},{fields: {name: 0, pic_url: 0, promotion: 0,
-        valid_until: 0, price: 0, type: 0, restaurant_name: 0}}).fetch()} } }
+            valid_until: 0, price: 0, type: 0, restaurant_name: 0}}).fetch()} } }
 );
 
 Restaurants.update({name: 'McDonald'},
