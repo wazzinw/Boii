@@ -251,30 +251,3 @@ Restaurants.update({name: 'KFC'},
         valid_until: 0, price: 0, type: 0, restaurant_name: 0}}).fetch()} } }
 );
 
-//Order
-
-/*
- {
- _id: ,
- customer_id: ,
- payment_info: ,
- total: ,
- status: ,
- date: ,
- time: ,
- confirm_code: ,
- orderItems: [ ObjectID: ,ObjectID: ]
- }
-
- orderItems
- {
- _id: ,
- name: ,
- quantity: ,
- price:
-
- }
-
- */
-
-//Customers

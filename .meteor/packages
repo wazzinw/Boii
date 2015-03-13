@@ -9,3 +9,6 @@ insecure
 cfs:http-publish
 iron:router
 aldeed:collection2
+matb33:collection-hooks
+msavin:mongol
+nimble:restivus
