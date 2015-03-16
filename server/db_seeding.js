@@ -2,8 +2,6 @@
  * Created by wazzinw on 2/18/15 AD.
  */
 
-
-
 //Restaurants
 /*
  name: ,
@@ -266,29 +264,35 @@ if(Menus.find().count() == 0){
 
 
     for(var i = 0; i < data.length; i++){
-
         Menus.insert(data[i]);
         console.log("Number of Menus: " + Menus.find().count());
     }
 
 }
 
+var rest = ['MK', 'McDonald', 'KFC'];
+rest.forEach(function(restname){
+    var menusToAdd = Menus.find({restaurant_name: restname}, {fields:{_id:1}}).fetch();
+    var menuIds = menusToAdd.map(function(value, index, array){
+        return value._id;
+    });
 
-Restaurants.update({name: 'MK'},
-    {$addToSet: { menu : {$each: Menus.find({restaurant_name: 'MK'},
-        {fields: {name: 0, pic_url: 0, promotion: 0,
-            valid_until: 0, price: 0, type: 0, restaurant_name: 0}}).fetch()} } }
-);
 
-Restaurants.update({name: 'McDonald'},
-    {$addToSet: { menu : {$each: Menus.find({restaurant_name: 'McDonald'},
-        {fields: {name: 0, pic_url: 0, promotion: 0,
-             valid_until: 0, price: 0, type: 0, restaurant_name: 0}}).fetch()} } }
-);
+    Restaurants.update({name: restname},
+        {$set: { menu : menuIds} }
+    ); 
+})
 
-Restaurants.update({name: 'KFC'},
-    {$addToSet: { menu : {$each: Menus.find({restaurant_name: 'KFC'},
-        {fields: {name: 0, pic_url: 0, promotion: 0,
-            valid_until: 0, price: 0, type: 0, restaurant_name: 0}}).fetch()} } }
-);
+
+// Restaurants.update({name: 'McDonald'},
+//     {$addToSet: { menu : {$each: Menus.find({restaurant_name: 'McDonald'},
+//         {fields: {name: 0, pic_url: 0, promotion: 0,
+//              valid_until: 0, price: 0, type: 0, restaurant_name: 0}}).fetch()} } }
+// );
+
+// Restaurants.update({name: 'KFC'},
+//     {$addToSet: { menu : {$each: Menus.find({restaurant_name: 'KFC'},
+//         {fields: {name: 0, pic_url: 0, promotion: 0,
+//             valid_until: 0, price: 0, type: 0, restaurant_name: 0}}).fetch()} } }
+// );
 
