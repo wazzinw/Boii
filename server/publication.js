@@ -9,9 +9,9 @@ if(Meteor.isServer){
         return Customers.find();
     });
 
-    Meteor.publish('staff', function() {
+    /*Meteor.publish('staff', function() {
         return Staff.find();
-    });
+    });*/
 
     Meteor.publish('menus', function() {
         return Menus.find();
