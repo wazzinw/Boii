@@ -24,6 +24,9 @@ if(Meteor.isServer){
     Meteor.publish('orders', function() {
         return Orders.find();
     });
+    Meteor.publish('orderItems', function() {
+        return OrderItems.find();
+    });
 
 }
 
