@@ -5,7 +5,7 @@ Template.overview.helpers({
 	menus: function(){
 		return Menus.find();
 	},
-	restaurant: function(){
+	restaurants: function(){
 		return Restaurants.find();
 	},
 	orderItems: function(){
@@ -20,9 +20,14 @@ Template.orderSection.helpers({
 	menus: function(){
 		return Menus.find();
 	},
-	restaurant: function(){
+	restaurants: function(){
 		return Restaurants.find();
 	},
+	orderItems: function(){
+		return OrderItems.find();
+	}
+});
+Template.orderItemSection.helpers({
 	orderItems: function(){
 		return OrderItems.find();
 	}
@@ -34,10 +39,15 @@ Template.menuSection.helpers({
 	menus: function(){
 		return Menus.find();
 	},
-	restaurant: function(){
+	restaurants: function(){
 		return Restaurants.find();
 	},
 	orderItems: function(){
 		return OrderItems.find();
+	}
+});
+Template.restaurantSection.helpers({
+	restaurants: function(){
+		return Restaurants.find();
 	}
 });
