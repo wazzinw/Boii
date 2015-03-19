@@ -1,4 +1,4 @@
-
+/*
 html{
     background: #BDFDFF;
 }
@@ -45,10 +45,10 @@ body{
     font-weight: bold;
     border: 10px solid #F0F1F1;
 }
-
+*/
 /*------------------------------MENU BAR---------------------------------------------*/
 
-.lish-menu{
+/*.lish-menu{
     height: 100px;
     min-width: 1500px;
     font-size: 35px;
@@ -74,10 +74,10 @@ body{
 .lish-menu a:hover{
     color: #F90;
 }
-
+*/
 /*------------------------------CENTER---------------------------------------------*/
 
-.center{
+/*.center{
     height: auto;
     padding: 10px;
     background-color: white;
@@ -153,12 +153,12 @@ body{
 }
 #reject_but{
     background: red;
-}
+}*/
 
 
 /*---------------------------------FOOTER--------------------------------------*/
 
-
+/*
 .footer{
     position: relative;
     background-color: #2D94EE;
@@ -176,4 +176,4 @@ body{
     top: 70px;
     border: 3px solid white;
     border-radius: 10px;
-}
+}*/

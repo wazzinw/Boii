@@ -1,0 +1,131 @@
+<template name="overview">
+<div class="container">
+	{{> orderSection}}
+	{{> orderItemSection}}
+	{{> menuSection}}
+	{{> restaurantSection}}
+</div>
+
+</template>
+
+<template name="orderSection">
+<h1>Orders</h1>
+				<table class="table">
+		    	<thead>
+		    		<tr>
+		    			<th>id</th>
+		    			<th>customer_id</th>
+		    			<th>restaurant_id</th>
+		    			<th>confirm_code</th>
+		    			<th>updatedAt</th>
+		    		</tr>
+		    	</thead>
+		    	<tbody>
+		    		{{#each orders}}
+							{{> order}}
+						{{/each}}
+		    	</tbody>
+		    </table>
+
+</template>
+
+<template name="order">
+  <tr>
+  	<td>{{_id}}</td>
+  	<td>{{customer_id}}</td>
+  	<td>{{restaurant_id}}</td>
+  	<td>{{confirm_code}}</td>
+  	<td>{{updatedAt}}</td>
+  </tr>
+</template>
+
+<template name="orderItemSection">
+<h1>OrderItems</h1>
+    <div>  
+		    <table class="table">
+		    	<thead>
+		    		<tr>
+		    			<th>id</th>
+		    			<th>menu</th>
+		    			<th>quantity</th>
+		    		</tr>
+		    	</thead>
+		    	<tbody>
+		    		{{#each orderItems}}
+		    			{{> orderItem}}
+		    		{{/each}}
+		    	</tbody>
+		    </table>
+    </div>
+</template>
+
+<template name="orderItem">
+  <tr>
+  	<td>{{_id}}</td>
+  	<td>{{menu_id}}</td>
+  	<td>{{quantity}}</td>
+  </tr>
+</template>
+
+<template name="menuSection">
+<h1>Menus</h1>
+    <div>  
+		    <table class="table">
+		    	<thead>
+		    		<tr>
+		    			<th>id</th>
+		    			<th>Name</th>
+		    			<th>Price</th>
+		    			<th>createdAt</th>
+		    			<th>updatedAt</th>
+		    		</tr>
+		    	</thead>
+		    	<tbody>
+		    		{{#each menus}}
+		    			{{> menu}}
+		    		{{/each}}
+		    	</tbody>
+		    </table>
+    </div>
+</template>
+
+<template name="menu">
+  <tr>
+  	<td>{{_id}}</td>
+  	<td>{{name}}</td>
+  	<td>{{price}}</td>
+  	<td>{{createdAt}}</td>
+  	<td>{{updatedAt}}</td>
+  </tr>
+</template>
+
+<template name="restaurantSection">
+<h1>Restaurants</h1>
+    <div>  
+		    <table class="table">
+		    	<thead>
+		    		<tr>
+		    			<th>id</th>
+		    			<th>Name</th>
+		    			<th>Menus</th>
+		    		</tr>
+		    	</thead>
+		    	<tbody>
+		    		{{#each rest}}
+		    			{{> restaurant}}
+		    		{{/each}}
+		    	</tbody>
+		    </table>
+    </div>
+</template>
+
+<template name="restaurant">
+  <tr>
+  	<td>{{_id}}</td>
+  	<td>{{name}}</td>
+  	<td>{{menu}}</td>
+  </tr>
+</template>
+
+
+
