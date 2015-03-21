@@ -6,6 +6,5 @@ if(Meteor.isClient){
     Meteor.subscribe("customers");
     Meteor.subscribe("staff");
     Meteor.subscribe("orderItems");
-
 }
 

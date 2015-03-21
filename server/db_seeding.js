@@ -15,6 +15,8 @@
  updated_at:
  */
 
+
+
 if(Restaurants.find().count() == 0) {
     Restaurants.insert(
         {
@@ -270,29 +272,94 @@ if(Menus.find().count() == 0){
 
 }
 
-var rest = ['MK', 'McDonald', 'KFC'];
-rest.forEach(function(restname){
-    var menusToAdd = Menus.find({restaurant_name: restname}, {fields:{_id:1}}).fetch();
-    var menuIds = menusToAdd.map(function(value, index, array){
-        return value._id;
+if (Orders.find().count() == 0 ){
+    var rest = ['MK', 'McDonald', 'KFC'];
+    rest.forEach(function(restname){
+        var menusToAdd = Menus.find({restaurant_name: restname}, {fields:{_id:1}}).fetch();
+        var menuIds = menusToAdd.map(function(value, index, array){
+            return value._id;
+        });
+
+
+        Restaurants.update({name: restname},
+            {$set: { menu : menuIds} }
+        ); 
+    })
+
+    var nrand = function(){
+        return ((Math.random() + Math.random() + Math.random() + Math.random() + Math.random() + Math.random()) - 3) / 3;
+    }
+
+    var users = ['blob','glob','flob','stob','klob'];
+
+    user_ids = users.map(function(value){
+        return Accounts.createUser({
+            username: value,
+            password: 'password',
+            email: value+ '@schmoe.com',
+
+        })
+    });
+
+    console.log(user_ids);
+
+    //random restaurant
+    //random number of menus to order
+    //random menus
+    //make some orders
+    restaurants = Restaurants.find().fetch();
+    console.log(restaurants);
+
+    var dayInMonth = []; 
+    _(12).times(function(n){
+        dayInMonth[n] = new Date(2015, n+1, 0).getDate();
+    })
+
+    _(1000).times(function(n){
+        var idx = Math.floor(Math.random() * restaurants.length);
+        console.log(idx);
+        rest = restaurants[idx];
+        console.log(rest.name);
+
+        //random num menu order
+        var menuToOrder = Math.floor(Math.random() * 3) + 1;
+        var menu = rest.menu;
+        var menuIds = [];
+        menu.sort( function() { return 0.5 - Math.random() });
+        console.log("making order for rest" + rest.name);
+        menu.slice(0,menuToOrder).forEach(function(value){
+            console.log(value);
+            var item_id =  OrderItems.insert({
+                menu_id: value,
+                quantity: 1
+            });
+
+            console.log("item id="+item_id);
+            menuIds.push(item_id);
+        });
+        console.log("menu id "+menuIds);
+        //random month
+        var month = Math.floor(Math.random() * 12);
+        //random day
+        var day = Math.floor(Math.random() * dayInMonth[month-1]);
+        //random time of day 10 - 22
+        var hour = Math.floor(nrand() * 12) + 10;
+
+        //add Order
+        Orders.insert({
+            customer_id: user_ids[Math.floor(Math.random() * user_ids.length)],
+            restaurant_id: rest._id,
+            orderItems: menuIds,
+            created_at: new Date(2015,month,day,hour)
+        });
+
+
     });
 
 
-    Restaurants.update({name: restname},
-        {$set: { menu : menuIds} }
-    ); 
-})
+}
 
 
-// Restaurants.update({name: 'McDonald'},
-//     {$addToSet: { menu : {$each: Menus.find({restaurant_name: 'McDonald'},
-//         {fields: {name: 0, pic_url: 0, promotion: 0,
-//              valid_until: 0, price: 0, type: 0, restaurant_name: 0}}).fetch()} } }
-// );
 
-// Restaurants.update({name: 'KFC'},
-//     {$addToSet: { menu : {$each: Menus.find({restaurant_name: 'KFC'},
-//         {fields: {name: 0, pic_url: 0, promotion: 0,
-//             valid_until: 0, price: 0, type: 0, restaurant_name: 0}}).fetch()} } }
-// );
+
 

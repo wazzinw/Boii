@@ -15,3 +15,5 @@ nimble:restivus
 accounts-ui
 accounts-password
 twbs:bootstrap
+mfpierre:chartist-js
+underscore
