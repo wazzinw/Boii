@@ -307,7 +307,7 @@ if (Orders.find().count() == 0 ){
     //random number of menus to order
     //random menus
     //make some orders
-    restaurants = Restaurants.find().fetch();
+    restaurants = Restaurants.findOne({name: 'MK'});
     console.log(restaurants);
 
     var dayInMonth = []; 
@@ -316,9 +316,9 @@ if (Orders.find().count() == 0 ){
     })
 
     _(1000).times(function(n){
-        var idx = Math.floor(Math.random() * restaurants.length);
-        console.log(idx);
-        rest = restaurants[idx];
+        // var idx = Math.floor(Math.random() * restaurants.length);
+        // console.log(idx);
+        rest = restaurants
         console.log(rest.name);
 
         //random num menu order
@@ -339,9 +339,9 @@ if (Orders.find().count() == 0 ){
         });
         console.log("menu id "+menuIds);
         //random month
-        var month = Math.floor(Math.random() * 12);
+        var month = Math.floor(Math.random() * 3);
         //random day
-        var day = Math.floor(Math.random() * dayInMonth[month-1]);
+        var day = Math.floor(Math.random() * dayInMonth[month]);
         //random time of day 10 - 22
         var hour = Math.floor(nrand() * 12) + 10;
 
