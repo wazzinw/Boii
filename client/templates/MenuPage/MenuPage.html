@@ -1,43 +1,56 @@
 
 <template name = "menuPage">
 
-    <div class="center">
-        <div class="pageheader">
-            <h1>Menu</h1>
-        </div>
-        <div class="menu">
-            <ul class="category">
-                <li><button class="food" type="button">Food</button></li>
-                <li><button class="beverage" type="button">Beverage</button></li>
-            </ul>
-
-            <ul class="menulist">
-                <li><button id="menu1"><h3> Hot Espresso</h3><h4>฿50</h4></button></li>
-                <li><button id="menu2"><h3>Iced Cappucino</h3><h4>฿60</h4></button></li>
-
-            </ul>
-
-            <button class="add_item" type="button">Add Item</button>
-        </div>
-
-        <div class="basket">
-            <h2>Your Basket</h2>
-            <div class="myorder">
-                <table class="myorder_table">
-                    <tr>
-                        <th>Item Name</th>
-                        <th>Price</th>
-                        <th>Total</th>
-                    </tr>
-                    <tr>
-                        <td>Espresso</td>
-                        <td>50</td>
-                    </tr>
-                </table>
+<div class="center">
+                <div class="pageheader">
+                    <h1>Menu</h1>
+                </div>
+                <div id="menu-panel">
+                    <nav id="nov01">
+                        <ul class="category">
+                            <li><button id="drink-butt" class="selected" type="button">Drink</button></li>
+                            <li><button id="food-butt" type="button">Food</button></li>
+                            <button id="cd-cart-trigger" class="cart" type="button">Cart</button>
+                        </ul>
+                    </nav>    
+                    <ul id="drink-list">
+                        <li class="drink-item"><button class="to_basket" id="menu"><h3 id="name1">Hot Espresso</h3><h4 id="price1">฿50</h4></button><button class="invisible" id="edit-item">Edit</button></li>
+                        <li class="drink-item"><button class="to_basket" id="menu"><h3>Iced Cappucino</h3><h4>฿60</h4></button><button class="invisible" id="edit-item">Edit</button></li>
+                    </ul>
+                    <ul id="food-list" class="invisible">
+                        <li><button class="to_basket" id="menu1"><h3>Chicker rice</h3><h4>฿50</h4></button><button class="invisible" id="edit-item">Edit</button></li>
+                        <li><button class="to_basket" id="menu2"><h3>Steak</h3><h4>฿60</h4></button><button class="invisible" id="edit-item">Edit</button></li>
+                    </ul>
+                    <div class="add-edit-btn"><button id="add_item_butt" type="button">Add Item</button><button id="edit_item_butt" type="button">Edit Item</button></div>
+                </div>
             </div>
-        </div>
-
-    </div>
+             <!-- CART  -->
+            <div id="cd-shadow-layer"></div>
+            <div id="cd-cart">
+                <h2>Cart</h2>
+                <ul class="cd-cart-items" id="cd-cart-item"></ul>
+                <div class="cd-cart-total">
+                    <p>Total <span>0 Baht</span></p>
+                </div> <!-- cd-cart-total -->
+                <a href="#0" class="checkout-btn">Checkout</a><br>
+                <a href="#0" class="close-cart-btn">Close Cart</a>
+            </div> <!-- cd-cart -->
+             <!-- ADD ITEM -->
+            <div id="add_item">
+                <h1>New Menu</h1>
+                <img id="preview_image" src="/picture/default_coffee.jpg">
+                <div class="detail">
+                    <p class="browsepic">Picture:<input id="item-image" type="file"/></p>
+                    <p class="type">Type: <input id="type-drink" type="radio" name="type" checked="checked"/>Drink<input id="type-food" type="radio" name="type"/>Food</p> 
+                    <p>Name: <input id="name-input" type="text"/></p>
+                    <p>Price: <input id="price-input" type="text"/></p>
+                   <!-- <p id="description"><span>Description:</span><textarea id="descrpt-input" rows="5" cols="50"></textarea></p> -->
+                </div>
+                <div class="add_button">
+                    <button id="add-to-save-butt">Add</button>
+                    <button id="cancel-add-butt">Cancel</button>
+                </div> 
+            </div>
 
 
 </template>

@@ -1,1 +1,733 @@
 /* CSS declarations go here */
+html{
+    background-image: url(/picture/bg1.jpg);
+}
+body{
+    margin: 0 auto;
+    padding: 0px;
+    min-width: 900px;
+    font-size: 16px;
+    line-height: 1em;
+    background-color: white;
+    font-family: Lato;
+    max-width: 1500px;
+}
+#mainpage-header{
+    height: 100px;
+    background-color: #2D94EE;
+}
+#mainpage-header span{
+    font-size: 40px;
+    margin-left: 40px;
+    position: relative;
+    bottom: 25px;
+    font-weight: bold;
+    text-shadow: 3px 2px 20px #333333;
+    color: #F1F5F8;
+}
+#logo{
+    margin-top: 10px;
+    margin-left: 10px;
+    max-height: 80px;
+}
+#contact {
+    float: right;
+    font-size: 20px;
+    padding: 20px 80px;
+    margin-top: 10px;
+    background-color: #D6DEE0;
+    border-radius: 100px 0px 0px 100px;
+    color: #153BFA;
+    font-weight: bold;
+    border: 10px solid #F0F1F1;  
+}
+/*------------------------------MENU BAR---------------------------------------------*/
+#mainpage-menu{
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 3px 2px 30px #333333;
+    background: #7C818C;
+    border: 1px solid #A8A8A8;
+    box-shadow: 0px 30px 30px 0px #B0B8C6 inset;
+}
+#mainpage-menu ul{
+}
+#mainpage-menu li{
+    display: inline;
+    padding: 10px 40px;
+}
+#mainpage-menu a{
+    color: #F0F1F4;
+    text-decoration: none;
+}
+#mainpage-menu a:hover{
+    color: #F90;
+}
+#mainpage-menu li:first-child {
+    margin-left: -40px;
+}
+#logout-btn{
+    height: 60px;
+    width: 100px;
+    margin: -20px;
+    margin-right: 10px;
+    background: #7C818C;
+    float: right;
+    border: none;
+    box-shadow: 0px 30px 30px 0px #B0B8C6 inset;
+    font-size: 20px;
+    font-weight: bold;
+    color: #F0F1F4;
+}
+/*------------------------------LOGIN PANEL-----------------------------------------*/
+#login-div{
+    border: 1px solid #A8A8A8;
+    background: #E0E0E2;
+    height: 300px;
+}
+#login-panel{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-bottom: 40px;
+    background-color:#2D94EE;
+    position: relative;
+    left: 30px;
+    top: 20px;
+    width: 400px;
+    font-size: 20px;
+    color: #F1F5F8;
+}
+#login-panel h2{
+    text-decoration: underline;
+}
+.loginbut{
+    margin-left: 10%;
+    margin-bottom: 5px;
+}
+.loginbut button{
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    border: 1px solid #9E9E9E;
+    border-radius: 10px;
+    background: #E9E9E9;
+    color: #55B8FF;
+}
+.loginbut button:hover{
+    box-shadow: 0px -5px 10px 1px #919394 inset;
+    cursor:pointer;
+}
+.loginbut button:active{
+    background: #ACB4BA;
+}
+.registerbut{
+    margin-left: 20px;
+}
+#login-panel input {
+    height: 20px;
+    width: 200px;
+    font-size: 20px;
+}
+/*------------------------------------OVERVIEW-----------------------------------*/
+.overview{
+    min-width: 900px;
+    height: 550px;
+    padding: 5px;
+    background: #CDEBFF;
+    box-shadow: 30px 90px 100px 0px #FFFFFF inset, -30px -30px 100px 0px #FFFFFF inset;
+    border: 1px solid #919394;
+}
+.overview h1{
+    min-width: 900px;
+    text-align: center;
+    text-shadow: 3px 2px 50px #9FC7F1;
+    color: #67696B;
+    float: center;
+}
+.summary_table{
+    margin: 50px 50px;
+    text-align: center;
+    font-size: 22px;
+    margin: auto;
+}
+.summary_table td{
+    width: 500px;
+    padding-top: 20px;
+}
+.summary_table p{
+    width: 300px;
+    margin: auto;
+    margin-top: 1em;
+}
+.summary_table span{
+    font-weight: bold;
+}
+.summary_table #logo{
+    box-shadow: 10px 0px 20px 5px #FFFFFF, -10px -0px 20px 5px #FFFFFF;
+}
+/*------------------------------------FEATURES-----------------------------------*/
+.features{
+    height: 400px;
+    padding: 5px;
+    background: #FCBC8E;
+    box-shadow: 10px 90px 100px 0px #FFFFFF inset,-10px -30px 100px 0px #FFFFFF inset,30px 30px 100px 0px #FDCC82 inset, -30px -30px 100px 0px #FDCC82 inset;
+    border: 1px solid #919394;
+}
+.features h1{
+    text-align: center;
+    text-shadow: 3px 2px 50px #FCBC8E;
+    color: #67696B;
+}
+.features_table{
+    margin: 50px 50px;
+    text-align: center;
+    font-size: 22px;
+}
+.features_table td{
+    width: 500px
+}   
+.features_table h3{
+}
+/*------------------------------------CAFE LIST-----------------------------------*/
+.cafelist{
+    height: auto;
+    background-color: #9AFF8F;
+    padding: 5px;
+    box-shadow: 10px 90px 100px 0px #FFFFFF inset,-10px -30px 100px 0px #FFFFFF inset,30px 30px 100px 0px #61FF4F inset, -30px -30px 100px 0px #61FF4F inset;
+}
+.cafelist h1{
+    text-align: center;
+    text-shadow: 3px 2px 50px #61FF4F;
+    color: #67696B;
+}
+.cafelist ul li{
+    display: inline-block;
+    margin: 50px 20px;
+    text-align: center;
+    width: 300px;
+}
+.cafelist img{
+    max-height: 200px;
+    max-width: 250px;
+}
+.cafelist h3{
+    margin-top: 5px;
+}
+/*------------------------------Register Center---------------------------------------------*/
+#register-center{
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    padding-bottom: 50px;
+}
+#register-center td{
+    padding: 5px 10px;
+    font-weight: 550;
+}
+#register-center input{
+    margin-left: 20px;
+    height: 25px;
+    font-size: 20px;
+    width: 200px;
+}
+#register-center h1{
+    text-align: center;
+    height: 50px;
+}
+#register-center h2{
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+#buttons{
+    width: 800px;
+    margin: auto;
+}
+#buttons button{
+    height: 100px;
+    width: 200px;
+    border-radius: 10px;
+    margin: 20px;
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 80px;
+}
+#buttons button:hover{
+    cursor: pointer;
+    box-shadow: 0px -5px 10px 1px #919394 inset;
+}
+#buttons button:active{
+    background: #ACB4BA;
+}
+/*------------------------------Center---------------------------------------------*/
+.center{
+    padding: 10px;
+    background-color: white;
+}
+.pageheader{
+    text-align: center;
+    font-size: 20px;
+}
+/*---------------------------------MENU--------------------------------------*/
+#menu-panel{
+    height: 850px;
+    border: 1px solid black;
+    background-color: #FFFFF0;
+    border-radius: 10px;
+    margin: auto;
+}
+.category{
+    margin: auto;
+    background: #24A8FF;
+    padding: 10px;
+}
+.category li{
+    display: inline;
+    border-right: 5px solid black;
+}
+.category button{
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bolder;
+    border-radius: 10px;
+    background: #24A8FF;
+    color: #EEF9FF;
+    border: none;
+}
+.category button:hover{
+    cursor: pointer;
+}
+#drink-butt.selected, #food-butt.selected{
+    background:#3A4246;
+}
+.category button:active{
+    background: #1F2121;
+}
+#cd-cart-trigger{
+    float: right;
+    background-color: white;
+    color: lightblue;
+    border-radius: 50px;
+}
+/*---------------------------------MENU LIST--------------------------------------*/
+#drink-list,  #food-list{
+    list-style: none;
+    height: 600px;
+    max-width: 1440px;
+    overflow: auto;
+    position: absolute;
+}
+#drink-list li, #food-list li{
+    display: inline-block;
+    margin: 20px;
+}
+#drink-list button, #food-list button{
+    width: 200px;
+    height: 100px;
+    font-size: 16px;
+    padding-top: 12px;
+    border-radius: 20px;
+    background: #001034;
+    color: #FFFFFF;
+}
+#drink-list h3, #food-list h3{
+    position: relative;
+    bottom: 10px;
+}
+#drink-list h4,#food-list h4{
+    position: relative;
+    bottom: 20px;
+}
+#drink-list button:hover, #food-list button:hover{
+    background: #00416D;
+    cursor: pointer;
+}
+#drink-list button:active, #food-list button:active{
+    background: #2870F6;
+}
+#food-list.invisible{
+    display: none;
+}
+#drink-list.invisible{
+    display: none;
+}
+#drink-list #edit-item,#food-list #edit-item {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    bottom: 30px;
+    right: 30px;
+    background: #ABD2FC;
+    font-size: 18px;
+    color: floralwhite;
+}
+#drink-list #edit-item.invisible,#food-list #edit-item.invisible{
+    display: none;
+}
+
+
+/*---------------------------------Add Button--------------------------------------*/
+.add-edit-btn{
+    height: 80px;
+    position: relative;
+    top: 680px;
+    display: inline;
+}
+#add_item_butt{
+    width: 300px;
+    height: 80px;
+    font-size: 20px;
+    font-weight: bold;
+    background: #24A8FF;
+    color: #FFFFFF;
+    border-radius: 10px;
+    margin-left: 20%;
+}
+#edit_item_butt{
+    margin-left: 50px;
+    width: 300px;
+    height: 80px;
+    font-size: 20px;
+    font-weight: bold;
+    background: #24A8FF;
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+#add_item_butt:hover,#edit_item_butt:hover{
+    cursor: pointer;
+}
+#add_item_butt:active,#edit_item_butt:active{
+    background: #1A699F;
+}
+/*---------------------------------CART--------------------------------------*/
+#cd-cart {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 300px;
+    /* header height */
+    padding-top: 50px;
+    overflow-y: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+}#cd-cart > * {
+    padding: 0 1em;
+}
+#cd-cart h2 {
+    font-size: 14px;
+    font-size: 1.875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 1em 0;
+    text-decoration: underline
+}
+#cd-cart .cd-cart-items {
+    padding: 0;
+}
+#cd-cart .cd-cart-items li {
+    position: relative;
+    padding: 1em;
+    border-top: 1px solid #e0e6ef;
+}
+#cd-cart .cd-cart-items li:last-child {
+    border-bottom: 1px solid #e0e6ef;
+}
+#cd-cart .cd-qty, #cd-cart .cd-price {
+    color: #a5aebc;
+}
+#cd-cart .cd-price {
+    margin-top: .4em;
+}
+#cd-cart .cd-item-remove {
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    bottom: auto;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: url("/picture/remove.png") center center;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+}
+#cd-cart .cd-item-remove span{
+    visibility: hidden;
+}
+#cd-cart .cd-cart-total {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+#cd-cart .cd-cart-total span {
+    float: right;
+}
+#cd-cart .cd-cart-total::after {
+    /* clearfix */
+    content: '';
+    display: table;
+    clear: both;
+}
+#cd-cart .checkout-btn {
+    display: block;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: #7dcf85;
+    color: #FFF;
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+#cd-cart .checkout-btn:hover {
+    background: #a2dda8;
+}
+#cd-cart .close-cart-btn {
+    display: block;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: #FA8258;
+    color: #FFF;
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+#cd-cart .close-cart-btn:hover{
+    background: #F79F81;
+}
+#cd-cart {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    background: white;
+    /* header height */
+    padding-top: 50px;
+    overflow-y: auto;
+    transition: right 0.3s;
+}
+#cd-cart.speed-in {
+    right: 0;
+}
+/*---------------------------------Shadow Layer--------------------------------------*/
+#cd-shadow-layer {
+    position: fixed;
+    min-height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(67, 87, 121, 0.6);
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+}
+#cd-shadow-layer.is-visible {
+    display: block;
+    -webkit-animation: cd-fade-in 0.3s;
+    -moz-animation: cd-fade-in 0.3s;
+    animation: cd-fade-in 0.3s;
+}
+/*---------------------------------Add ITEM--------------------------------------*/
+#add_item{
+    position: relative;
+    top: -800px;
+    width: 50%;
+    min-width: 600px;
+    margin:auto;
+    padding-top: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 3 ;
+    background: white;
+    display: none;
+    border-radius: 10px;
+}
+#add_item.speed-in{
+    display:block;
+}
+#add_item h1{
+    margin: 0 auto;
+    width: 200px;
+    margin-bottom: 50px;
+    text-decoration: underline;
+}
+.browsepic input{
+    width: 70%;
+    border: 1px solid black;
+}
+.detail {
+    margin-left: 10%;
+    font-size: 25px;
+}
+.detail input{
+    height: 30px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+#name-input{
+    width: 300px;
+}
+#price-input{
+    margin-left: 30px;
+}
+#descrpt-input{
+    margin-left: 30px;
+    font-size: 15px;
+}
+.detail button{
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 45px;
+    width: 100px;
+}
+.detail span{
+    position: relative;
+    top: -30px;
+}
+.type input{
+    width: 20px;
+    height: 20px;
+}
+.add_button {
+    margin: 0 auto;
+    width: 335px;
+    padding-bottom: 20px;
+}
+.add_button button{
+    width: 150px;
+    height: 80px;
+    font-size: 30px;
+    border-radius: 10px;
+}
+#cancel-add-butt{
+    margin-left: 30px;
+}
+#preview_image{
+    display: block;
+    margin: auto;
+    border: 1px solid black;
+    max-height: 200px;
+    max-width: 250px;
+}
+/*------------------------------Order---------------------------------------------*/
+.showorder{
+    margin: 0 auto;
+    height: 800px;
+    min-width: 850px;
+    max-width: 1200px;
+    border: 1px solid black;
+    background-color: #FFFFF0;
+    border-radius: 10px;
+    overflow: auto;
+}
+/*------------------------------Table---------------------------------------------*/
+#table-header{
+    position: absolute;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    min-width: 900px;
+    max-width: 1200px;
+    padding: 15px 0px;
+    background: #24A8FF;
+    color: #FFFFFF;
+}
+.order_table{
+    text-align: center;
+    margin-top: 50px;
+}
+.order_table tr{
+    outline: 1px solid;
+}
+.order_no{
+    width: 50px;
+}
+.order_code{
+    width: 100px;
+}
+.order_time{
+    width: 150px;
+}
+.order_date{
+    width: 150px;
+}
+.order_items{
+    width: 300px
+}
+.order_qty{
+    width: 100px;
+}
+.order_action{
+    width: 400px;
+}
+.item_button button{
+    width: 100px;
+    height: 80px;
+    border-radius: 20px;
+    font-size: 20px;
+    color: white;
+    font-weight: 800;
+    margin: 5px;
+}
+.item_button button:hover{
+    box-shadow: 0px -5px 5px 1px #919394 inset;
+    cursor: pointer;
+}
+.item_button button:active{
+    color: black;
+}
+#accept_but{
+    background: #44FF00;
+}
+#reject_but{
+    background: red;
+}
+#bill_but{
+    background: yellow;
+    color: black;
+    width: 200px;
+    margin: 5px;
+}
+#test_but{
+    height: 100px;
+    width: 500px;
+    font-size: 50px;
+    position: relavtive;
+    top: 500px;
+    left: 550px;
+}
+/*---------------------------------Report--------------------------------------*/
+#show-report{
+    height: 800px;
+    max-width: 1200px;
+    min-width: 900px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+/*---------------------------------FOOTER--------------------------------------*/
+.footer{
+    position: relative;
+    background-color: #2D94EE;
+    box-shadow: 30px 30px 100px 0px #FFFFFF inset, -30px -30px 100px 0px #FFFFFF inset;
+}
+.foottext{
+    position: relative;
+    bottom: 60px;
+    left: 200px;
+}
+.fblogo img{
+    max-height: 100px;
+    position: relative;
+    left: 60px;
+    top: 70px;
+    border: 3px solid white;
+    border-radius: 10px;
+}

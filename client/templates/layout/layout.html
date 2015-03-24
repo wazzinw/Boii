@@ -1,11 +1,65 @@
 
 <template name = "layout">
+	<div id="mainpage-header">
+		<div>
+			<img id="logo" src="/picture/dish.png" />
+			<span>BOII</span>
+			<a id="contact">Contact Support: 02-1661215 </a>
+		</div>
+	</div>
+	
+	<div id="mainpage-menu">
 
-    {{>navigation}}
+	{{#if currentUser}}
+            <ul>
+                <li><a href={{pathFor 'orderList'}}> Order </a></li>
+                <li><a href={{pathFor 'menuPage'}}> Menu </a></li>
+                <li><a href={{pathFor 'reportPage'}}> Report </a></li>
+                <li><a href="#employee"> Employee </a></li>
+                <li><a href="#cafeinfo"> Cafe Information </a></li>
+                <!-- <button id="logout-btn" type="button"><a href="/MainPage.html">Log out</a></button> -->
+            </ul>
+	{{else}}
 
-    <div class = container>
-        {{>yield}}
-    </div>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="#overview"> Overview </a></li>
+				<li><a href="#features"> Features </a></li>
+				<li><a href="#cafe"> Cafe with Us </a></li>
+			</ul>
 
-    {{>footer}}
+
+	{{/if}}
+			</div>       
+
+		<div id="login-div">
+<!-- 			<div id="login-panel">
+				<h2> Log-In </h2>
+				<div>username:  <input type="text" name="username"> </div><br>
+				<div class="password">password:  <input type="text" name="password"> </div><br>
+				<div class="loginbut">
+					<a href="/OrderListPage.html"><button class="loginbut" type="button"> Log in </button></a>
+					<a href="/MainPage/RegisterPage.html"><button class="registerbut" type="button">Register</button></a>
+				</div>
+			</div> -->
+			{{> loginButtons align=right}}
+		</div>
+
+	<div class="container">
+		{{>yield}}
+	</div>
+
+	<div class="footer">
+		<div class="fblogo">
+			<a href="http://www.facebook.com">
+				<img src="https://www.facebook.com/images/fb_icon_325x325.png"/>
+			</a>
+		</div>
+		<div class="foottext">
+			<h1>ICE Senior Project</h1>
+			<h2>Faculty of Engineering, Chulalongkorn University</h2>
+			<h3>Call Center: 02-4567890</h3>
+			<a href="http://www.google.co.th"> Privacy Policy </a>
+		</div>
+	</div>
 </template>
