@@ -17,10 +17,9 @@
                     </nav>
 
                     <ul id="drink-list">
-
                         {{#each drinkMenu}}
-                            <li class="drink-item">
-                                <button id="menu">
+                            <li id= "item" class="drink-item" data-id={{_id}}>
+                                <button class="menu">
                                     <h3>{{name}}</h3>
                                     <h4>{{price}}</h4>
                                 </button>
@@ -44,8 +43,27 @@
              <!-- CART  -->
             <div id="cd-shadow-layer"></div>
             <div id="cd-cart">
+                
                 <h2>Cart</h2>
-                <ul class="cd-cart-items" id="cd-cart-item"></ul>
+                <ul class="cd-cart-items" id="cd-cart-item">
+                    {{#each cartItems}}
+                        <li class="item">
+                            <span class="cd-qty">
+                                {{quantity}}
+                            </span>
+                            <span class="cd-name">
+                                {{name}}
+                            </span>
+                            <div class="cd-price">
+                                ฿{{price}}
+                            </div>
+                            <a href="#0" class="cd-item-remove"><span>Remove</span></a>
+                        </li>
+                    {{/each}}
+
+                </ul>
+                
+
                 <div class="cd-cart-total">
                     <p>Total <span>0 Baht</span></p>
                 </div> <!-- cd-cart-total -->

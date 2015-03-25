@@ -40,7 +40,7 @@ var OrdersSchema = new SimpleSchema({
     },
     order_status: {
         type: String,
-        label: "status of the order { 'collected','ready', 'accepted', 'rejected', 'approving'} ",
+        label: "status of the order { 'billed','ready', 'accepted', 'rejected', 'approving'} ",
     }
 });
 
@@ -90,12 +90,7 @@ Meteor.methods({
         console.log("params="+params);
 
 
-            return  Orders.insert(params);
-
-
-
-
-
+        return  Orders.insert(params);
     }
 });
 

@@ -1,4 +1,4 @@
-<template name = "orderList">
+<template name = "orderListPage">
  <div class="center">
                 <div class="pageheader">
                     <h1>Order</h1>
@@ -16,26 +16,45 @@
                         </tr>
                     </table>
                     <table class="order_table">
-                        <tr>
-                            <td class="order_no"><p id="no">1</p></td>
-                            <td class="order_code"><p id="code">678</p></td>
-                            <td class="order_time"><p id="time">12.00.00</p></td>
-                            <td class="order_date"><p id="date">01/01/2015</p></td>
+                        {{#each orders}}
+                        <tr class="order_row" data-id={{_id}}>
+                            <td class="order_no"><p id="no"></p></td>
+                            <td class="order_code"><p id="code">{{confirm_code}}</p></td>
+                            <td class="order_time"><p id="time">{{created_at.getHours}}:{{created_at.getMinutes}}</p></td>
+                            <td class="order_date"><p id="date">{{created_at.toDateString}}</p></td>
+
                             <td class="order_items">
-                                <p id="item1_name">Espresso</p>
-                                <p id="item2_name">Cappucino</p>
+                                {{#each orderItems}}
+                                    {{#with menuWithOrderItemId this }}
+                                        <p id="item1_name">{{name}}</p>
+                                    {{/with}}
+                                {{/each}}
                             </td>
+
                             <td class="order_qty">
-                                <p id="item1_num">1</p>
-                                <p id="item2_num">1</p>
+                            {{#each orderItems}}
+                                {{#with orderItemWithId this}}
+                                <p id="item1_num">{{quantity}}</p>
+                                {{/with}}
+                            {{/each}}
                             </td>
                             <td class="order_action"><div class="item_button">
+                                {{#if isAccepted order_status}}
                                 <button type="button" id="bill_but">Bill</button>
-                                <!--
+                                {{/if}}
+
+                                {{#if isApproving order_status}}
                                 <button type="button" id="accept_but">Accept</button>
-                                <button type="button" id="reject_but">Reject</button> -->
-                                </div></td>
+                                <button type="button" id="reject_but">Reject</button> 
+                                {{/if}}
+
+                                {{#if isAccepted order_status}}
+                                <button type="button" id="ready_but">Ready</button>
+                                {{/if}}
+                                </div>
+                            </td>
                         </tr> 
+                        {{/each}}
                     </table>
                 </div>
                 <div><button id="test_but">Test</button></div>
