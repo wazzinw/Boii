@@ -281,7 +281,7 @@ if (Orders.find().count() == 0 ){
         Restaurants.update({name: restname},
             {$set: { menu : menuIds} }
         ); 
-    })
+    });
 
     var nrand = function(){
         return ((Math.random() + Math.random() + Math.random() + Math.random() + Math.random() + Math.random()) - 3) / 3;

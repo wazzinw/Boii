@@ -125,22 +125,7 @@ Template.menuPage.onRendered(function(){
     });
 
 
-    //add item to panel
-    $save_on_panel.on('click', function(event){
-        $shadow_layer.removeClass('is-visible');
-        $add_item.removeClass('speed-in');
-        if($('#type-drink').is(':checked')){
-            $('#drink-list').append('<li class="drink-item"><button class="to_basket" id="menu"><h3>'
-                                    + $('#name-input').val() +'</h3><h4>฿'
-                                    + $('#price-input').val() 
-                                    +'</h4></button></li>');
-        }else{
-            $('#food-list').append('<li class="food-item"><button class="to_basket" id="menu"><h3>'
-                                   + $('#name-input').val() 
-                                   +'</h3><h4>฿'+ $('#price-input').val() 
-                                   +'</h4></button></li>');
-        }
-    });
+
 
 
     //open add item pop-up
@@ -204,6 +189,26 @@ Template.menuPage.onRendered(function(){
 		}
 	});*/
 
+    //add item to panel
+    /*$save_on_panel.on('click', function(event){
+        $shadow_layer.removeClass('is-visible');
+        $add_item.removeClass('speed-in');
+
+        if($('#type-drink').is(':checked')){
+            $('#drink-list').append('<li class="drink-item"><button class="to_basket" id="menu"><h3>'
+            + $('#name-input').val() +'</h3><h4>฿'
+            + $('#price-input').val()
+            +'</h4></button></li>');
+        }else{
+            $('#food-list').append('<li class="food-item"><button class="to_basket" id="menu"><h3>'
+            + $('#name-input').val()
+            +'</h3><h4>฿'+ $('#price-input').val()
+            +'</h4></button></li>');
+        }
+    });
+*/
+
+
 //preview image
 $('#item-image').on('change', function(){
     preview(this);
@@ -249,6 +254,10 @@ function preview(input) {
 
 });
 
+
+var pic_url = "";
+
+
 Template.menuPage.events({
 
 
@@ -261,11 +270,65 @@ Template.menuPage.events({
                     }
                     else{
                         console.log("Successfully uploaded: " +fileObject._id);
+
+                        pic_url =  '/cfs/files/images/' + fileObject._id;
                     }
+                    
                 });
+
+
             })
         }
+    , 'click #add-to-save-butt': function(e,t){
+
+        console.log("add button clicked");
+
+        options = {};
+        options.name = $('#name-input').val();
+        options.pic_url = pic_url;
+        //options.promotion = Boolean($('#promotion').val());
+        options.valid_until = $('#validTill').val();
+        options.price = $('#price-input').val();
+        options.restaurant_name = "MK";
+        options.created_at = new Date();
+        options.updated_at = new Date();
+
+
+        if($('#promotion').is(':checked')){
+            options.promotion = true;
+        }else options.promotion = false;
+
+        if($('#type-drink').is(':checked')){
+          /* $('#drink-list').append('<li class="drink-item"><button class="to_basket" id="menu"><h3>'
+            + $('#name-input').val() +'</h3><h4>฿'
+            + $('#price-input').val()
+            +'</h4></button></li>'); */
+            options.type = "drink";
+        }else{
+           /* $('#food-list').append('<li class="food-item"><button class="to_basket" id="menu"><h3>'
+            + $('#name-input').val()
+            +'</h3><h4>฿'+ $('#price-input').val()
+            +'</h4></button></li>');*/
+            options.type = "food";
+        }
+
+        var menu_id = Menus.insert(options, function(error){
+            console.log(error);
+        });
+
+        console.log("menu_id: "+ menu_id);
+
+        Restaurants.update({_id: "3f4eXbyfwp4wep6Wd"}, { $push: { menu: menu_id }});
+
+
+    }
 
 
 });
 
+Template.menuPage.helpers({
+
+    images: function(){
+        return Images.find();
+    }
+});
