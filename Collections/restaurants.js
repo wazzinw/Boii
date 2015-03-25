@@ -15,38 +15,42 @@ var PhoneSchema = new SimpleSchema({
 RestaurantsSchema =  new SimpleSchema({
     name: {
         type: String,
-        label: "restaurant name"
+        label: "Restaurant name"
     },
 
     beacon_major: {
         type: String,
-        label: "majorID of iBeacon"
+        label: "majorID of iBeacon",
+        optional: true
     },
 
     beacon_minor: {
         type: String,
-        label: "minorID of iBeacon"
+        label: "minorID of iBeacon",
+        optional: true
+
     },
 
     email: {
         type: String,
-        label: "email restaurant"
+        label: "Restaurant Email"
     },
 
     address: {
         type: String,
-        label: "restaurant address"
+        label: "Address"
     },
 
 
     phone_numbers:{
         type: [PhoneSchema],
-        label: "reference to menuID"
+        label: "Contact"
 
     },
     menu:{
         type: [String],
-        label: "reference to menuID"
+        label: "reference to menuID",
+        optional: true
     },
 
     created_at: {
