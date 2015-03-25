@@ -15,9 +15,8 @@
  updated_at:
  */
 
-
-
-if(Restaurants.find().count() == 0) {
+if(true){
+    if(Restaurants.find().count() == 0) {
     Restaurants.insert(
         {
 
@@ -315,7 +314,7 @@ if (Orders.find().count() == 0 ){
         dayInMonth[n] = new Date(2015, n+1, 0).getDate();
     })
 
-    _(1000).times(function(n){
+    _(10).times(function(n){
         // var idx = Math.floor(Math.random() * restaurants.length);
         // console.log(idx);
         rest = restaurants
@@ -350,7 +349,9 @@ if (Orders.find().count() == 0 ){
             customer_id: user_ids[Math.floor(Math.random() * user_ids.length)],
             restaurant_id: rest._id,
             orderItems: menuIds,
-            created_at: new Date(2015,month,day,hour)
+            created_at: new Date(2015,month,day,hour),
+            updated_at: new Date(2015, month, day, hour),
+            order_status: 'collected'
         });
 
 
@@ -358,6 +359,9 @@ if (Orders.find().count() == 0 ){
 
 
 }
+}
+
+
 
 
 

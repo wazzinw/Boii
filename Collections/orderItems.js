@@ -2,15 +2,14 @@ OrderItems = new Mongo.Collection('orderItems');
 
 
 OrderItems.attachSchema (  new SimpleSchema({
-    menu_id: {
-        type: String,
-        label: "menu_id"
-    },
-    quantity: {
-        type: Number,
-        label: "quantity of the item"
-    }
-
+	    menu_id: {
+	        type: String,
+	        label: "menu_id"
+	    },
+	    quantity: {
+	        type: Number,
+	        label: "quantity of the item"
+	    }
 	})
 );
 
@@ -39,3 +38,4 @@ OrderItems.attachSchema (  new SimpleSchema({
  }
 
  */
+

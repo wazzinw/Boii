@@ -22,11 +22,20 @@ if(Meteor.isServer){
     });
 
     Meteor.publish('orders', function() {
-        return Orders.find();
+        return Orders.find({
+            restaurant_id: Restaurants.findOne({name:"MK"})._id }, 
+            {
+                limit: 10, 
+                sort: {updated_at: -1}
+            });
     });
     Meteor.publish('orderItems', function() {
-        return OrderItems.find();
+        return OrderItems.find({});
     });
+
+    Meteor.publish('myOrders', function() {
+        return Orders.find({customer_id: this.userId});
+    })
 
 }
 
