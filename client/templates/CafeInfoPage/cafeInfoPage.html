@@ -3,7 +3,34 @@
 
     <div class="insert">
 
-        {{> quickForm collection="Restaurants" id="insertRestaurantForm" type="insert" fields="name,email, address, phone_numbers"}}
+        <div id="register-center">
+                <h1>Register</h1>
+                <h2> Cafe Information</h2>
+                <table id="cafe-info">
+                    <tr>
+                        <td><p>Cafe Name:</p></td><td><input type="text"/></td>
+                    </tr>
+                    <tr>
+                        <td><p>Address Number:</p></td><td><input type="text"/></td>
+                        <td><p>Floor:</p></td><td><input type="text"/></td>
+                        <td><p>Building:</p></td><td><input type="text"/></td>
+                </tr>
+            <tr>
+                <td><p>Street/Soi:</p></td><td><input type="text"/></td>
+                <td><p>Sub-District:</p></td><td><input type="text"/></td>
+                <td><p>District:</p></td><td><input type="text"/></td>
+            </tr>
+            <tr>
+                <td><p>Province:</p></td><td><input type="text"/></td>
+                <td><p>Country:</p></td><td><input type="text"/></td>
+                <td><p>Post Code:</p></td><td><input type="text"/></td>
+            </tr>
+            </table>
+        <div id="buttons">
+            <button type="button" id="regis-button">Register</button>
+            <a href="/MainPage.html"><button type="button" id="back-button">Back</button></a>
+        </div>
+        </div>
 
     </div>
 

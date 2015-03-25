@@ -2,6 +2,11 @@
  * Created by wazzinw on 2/21/15 AD.
  */
 var cart = [];
+var order ={};
+var cart_length = 0;
+Cart = new Mongo.Collection(null);
+
+//var $cart_list = $('.cd-cart-items');
 
 Template.menuPage.helpers({
     foodMenu: function(){
@@ -14,38 +19,131 @@ Template.menuPage.helpers({
                 // var rest = Restaurants.find(Meteor.user().restaurant_id);
         var rest = Restaurants.findOne({name: "MK"});
         return Menus.find({restaurant_name: rest.name  ,type:"drink"});
+    },
+
+    cartItems: function(){
+        
+        var cart = Session.get('cart');
+
+        if(!cart){
+            Session.set('cart', {});
+            return [];
+        }
+
+        var keys = Object.keys(cart);
+
+        var cartList = keys.map(function(value, index, array){
+
+            var menu = Menus.findOne(value);
+
+            return {
+                _id: value,
+                quantity: cart[value],
+                name: menu.name,
+                price: menu.price
+            }
+        });
+        //For each key, make an array entry
+
+        return cartList
     }
 });
 
 Template.menuPage.events({
-    'click #drink-list': function(event){
-        var item_name = $(this).find('h3').text(),
-            item_price = $(this).find('h4').text(),
-            count = 0;
-        // Count number of item
-        for(i = 0; i <= cart_length; i++) {
-            if($('#item'+i).find('.cd-name').text() === item_name){
-                var val = parseInt($('#item'+i).find('.cd-qty').text(),10);
-                var newVal = val+1;
-                $('#item'+i).find('.cd-qty').text(newVal+'x');
-                count++;
-                var total = parseInt($('.cd-cart-total span').text(),10);
-                var newTotal = total+parseInt(item_price.substr(1),10);
-                $('.cd-cart-total span').text(newTotal+' Baht');
-            }
+    'click button.menu': function(event){
+
+        var id = $(event.currentTarget).closest('.drink-item').data('id');
+        console.log(id);
+        var cart = Session.get('cart') || {};
+
+        if ( cart[id] ){
+            cart[id] += 1;
+        } else {
+            cart[id] = 1;
         }
+
+        Session.set('cart', cart )
+        console.log(Session.get('cart'));
+
+        // var item_name = $('#drink-list button').find('h3').text(),
+        //     item_price = $('#menu').find('h4').text(),
+            
+        //     count = 0;
+           
+        //     console.log("Click Event");
+            
         
-        if(count == 0)
-        {
-            var qty = 0; 
-            $cart_list.append('<li class="item"><span class="cd-qty">' + (++qty) + 'x</span><span class="cd-name">' + item_name + '</span><div class="cd-price">' + item_price + '</div><a href="#0" class="cd-item-remove"><span>Remove</span></a></li>');
-            $('li').last().attr('id', 'item'+(cart_length++) );
-            var total = parseInt($('.cd-cart-total span').text(),10);
-            var newTotal = total+parseInt(item_price.substr(1),10);
-            $('.cd-cart-total span').text(newTotal+' Baht');
+        // // Count number of item
+        // for(i = 0; i < cart_length; i++) {
+            
+        //     if($('#item'+i).find('.cd-name').text() === item_name){
+                
+        //         console.log("Enter if");
+                
+        //         var val = parseInt($('#item'+i).find('.cd-qty').text(),10);
+        //         var newVal = val+1;
+
+        //         $('#item'+i).find('.cd-qty').text(newVal+'x');
+        //         count++;
+
+        //         var total = parseInt($('.cd-cart-total span').text(),10);
+        //         var newTotal = total+parseInt(item_price.substr(1),10);
+        //         $('.cd-cart-total span').text(newTotal+' Baht');
+        //     }
+        // }
+
+        // if(count == 0)
+        // {
+        //     console.log("new item");
+        //     console.log("item name "+ item_name);    
+        //     var qty = 0; 
+            
+        //     $('.cd-cart-items').append('<li class="item"><span class="cd-qty">' + (++qty) + 'x</span><span class="cd-name">' + item_name + '</span><div class="cd-price">' + item_price + '</div><a href="#0" class="cd-item-remove"><span>Remove</span></a></li>');
+            
+        //     $('li').last().attr('id', 'item'+(cart_length++) );
+            
+        //     console.log("cart length "+ cart_length);
+        //     console.log("count "+ count);
+        //     console.log("qty "+ qty);
+            
+
+        //     //find total price(old total + new item price)
+        //     var total = parseInt($('.cd-cart-total span').text(),10);
+        //     var newTotal = total+parseInt(item_price.substr(1),10);
+        //     $('.cd-cart-total span').text(newTotal+' Baht');
+        // }
+    },
+
+    'click a.checkout-btn': function(event){
+        var cart = Session.get('cart');
+
+        if(!cart){
+            Session.set('cart', {});
+            return [];
         }
+
+        var keys = Object.keys(cart);
+
+        var cartList = keys.map(function(value, index, array){
+            var menu = Menus.findOne(value);
+            return {
+                menu_id: value,
+                quantity: cart[value],
+            }
+        });
+
+        var params = {
+            restaurant_id: Restaurants.findOne({name: "MK"})._id,
+            orderItems: cartList
+        }
+
+        Meteor.call('createOrder', params, function(error, result){
+            if(!error){
+                Session.set('cart', {});
+            }
+        });
     }
-})
+});
 
 Template.menuPage.onRendered(function(){
 
@@ -68,7 +166,7 @@ Template.menuPage.onRendered(function(){
 
 
     //add item to cart
-    $('#drink-list').on('click', 'button', function () {
+  /*  $('#drink-list').on('click', 'button', function () {
         var item_name = $(this).find('h3').text(),
             item_price = $(this).find('h4').text(),
             count = 0;
@@ -93,17 +191,17 @@ Template.menuPage.onRendered(function(){
             $('.cd-cart-total span').text(newTotal+' Baht');
         }
     });
-
+*/
 
     //remove item from cart
-    $('#cd-cart-item').on('click','a', function(){          
-        var total = parseInt($('.cd-cart-total span').text(),10);
-        var price = parseInt($(this).closest('li').find('.cd-price').text().substr(1),10);
-        var qty = parseInt($(this).closest('li').find('.cd-qty').text(),10);
-        var newTotal = total-(price*qty);
-        $('.cd-cart-total span').text(newTotal + ' Baht');
-        $(this).closest('li').remove(); 
-    });
+    // $('#cd-cart-item').on('click','a', function(){          
+    //     var total = parseInt($('.cd-cart-total span').text(),10);
+    //     var price = parseInt($(this).closest('li').find('.cd-price').text().substr(1),10);
+    //     var qty = parseInt($(this).closest('li').find('.cd-qty').text(),10);
+    //     var newTotal = total-(price*qty);
+    //     $('.cd-cart-total span').text(newTotal + ' Baht');
+    //     $(this).closest('li').remove(); 
+    // });
 
 
     //choose category
