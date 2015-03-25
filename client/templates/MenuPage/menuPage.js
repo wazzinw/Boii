@@ -1,6 +1,52 @@
 /**
  * Created by wazzinw on 2/21/15 AD.
  */
+var cart = [];
+
+Template.menuPage.helpers({
+    foodMenu: function(){
+        // var rest = Restaurants.find(Meteor.user().restaurant_id);
+        var rest = Restaurants.findOne({name: "MK"});
+        return Menus.find({restaurant_name: rest.name  ,type:"food"});
+    },
+
+    drinkMenu: function(){
+                // var rest = Restaurants.find(Meteor.user().restaurant_id);
+        var rest = Restaurants.findOne({name: "MK"});
+        return Menus.find({restaurant_name: rest.name  ,type:"drink"});
+    }
+});
+
+Template.menuPage.events({
+    'click #drink-list': function(event){
+        var item_name = $(this).find('h3').text(),
+            item_price = $(this).find('h4').text(),
+            count = 0;
+        // Count number of item
+        for(i = 0; i <= cart_length; i++) {
+            if($('#item'+i).find('.cd-name').text() === item_name){
+                var val = parseInt($('#item'+i).find('.cd-qty').text(),10);
+                var newVal = val+1;
+                $('#item'+i).find('.cd-qty').text(newVal+'x');
+                count++;
+                var total = parseInt($('.cd-cart-total span').text(),10);
+                var newTotal = total+parseInt(item_price.substr(1),10);
+                $('.cd-cart-total span').text(newTotal+' Baht');
+            }
+        }
+        
+        if(count == 0)
+        {
+            var qty = 0; 
+            $cart_list.append('<li class="item"><span class="cd-qty">' + (++qty) + 'x</span><span class="cd-name">' + item_name + '</span><div class="cd-price">' + item_price + '</div><a href="#0" class="cd-item-remove"><span>Remove</span></a></li>');
+            $('li').last().attr('id', 'item'+(cart_length++) );
+            var total = parseInt($('.cd-cart-total span').text(),10);
+            var newTotal = total+parseInt(item_price.substr(1),10);
+            $('.cd-cart-total span').text(newTotal+' Baht');
+        }
+    }
+})
+
 Template.menuPage.onRendered(function(){
 
     //if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well

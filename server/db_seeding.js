@@ -14,6 +14,7 @@
  created_at: ,
  updated_at:
  */
+var orderAmount = 0;
 
 if(true){
     if(Restaurants.find().count() == 0) {
@@ -34,9 +35,7 @@ if(true){
     );
 
     Restaurants.insert(
-
         {
-
             name: 'McDonald',
             beacon_major: '12456',
             beacon_minor: '124456',
@@ -46,7 +45,6 @@ if(true){
             menu: [],
             created_at: new Date().toJSON(),
             updated_at: new Date().toJSON()
-
         }
     );
 
@@ -314,7 +312,7 @@ if (Orders.find().count() == 0 ){
         dayInMonth[n] = new Date(2015, n+1, 0).getDate();
     })
 
-    _(10).times(function(n){
+    _(orderAmount).times(function(n){
         // var idx = Math.floor(Math.random() * restaurants.length);
         // console.log(idx);
         rest = restaurants
