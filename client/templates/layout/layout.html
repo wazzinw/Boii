@@ -17,16 +17,19 @@
                 <li><a href={{pathFor 'reportPage'}}> Report </a></li>
                 <li><a href="#employee"> Employee </a></li>
                 <li><a href="#cafeinfo"> Cafe Information </a></li>
-                <!-- <button id="logout-btn" type="button"><a href="/MainPage.html">Log out</a></button> -->
+                <li><a href="/sign-out"> Log Out </a></li>
+
             </ul>
 	{{else}}
+
 
 			<ul>
 				<li><a href="/">Home</a></li>
 				<li><a href="#overview"> Overview </a></li>
 				<li><a href="#features"> Features </a></li>
 				<li><a href="#cafe"> Cafe with Us </a></li>
-			</ul>
+                <li><a href="/sign-in"> Log in </a></li>
+            </ul>
 
 
 	{{/if}}
@@ -42,7 +45,7 @@
 					<a href="/MainPage/RegisterPage.html"><button class="registerbut" type="button">Register</button></a>
 				</div>
 			</div> -->
-			{{> loginButtons align=right}}
+
 		</div>
 
 	<div class="container">
@@ -62,4 +65,5 @@
 			<a href="http://www.google.co.th"> Privacy Policy </a>
 		</div>
 	</div>
+
 </template>
