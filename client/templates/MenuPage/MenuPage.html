@@ -1,14 +1,12 @@
 
 <template name = "menuPage">
 
-<div class="center">
+            <div class="center">
                 <div class="pageheader">
                     <h1>Menu</h1>
                 </div>
 
-                <ul>
 
-                </ul>
                 <div id="menu-panel">
                     <nav id="nov01">
                         <ul class="category">
@@ -16,7 +14,8 @@
                             <li><button id="food-butt" type="button">Food</button></li>
                             <button id="cd-cart-trigger" class="cart" type="button">Cart</button>
                         </ul>
-                    </nav>    
+                    </nav>
+
                     <ul id="drink-list">
                         {{#each drinkMenu}}
                             <li id= "item" class="drink-item" data-id={{_id}}>
@@ -35,9 +34,12 @@
                             <li><button class="to_basket" id="menu1"><h3>{{name}}</h3><h4>{{price}}</h4></button><button class="invisible" id="edit-item">Edit</button></li>
                         {{/each}}
                     </ul>
+
                     <div class="add-edit-btn"><button id="add_item_butt" type="button">Add Item</button><button id="edit_item_butt" type="button">Edit Item</button></div>
                 </div>
             </div>
+
+
              <!-- CART  -->
             <div id="cd-shadow-layer"></div>
             <div id="cd-cart">
@@ -68,12 +70,14 @@
                 <a href="#0" class="checkout-btn">Checkout</a><br>
                 <a href="#0" class="close-cart-btn">Close Cart</a>
             </div> <!-- cd-cart -->
-             <!-- ADD ITEM -->
+
+
+            <!-- ADD ITEM -->
             <div id="add_item">
                 <h1>New Menu</h1>
                 <img id="preview_image" src="/picture/default_coffee.jpg">
                 <div class="detail">
-                    <p class="browsepic">Picture:<input id="item-image" type="file"/></p>
+                    <p class="browsepic">Picture:<input class = "file fileInput" id="item-image" type="file"/></p>
                     <p class="type">Type: <input id="type-drink" type="radio" name="type" checked="checked"/>Drink<input id="type-food" type="radio" name="type"/>Food</p> 
                     <p>Name: <input id="name-input" type="text"/></p>
                     <p>Price: <input id="price-input" type="text"/></p>

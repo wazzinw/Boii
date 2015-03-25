@@ -345,4 +345,25 @@ function preview(input) {
 }
 
 
-})
+});
+
+Template.menuPage.events({
+
+
+        'change .fileInput': function (event, template) {
+            FS.Utility.eachFile(event, function(file){
+                var fileObject = new FS.File(file);
+                Images.insert(fileObject, function(error){
+                    if(error){
+                        console.log(error);
+                    }
+                    else{
+                        console.log("Successfully uploaded: " +fileObject._id);
+                    }
+                });
+            })
+        }
+
+
+});
+
