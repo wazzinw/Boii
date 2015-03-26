@@ -77,8 +77,13 @@
                 <h1>New Menu</h1>
                 <img id="preview_image" src="/picture/default_coffee.jpg">
                 <div class="detail">
-                    <p class="browsepic">Picture:<input class = "file fileInput" id="item-image" type="file"/></p>
-                    <p class="type">Type: <input id="type-drink" type="radio" name="type" checked="checked"/>Drink<input id="type-food" type="radio" name="type"/>Food</p> 
+                    <p class="browsepic">Picture:<input multiple class = "file fileInput" id="item-image" type="file"/></p>
+
+                    <p class="type">Type: <input id="type-drink" type="radio" name="type" checked="checked"/>Drink
+                        <input id="type-food" type="radio" name="type"/>Food</p>
+
+                    <p>Promotion: <input type="checkbox" id="promotion" value=true></p>
+                    <p>Valid Until: <input type="date" id = "validTill"></p>
                     <p>Name: <input id="name-input" type="text"/></p>
                     <p>Price: <input id="price-input" type="text"/></p>
                    <!-- <p id="description"><span>Description:</span><textarea id="descrpt-input" rows="5" cols="50"></textarea></p> -->
