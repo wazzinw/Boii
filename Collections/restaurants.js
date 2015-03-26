@@ -7,7 +7,9 @@ var PhoneSchema = new SimpleSchema({
     },
     number: {
         type: String,
-        max: 50
+        max: 10,
+        min:8
+
     }
 });
 
@@ -47,6 +49,7 @@ RestaurantsSchema =  new SimpleSchema({
         label: "Contact"
 
     },
+
     menu:{
         type: [String],
         label: "reference to menuID",

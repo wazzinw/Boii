@@ -1,39 +1,43 @@
 
 <template name="cafeInfoPage">
-    <h1>New Restaurant</h1>
 
-    <div class="insert">
 
-        <div id="register-center">
-                <h1>Register</h1>
-                <h2> Cafe Information</h2>
-                <table id="cafe-info">
-                    <tr>
-                        <td><p>Cafe Name:</p></td><td><input type="text"/></td>
-                    </tr>
-                    <tr>
-                        <td><p>Address Number:</p></td><td><input type="text"/></td>
-                        <td><p>Floor:</p></td><td><input type="text"/></td>
-                        <td><p>Building:</p></td><td><input type="text"/></td>
-                </tr>
-            <tr>
-                <td><p>Street/Soi:</p></td><td><input type="text"/></td>
-                <td><p>Sub-District:</p></td><td><input type="text"/></td>
-                <td><p>District:</p></td><td><input type="text"/></td>
-            </tr>
-            <tr>
-                <td><p>Province:</p></td><td><input type="text"/></td>
-                <td><p>Country:</p></td><td><input type="text"/></td>
-                <td><p>Post Code:</p></td><td><input type="text"/></td>
-            </tr>
-            </table>
+    <div class="show-info">
+        {{>restaurant_info}}
+
         <div id="buttons">
-            <button type="button" id="regis-button">Register</button>
-            <a href="/MainPage.html"><button type="button" id="back-button">Back</button></a>
-        </div>
-        </div>
 
+            <a href={{pathFor 'cafeRegisterPage'}}><button class = "btn btn-primary" type="button" id="back-button">New Restaurant</button></a>
+        </div>
 
     </div>
 
+
+
 </template>
+
+<template name="restaurant_info">
+    <h1>Restaurants</h1>
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Menus</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each findRestaurant}}
+                <td>{{_id}}</td>
+                <td>{{name}}</td>
+                <td>{{menu}}</td>
+            {{/each}}
+
+
+            </tbody>
+        </table>
+    </div>
+</template>
+
+
