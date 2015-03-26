@@ -41,6 +41,7 @@ var OrdersSchema = new SimpleSchema({
     order_status: {
         type: String,
         label: "status of the order { 'billed','ready', 'accepted', 'rejected', 'approving'} ",
+        // allowedValues: ['billed', 'ready', 'accepted','rejected','accepted','approving']
     }
 });
 

@@ -2,7 +2,7 @@
 <template name = "layout">
 	<div id="mainpage-header">
 		<div>
-			<img id="logo" src="/picture/dish.png" />
+			<img id="logo" src="/dish.png" />
 			<span>BOII</span>
 			<a id="contact">Contact Support: 02-1661215 </a>
 		</div>
@@ -17,7 +17,7 @@
                 <li><a href={{pathFor 'reportPage'}}> Report </a></li>
                 <li><a href="#employee"> Employee </a></li>
                 <li><a href={{pathFor 'cafeInfoPage'}}> Cafe Information </a></li>
-                <li><a href="/sign-out"> Log Out </a></li>
+                <li class="login-out"><a href="/sign-out"> Log Out </a></li>
 
             </ul>
 	{{else}}
@@ -28,7 +28,7 @@
 				<li><a href="#overview"> Overview </a></li>
 				<li><a href="#features"> Features </a></li>
 				<li><a href="#cafe"> Cafe with Us </a></li>
-                <li><a href="/sign-in"> Log in </a></li>
+                <li class="login-out"><a href="/sign-in"> Log in </a></li>
             </ul>
 
 

@@ -14,7 +14,7 @@
  created_at: ,
  updated_at:
  */
-var orderAmount = 0;
+var orderAmount = 1000;
 
 if(true){
     if(Restaurants.find().count() == 0) {
@@ -349,7 +349,7 @@ if (Orders.find().count() == 0 ){
             orderItems: menuIds,
             created_at: new Date(2015,month,day,hour),
             updated_at: new Date(2015, month, day, hour),
-            order_status: 'collected'
+            order_status: 'billed'
         });
 
 
