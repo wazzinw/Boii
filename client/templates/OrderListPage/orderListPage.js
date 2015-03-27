@@ -4,13 +4,15 @@
 
 //console.log('order');
 //find Menu in the restaurant
+
+
 Template.orderListPage.helpers({
 	orders: function(){
-		var rest = Restaurants.findOne({name: "MK"});
+        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
 
-		return Orders.find({
+        return  Orders.find({
 				restaurant_id: rest._id,
-				order_status: {$in: ['ready', 'accepted', 'approving']},
+				order_status: {$in: ['ready', 'accepted', 'approving']}
 			},
 			{
 				sort: {updated_at: -1}
