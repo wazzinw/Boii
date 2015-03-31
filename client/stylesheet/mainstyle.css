@@ -1,5 +1,5 @@
 html{
-    background-image: url(/picture/bg1.jpg);
+    background-image: url("/bg1.jpg");
 }
 body{
     margin: 0 auto;
@@ -471,7 +471,7 @@ body{
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
     border-radius: 50%;
-    background: url("/picture/remove.png") center center;
+    background: url("/remove.png") center center;
     background-size: 40px 40px;
     background-repeat: no-repeat;
     height: 50px;
@@ -726,7 +726,7 @@ body{
     position: relative;
     width: 90%;
     max-width: 400px;
-   // height: 190px;
+    height: 190px;
     margin: 4em auto;
     background: none repeat scroll 0% 0% #FFF;
     border-radius: 0.25em 0.25em 0.4em 0.4em;

@@ -71,55 +71,8 @@ Template.menuPage.events({
         }
 
         Session.set('cart', cart )
-        console.log(Session.get('cart'));
+        console.log("Cart: " + Session.get('cart').toString());
 
-        // var item_name = $('#drink-list button').find('h3').text(),
-        //     item_price = $('#menu').find('h4').text(),
-            
-        //     count = 0;
-           
-        //     console.log("Click Event");
-            
-        
-        // // Count number of item
-        // for(i = 0; i < cart_length; i++) {
-            
-        //     if($('#item'+i).find('.cd-name').text() === item_name){
-                
-        //         console.log("Enter if");
-                
-        //         var val = parseInt($('#item'+i).find('.cd-qty').text(),10);
-        //         var newVal = val+1;
-
-        //         $('#item'+i).find('.cd-qty').text(newVal+'x');
-        //         count++;
-
-        //         var total = parseInt($('.cd-cart-total span').text(),10);
-        //         var newTotal = total+parseInt(item_price.substr(1),10);
-        //         $('.cd-cart-total span').text(newTotal+' Baht');
-        //     }
-        // }
-
-        // if(count == 0)
-        // {
-        //     console.log("new item");
-        //     console.log("item name "+ item_name);    
-        //     var qty = 0; 
-            
-        //     $('.cd-cart-items').append('<li class="item"><span class="cd-qty">' + (++qty) + 'x</span><span class="cd-name">' + item_name + '</span><div class="cd-price">' + item_price + '</div><a href="#0" class="cd-item-remove"><span>Remove</span></a></li>');
-            
-        //     $('li').last().attr('id', 'item'+(cart_length++) );
-            
-        //     console.log("cart length "+ cart_length);
-        //     console.log("count "+ count);
-        //     console.log("qty "+ qty);
-            
-
-        //     //find total price(old total + new item price)
-        //     var total = parseInt($('.cd-cart-total span').text(),10);
-        //     var newTotal = total+parseInt(item_price.substr(1),10);
-        //     $('.cd-cart-total span').text(newTotal+' Baht');
-        // }
     },
 
     'click a.checkout-btn': function(event){
@@ -153,6 +106,28 @@ Template.menuPage.events({
         });
     },
 
+    'click .cd-item-remove': function(event){
+        //remove the select row out of cart
+        console.log("remove button clicked");
+
+        var id = $(event.currentTarget).closest('.item').data('id');
+        console.log("clicked id: "+id);
+        var cart = Session.get('cart');
+
+        if(!cart){
+            Session.set('cart', {});
+            return [];
+        }
+
+        delete cart[id];
+
+        Session.set('cart', cart);
+
+        console.log(cart);
+
+    },
+
+
     'change .fileInput': function (event, template) {
         FS.Utility.eachFile(event, function(file){
             var fileObject = new FS.File(file);
@@ -179,7 +154,6 @@ Template.menuPage.events({
         options = {};
         options.name = $('#name-input').val();
         options.pic_url = pic_url;
-        //options.promotion = Boolean($('#promotion').val());
         options.valid_until = $('#validTill').val();
         options.price = $('#price-input').val();
         options.restaurant_name = rest.name;
