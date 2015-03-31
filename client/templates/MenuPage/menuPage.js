@@ -5,19 +5,23 @@ var cart = [];
 var order ={};
 var cart_length = 0;
 Cart = new Mongo.Collection(null);
+//var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
+var pic_url = "";
+
+
 
 //var $cart_list = $('.cd-cart-items');
 
 Template.menuPage.helpers({
     foodMenu: function(){
-        // var rest = Restaurants.find(Meteor.user().restaurant_id);
-        var rest = Restaurants.findOne({name: "MK"});
+        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
+
         return Menus.find({restaurant_name: rest.name  ,type:"food"});
     },
 
     drinkMenu: function(){
-                // var rest = Restaurants.find(Meteor.user().restaurant_id);
-        var rest = Restaurants.findOne({name: "MK"});
+        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
+
         return Menus.find({restaurant_name: rest.name  ,type:"drink"});
     },
 
@@ -46,6 +50,10 @@ Template.menuPage.helpers({
         //For each key, make an array entry
 
         return cartList
+    },
+
+    images: function(){
+        return Images.find();
     }
 });
 
@@ -63,59 +71,13 @@ Template.menuPage.events({
         }
 
         Session.set('cart', cart )
-        console.log(Session.get('cart'));
+        console.log("Cart: " + Session.get('cart').toString());
 
-        // var item_name = $('#drink-list button').find('h3').text(),
-        //     item_price = $('#menu').find('h4').text(),
-            
-        //     count = 0;
-           
-        //     console.log("Click Event");
-            
-        
-        // // Count number of item
-        // for(i = 0; i < cart_length; i++) {
-            
-        //     if($('#item'+i).find('.cd-name').text() === item_name){
-                
-        //         console.log("Enter if");
-                
-        //         var val = parseInt($('#item'+i).find('.cd-qty').text(),10);
-        //         var newVal = val+1;
-
-        //         $('#item'+i).find('.cd-qty').text(newVal+'x');
-        //         count++;
-
-        //         var total = parseInt($('.cd-cart-total span').text(),10);
-        //         var newTotal = total+parseInt(item_price.substr(1),10);
-        //         $('.cd-cart-total span').text(newTotal+' Baht');
-        //     }
-        // }
-
-        // if(count == 0)
-        // {
-        //     console.log("new item");
-        //     console.log("item name "+ item_name);    
-        //     var qty = 0; 
-            
-        //     $('.cd-cart-items').append('<li class="item"><span class="cd-qty">' + (++qty) + 'x</span><span class="cd-name">' + item_name + '</span><div class="cd-price">' + item_price + '</div><a href="#0" class="cd-item-remove"><span>Remove</span></a></li>');
-            
-        //     $('li').last().attr('id', 'item'+(cart_length++) );
-            
-        //     console.log("cart length "+ cart_length);
-        //     console.log("count "+ count);
-        //     console.log("qty "+ qty);
-            
-
-        //     //find total price(old total + new item price)
-        //     var total = parseInt($('.cd-cart-total span').text(),10);
-        //     var newTotal = total+parseInt(item_price.substr(1),10);
-        //     $('.cd-cart-total span').text(newTotal+' Baht');
-        // }
     },
 
     'click a.checkout-btn': function(event){
         var cart = Session.get('cart');
+        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
 
         if(!cart){
             Session.set('cart', {});
@@ -133,7 +95,7 @@ Template.menuPage.events({
         });
 
         var params = {
-            restaurant_id: Restaurants.findOne({name: "MK"})._id,
+            restaurant_id: Restaurants.findOne({name: rest.name})._id,
             orderItems: cartList
         }
 
@@ -142,7 +104,92 @@ Template.menuPage.events({
                 Session.set('cart', {});
             }
         });
+    },
+
+    'click .cd-item-remove': function(event){
+        //remove the select row out of cart
+        console.log("remove button clicked");
+
+        var id = $(event.currentTarget).closest('.item').data('id');
+        console.log("clicked id: "+id);
+        var cart = Session.get('cart');
+
+        if(!cart){
+            Session.set('cart', {});
+            return [];
+        }
+
+        delete cart[id];
+
+        Session.set('cart', cart);
+
+        console.log(cart);
+
+    },
+
+
+    'change .fileInput': function (event, template) {
+        FS.Utility.eachFile(event, function(file){
+            var fileObject = new FS.File(file);
+            Images.insert(fileObject, function(error){
+                if(error){
+                    console.log(error);
+                }
+                else{
+                    console.log("Successfully uploaded: " +fileObject._id);
+
+                    pic_url =  '/cfs/files/images/' + fileObject._id;
+                }
+
+            });
+
+
+        })
     }
+    , 'click #add-to-save-butt': function(e,t){
+
+        console.log("add button clicked");
+        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
+
+        options = {};
+        options.name = $('#name-input').val();
+        options.pic_url = pic_url;
+        options.valid_until = $('#validTill').val();
+        options.price = $('#price-input').val();
+        options.restaurant_name = rest.name;
+        options.created_at = new Date();
+        options.updated_at = new Date();
+
+
+        if($('#promotion').is(':checked')){
+            options.promotion = true;
+        }else options.promotion = false;
+
+        if($('#type-drink').is(':checked')){
+            /* $('#drink-list').append('<li class="drink-item"><button class="to_basket" id="menu"><h3>'
+             + $('#name-input').val() +'</h3><h4>฿'
+             + $('#price-input').val()
+             +'</h4></button></li>'); */
+            options.type = "drink";
+        }else{
+            /* $('#food-list').append('<li class="food-item"><button class="to_basket" id="menu"><h3>'
+             + $('#name-input').val()
+             +'</h3><h4>฿'+ $('#price-input').val()
+             +'</h4></button></li>');*/
+            options.type = "food";
+        }
+
+        var menu_id = Menus.insert(options, function(error){
+            console.log(error);
+        });
+
+        console.log("menu_id: "+ menu_id);
+
+        Restaurants.update({_id: rest._id}, { $push: { menu: menu_id }});
+
+
+    }
+
 });
 
 Template.menuPage.onRendered(function(){
@@ -287,24 +334,6 @@ Template.menuPage.onRendered(function(){
 		}
 	});*/
 
-    //add item to panel
-    /*$save_on_panel.on('click', function(event){
-        $shadow_layer.removeClass('is-visible');
-        $add_item.removeClass('speed-in');
-
-        if($('#type-drink').is(':checked')){
-            $('#drink-list').append('<li class="drink-item"><button class="to_basket" id="menu"><h3>'
-            + $('#name-input').val() +'</h3><h4>฿'
-            + $('#price-input').val()
-            +'</h4></button></li>');
-        }else{
-            $('#food-list').append('<li class="food-item"><button class="to_basket" id="menu"><h3>'
-            + $('#name-input').val()
-            +'</h3><h4>฿'+ $('#price-input').val()
-            +'</h4></button></li>');
-        }
-    });
-*/
 
 
 //preview image
@@ -353,80 +382,3 @@ function preview(input) {
 });
 
 
-var pic_url = "";
-
-
-Template.menuPage.events({
-
-
-        'change .fileInput': function (event, template) {
-            FS.Utility.eachFile(event, function(file){
-                var fileObject = new FS.File(file);
-                Images.insert(fileObject, function(error){
-                    if(error){
-                        console.log(error);
-                    }
-                    else{
-                        console.log("Successfully uploaded: " +fileObject._id);
-
-                        pic_url =  '/cfs/files/images/' + fileObject._id;
-                    }
-                    
-                });
-
-
-            })
-        }
-    , 'click #add-to-save-butt': function(e,t){
-
-        console.log("add button clicked");
-
-        options = {};
-        options.name = $('#name-input').val();
-        options.pic_url = pic_url;
-        //options.promotion = Boolean($('#promotion').val());
-        options.valid_until = $('#validTill').val();
-        options.price = $('#price-input').val();
-        options.restaurant_name = "MK";
-        options.created_at = new Date();
-        options.updated_at = new Date();
-
-
-        if($('#promotion').is(':checked')){
-            options.promotion = true;
-        }else options.promotion = false;
-
-        if($('#type-drink').is(':checked')){
-          /* $('#drink-list').append('<li class="drink-item"><button class="to_basket" id="menu"><h3>'
-            + $('#name-input').val() +'</h3><h4>฿'
-            + $('#price-input').val()
-            +'</h4></button></li>'); */
-            options.type = "drink";
-        }else{
-           /* $('#food-list').append('<li class="food-item"><button class="to_basket" id="menu"><h3>'
-            + $('#name-input').val()
-            +'</h3><h4>฿'+ $('#price-input').val()
-            +'</h4></button></li>');*/
-            options.type = "food";
-        }
-
-        var menu_id = Menus.insert(options, function(error){
-            console.log(error);
-        });
-
-        console.log("menu_id: "+ menu_id);
-
-        Restaurants.update({_id: "3f4eXbyfwp4wep6Wd"}, { $push: { menu: menu_id }});
-
-
-    }
-
-
-});
-
-Template.menuPage.helpers({
-
-    images: function(){
-        return Images.find();
-    }
-});

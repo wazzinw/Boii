@@ -35,8 +35,19 @@
                         {{/each}}
                     </ul>
 
+<<<<<<< HEAD
                     <div class="btn-panel"><button id="add_item_butt" type="button">Add Item</button><button id="edit_item_butt" type="button">Edit Item</button>
                     </div>
+=======
+                    <div class="btn-panel">
+
+                            <button id="add_item_butt" type="button">Add Item</button>
+                            <button id="edit_item_butt" type="button">Edit Item</button>
+
+
+                    </div>
+
+>>>>>>> 92484c7152052216fad2b4f4c1094cb02e8a7818
                 </div>
             </div>
 
@@ -46,9 +57,9 @@
             <div id="cd-cart">
                 
                 <h2>Cart</h2>
-                <ul class="cd-cart-items" id="cd-cart-item">
+                <ul class="cd-cart-items" id="cd-cart-item" >
                     {{#each cartItems}}
-                        <li class="item">
+                        <li class="item" data-id={{_id}}>
                             <span class="cd-qty">
                                 {{quantity}}
                             </span>
@@ -58,7 +69,8 @@
                             <div class="cd-price">
                                 ฿{{price}}
                             </div>
-                            <a href="#0" class="cd-item-remove"><span>Remove</span></a>
+                           <a href="#0" class="cd-item-remove"><span>Remove</span></a>
+
                         </li>
                     {{/each}}
 
@@ -76,7 +88,7 @@
             <!-- ADD ITEM -->
             <div id="add_item">
                 <h1>New Menu</h1>
-                <img id="preview_image" src="/picture/default_coffee.jpg">
+                <img id="preview_image" src= "/default_coffee.jpg">
 
                 <div class="detail">
                     <p class="browsepic">Picture:<input multiple class = "file fileInput" id="item-image" type="file"/></p>

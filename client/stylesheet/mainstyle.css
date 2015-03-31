@@ -1,5 +1,9 @@
 html{
-    /*background-image: url(/bg1.jpg);*/
+
+
+
+    background-image: url("/bg1.jpg");
+
 }
 body{
     margin: auto;

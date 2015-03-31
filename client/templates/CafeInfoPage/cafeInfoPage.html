@@ -27,12 +27,17 @@
                 <th>Menus</th>
             </tr>
             </thead>
+
             <tbody>
-            {{#each findRestaurant}}
+            {{#with findRestaurant}}
                 <td>{{_id}}</td>
                 <td>{{name}}</td>
-                <td>{{menu}}</td>
-            {{/each}}
+                <td>{{menu}}</td>z
+                {{email}}
+                {{address}}
+                {{phone_numbers}}
+
+            {{/with}}
 
 
             </tbody>

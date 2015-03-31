@@ -14,7 +14,6 @@ Template.cafeInfoPage.events({
 Template.restaurant_info.helpers({
     findRestaurant : function(){
         var restID = Meteor.user().profile.restaurant_id;
-        console.log(restID);
         return Restaurants.find({_id: restID});
     }
 
