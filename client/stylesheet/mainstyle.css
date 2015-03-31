@@ -71,20 +71,23 @@ body{
 #mainpage-menu li:last-child{
     float: right;
 }
-/*------------------------------------OVERVIEW-----------------------------------*/
-.overview{
-    height: 550px;
-    padding: 5px;
-    background: #CDEBFF;
-    box-shadow: 30px 90px 100px 0px #FFFFFF inset, -30px -30px 100px 0px #FFFFFF inset;
+.main_div{
     border: 1px solid #919394;
+    padding: 5px;
 }
-.overview h1{
+.main_div h1{
     text-align: center;
     text-shadow: 3px 2px 50px #9FC7F1;
     color: #67696B;
-    float: center;
 }
+/*------------------------------------OVERVIEW-----------------------------------*/
+
+#overview{
+    height: 450px;
+    background: #CDEBFF;
+    box-shadow: 30px 90px 100px 0px #FFFFFF inset, -30px -30px 100px 0px #FFFFFF inset;
+}
+
 .summary_table{
     margin: 50px 50px;
     text-align: center;
@@ -108,17 +111,10 @@ body{
     box-shadow: 10px 0px 20px 5px #FFFFFF, -10px -0px 20px 5px #FFFFFF;
 }
 /*------------------------------------FEATURES-----------------------------------*/
-.features{
+#features{
     height: 400px;
-    padding: 5px;
     background: #FCBC8E;
     box-shadow: 10px 90px 100px 0px #FFFFFF inset,-10px -30px 100px 0px #FFFFFF inset,30px 30px 100px 0px #FDCC82 inset, -30px -30px 100px 0px #FDCC82 inset;
-    border: 1px solid #919394;
-}
-.features h1{
-    text-align: center;
-    text-shadow: 3px 2px 50px #FCBC8E;
-    color: #67696B;
 }
 .features_table{
     margin: 50px 50px;
@@ -126,7 +122,7 @@ body{
     font-size: 22px;
 }
 .features_table td{
-    width: 500px
+    width: 500px;
     height: 50px;
 }   
 .features_table h3{
@@ -134,29 +130,22 @@ body{
     text-decoration: underline;
 }
 /*------------------------------------CAFE LIST-----------------------------------*/
-.cafelist{
+#cafelist{
     height: auto;
     background-color: #9AFF8F;
-    padding: 5px;
     box-shadow: 10px 90px 100px 0px #FFFFFF inset,-10px -30px 100px 0px #FFFFFF inset,30px 30px 100px 0px #61FF4F inset, -30px -30px 100px 0px #61FF4F inset;
-    border: 1px solid #919394;
 }
-.cafelist h1{
-    text-align: center;
-    text-shadow: 3px 2px 50px #61FF4F;
-    color: #67696B;
-}
-.cafelist ul li{
+#cafelist ul li{
     display: inline-block;
     margin: 50px 20px;
     text-align: center;
     width: 300px;
 }
-.cafelist img{
+#cafelist img{
     max-height: 150px;
     max-width: 200px;
 }
-.cafelist h3{
+#cafelist h3{
     margin-top: 5px;
 }
 /*------------------------------Register Center---------------------------------------------*/
@@ -251,9 +240,9 @@ body{
 }
 #cd-cart-trigger{
     float: right;
-    background-color: white;
-    color: blue;
-    border-radius: 50px;
+    background-color: #1F2121;
+    color: #FFFFFF;
+    border-radius: 10px;
 }
 /*---------------------------------MENU LIST--------------------------------------*/
 #drink-list,  #food-list{
@@ -271,7 +260,6 @@ body{
 #drink-list .menu, #food-list .menu{
     width: 200px;
     height: 100px;
-    font-size: 16px;
     padding-top: 12px;
     border-radius: 20px;
     background: #001034;
@@ -324,40 +312,33 @@ body{
 }
 
 
-/*---------------------------------Add Button--------------------------------------*/
+/*---------------------------------Menu Button Panel--------------------------------------*/
 .btn-panel{
     position: relative;
     top: 80%;
     left: 40%;
-    width: 400px;
+    width: 100%;
+}
+.btn-panel button{
+    height: 80px;
+    color: #FFFFFF;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
 }
 #add_item_butt{
     width: 300px;
-    height: 80px;
-    font-size: 20px;
-    font-weight: bold;
     background: #24A8FF;
-    color: #FFFFFF;
-    border-radius: 10px;
 }
 #edit_item_butt{
-    float: right;
     width: 100px;
-    height: 80px;
-    background: #24A8AF;
-    color: #FFFFFF;
-    border-radius: 10px;
-    font-size: 20px;
+    margin-left: 30px;
+    background: #5CB85C;;
 }
 #delete_item_butt{
-    float: right;
+    margin-left: 30px;
     width: 100px;
-    height: 80px;
-    background: red;
-    color: #FFFFFF;
-    border-radius: 10px;
-    font-size: 20px;
-    margin-left: 5%
+    background: #D9534F;;
 }
 #add_item_butt:hover, #edit_item_butt:hover, #delete_item_butt:hover{
     cursor: pointer;
@@ -729,7 +710,6 @@ body{
     width: 100px;
     height: 80px;
     border-radius: 10px;
-    font-size: 16px;
     color: #FFFFFF;
     font-weight: bold;
     margin: 5px;
@@ -752,14 +732,6 @@ body{
     background: #EC900F;
     width: 200px;
     margin: 5px;
-}
-#test_but{
-    height: 100px;
-    width: 500px;
-    font-size: 50px;
-    position: relavtive;
-    top: 500px;
-    left: 550px;
 }
 /*---------------------------------Report--------------------------------------*/
 #show-report{
@@ -785,12 +757,6 @@ body{
     border-bottom: 1px solid black;
     padding-bottom: 5px;
     margin-left: 10px;
-}
-#info-panel p{
-    font-size: 16px;
-}
-#cafe-info input{
-    border: none; 
 }
 #info-panel td{
     padding: 5px 10px;

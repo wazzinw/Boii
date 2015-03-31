@@ -145,8 +145,10 @@ Template.menuPage.events({
 
 
         })
-    }
-    , 'click #add-to-save-butt': function(e,t){
+    }, 
+
+
+    'click #add-to-save-butt': function(e,t){
 
         console.log("add button clicked");
         var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
