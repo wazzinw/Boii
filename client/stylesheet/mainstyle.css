@@ -1,25 +1,25 @@
 html{
-    background-image: url(/picture/bg1.jpg);
+    /*background-image: url(/bg1.jpg);*/
 }
 body{
-    margin: 0 auto;
+    margin: auto;
     padding: 0px;
     min-width: 900px;
     font-size: 16px;
     line-height: 1em;
     background-color: white;
     font-family: Lato;
-    max-width: 1500px;
+    max-width: 1200px;
 }
 #mainpage-header{
-    height: 100px;
+    height: 70px;
     background-color: #2D94EE;
 }
 #mainpage-header span{
     font-size: 40px;
     margin-left: 40px;
     position: relative;
-    bottom: 25px;
+    top: 15px;
     font-weight: bold;
     text-shadow: 3px 2px 20px #333333;
     color: #F1F5F8;
@@ -27,18 +27,18 @@ body{
 #logo{
     margin-top: 10px;
     margin-left: 10px;
-    max-height: 80px;
+    max-height: 50px;
 }
 #contact {
     float: right;
-    font-size: 20px;
-    padding: 20px 80px;
+    font-size: 18px;
+    padding: 10px 40px;
     margin-top: 10px;
     background-color: #D6DEE0;
     border-radius: 100px 0px 0px 100px;
     color: #153BFA;
     font-weight: bold;
-    border: 10px solid #F0F1F1;  
+    border: 5px solid #F0F1F1;  
 }
 /*------------------------------MENU BAR---------------------------------------------*/
 #mainpage-menu{
@@ -50,11 +50,9 @@ body{
     border: 1px solid #A8A8A8;
     box-shadow: 0px 30px 30px 0px #B0B8C6 inset;
 }
-#mainpage-menu ul{
-}
 #mainpage-menu li{
-    display: inline;
-    padding: 10px 40px;
+    display: inline-block;
+    padding: 20px 30px;
 }
 #mainpage-menu a{
     color: #F0F1F4;
@@ -66,73 +64,11 @@ body{
 #mainpage-menu li:first-child {
     margin-left: -40px;
 }
-#logout-btn{
-    height: 60px;
-    width: 100px;
-    margin: -20px;
-    margin-right: 10px;
-    background: #7C818C;
+#mainpage-menu li:last-child{
     float: right;
-    border: none;
-    box-shadow: 0px 30px 30px 0px #B0B8C6 inset;
-    font-size: 20px;
-    font-weight: bold;
-    color: #F0F1F4;
-}
-/*------------------------------LOGIN PANEL-----------------------------------------*/
-#login-div{
-    border: 1px solid #A8A8A8;
-    background: #E0E0E2;
-    height: 300px;
-}
-#login-panel{
-    border: 1px solid black;
-    border-radius: 10px;
-    padding-left: 20px;
-    padding-bottom: 40px;
-    background-color:#2D94EE;
-    position: relative;
-    left: 30px;
-    top: 20px;
-    width: 400px;
-    font-size: 20px;
-    color: #F1F5F8;
-}
-#login-panel h2{
-    text-decoration: underline;
-}
-.loginbut{
-    margin-left: 10%;
-    margin-bottom: 5px;
-}
-.loginbut button{
-    width: 100px;
-    height: 40px;
-    font-size: 20px;
-    font-weight: 600;
-    border: 1px solid #9E9E9E;
-    border-radius: 10px;
-    background: #E9E9E9;
-    color: #55B8FF;
-}
-.loginbut button:hover{
-    box-shadow: 0px -5px 10px 1px #919394 inset;
-    cursor:pointer;
-}
-.loginbut button:active{
-    background: #ACB4BA;
-}
-.registerbut{
-    margin-left: 20px;
-}
-#login-panel input {
-    height: 20px;
-    width: 200px;
-    font-size: 20px;
 }
 /*------------------------------------OVERVIEW-----------------------------------*/
 .overview{
-    min-width: 900px;
     height: 550px;
     padding: 5px;
     background: #CDEBFF;
@@ -140,7 +76,6 @@ body{
     border: 1px solid #919394;
 }
 .overview h1{
-    min-width: 900px;
     text-align: center;
     text-shadow: 3px 2px 50px #9FC7F1;
     color: #67696B;
@@ -149,7 +84,7 @@ body{
 .summary_table{
     margin: 50px 50px;
     text-align: center;
-    font-size: 22px;
+    font-size: 20px;
     margin: auto;
 }
 .summary_table td{
@@ -158,6 +93,7 @@ body{
 }
 .summary_table p{
     width: 300px;
+    height: 50px;
     margin: auto;
     margin-top: 1em;
 }
@@ -187,8 +123,11 @@ body{
 }
 .features_table td{
     width: 500px
+    height: 50px;
 }   
 .features_table h3{
+    font-weight: bold;
+    text-decoration: underline;
 }
 /*------------------------------------CAFE LIST-----------------------------------*/
 .cafelist{
@@ -196,6 +135,7 @@ body{
     background-color: #9AFF8F;
     padding: 5px;
     box-shadow: 10px 90px 100px 0px #FFFFFF inset,-10px -30px 100px 0px #FFFFFF inset,30px 30px 100px 0px #61FF4F inset, -30px -30px 100px 0px #61FF4F inset;
+    border: 1px solid #919394;
 }
 .cafelist h1{
     text-align: center;
@@ -209,8 +149,8 @@ body{
     width: 300px;
 }
 .cafelist img{
-    max-height: 200px;
-    max-width: 250px;
+    max-height: 150px;
+    max-width: 200px;
 }
 .cafelist h3{
     margin-top: 5px;
@@ -308,7 +248,7 @@ body{
 #cd-cart-trigger{
     float: right;
     background-color: white;
-    color: lightblue;
+    color: blue;
     border-radius: 50px;
 }
 /*---------------------------------MENU LIST--------------------------------------*/
@@ -385,7 +325,7 @@ body{
     position: relative;
     top: 80%;
     left: 40%;
-    width: 850px;
+    width: 400px;
 }
 #add_item_butt{
     width: 300px;
@@ -471,7 +411,7 @@ body{
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
     border-radius: 50%;
-    background: url("/picture/remove.png") center center;
+    background: url("/remove.png") center center;
     background-size: 40px 40px;
     background-repeat: no-repeat;
     height: 50px;
@@ -726,7 +666,7 @@ body{
     position: relative;
     width: 90%;
     max-width: 400px;
-   // height: 190px;
+    height: 190px;
     margin: 4em auto;
     background: none repeat scroll 0% 0% #FFF;
     border-radius: 0.25em 0.25em 0.4em 0.4em;
@@ -751,21 +691,20 @@ body{
     padding: 15px 0px;
     background: #24A8FF;
     color: #FFFFFF;
-    width: 100%;
-    height: 30px;
+    height: 40px;
 }
 .order_table{
     text-align: center;
     width: 100%;
 }
+.order_table th{
+    text-align: center
+}
 .order_table tr{
     outline: 1px solid;
 }
-.order_no{
-    width: 30px;
-}
 .order_code{
-    width: 70px;
+    width: 100px;
 }
 .order_time{
     width: 100px;
@@ -780,7 +719,7 @@ body{
     width: 30px;
 }
 .order_action{
-    width: 270px;
+    width: 300px;
 }
 .item_button button{
     width: 100px;
@@ -878,6 +817,7 @@ body{
     position: relative;
     background-color: #2D94EE;
     box-shadow: 30px 30px 100px 0px #FFFFFF inset, -30px -30px 100px 0px #FFFFFF inset;
+    border: 1px solid #919394;
 }
 .foottext{
     position: relative;

@@ -16,7 +16,7 @@
  */
 var orderAmount = 1000;
 
-if(true){
+if(false){
     if(Restaurants.find().count() == 0) {
     Restaurants.insert(
         {
