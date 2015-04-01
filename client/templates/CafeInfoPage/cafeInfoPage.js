@@ -13,8 +13,13 @@ Template.cafeInfoPage.events({
 
 Template.restaurant_info.helpers({
     findRestaurant : function(){
-        var restID = Meteor.user().profile.restaurant_id;
-        return Restaurants.find({_id: restID});
+       var restID;
+        if(!Meteor.loggingIn() && !Meteor.user()){
+           console.log("can't find user");
+        }
+        else  restID = Meteor.user().profile.restaurant_id;
+
+        return Restaurants.findOne({_id: restID});
     }
 
 });

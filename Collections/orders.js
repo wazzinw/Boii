@@ -88,7 +88,7 @@ Meteor.methods({
         params.orderItems = orderItemsIds;
         params.customer_id = this.userId;
 
-        console.log("params="+params);
+        console.log("params= "+params);
 
 
         return  Orders.insert(params);

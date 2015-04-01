@@ -24,3 +24,4 @@ aldeed:autoform
 cfs:standard-packages
 cfs:filesystem
 cfs:s3
+meteorhacks:fast-render
