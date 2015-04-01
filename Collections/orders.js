@@ -92,7 +92,21 @@ Meteor.methods({
 
 
         return  Orders.insert(params);
+    },
+    markOrderReady: function(orderId) {
+
+    },
+    markOrderAccepted: function(orderId) {
+
+    },
+    markOrderRejected: function(orderId) {
+
+    },
+    markOrderBilled: function(orderId) {
+        
     }
+
+
 });
 
 var OrderParamsSchema = new SimpleSchema({

@@ -26,3 +26,7 @@ cfs:filesystem
 cfs:s3
 meteorhacks:fast-render
 raix:push
+meteorhacks:npm
+
+
+npm-container
