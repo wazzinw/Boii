@@ -22,13 +22,16 @@ if(Meteor.isServer){
     });
 
     Meteor.publish('orders', function() {
-        return Orders.find({
-            restaurant_id: Restaurants.findOne({name:"MK"})._id }, 
-            {
-                limit: 10, 
-                sort: {updated_at: -1}
-            });
+
+        if (this.userId) {
+            var restID = Meteor.users.findOne({_id: this.userId}).profile.restaurant_id;
+        }
+        if(restID) return Orders.find({restaurant_id: restID}, {limit: 10, sort: {updated_at: -1}});
+        else return Orders.find();
+
     });
+
+
     Meteor.publish('orderItems', function() {
         return OrderItems.find({});
     });
@@ -37,7 +40,7 @@ if(Meteor.isServer){
         return Orders.find({customer_id: this.userId});
     })
 
-}
+};
 
 
 

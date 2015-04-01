@@ -2,7 +2,7 @@
  * Created by wazzinw on 3/25/15 AD.
  */
 
-Template.cafeInfoPage.events({
+Template.cafeRegisterPage.events({
 
     "click #regis-button": function () {
         console.log('register clicked');
@@ -50,10 +50,10 @@ Template.cafeInfoPage.events({
 
 
 
-        //console.log("New restaurant id: "+ restID);
+        console.log("New restaurant id: "+ restID);
         Meteor.users.update( { _id: Meteor.userId() }, { $set: { 'profile.restaurant_id': restID}} );
 
-
+        this.redirect("cafeInfoPage");
 
 
     }

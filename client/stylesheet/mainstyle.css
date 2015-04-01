@@ -284,6 +284,46 @@ body{
 #drink-list button:active, #food-list button:active{
     background: #2870F6;
 }
+ #food-list{
+    list-style: none;
+    height: 600px;
+    max-width: 1440px;
+    overflow: auto;
+    position: absolute;
+    margin: auto;
+}
+#food-list li{
+    display: inline-block;
+    margin: 20px;
+}
+#food-list .food-menu{
+    width: 200px;
+    height: 100px;
+    padding-top: 12px;
+    border-radius: 20px;
+    background: #001034;
+    color: #FFFFFF;
+}
+#food-list .food-item h3{
+    position: relative;
+    height: 50px;
+    bottom: 1em;
+}
+#food-list h4{
+    position: relative;
+    bottom: 40px;
+}
+#food-list .food-item button:hover{
+    background: #00416D;
+    cursor: pointer;
+}
+#food-list .food-item button:active{
+    background: #2870F6;
+}
+
+
+
+
 #food-list.invisible{
     display: none;
 }

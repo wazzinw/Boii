@@ -18,29 +18,30 @@ function userAvailable() {
 
 Template.menuPage.helpers({
     foodMenu: function(){
-        var user = Meteor.user();
+
         var rest;
         if(userAvailable()){
+            var user = Meteor.user();
             rest = Restaurants.findOne({_id: user.profile.restaurant_id});
         }
         else{
             console.log("food: no user found");
         }
 
-        return Menus.find({restaurant_name: rest.name  ,type:"food"});
+        return Menus.find({restaurant_name: rest.name ,type: "food"});
     },
 
     drinkMenu: function(){
-        var user = Meteor.user();
         var rest;
         if(userAvailable()){
+            var user = Meteor.user();
             rest = Restaurants.findOne({_id: user.profile.restaurant_id});
         }
         else{
             console.log("food: no user found");
         }
 
-        return Menus.find({restaurant_name: rest.name  ,type:"drink"});
+        return Menus.find({restaurant_name: rest.name  , type:"drink"});
     },
 
     cartItems: function(){
@@ -71,13 +72,37 @@ Template.menuPage.helpers({
 
     images: function(){
         return Images.find();
+    },
+
+    totalPrice: function(){
+        var cart = Session.get('cart');
+
+        if(!cart){
+            Session.set('cart', {});
+            return [];
+        }
+        var sum = 0;
+
+        var keys = Object.keys(cart);
+
+        var cartList = keys.map(function(value, index, array) {
+
+            var menu = Menus.findOne(value);
+            sum += cart[value]* menu.price;
+            console.log("sum = "+ cart[value] +"*"+ menu.price);
+
+        });
+
+        return sum;
     }
 });
 
 Template.menuPage.events({
     'click button.menu': function(event){
+        console.log("drink menu clicked");
 
         var id = $(event.currentTarget).closest('.drink-item').data('id');
+
         console.log(id);
         var cart = Session.get('cart') || {};
 
@@ -90,7 +115,28 @@ Template.menuPage.events({
         Session.set('cart', cart )
         console.log("Cart: " + Session.get('cart').toString());
 
+    },'click button.food-menu': function(event){
+        console.log("food menu clicked");
+
+        var id = $(event.currentTarget).closest('.food-item').data('id');
+
+        console.log(id);
+
+        var cart = Session.get('cart') || {};
+
+        if ( cart[id] ){
+            cart[id] += 1;
+        } else {
+            cart[id] = 1;
+        }
+
+        Session.set('cart', cart );
+
+        console.log("Cart: " + Session.get('cart').toString());
+
     },
+
+
 
     'click a.checkout-btn': function(event){
         var cart = Session.get('cart');
