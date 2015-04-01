@@ -5,28 +5,46 @@ var cart = [];
 var order ={};
 var cart_length = 0;
 Cart = new Mongo.Collection(null);
-//var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
 var pic_url = "";
 
 
+function userAvailable() {
+    // use Meteor.user() since it's available
+    if (Meteor.user())
+        return Meteor.user().profile;
 
-//var $cart_list = $('.cd-cart-items');
+}
+
 
 Template.menuPage.helpers({
     foodMenu: function(){
-        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
 
-        return Menus.find({restaurant_name: rest.name  ,type:"food"});
+        var rest;
+        if(userAvailable()){
+            var user = Meteor.user();
+            rest = Restaurants.findOne({_id: user.profile.restaurant_id});
+        }
+        else{
+            console.log("food: no user found");
+        }
+
+        return Menus.find({restaurant_name: rest.name ,type: "food"});
     },
 
     drinkMenu: function(){
-        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
+        var rest;
+        if(userAvailable()){
+            var user = Meteor.user();
+            rest = Restaurants.findOne({_id: user.profile.restaurant_id});
+        }
+        else{
+            console.log("food: no user found");
+        }
 
-        return Menus.find({restaurant_name: rest.name  ,type:"drink"});
+        return Menus.find({restaurant_name: rest.name  , type:"drink"});
     },
 
     cartItems: function(){
-        
         var cart = Session.get('cart');
 
         if(!cart){
@@ -54,13 +72,37 @@ Template.menuPage.helpers({
 
     images: function(){
         return Images.find();
+    },
+
+    totalPrice: function(){
+        var cart = Session.get('cart');
+
+        if(!cart){
+            Session.set('cart', {});
+            return [];
+        }
+        var sum = 0;
+
+        var keys = Object.keys(cart);
+
+        var cartList = keys.map(function(value, index, array) {
+
+            var menu = Menus.findOne(value);
+            sum += cart[value]* menu.price;
+            //console.log("sum = "+ cart[value] +"*"+ menu.price);
+
+        });
+
+        return sum;
     }
 });
 
 Template.menuPage.events({
     'click button.menu': function(event){
+        console.log("drink menu clicked");
 
         var id = $(event.currentTarget).closest('.drink-item').data('id');
+
         console.log(id);
         var cart = Session.get('cart') || {};
 
@@ -73,12 +115,39 @@ Template.menuPage.events({
         Session.set('cart', cart )
         console.log("Cart: " + Session.get('cart').toString());
 
+    },'click button.food-menu': function(event){
+        console.log("food menu clicked");
+
+        var id = $(event.currentTarget).closest('.food-item').data('id');
+
+        console.log(id);
+
+        var cart = Session.get('cart') || {};
+
+        if ( cart[id] ){
+            cart[id] += 1;
+        } else {
+            cart[id] = 1;
+        }
+
+        Session.set('cart', cart );
+
+        console.log("Cart: " + Session.get('cart').toString());
+
     },
+
+
 
     'click a.checkout-btn': function(event){
         var cart = Session.get('cart');
-        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
 
+        var rest;
+        if(userAvailable()){
+            rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
+        }
+        else{
+            console.log("food: no user found");
+        }
         if(!cart){
             Session.set('cart', {});
             return [];
@@ -90,7 +159,7 @@ Template.menuPage.events({
             var menu = Menus.findOne(value);
             return {
                 menu_id: value,
-                quantity: cart[value],
+                quantity: cart[value]
             }
         });
 
@@ -145,13 +214,15 @@ Template.menuPage.events({
 
 
         })
+
     }, 
 
 
-    'click #add-to-save-butt': function(e,t){
 
+    'click #add-to-save-butt': function(e,t){
+        var user = Meteor.user();
         console.log("add button clicked");
-        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
+        var rest = Restaurants.findOne({_id: user.profile.restaurant_id});
 
         options = {};
         options.name = $('#name-input').val();
@@ -189,6 +260,9 @@ Template.menuPage.events({
 
         Restaurants.update({_id: rest._id}, { $push: { menu: menu_id }});
 
+        window.alert(options.name+" is added");
+        $('#cd-shadow-layer').removeClass('is-visible');
+        $('#add_item').removeClass('speed-in');
 
     }
 
@@ -267,11 +341,51 @@ Template.menuPage.onRendered(function(){
         $('#food-list').addClass('invisible');
     });
     
+    //edit item
     $('#edit_item_butt').on('click', function(){
-        $('#edit-item').removeClass('invisible');
+        if($('#edit_item_butt').text() === 'Edit'){
+            $('#drink-list').find('h4').text('').append('<button class="edit-item-btn">Edit</button>');
+            $('#edit_item_butt').text('Done');
+        }else{
+            $('#drink-list').find('h4').text('$50');
+            $('#edit_item_butt').text('Edit');
+
+        }
     });
 
+    //delete item from panel
+    $('#delete_item_butt').on('click', function(){
+        if($('#delete_item_butt').text() === 'Delete'){
+            $('.delete-btn').css('display','inherit');
+            $('#delete_item_butt').text('Done');
+        }else{
+            $('.delete-btn').css('display','none');
+            $('#delete_item_butt').text('Delete');
+        }
+    $('.delete-btn').on('click', function(){
 
+        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
+
+        //$(this).closest('li').remove();
+        var id = $(event.currentTarget).closest('li').data('id');
+        console.log("id: "+ id);
+        //Restaurants.update({_id: Meteor.user().profile.restaurant_id}, )
+        Menus.remove({_id: id});
+
+        var menuArray = rest.menu;
+        var index = menuArray.indexOf(id);
+        console.log("index: "+ index);
+
+        if (index > -1) {
+            menuArray.splice(index, 1);
+            console.log("remove id")
+        }
+
+
+        Restaurants.update({_id: Meteor.user().profile.restaurant_id}, { $set: { menu: menuArray }});
+
+    });
+    });
 
 
 
@@ -379,6 +493,8 @@ function preview(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+
+
 
 
 });

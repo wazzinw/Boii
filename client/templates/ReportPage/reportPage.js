@@ -7,9 +7,9 @@ var orderByDate = function(month){
 		created_at: {
 			//query for month 3
 			$gt: new Date(2015, month-1, 1),
-			$lte: new Date(2015, month, 0),
+			$lte: new Date(2015, month, 0)
 		},
-		restaurant_id: Restaurants.findOne({name:"MK"})._id
+		restaurant_id: Meteor.user().profile.restaurant_id
 	}, {sort: {created_at: 1}} ); //ascending
 
 	console.log(orders.fetch());
@@ -64,7 +64,7 @@ Template.reportPage.events({
 				$gte: gteDate,
 				$lt: ltDate
 			},
-			restaurant_id: Restaurants.findOne({name:"MK"})._id
+			restaurant_id: Meteor.user().profile.restaurant_id
 		});
 		console.log(orders.fetch());
 		var data = {};

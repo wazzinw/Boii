@@ -274,13 +274,55 @@ body{
     position: relative;
     bottom: 40px;
 }
-#drink-list button:hover, #food-list button:hover{
+#drink-list input, #food-list input{
+    color: black;
+}
+#drink-list .menu:hover, #food-list .menu:hover{
+    cursor: pointer;
+}
+#drink-list .menu:active, #food-list .menu:active{
+    background: #2870F6;
+}
+ #food-list{
+    list-style: none;
+    height: 600px;
+    max-width: 1440px;
+    overflow: auto;
+    position: absolute;
+    margin: auto;
+}
+#food-list li{
+    display: inline-block;
+    margin: 20px;
+}
+#food-list .food-menu{
+    width: 200px;
+    height: 100px;
+    padding-top: 12px;
+    border-radius: 20px;
+    background: #001034;
+    color: #FFFFFF;
+}
+#food-list .food-item h3{
+    position: relative;
+    height: 50px;
+    bottom: 1em;
+}
+#food-list h4{
+    position: relative;
+    bottom: 40px;
+}
+#food-list .food-item button:hover{
     background: #00416D;
     cursor: pointer;
 }
-#drink-list button:active, #food-list button:active{
+#food-list .food-item button:active{
     background: #2870F6;
 }
+
+
+
+
 #food-list.invisible{
     display: none;
 }
@@ -309,6 +351,12 @@ body{
     color: white;
     font-weight: bold;
     display: none;
+}
+.edit-item-btn{
+    width: 100px;
+    background: grey;
+    color: white;
+    border-radius: 5px;
 }
 
 
@@ -343,7 +391,7 @@ body{
 #add_item_butt:hover, #edit_item_butt:hover, #delete_item_butt:hover{
     cursor: pointer;
 }
-#add_item_butt:active, #edit_item_butt:active, #delete_item_butt:hover{
+#add_item_butt:active, #edit_item_butt:active, #delete_item_butt:active{
     background: #1A699F;
 }
 /*---------------------------------CART--------------------------------------*/

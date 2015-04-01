@@ -14,6 +14,16 @@
  created_at: ,
  updated_at:
  */
+
+if( Meteor.users.find({username: "blob"}).count == 0) {
+    console.log("Creating Blob");
+    Accounts.createUser({
+            username: "blob",
+            password: 'password',
+            email: value+ '@test.com',
+    });
+}
+
 var orderAmount = 1000;
 
 if(false){
@@ -310,7 +320,7 @@ if (Orders.find().count() == 0 ){
     var dayInMonth = []; 
     _(12).times(function(n){
         dayInMonth[n] = new Date(2015, n+1, 0).getDate();
-    })
+    });
 
     _(orderAmount).times(function(n){
         // var idx = Math.floor(Math.random() * restaurants.length);
