@@ -14,6 +14,16 @@
  created_at: ,
  updated_at:
  */
+
+if( Meteor.users.find({username: "blob"}).count == 0) {
+    console.log("Creating Blob");
+    Accounts.createUser({
+            username: "blob",
+            password: 'password',
+            email: value+ '@test.com',
+    });
+}
+
 var orderAmount = 1000;
 
 if(false){

@@ -292,11 +292,32 @@ Template.menuPage.onRendered(function(){
         $('#food-list').addClass('invisible');
     });
     
+    //edit item
     $('#edit_item_butt').on('click', function(){
-        $('#edit-item').removeClass('invisible');
+        if($('#edit_item_butt').text() === 'Edit'){
+            $('#drink-list').find('h3').text('').append('<input class="item-name" type="text" value="Late"' + 'Late' + '/>');
+            $('#drink-list').find('h4').text('').append('<input class="item-price" type="text" value=""' + '$50' + '/>');
+            $('#edit_item_butt').text('Save');
+        }else{
+            $('#edit_item_butt').text('Edit');
+            $('#drink-list').find('h3').text($('.item-name').val());
+            $('#drink-list').find('h4').text($('.item-price').val());
+        }
     });
 
-
+    //delete item from panel
+    $('#delete_item_butt').on('click', function(){
+        if($('#delete_item_butt').text() === 'Delete'){
+            $('.delete-btn').css('display','inherit');
+            $('#delete_item_butt').text('Done');
+        }else{
+            $('.delete-btn').css('display','none');
+            $('#delete_item_butt').text('Delete');
+        }
+    $('.delete-btn').on('click', function(){
+        $(this).closest('li').remove();
+    });
+    });
 
 
 

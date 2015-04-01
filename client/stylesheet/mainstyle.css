@@ -274,6 +274,9 @@ body{
     position: relative;
     bottom: 40px;
 }
+#drink-list input, #food-list input{
+    color: black;
+}
 #drink-list button:hover, #food-list button:hover{
     background: #00416D;
     cursor: pointer;
