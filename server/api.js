@@ -16,3 +16,8 @@ HTTP.publish({collection: OrderItems}, function(data){
 */
 
 
+Push.allow({
+	send: function(userId, notification){
+		return true;
+	}
+})

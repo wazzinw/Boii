@@ -1,0 +1,11 @@
+{
+  "apn": {
+    "passphrase": "boiisusu",
+    "key": "boii_aps_key.pem",
+    "cert": "boii_aps_cer.pem"
+  }, 
+  "badge": true,
+  "sound": true,
+  "alert": true,
+  "vibrate": true
+}
