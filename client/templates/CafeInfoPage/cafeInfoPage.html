@@ -7,7 +7,7 @@
 
         <div id="buttons">
 
-            <a href={{pathFor 'cafeRegisterPage'}}><button class = "btn btn-primary" type="button" id="back-button">New Restaurant</button></a>
+
         </div>
 
     </div>
@@ -51,23 +51,27 @@
                     <tr><td class="title">Contact:</td><td><p id="cafe-contact">{{phone_numbers.number}}</p></td>
                     </tr>
                     <tr>
-                        <td class="title">Address Number:</td><td><p id="cafe-add-num">{{address.number}}</p></td>
-                        <td class="title">Floor:</td><td><p id="cafe-floor">{{address.floor}}</p></td>
-                        <td class="title">Building:</td><td><p id="cafe-building">{{address.building}}</p></td>
+                        <td class="title">Address Number:</td><td><p id="cafe-add-num">{{address.[0].number}}</p></td>
+                        <td class="title">Floor:</td><td><p id="cafe-floor">{{address.[0].floor}}</p></td>
+                        <td class="title">Building:</td><td><p id="cafe-building">{{address.[0].building}}</p></td>
                     </tr>
                     <tr>
-                        <td class="title">Street/Soi:</td><td><p id="cafe-street">{{address.street}}</p></td>
-                        <td class="title">Sub-District:</td><td><p id="cafe-subdistrict">{{address.subDistrict}}</p></td>
-                        <td class="title">District:</td><td><p id="cafe-district">{{address.district}}</p></td>
+                        <td class="title">Street/Soi:</td><td><p id="cafe-street">{{address.[0].street}}</p></td>
+                        <td class="title">Sub-District:</td><td><p id="cafe-subdistrict">{{address.[0].subDistrict}}</p></td>
+                        <td class="title">District:</td><td><p id="cafe-district">{{address.[0].district}}</p></td>
                     </tr>
                     <tr>
-                        <td class="title">Province:</td><td><p id="cafe-province">{{address.province}}</p></td>
-                        <td class="title">Country:</td><td><p id="cafe-country">{{address.country}}</p></td>
-                        <td class="title">Post Code:</td><td><p id="cafe-postcode">{{address.postalCode}}</p></td>
+                        <td class="title">Province:</td><td><p id="cafe-province">{{address.[0].province}}</p></td>
+                        <td class="title">Country:</td><td><p id="cafe-country">{{address.[0].country}}</p></td>
+                        <td class="title">Post Code:</td><td><p id="cafe-postcode">{{address.[0].postalCode}}</p></td>
                     </tr>
             {{/with}}
                 </table>
+                {{#if findRestaurant}}
                 <button id="edit_info_butt" type="button">Edit</button>
+                {{else}}
+    <a href={{pathFor 'cafeRegisterPage'}}><button class = "btn btn-primary" type="button" id="back-button">New Restaurant</button></a>
+                {{/if}}
             </div>
         </div>
 </template>
