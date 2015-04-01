@@ -6,8 +6,7 @@
         {{>restaurant_info}}
 
         <div id="buttons">
-
-            <a href={{pathFor 'cafeRegisterPage'}}><button class = "btn btn-primary" type="button" id="back-button">New Restaurant</button></a>
+            <a href={{pathFor 'cafeRegisterPage'}}><button class = "btn btn-primary" type="button" id="new-res-button">New Restaurant</button></a>
         </div>
 
     </div>
@@ -18,58 +17,58 @@
 
 <template name="restaurant_info">
     <h1>Restaurants</h1>
-        <div class="center">
-            <div class="pageheader">
-                <h1>Cafe Information</h1>
+    <div class="center">
+        <div class="pageheader">
+            <h1>Cafe Information</h1>
 
-            </div>
-            <div id="info-panel">
-
-                <h2>Owner Information</h2>
-                <table id="owner-info">
-                    <tr>
-                        <td>Name:</td><td><p id="owner-name">{{currentUser.profile.name}}</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>Email:</td><td><p id="owner-email">{{currentUser.emails.[0].address}}</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>Phone Number:</td><td><p id="owner-phone">{{currentUser.profile.phone}}</p></td>
-
-                    </tr>
-                </table>
-
-                <h2>Cafe Information</h2>
-
-                <table id="cafe-info">
-            {{#with findRestaurant}}
-                    <tr>
-                        <td class="title">Cafe Name:</td><td><p id="cafe-name">{{name}}</p></td></tr>
-                    <tr><td class="title">Email:</td><td><p id="cafe-email">{{email}}</p></td></tr>
-                    <tr><td class="title">Contact:</td><td><p id="cafe-contact">{{phone_numbers.number}}</p></td>
-                    </tr>
-                    <tr>
-                        <td class="title">Address Number:</td><td><p id="cafe-add-num">{{address.number}}</p></td>
-                        <td class="title">Floor:</td><td><p id="cafe-floor">{{address.floor}}</p></td>
-                        <td class="title">Building:</td><td><p id="cafe-building">{{address.building}}</p></td>
-                    </tr>
-                    <tr>
-                        <td class="title">Street/Soi:</td><td><p id="cafe-street">{{address.street}}</p></td>
-                        <td class="title">Sub-District:</td><td><p id="cafe-subdistrict">{{address.subDistrict}}</p></td>
-                        <td class="title">District:</td><td><p id="cafe-district">{{address.district}}</p></td>
-                    </tr>
-                    <tr>
-                        <td class="title">Province:</td><td><p id="cafe-province">{{address.province}}</p></td>
-                        <td class="title">Country:</td><td><p id="cafe-country">{{address.country}}</p></td>
-                        <td class="title">Post Code:</td><td><p id="cafe-postcode">{{address.postalCode}}</p></td>
-                    </tr>
-            {{/with}}
-                </table>
-                <button id="edit_info_butt" type="button">Edit</button>
-            </div>
         </div>
+        <div id="info-panel">
+
+            <h2>Owner Information</h2>
+            <table id="owner-info">
+                <tr>
+                    <td>Name:</td><td><p id="owner-name">{{currentUser.profile.name}}</p></td>
+
+                </tr>
+                <tr>
+                    <td>Email:</td><td><p id="owner-email">{{currentUser.emails.[0].address}}</p></td>
+
+                </tr>
+                <tr>
+                    <td>Phone Number:</td><td><p id="owner-phone">{{currentUser.profile.phone}}</p></td>
+
+                </tr>
+            </table>
+
+            <h2>Cafe Information</h2>
+
+            <table id="cafe-info">
+                {{#with findRestaurant}}
+                <tr>
+                    <td class="title">Cafe Name:</td><td><p id="cafe-name">{{name}}</p></td></tr>
+                <tr><td class="title">Email:</td><td><p id="cafe-email">{{email}}</p></td></tr>
+                <tr><td class="title">Contact:</td><td><p id="cafe-contact">{{phone_numbers.number}}</p></td>
+                </tr>
+                <tr>
+                    <td class="title">Address Number:</td><td><p id="cafe-add-num">{{address.number}}</p></td>
+                    <td class="title">Floor:</td><td><p id="cafe-floor">{{address.floor}}</p></td>
+                    <td class="title">Building:</td><td><p id="cafe-building">{{address.building}}</p></td>
+                </tr>
+                <tr>
+                    <td class="title">Street/Soi:</td><td><p id="cafe-street">{{address.street}}</p></td>
+                    <td class="title">Sub-District:</td><td><p id="cafe-subdistrict">{{address.subDistrict}}</p></td>
+                    <td class="title">District:</td><td><p id="cafe-district">{{address.district}}</p></td>
+                </tr>
+                <tr>
+                    <td class="title">Province:</td><td><p id="cafe-province">{{address.province}}</p></td>
+                    <td class="title">Country:</td><td><p id="cafe-country">{{address.country}}</p></td>
+                    <td class="title">Post Code:</td><td><p id="cafe-postcode">{{address.postalCode}}</p></td>
+                </tr>
+                {{/with}}
+            </table>
+            <button id="edit_info_butt" type="button">Edit</button>
+        </div>
+    </div>
 </template>
 
 
