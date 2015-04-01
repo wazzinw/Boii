@@ -295,13 +295,12 @@ Template.menuPage.onRendered(function(){
     //edit item
     $('#edit_item_butt').on('click', function(){
         if($('#edit_item_butt').text() === 'Edit'){
-            $('#drink-list').find('h3').text('').append('<input class="item-name" type="text" value="Late"' + 'Late' + '/>');
-            $('#drink-list').find('h4').text('').append('<input class="item-price" type="text" value=""' + '$50' + '/>');
-            $('#edit_item_butt').text('Save');
+            $('#drink-list').find('h4').text('').append('<button class="edit-item-btn">Edit</button>');
+            $('#edit_item_butt').text('Done');
         }else{
+            $('#drink-list').find('h4').text('$50');
             $('#edit_item_butt').text('Edit');
-            $('#drink-list').find('h3').text($('.item-name').val());
-            $('#drink-list').find('h4').text($('.item-price').val());
+
         }
     });
 

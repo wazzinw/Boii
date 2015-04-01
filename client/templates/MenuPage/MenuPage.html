@@ -18,7 +18,7 @@
 
                     <ul id="drink-list">
                         <li id="item" class="drink-item">
-                            <button class="menu">
+                            <button type="button" class="menu">
                                 <h3>Late</h3>
                                 <h4>$50</h4>
                             </button>
@@ -26,7 +26,7 @@
                         </li>
                         {{#each drinkMenu}}
                             <li id= "item" class="drink-item" data-id={{_id}}>
-                                <button class="menu">
+                                <button type="button" class="menu">
                                     <h3>{{name}}</h3>
                                     <h4>{{price}}</h4>
                                 </button>
@@ -39,7 +39,7 @@
                     <ul id="food-list">
                         {{#each foodMenu}}
                             <li id="item" class="food-item" data-id={{_id}}>
-                                <button class="menu">
+                                <button type="button" class="menu">
                                 <h3>{{name}}</h3>
                                 <h4>{{price}}</h4>
                                 </button><button type="button" class="delete-btn">X</button>
