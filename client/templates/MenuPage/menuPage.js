@@ -5,28 +5,45 @@ var cart = [];
 var order ={};
 var cart_length = 0;
 Cart = new Mongo.Collection(null);
-//var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
 var pic_url = "";
 
 
+function userAvailable() {
+    // use Meteor.user() since it's available
+    if (Meteor.user())
+        return Meteor.user().profile;
 
-//var $cart_list = $('.cd-cart-items');
+}
+
 
 Template.menuPage.helpers({
     foodMenu: function(){
-        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
+        var user = Meteor.user();
+        var rest;
+        if(userAvailable()){
+            rest = Restaurants.findOne({_id: user.profile.restaurant_id});
+        }
+        else{
+            console.log("food: no user found");
+        }
 
         return Menus.find({restaurant_name: rest.name  ,type:"food"});
     },
 
     drinkMenu: function(){
-        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
+        var user = Meteor.user();
+        var rest;
+        if(userAvailable()){
+            rest = Restaurants.findOne({_id: user.profile.restaurant_id});
+        }
+        else{
+            console.log("food: no user found");
+        }
 
         return Menus.find({restaurant_name: rest.name  ,type:"drink"});
     },
 
     cartItems: function(){
-        
         var cart = Session.get('cart');
 
         if(!cart){
@@ -77,8 +94,14 @@ Template.menuPage.events({
 
     'click a.checkout-btn': function(event){
         var cart = Session.get('cart');
-        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
 
+        var rest;
+        if(userAvailable()){
+            rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
+        }
+        else{
+            console.log("food: no user found");
+        }
         if(!cart){
             Session.set('cart', {});
             return [];
@@ -90,7 +113,7 @@ Template.menuPage.events({
             var menu = Menus.findOne(value);
             return {
                 menu_id: value,
-                quantity: cart[value],
+                quantity: cart[value]
             }
         });
 
@@ -145,13 +168,19 @@ Template.menuPage.events({
 
 
         })
+<<<<<<< Updated upstream
     }, 
 
 
     'click #add-to-save-butt': function(e,t){
 
+=======
+    }
+    , 'click #add-to-save-butt': function(e,t){
+        var user = Meteor.user();
+>>>>>>> Stashed changes
         console.log("add button clicked");
-        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
+        var rest = Restaurants.findOne({_id: user.profile.restaurant_id});
 
         options = {};
         options.name = $('#name-input').val();
@@ -379,6 +408,8 @@ function preview(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+
+
 
 
 });

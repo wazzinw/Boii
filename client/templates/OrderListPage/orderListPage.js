@@ -8,7 +8,12 @@
 
 Template.orderListPage.helpers({
 	orders: function(){
-        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
+
+        var user = Meteor.user();
+        console.log("User = "+ user);
+
+        var rest = Restaurants.findOne({_id: user.profile.restaurant_id});
+        console.log("Rest "+ rest.name);
 
         return  Orders.find({
 				restaurant_id: rest._id,
