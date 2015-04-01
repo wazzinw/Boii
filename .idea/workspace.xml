@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3757415f-3c7c-4f1f-be06-ad4d897b43a6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/OrderListPage/OrderListPage.html" afterPath="$PROJECT_DIR$/client/templates/OrderListPage/OrderListPage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/CafeInfoPage/cafeInfoPage.html" afterPath="$PROJECT_DIR$/client/templates/CafeInfoPage/cafeInfoPage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/db_seeding.js" afterPath="$PROJECT_DIR$/server/db_seeding.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/MenuPage/menuPage.js" afterPath="$PROJECT_DIR$/client/templates/MenuPage/menuPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/publication.js" afterPath="$PROJECT_DIR$/server/publication.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/router.js" afterPath="$PROJECT_DIR$/lib/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/stylesheet/mainstyle.css" afterPath="$PROJECT_DIR$/client/stylesheet/mainstyle.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/OrderListPage/orderListPage.js" afterPath="$PROJECT_DIR$/client/templates/OrderListPage/orderListPage.js" />
     </list>
     <ignored path="boii.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,6 +29,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="cafeInfoPage.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/templates/CafeInfoPage/cafeInfoPage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.28508124" vertical-offset="1393" max-vertical-offset="2070">
+              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="menuPage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/templates/MenuPage/menuPage.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -91,10 +99,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuPage.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MenuPage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3323077" vertical-offset="189" max-vertical-offset="1980">
+            <state vertical-scroll-proportion="-4.2352943" vertical-offset="189" max-vertical-offset="1980">
               <caret line="27" column="40" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="40" />
               <folding />
             </state>
@@ -175,13 +183,13 @@
         <option value="$PROJECT_DIR$/client/templates/CafeRegisterPage/cafeRegisterPage.js" />
         <option value="$PROJECT_DIR$/Collections/restaurants.js" />
         <option value="$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html" />
-        <option value="$PROJECT_DIR$/client/templates/CafeInfoPage/cafeInfoPage.html" />
         <option value="$PROJECT_DIR$/server/db_seeding.js" />
         <option value="$PROJECT_DIR$/client/templates/MenuPage/menuPage.js" />
         <option value="$PROJECT_DIR$/server/imagestore_setup.js" />
         <option value="$PROJECT_DIR$/server/publication.js" />
         <option value="$PROJECT_DIR$/server/settings.js" />
         <option value="$PROJECT_DIR$/lib/router.js" />
+        <option value="$PROJECT_DIR$/client/templates/CafeInfoPage/cafeInfoPage.html" />
       </list>
     </option>
   </component>
@@ -351,6 +359,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="CafeRegisterPage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="boii" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="boii" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CafeInfoPage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -857,14 +887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/CafeInfoPage/cafeInfoPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.333334" vertical-offset="583" max-vertical-offset="1275">
-          <caret line="73" column="19" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/user_config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19258203" vertical-offset="0" max-vertical-offset="701">
@@ -971,8 +993,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3323077" vertical-offset="189" max-vertical-offset="1980">
+        <state vertical-scroll-proportion="-4.2352943" vertical-offset="189" max-vertical-offset="1980">
           <caret line="27" column="40" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/CafeInfoPage/cafeInfoPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.28508124" vertical-offset="1393" max-vertical-offset="2070">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding />
         </state>
       </provider>

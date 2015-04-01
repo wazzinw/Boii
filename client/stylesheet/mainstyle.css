@@ -699,7 +699,7 @@ body{
     position: relative;
     width: 90%;
     max-width: 400px;
-    height: 190px;
+    height: 130px;
     margin: 4em auto;
     background: none repeat scroll 0% 0% #FFF;
     border-radius: 0.25em 0.25em 0.4em 0.4em;
@@ -716,6 +716,7 @@ body{
 }
 .is-visible .cd-popup-container {
     transform: translateY(0);
+    top: 30%;
 }
 /*------------------------------Order Table---------------------------------------------*/
 #table-header{
@@ -776,6 +777,9 @@ body{
 #reject_but{
     background: #D9534F;
 }
+#ready_but{
+    background: green;
+}
 #bill_but{
     background: #EC900F;
     width: 200px;
@@ -822,7 +826,7 @@ body{
     width: 200px;
     height: 80px;
     background: #24A8AF;
-    color: #FFFFFF;
+    color: white;
     border-radius: 10px;
     font-size: 20px;
     position: relative;
