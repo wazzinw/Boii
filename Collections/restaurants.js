@@ -7,12 +7,53 @@ var PhoneSchema = new SimpleSchema({
     },
     number: {
         type: String,
-        max: 10,
+        max: 20,
         min:8
 
     }
 });
 
+var AddressSchema = new SimpleSchema({
+    number: {
+        type: String,
+        max: 5
+    },
+    floor: {
+        type: String,
+        max: 5
+    },
+    building: {
+        type: String,
+        max: 100
+    },
+
+    street: {
+        type: String,
+        max: 100
+    },
+
+    subDistrict: {
+        type: String,
+        max: 100
+    },
+    district: {
+        type: String,
+        max: 100
+    },
+
+    province: {
+        type: String,
+        max: 50
+    },
+    country: {
+        type: String,
+        max: 100
+    },
+    postalCode: {
+        type: String,
+        regEx: /^[0-9]{5}$/
+    }
+});
 
 RestaurantsSchema =  new SimpleSchema({
     name: {
@@ -39,7 +80,7 @@ RestaurantsSchema =  new SimpleSchema({
     },
 
     address: {
-        type: String,
+        type: [AddressSchema],
         label: "Address"
     },
 

@@ -4,7 +4,14 @@
 
 //console.log('order');
 //find Menu in the restaurant
-
+Template.menuPage.onRendered(function(){
+    if(Meteor.user().profile.restaurant_id==null){
+        this.redirect("cafeRegisterPage");
+    }else{
+        console.log("Registered")
+       // this.next();
+    }
+});
 
 Template.orderListPage.helpers({
 	orders: function(){

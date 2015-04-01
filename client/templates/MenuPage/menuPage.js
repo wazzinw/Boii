@@ -89,7 +89,7 @@ Template.menuPage.helpers({
 
             var menu = Menus.findOne(value);
             sum += cart[value]* menu.price;
-            console.log("sum = "+ cart[value] +"*"+ menu.price);
+            //console.log("sum = "+ cart[value] +"*"+ menu.price);
 
         });
 
@@ -219,7 +219,7 @@ Template.menuPage.events({
 
 
 
-     'click #add-to-save-butt': function(e,t){
+    'click #add-to-save-butt': function(e,t){
         var user = Meteor.user();
         console.log("add button clicked");
         var rest = Restaurants.findOne({_id: user.profile.restaurant_id});
@@ -260,6 +260,9 @@ Template.menuPage.events({
 
         Restaurants.update({_id: rest._id}, { $push: { menu: menu_id }});
 
+        window.alert(options.name+" is added");
+        $('#cd-shadow-layer').removeClass('is-visible');
+        $('#add_item').removeClass('speed-in');
 
     }
 
@@ -360,7 +363,27 @@ Template.menuPage.onRendered(function(){
             $('#delete_item_butt').text('Delete');
         }
     $('.delete-btn').on('click', function(){
-        $(this).closest('li').remove();
+
+        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
+
+        //$(this).closest('li').remove();
+        var id = $(event.currentTarget).closest('li').data('id');
+        console.log("id: "+ id);
+        //Restaurants.update({_id: Meteor.user().profile.restaurant_id}, )
+        Menus.remove({_id: id});
+
+        var menuArray = rest.menu;
+        var index = menuArray.indexOf(id);
+        console.log("index: "+ index);
+
+        if (index > -1) {
+            menuArray.splice(index, 1);
+            console.log("remove id")
+        }
+
+
+        Restaurants.update({_id: Meteor.user().profile.restaurant_id}, { $set: { menu: menuArray }});
+
     });
     });
 
