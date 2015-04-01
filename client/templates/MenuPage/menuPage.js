@@ -168,17 +168,13 @@ Template.menuPage.events({
 
 
         })
-<<<<<<< Updated upstream
+
     }, 
 
 
-    'click #add-to-save-butt': function(e,t){
 
-=======
-    }
-    , 'click #add-to-save-butt': function(e,t){
+     'click #add-to-save-butt': function(e,t){
         var user = Meteor.user();
->>>>>>> Stashed changes
         console.log("add button clicked");
         var rest = Restaurants.findOne({_id: user.profile.restaurant_id});
 

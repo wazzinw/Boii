@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3757415f-3c7c-4f1f-be06-ad4d897b43a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/loading/loading.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html" afterPath="$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/OrderListPage/OrderListPage.html" afterPath="$PROJECT_DIR$/client/templates/OrderListPage/OrderListPage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/CafeInfoPage/cafeInfoPage.js" afterPath="$PROJECT_DIR$/client/templates/CafeInfoPage/cafeInfoPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/db_seeding.js" afterPath="$PROJECT_DIR$/server/db_seeding.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/MenuPage/menuPage.js" afterPath="$PROJECT_DIR$/client/templates/MenuPage/menuPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/OrderListPage/orderListPage.js" afterPath="$PROJECT_DIR$/client/templates/OrderListPage/orderListPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Collections/orders.js" afterPath="$PROJECT_DIR$/Collections/orders.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/packages" afterPath="$PROJECT_DIR$/.meteor/packages" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/router.js" afterPath="$PROJECT_DIR$/lib/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/versions" afterPath="$PROJECT_DIR$/.meteor/versions" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="boii.iws" />
@@ -57,25 +49,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menuPage.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="menuPage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/templates/MenuPage/menuPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.888889" vertical-offset="1185" max-vertical-offset="2625">
-              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6661721" vertical-offset="1636" max-vertical-offset="2940">
+              <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
               <folding>
                 <element signature="e#1705#2066#0" expanded="false" />
                 <element signature="e#3072#3500#0" expanded="false" />
-                <element signature="e#3556#4019#0" expanded="false" />
-                <element signature="e#5569#12673#0" expanded="false" />
-                <element signature="e#8192#8383#0" expanded="false" />
-                <element signature="e#8425#8616#0" expanded="false" />
-                <element signature="e#8671#8728#0" expanded="false" />
-                <element signature="e#9006#9105#0" expanded="false" />
-                <element signature="e#9148#9810#0" expanded="false" />
-                <element signature="e#9876#10038#0" expanded="false" />
-                <element signature="e#10114#10776#0" expanded="false" />
-                <element signature="e#10784#11222#0" expanded="false" />
-                <element signature="e#12101#12319#0" expanded="false" />
+                <element signature="e#5574#12678#0" expanded="false" />
+                <element signature="e#8197#8388#0" expanded="false" />
+                <element signature="e#8430#8621#0" expanded="false" />
+                <element signature="e#8676#8733#0" expanded="false" />
+                <element signature="e#9011#9110#0" expanded="false" />
+                <element signature="e#9153#9815#0" expanded="false" />
+                <element signature="e#9881#10043#0" expanded="false" />
+                <element signature="e#10119#10781#0" expanded="false" />
+                <element signature="e#10789#11227#0" expanded="false" />
+                <element signature="e#12106#12324#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -114,11 +105,14 @@
       <file leaf-file-name="MenuPage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.541666" vertical-offset="164" max-vertical-offset="1590">
-              <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+            <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="330">
+              <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
               <folding>
-                <element signature="n#ul#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="n#span#0;n#li#0;n#ul#0;n#div#2;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#3;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#3;n#template#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -127,8 +121,8 @@
       <file leaf-file-name="OrderListPage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/templates/OrderListPage/OrderListPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.745098" vertical-offset="190" max-vertical-offset="975">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+            <state vertical-scroll-proportion="-10.09804" vertical-offset="325" max-vertical-offset="975">
+              <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -144,10 +138,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db_seeding.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="db_seeding.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/db_seeding.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.4407988" vertical-offset="0" max-vertical-offset="4815">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4815">
               <caret line="312" column="7" selection-start-line="312" selection-start-column="7" selection-end-line="312" selection-end-column="7" />
               <folding>
                 <element signature="e#6193#6322#0" expanded="false" />
@@ -208,15 +202,15 @@
         <option value="$PROJECT_DIR$/client/templates/CafeInfoPage/CafeInfoPage_tan.html" />
         <option value="$PROJECT_DIR$/client/templates/CafeInfoPage/cafeInfoPage.html" />
         <option value="$PROJECT_DIR$/client/stylesheet/mainstyle.css" />
-        <option value="$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html" />
         <option value="$PROJECT_DIR$/client/templates/loading/loading.html" />
         <option value="$PROJECT_DIR$/lib/router.js" />
         <option value="$PROJECT_DIR$/client/templates/CafeInfoPage/cafeInfoPage.js" />
-        <option value="$PROJECT_DIR$/client/templates/MenuPage/menuPage.js" />
         <option value="$PROJECT_DIR$/Collections/orders.js" />
-        <option value="$PROJECT_DIR$/client/templates/OrderListPage/OrderListPage.html" />
         <option value="$PROJECT_DIR$/client/templates/OrderListPage/orderListPage.js" />
         <option value="$PROJECT_DIR$/server/db_seeding.js" />
+        <option value="$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html" />
+        <option value="$PROJECT_DIR$/client/templates/OrderListPage/OrderListPage.html" />
+        <option value="$PROJECT_DIR$/client/templates/MenuPage/menuPage.js" />
       </list>
     </option>
   </component>
@@ -1122,39 +1116,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.541666" vertical-offset="164" max-vertical-offset="1590">
-          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-          <folding>
-            <element signature="n#ul#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#span#0;n#li#0;n#ul#0;n#div#2;n#template#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/MenuPage/menuPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.888889" vertical-offset="1185" max-vertical-offset="2625">
-          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding>
-            <element signature="e#1705#2066#0" expanded="false" />
-            <element signature="e#3072#3500#0" expanded="false" />
-            <element signature="e#3556#4019#0" expanded="false" />
-            <element signature="e#5569#12673#0" expanded="false" />
-            <element signature="e#8192#8383#0" expanded="false" />
-            <element signature="e#8425#8616#0" expanded="false" />
-            <element signature="e#8671#8728#0" expanded="false" />
-            <element signature="e#9006#9105#0" expanded="false" />
-            <element signature="e#9148#9810#0" expanded="false" />
-            <element signature="e#9876#10038#0" expanded="false" />
-            <element signature="e#10114#10776#0" expanded="false" />
-            <element signature="e#10784#11222#0" expanded="false" />
-            <element signature="e#12101#12319#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Collections/orders.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="1695">
@@ -1163,11 +1124,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/OrderListPage/OrderListPage.html">
+    <entry file="file://$PROJECT_DIR$/server/db_seeding.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.745098" vertical-offset="190" max-vertical-offset="975">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4815">
+          <caret line="312" column="7" selection-start-line="312" selection-start-column="7" selection-end-line="312" selection-end-column="7" />
+          <folding>
+            <element signature="e#6193#6322#0" expanded="false" />
+            <element signature="e#6419#6579#0" expanded="false" />
+            <element signature="e#6957#8344#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1179,14 +1144,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/db_seeding.js">
+    <entry file="file://$PROJECT_DIR$/client/templates/OrderListPage/OrderListPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.4407988" vertical-offset="0" max-vertical-offset="4815">
-          <caret line="312" column="7" selection-start-line="312" selection-start-column="7" selection-end-line="312" selection-end-column="7" />
+        <state vertical-scroll-proportion="-10.09804" vertical-offset="325" max-vertical-offset="975">
+          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="330">
+          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding>
-            <element signature="e#6193#6322#0" expanded="false" />
-            <element signature="e#6419#6579#0" expanded="false" />
-            <element signature="e#6957#8344#0" expanded="false" />
+            <element signature="n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#3;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#3;n#template#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/MenuPage/menuPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6661721" vertical-offset="1636" max-vertical-offset="2940">
+          <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          <folding>
+            <element signature="e#1705#2066#0" expanded="false" />
+            <element signature="e#3072#3500#0" expanded="false" />
+            <element signature="e#5574#12678#0" expanded="false" />
+            <element signature="e#8197#8388#0" expanded="false" />
+            <element signature="e#8430#8621#0" expanded="false" />
+            <element signature="e#8676#8733#0" expanded="false" />
+            <element signature="e#9011#9110#0" expanded="false" />
+            <element signature="e#9153#9815#0" expanded="false" />
+            <element signature="e#9881#10043#0" expanded="false" />
+            <element signature="e#10119#10781#0" expanded="false" />
+            <element signature="e#10789#11227#0" expanded="false" />
+            <element signature="e#12106#12324#0" expanded="false" />
           </folding>
         </state>
       </provider>
