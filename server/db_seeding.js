@@ -20,7 +20,7 @@ if( Meteor.users.find({username: "blob"}).count == 0) {
     Accounts.createUser({
             username: "blob",
             password: 'password',
-            email: value+ '@test.com',
+            email: value+ '@test.com'
     });
 }
 

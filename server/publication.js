@@ -3,6 +3,7 @@ if(Meteor.isServer){
 
     Meteor.startup(function(){
         Router.onBeforeAction(Iron.Router.bodyParser.urlencoded({extended: false}));
+
     });
 
     Meteor.publish('customers', function() {

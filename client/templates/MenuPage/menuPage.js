@@ -16,6 +16,8 @@ function userAvailable() {
 }
 
 
+
+
 Template.menuPage.helpers({
     foodMenu: function(){
 
@@ -321,7 +323,9 @@ Template.menuPage.onRendered(function(){
     //     $('.cd-cart-total span').text(newTotal + ' Baht');
     //     $(this).closest('li').remove(); 
     // });
-
+    Meteor.call("getEnvironment", function (result) {
+        console.log("result");
+    });
 
     //choose category
     $food_butt.on('click',function(){
