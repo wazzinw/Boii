@@ -269,12 +269,8 @@ Template.menuPage.events({
 });
 
 Template.menuPage.onRendered(function(){
-
-    //if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
-    //var $L = 1200,
     var $menu_navigation = $('#main-nav'),
         $cart_trigger = $('#cd-cart-trigger'),
-        //	$hamburger_icon = $('#cd-hamburger-menu'),
         $lateral_cart = $('#cd-cart'),
         $shadow_layer = $('#cd-shadow-layer'),
         $add_item = $('#add_item'),
@@ -289,7 +285,7 @@ Template.menuPage.onRendered(function(){
 
 
     //add item to cart
-  /*  $('#drink-list').on('click', 'button', function () {
+    /*  $('#drink-list').on('click', 'button', function () {
         var item_name = $(this).find('h3').text(),
             item_price = $(this).find('h4').text(),
             count = 0;
@@ -340,15 +336,15 @@ Template.menuPage.onRendered(function(){
         $('#drink-list').removeClass('invisible');
         $('#food-list').addClass('invisible');
     });
-    
+
     //edit item
     $('#edit_item_butt').on('click', function(){
         if($('#edit_item_butt').text() === 'Edit'){
             $('#drink-list').find('h4').text('').append('<button class="edit-item-btn">Edit</button>');
-            $('#edit_item_butt').text('Done');
+            $('#edit_item_butt').text('Done').css('background', 'green');
         }else{
             $('#drink-list').find('h4').text('$50');
-            $('#edit_item_butt').text('Edit');
+            $('#edit_item_butt').text('Edit').css('background', '#24A8AF');
 
         }
     });
@@ -357,34 +353,34 @@ Template.menuPage.onRendered(function(){
     $('#delete_item_butt').on('click', function(){
         if($('#delete_item_butt').text() === 'Delete'){
             $('.delete-btn').css('display','inherit');
-            $('#delete_item_butt').text('Done');
+            $('#delete_item_butt').text('Done').css('background', 'green');
         }else{
             $('.delete-btn').css('display','none');
-            $('#delete_item_butt').text('Delete');
+            $('#delete_item_butt').text('Delete').css('background', '#D9534F');
         }
-    $('.delete-btn').on('click', function(){
+        $('.delete-btn').on('click', function(){
 
-        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
+            var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
 
-        //$(this).closest('li').remove();
-        var id = $(event.currentTarget).closest('li').data('id');
-        console.log("id: "+ id);
-        //Restaurants.update({_id: Meteor.user().profile.restaurant_id}, )
-        Menus.remove({_id: id});
+            //$(this).closest('li').remove();
+            var id = $(event.currentTarget).closest('li').data('id');
+            console.log("id: "+ id);
+            //Restaurants.update({_id: Meteor.user().profile.restaurant_id}, )
+            Menus.remove({_id: id});
 
-        var menuArray = rest.menu;
-        var index = menuArray.indexOf(id);
-        console.log("index: "+ index);
+            var menuArray = rest.menu;
+            var index = menuArray.indexOf(id);
+            console.log("index: "+ index);
 
-        if (index > -1) {
-            menuArray.splice(index, 1);
-            console.log("remove id")
-        }
+            if (index > -1) {
+                menuArray.splice(index, 1);
+                console.log("remove id")
+            }
 
 
-        Restaurants.update({_id: Meteor.user().profile.restaurant_id}, { $set: { menu: menuArray }});
+            Restaurants.update({_id: Meteor.user().profile.restaurant_id}, { $set: { menu: menuArray }});
 
-    });
+        });
     });
 
 
@@ -438,63 +434,32 @@ Template.menuPage.onRendered(function(){
         }
     });
 
-    /*	//move #main-navigation inside header on laptop
-	//insert #main-navigation after header on mobile
-	move_navigation( $menu_navigation, $L);
-	$(window).on('resize', function(){
-		move_navigation( $menu_navigation, $L);
-		if( $(window).width() >= $L && $menu_navigation.hasClass('speed-in')) {
-			$menu_navigation.removeClass('speed-in');
-			$shadow_layer.removeClass('is-visible');
-			$('body').removeClass('overflow-hidden');
-		}
-	});*/
+    //preview image
+    $('#item-image').on('change', function(){
+        preview(this);
+    });
 
-
-
-//preview image
-$('#item-image').on('change', function(){
-    preview(this);
-});
-
-function toggle_panel_visibility ($lateral_panel, $background_layer, $body) {
-    /*if( $lateral_panel.hasClass('speed-in') ) {
-		// firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
-		$lateral_panel.removeClass('speed-in').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', 
-        function(){
-			$body.removeClass('overflow-hidden');});
-		$background_layer.removeClass('is-visible');
-	} else {*/
-    $lateral_panel.addClass('speed-in').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',                         function(){
-        $body.addClass('overflow-hidden');});
-    $background_layer.addClass('is-visible');
-    //}
-}
-/*function move_navigation( $navigation, $MQ) {
-	if ( $(window).width() >= $MQ ) {
-		$navigation.detach();
-		$navigation.appendTo('header');
-	} else {
-		$navigation.detach();
-		$navigation.insertAfter('header');
-	}
-}*/
-function preview(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#preview_image')
-                .attr('src', e.target.result)
-                .width(250)
-                .height(200);
-        };
-
-        reader.readAsDataURL(input.files[0]);
+    function toggle_panel_visibility ($lateral_panel, $background_layer, $body) {
+        $lateral_panel.addClass('speed-in').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',                         function(){
+            $body.addClass('overflow-hidden');});
+        $background_layer.addClass('is-visible');
+        //}
     }
-}
 
+    function preview(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
+            reader.onload = function (e) {
+                $('#preview_image')
+                    .attr('src', e.target.result)
+                    .width(250)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 
 
 });

@@ -354,11 +354,10 @@ body{
 }
 .edit-item-btn{
     width: 100px;
-    background: grey;
+    background: #24A8AF;
     color: white;
     border-radius: 5px;
 }
-
 
 /*---------------------------------Menu Button Panel--------------------------------------*/
 .btn-panel{
@@ -381,12 +380,12 @@ body{
 #edit_item_butt{
     width: 100px;
     margin-left: 30px;
-    background: #5CB85C;;
+    background: #24A8AF;
 }
 #delete_item_butt{
     margin-left: 30px;
     width: 100px;
-    background: #D9534F;;
+    background: #D9534F;
 }
 #add_item_butt:hover, #edit_item_butt:hover, #delete_item_butt:hover{
     cursor: pointer;
@@ -675,14 +674,6 @@ body{
     transition: background-color 0.2s ease 0s;
     text-decoration: none;
 }
-/*.img-replace {
-    display: inline-block;
-    overflow: hidden;
-    text-indent: 100%;
-    color: transparent;
-    white-space: nowrap;
-}*/
-
 .cd-buttons{
     margin: 0px;
     padding: 0px;

@@ -52,6 +52,7 @@ Template.orderListPage.helpers({
     }
 });
 
+var lastReject;
 Template.orderListPage.events({
     'click button#bill_but': function(event){
         var order_id = $(event.currentTarget).closest(".order_row").data('id');
@@ -62,7 +63,25 @@ Template.orderListPage.events({
         Orders.update({_id: order_id}, {$set: {order_status:'accepted'}});
     },
     'click button#reject_but': function(event){
-        var order_id = $(event.currentTarget).closest(".order_row").data('id');
-        Orders.update({_id: order_id}, {$set: {order_status:'rejected'}});
+        event.preventDefault();
+        lastReject = $(event.currentTarget).closest(".order_row").data('id');
+        $('.cd-popup').addClass('is-visible');
+    },
+    'click a.cd-popup-close': function(event){
+        event.preventDefault();
+        $('.cd-popup').removeClass('is-visible');
+    },
+    'click a.no-btn': function(event){
+        event.preventDefault();
+        lastReject = "";
+        $('.cd-popup').removeClass('is-visible');
+    },
+    'click a.yes-btn': function(event){
+        console.log($(".order_table").closest(".order_row"));
+        Orders.update({_id: lastReject}, {$set: {order_status:'rejected'}});
+        lastReject = "";
+        event.preventDefault();
+        $('.cd-popup').removeClass('is-visible');
     }
+    
 });

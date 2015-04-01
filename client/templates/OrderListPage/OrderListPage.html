@@ -53,17 +53,21 @@
                 </tr> 
                 {{/each}}
             </table>
+            
+            <div class="cd-popup" role="alert">
+                <div class="cd-popup-container">
+                    <p>Are you sure you want to reject this order?</p>
+                    <ul class="cd-buttons">
+                        <li><a class="yes-btn" href="#0">Yes</a></li>
+                        <li><a class="no-btn" href="#0">No</a></li>
+                    </ul>
+                    <a href="#0" class="cd-popup-close">X</a>
+                </div> <!-- cd-popup-container -->
+            </div> <!-- cd-popup -->
+            
         </div>
+
     </div>
-    <div class="cd-popup" role="alert">
-        <div class="cd-popup-container">
-            <p>Are you sure you want to reject this order?</p>
-            <ul class="cd-buttons">
-                <li><a href="#0">Yes</a></li>
-                <li><a href="#0">No</a></li>
-            </ul>
-            <a href="#0" class="cd-popup-close img-replace">X</a>
-        </div> <!-- cd-popup-container -->
-    </div> <!-- cd-popup -->
+
 
 </template>
