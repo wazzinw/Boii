@@ -312,16 +312,6 @@ body{
     position: relative;
     bottom: 40px;
 }
-#food-list .food-item button:hover{
-    background: #00416D;
-    cursor: pointer;
-}
-#food-list .food-item button:active{
-    background: #2870F6;
-}
-
-
-
 
 #food-list.invisible{
     display: none;
@@ -814,8 +804,8 @@ body{
     font-size: 18px;
 }
 #edit_info_butt{
-    width: 200px;
-    height: 80px;
+    width: 150px;
+    height: 60px;
     background: #24A8AF;
     color: white;
     border-radius: 10px;

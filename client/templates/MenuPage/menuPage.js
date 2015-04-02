@@ -2,7 +2,7 @@
  * Created by wazzinw on 2/21/15 AD.
  */
 var cart = [];
-var order ={};
+var order = {};
 var cart_length = 0;
 Cart = new Mongo.Collection(null);
 var pic_url = "";
@@ -12,7 +12,6 @@ function userAvailable() {
     // use Meteor.user() since it's available
     if (Meteor.user())
         return Meteor.user().profile;
-
 }
 
 
@@ -38,12 +37,11 @@ Template.menuPage.helpers({
         if(userAvailable()){
             var user = Meteor.user();
             rest = Restaurants.findOne({_id: user.profile.restaurant_id});
-        }
-        else{
+        }else{
             console.log("food: no user found");
         }
 
-        return Menus.find({restaurant_name: rest.name  , type:"drink"});
+        return Menus.find({restaurant_name: rest.name   , type: "drink"});
     },
 
     cartItems: function(){
@@ -344,12 +342,17 @@ Template.menuPage.onRendered(function(){
     //edit item
     $('#edit_item_butt').on('click', function(){
         if($('#edit_item_butt').text() === 'Edit'){
+            $('#drink-list').find('.menu').prop('disabled',true);
+            $('#drink-list').find('.menu').css('active','disabled');
             $('#drink-list').find('h4').text('').append('<button class="edit-item-btn">Edit</button>');
             $('#edit_item_butt').text('Done').css('background', 'green');
+            $('.edit-item-btn').on('click', function(){
+                toggle_panel_visibility($add_item, $shadow_layer, $('body'));
+            });
         }else{
             $('#drink-list').find('h4').text('$50');
             $('#edit_item_butt').text('Edit').css('background', '#24A8AF');
-
+            $('#drink-list').find('.menu').prop('disabled',false);
         }
     });
 
@@ -362,29 +365,32 @@ Template.menuPage.onRendered(function(){
             $('.delete-btn').css('display','none');
             $('#delete_item_butt').text('Delete').css('background', '#D9534F');
         }
-        $('.delete-btn').on('click', function(){
 
-            var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
+    });
+    
+    //delete item from panel
+    $('.delete-btn').on('click', function(){
 
-            //$(this).closest('li').remove();
-            var id = $(event.currentTarget).closest('li').data('id');
-            console.log("id: "+ id);
-            //Restaurants.update({_id: Meteor.user().profile.restaurant_id}, )
-            Menus.remove({_id: id});
+        var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
 
-            var menuArray = rest.menu;
-            var index = menuArray.indexOf(id);
-            console.log("index: "+ index);
+        //$(this).closest('li').remove();
+        var id = $(event.currentTarget).closest('li').data('id');
+        console.log("id: "+ id);
+        //Restaurants.update({_id: Meteor.user().profile.restaurant_id}, )
+        Menus.remove({_id: id});
 
-            if (index > -1) {
-                menuArray.splice(index, 1);
-                console.log("remove id")
-            }
+        var menuArray = rest.menu;
+        var index = menuArray.indexOf(id);
+        console.log("index: "+ index);
+
+        if (index > -1) {
+            menuArray.splice(index, 1);
+            console.log("remove id")
+        }
 
 
-            Restaurants.update({_id: Meteor.user().profile.restaurant_id}, { $set: { menu: menuArray }});
+        Restaurants.update({_id: Meteor.user().profile.restaurant_id}, { $set: { menu: menuArray }});
 
-        });
     });
 
 
