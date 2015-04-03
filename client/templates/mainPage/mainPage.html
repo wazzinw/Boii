@@ -1,60 +1,54 @@
 <template name="mainPage">
-<div class="main">
+    <div class="main">
 
-    <!-- OVERVIEW -->
-    <div class="main_div" id="overview">
-        <h1>Overview</h1>
-        <div id="summary">
-            <table class="summary_table">
-                <tr>
-                    <td>
-                        <img id="logo" src="/cloudIcon.png" /><p>
-                        <span>Online cafe platform</span> that allows you to mange your restaurant from anywhere</p>
-                    </td>
-                    <td>
-                        <img id="logo" src="/byod.png" /><p>Allow your customer to order from their own smart device <span>(BYOD)</span></p>
-                    </td>
-                    <td>
-                        <img id="logo" src="/graph.png" /><p>Provide full <span>features</span> to operate a good quality and service cafe</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img id="logo" src="/easyUI.png" /><p><span>Easy and simple user interface</span> for new startup to use cafe management system</p>
-                    </td>
-                    <td>
-                        <img id="logo" src="/free.jpg" /><p><span>Free</span> registration and no application for customer on their smart device</p>
-                    </td>
-                </tr>
-            </table>
+
+        <!-- OVERVIEW -->
+        <div class="main_div" id="overview">
+            <h1>Overview</h1>
+            <ul class="summary_table">
+                <li>
+                    <img id="logo" src="/cloudIcon.png" /><p>
+                    <span>Online cafe platform</span> that allows you to mange your restaurant from anywhere</p>
+                </li>
+                <li>
+                    <img id="logo" src="/byod.png" /><p>Allow your customer to order from their own smart device <span>(BYOD)</span></p>
+                </li>
+                <li>
+                    <img id="logo" src="/graph.png" /><p>Provide full <span>features and functions</span> to operate a good quality service cafe</p>
+                </li>
+                <li>
+                    <img id="logo" src="/easyUI.png" /><p><span>Easy and simple user interface</span> for new startup to use cafe management system</p>
+                </li>
+                <li>
+                    <img id="logo" src="/free.jpg" /><p><span>Free</span> registration and no application for customer on their smart device</p>
+                </li>
+            </ul>
+        </div>    
+
+
+        <!--FEATURE -->
+        <div class="main_div" id="features">
+            <h1>Features</h1>
+            <ul class="features_table">
+                <li><h3>Order</h3> Table of incoming orders that your cafe can manage accordingly</li>
+                <li><h3>Menu</h3> Receive order from customer and update your menu when new dish comes</li>
+                <li><h3>Report</h3> Summarize your sale and track cafe's activities  for further business development</li>
+                <li><h3>Employee</h3> Assign and manage your employee to operate your cafe with limited functions</li>
+                <li><h3>Cafe</h3> Create your new restaurant in our sytem and manage you and your cafe information</li>    
+            </ul>
         </div>
-    </div>    
-    <!--FEATURE -->
-    <div class="main_div" id="features">
-        <h1>Features</h1>
-        <table class="features_table">
-            <tr>
-                <td><h3>Order</h3> Table to show and manage incoming order</td>
-                <td><h3>Menu</h3> Make order and changes to your menu</td>
-                <td><h3>Report</h3> Summarize your sale and other detail for further business development</td>
-            </tr>
-            <tr>
-                <td><h3>Employee</h3> Assign and manage your employee to operate your cafe</td>
-                <td><h3>Cafe</h3> Manage your cafe information</td>    
-            </tr>
-        </table>
-    </div> 
-    <!--CAFE LIST-->
-    <div class="main_div" id="cafelist">
-        <h1>Cafe with Us</h1>
-        <div class="lish-cafe">
-            <ul>
+
+
+        <!--CAFE LIST-->
+        <div class="main_div" id="cafelist">
+            <h1>Cafe with Us</h1>
+            <ul class="lish-cafe">
                 <li><img src="https://lh6.googleusercontent.com/--ncDuIWvGK8/AAAAAAAAAAI/AAAAAAAAADc/p1Yqr4N05rA/photo.jpg" /><h3>Starbucks</h3></li>
                 <li><img src="http://www.parttimejobeasy.com/wp-content/uploads/2014/01/Cafe-Amazon111.jpg" /><h3>Amazon</h3></li>
                 <li><img src="http://upic.me/i/ub/coffee.jpg" /><h3>Car Cha's Bua </h3></li>    
             </ul>
         </div>
-    </div>
 
-</div>
+
+    </div>
 </template>

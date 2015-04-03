@@ -15,11 +15,8 @@ function userAvailable() {
 }
 
 
-
-
 Template.menuPage.helpers({
     foodMenu: function(){
-
         var rest;
         if(userAvailable()){
             var user = Meteor.user();
@@ -98,12 +95,16 @@ Template.menuPage.helpers({
 });
 
 Template.menuPage.events({
+
+
+    //open drink category
     'click button.menu': function(event){
         console.log("drink menu clicked");
 
         var id = $(event.currentTarget).closest('.drink-item').data('id');
 
         console.log(id);
+
         var cart = Session.get('cart') || {};
 
         if ( cart[id] ){
@@ -114,8 +115,11 @@ Template.menuPage.events({
 
         Session.set('cart', cart )
         console.log("Cart: " + Session.get('cart').toString());
+    },
 
-    },'click button.food-menu': function(event){
+
+    //open food category
+    'click button.food-menu': function(event){
         console.log("food menu clicked");
 
         var id = $(event.currentTarget).closest('.food-item').data('id');
@@ -137,7 +141,7 @@ Template.menuPage.events({
     },
 
 
-
+    //send order to order page
     'click a.checkout-btn': function(event){
         var cart = Session.get('cart');
 
@@ -175,6 +179,7 @@ Template.menuPage.events({
         });
     },
 
+    //remove item from cart
     'click .cd-item-remove': function(event){
         //remove the select row out of cart
         console.log("remove button clicked");
@@ -196,7 +201,7 @@ Template.menuPage.events({
 
     },
 
-
+    //get picture
     'change .fileInput': function (event, template) {
         FS.Utility.eachFile(event, function(file){
             var fileObject = new FS.File(file);
@@ -209,16 +214,12 @@ Template.menuPage.events({
 
                     pic_url =  '/cfs/files/images/' + fileObject._id;
                 }
-
             });
-
-
         })
-
     }, 
 
 
-
+    //add item to menu panel
     'click #add-to-save-butt': function(e,t){
         var user = Meteor.user();
         console.log("add button clicked");
@@ -239,16 +240,8 @@ Template.menuPage.events({
         }else options.promotion = false;
 
         if($('#type-drink').is(':checked')){
-            /* $('#drink-list').append('<li class="drink-item"><button class="to_basket" id="menu"><h3>'
-             + $('#name-input').val() +'</h3><h4>฿'
-             + $('#price-input').val()
-             +'</h4></button></li>'); */
             options.type = "drink";
         }else{
-            /* $('#food-list').append('<li class="food-item"><button class="to_basket" id="menu"><h3>'
-             + $('#name-input').val()
-             +'</h3><h4>฿'+ $('#price-input').val()
-             +'</h4></button></li>');*/
             options.type = "food";
         }
 
@@ -284,43 +277,6 @@ Template.menuPage.onRendered(function(){
         i;
 
 
-    //add item to cart
-    /*  $('#drink-list').on('click', 'button', function () {
-        var item_name = $(this).find('h3').text(),
-            item_price = $(this).find('h4').text(),
-            count = 0;
-        for(i = 0; i <= cart_length; i++) {
-            if($('#item'+i).find('.cd-name').text() === item_name){
-                var val = parseInt($('#item'+i).find('.cd-qty').text(),10);
-                var newVal = val+1;
-                $('#item'+i).find('.cd-qty').text(newVal+'x');
-                count++;
-                var total = parseInt($('.cd-cart-total span').text(),10);
-                var newTotal = total+parseInt(item_price.substr(1),10);
-                $('.cd-cart-total span').text(newTotal+' Baht');
-            }
-        }
-        if(count == 0)
-        {
-            var qty = 0; 
-            $cart_list.append('<li class="item"><span class="cd-qty">' + (++qty) + 'x</span><span class="cd-name">' + item_name + '</span><div class="cd-price">' + item_price + '</div><a href="#0" class="cd-item-remove"><span>Remove</span></a></li>');
-            $('li').last().attr('id', 'item'+(cart_length++) );
-            var total = parseInt($('.cd-cart-total span').text(),10);
-            var newTotal = total+parseInt(item_price.substr(1),10);
-            $('.cd-cart-total span').text(newTotal+' Baht');
-        }
-    });
-*/
-
-    //remove item from cart
-    // $('#cd-cart-item').on('click','a', function(){          
-    //     var total = parseInt($('.cd-cart-total span').text(),10);
-    //     var price = parseInt($(this).closest('li').find('.cd-price').text().substr(1),10);
-    //     var qty = parseInt($(this).closest('li').find('.cd-qty').text(),10);
-    //     var newTotal = total-(price*qty);
-    //     $('.cd-cart-total span').text(newTotal + ' Baht');
-    //     $(this).closest('li').remove(); 
-    // });
     Meteor.call("getEnvironment", function (result) {
         console.log("result");
     });
@@ -356,7 +312,7 @@ Template.menuPage.onRendered(function(){
         }
     });
 
-    //delete item from panel
+    //delete item from panel UI
     $('#delete_item_butt').on('click', function(){
         if($('#delete_item_butt').text() === 'Delete'){
             $('.delete-btn').css('display','inherit');
@@ -365,9 +321,8 @@ Template.menuPage.onRendered(function(){
             $('.delete-btn').css('display','none');
             $('#delete_item_butt').text('Delete').css('background', '#D9534F');
         }
-
     });
-    
+
     //delete item from panel
     $('.delete-btn').on('click', function(){
 
@@ -387,7 +342,6 @@ Template.menuPage.onRendered(function(){
             menuArray.splice(index, 1);
             console.log("remove id")
         }
-
 
         Restaurants.update({_id: Meteor.user().profile.restaurant_id}, { $set: { menu: menuArray }});
 
@@ -409,7 +363,6 @@ Template.menuPage.onRendered(function(){
     });
     $shadow_layer.on('click', function(){
         $shadow_layer.removeClass('is-visible');
-        // firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
         if( $lateral_cart.hasClass('speed-in') ) {
             $lateral_cart.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
                 $('body').removeClass('overflow-hidden');
@@ -432,7 +385,6 @@ Template.menuPage.onRendered(function(){
     //close lateral cart
     $('.close-cart-btn').on('click', function(){
         $shadow_layer.removeClass('is-visible');
-        // firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
         if( $lateral_cart.hasClass('speed-in') ) {
             $lateral_cart.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
                 $('body').removeClass('overflow-hidden');

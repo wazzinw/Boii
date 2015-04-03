@@ -83,5 +83,5 @@ Template.orderListPage.events({
         event.preventDefault();
         $('.cd-popup').removeClass('is-visible');
     }
-    
+
 });
