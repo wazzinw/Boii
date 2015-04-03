@@ -1,6 +1,33 @@
 /**
  * Created by wazzinw on 3/25/15 AD.
  */
+var pic_url = "";
+
+Template.cafeRegisterPage.onRendered(function(){
+
+    //preview image
+
+    function preview(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#preview_image')
+                    .attr('src', e.target.result)
+                    .width(250)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $('#item-image').on('change', function(){
+        preview(this);
+    });
+
+
+});
 
 Template.cafeRegisterPage.events({
 
@@ -42,12 +69,12 @@ Template.cafeRegisterPage.events({
         option.menu = [];
         option.created_at = new Date();
         option.updated_at = new Date();
-
+        option.pic_url = pic_url;
 
 
         var restID = Restaurants.insert(option, function(error){
             if(error) console.log(error);
-            else window.alert(options.name+" is added");
+            else window.alert(option.name+" is added");
 
         });
 
@@ -60,6 +87,33 @@ Template.cafeRegisterPage.events({
        // this.redirect("cafeInfoPage");
 
 
+    },
+
+    'change .fileInput': function (event, template) {
+        FS.Utility.eachFile(event, function(file){
+            var fileObject = new FS.File(file);
+
+
+            Images.insert(fileObject, function(error){
+                if(error){
+                    console.log(error);
+                }
+                else{
+                    console.log("Successfully uploaded: " +fileObject._id);
+
+                    pic_url =  '/cfs/files/images/' + fileObject._id;
+                }
+
+            });
+
+
+        })
+
     }
 });
+
+
+
+
+
 
