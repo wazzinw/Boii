@@ -22,15 +22,15 @@
             <h2>Owner Information</h2>
             <table id="owner-info">
                 <tr>
-                    <td>Name:</td><td><p id="owner-name">{{currentUser.profile.name}}</p></td>
+                    <td class="title">Name:</td><td><p id="owner-name">{{currentUser.profile.name}}</p></td>
 
                 </tr>
                 <tr>
-                    <td>Email:</td><td><p id="owner-email">{{currentUser.emails.[0].address}}</p></td>
+                    <td class = "title">Email:</td><td><p id="owner-email">{{currentUser.emails.[0].address}}</p></td>
 
                 </tr>
                 <tr>
-                    <td>Phone Number:</td><td><p id="owner-phone">{{currentUser.profile.phone}}</p></td>
+                    <td class = "title">Phone Number:</td><td><p id="owner-phone">{{currentUser.profile.phone}}</p></td>
 
                 </tr>
             </table>
@@ -39,8 +39,8 @@
 
             <table id="cafe-info">
                 {{#with findRestaurant}}
-                <tr>
-                    <td class="title">Cafe Name:</td><td><p id="cafe-name">{{name}}</p></td></tr>
+                <tr><td class = "title">Logo:</td><td><p><img id="preview_image" src= {{pic_url}}></p></td></tr>
+                <tr><td class="title">Cafe Name:</td><td><p id="cafe-name">{{name}}</p></td></tr>
                 <tr><td class="title">Email:</td><td><p id="cafe-email">{{email}}</p></td></tr>
                 <tr><td class="title">Contact:</td><td><p id="cafe-contact">{{phone_numbers.number}}</p></td>
                 </tr>

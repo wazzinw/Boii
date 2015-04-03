@@ -61,6 +61,12 @@ RestaurantsSchema =  new SimpleSchema({
         label: "Restaurant name"
     },
 
+    pic_url: {
+        type: String,
+        label: "reference to the picture url",
+        optional: true
+    },
+
     beacon_major: {
         type: String,
         label: "majorID of iBeacon",
