@@ -25,3 +25,4 @@ cfs:filesystem
 cfs:s3
 meteorhacks:fast-render
 sacha:spin
+momentjs:moment

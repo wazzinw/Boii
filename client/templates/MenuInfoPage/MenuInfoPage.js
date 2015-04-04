@@ -31,6 +31,14 @@ Template.menuInfo.onRendered(function(){
 
 });
 
+Template.menuInfo.helpers({
+
+    'FormatDate':function(date) {
+        return moment(date).format("YYYY-MM-DD");
+    }
+
+});
+
 
 
 

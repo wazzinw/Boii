@@ -2,8 +2,12 @@
 <template name = "menuInfo">
     <div class="item-info">
         {{>menuItem}}
-        <div id="info-btn-panel"><button id="edit_item_butt" type="button">Edit</button><a href={{pathFor 'menuPage'}}><button id="back_item_butt" type="button">back</button></a></div>
-    </div>
+        <div id="info-btn-panel">
+            <a href = "{{pathFor 'menuEdit'}}" id="edit_item_butt" class = "btn btn-default">Edit</a>
+            <a href="{{pathFor 'menuPage'}}" id="back_item_butt" class="btn btn-default">Back</a>
+
+        </div>
+        </div>
 
 </template>
 
@@ -18,12 +22,12 @@
     {{/if}}
 
 
-    {{#with promotion}}
-    <h3 >Promotion status: True</h3>
-    <h3 >Valid Until: {{valid_until}}</h3>
-    {{/with}}
+    {{#if promotion}}
+    <h3>Promotion status: true</h3>
+    <h3 >Valid Until: {{FormatDate valid_until}}</h3>
+    {{/if}}
 
-    <h3 >Price: {{price}}</h3>
+    <h3 >Price: {{price}} Baht</h3>
     <h3 >Type: {{type}}</h3>
 
 
