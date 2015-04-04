@@ -26,7 +26,7 @@ Template.menuPage.helpers({
             console.log("food: no user found");
         }
 
-        return Menus.find({restaurant_name: rest.name ,type: "food"});
+        return Menus.find({restaurant_name: rest.name , type: "food"});
     },
 
     drinkMenu: function(){
@@ -35,7 +35,7 @@ Template.menuPage.helpers({
             var user = Meteor.user();
             rest = Restaurants.findOne({_id: user.profile.restaurant_id});
         }else{
-            console.log("food: no user found");
+            console.log("drink: no user found");
         }
 
         return Menus.find({restaurant_name: rest.name   , type: "drink"});
@@ -120,7 +120,6 @@ Template.menuPage.events({
 
 
     //open food category
-
     'click button.food-menu': function(event){
         console.log("food menu clicked");
 
