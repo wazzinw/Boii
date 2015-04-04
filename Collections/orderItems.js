@@ -1,6 +1,7 @@
 OrderItems = new Mongo.Collection('orderItems');
 
 
+
 OrderItems.attachSchema (  new SimpleSchema({
 	    menu_id: {
 	        type: String,

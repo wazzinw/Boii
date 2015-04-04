@@ -1,5 +1,35 @@
 Restaurants = new Mongo.Collection('restaurants');
 
+Meteor.methods({
+    restaurantInsert: function(restAttributes) {
+        //check(Meteor.userId(), String);
+        var user = Meteor.user();
+        var restId = Restaurants.insert(restAttributes);
+        return restId
+         },
+
+    deleteMenuID: function(id, newArray){
+        //check(id, String);
+        //check(newArray, [String]);
+        console.log("input array: "+ newArray.length);
+        Restaurants.update(
+            {_id: id},
+            { $set: { menu: newArray }});
+
+    },
+
+    addMenuID: function(id, menu_id){
+       // check(id, String);
+        //check(menu_id, String);
+
+        console.log("menu_id: "+ menu_id);
+        Restaurants.update({_id: id},
+            { $push: { menu: menu_id }});
+
+    }
+});
+
+
 var PhoneSchema = new SimpleSchema({
     type: {
         type: String,

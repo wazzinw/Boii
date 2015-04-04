@@ -13,3 +13,27 @@ Images = new FS.Collection('images', {
         }
     }
 });
+
+    Images.allow({
+        insert: function(userId, doc) {
+            // only allow posting if you are logged in
+            return !! userId;
+        },
+        download: function(userId, doc) {
+            // only allow posting if you are logged in
+            return !! userId;
+        },
+        update: function(userId, doc) {
+            // only allow posting if you are logged in
+            return !! userId; },
+
+        remove: function(userId, doc) {
+            // only allow posting if you are logged in
+            return false
+        }
+
+    });
+
+    if(Meteor.isClient){
+        Meteor.subscribe('images');
+    }

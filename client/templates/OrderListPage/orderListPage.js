@@ -56,11 +56,19 @@ var lastReject;
 Template.orderListPage.events({
     'click button#bill_but': function(event){
         var order_id = $(event.currentTarget).closest(".order_row").data('id');
-        Orders.update({_id: order_id}, {$set: {order_status:'billed'}});
+        Meteor.call('updateOrderStatus', order_id, "billed",function(error, result) {
+            if (error) return alert(error.reason);
+            else console.log("status updated to billed");
+        });
+       // Orders.update({_id: order_id}, {$set: {order_status:'billed'}});
     },
     'click button#accept_but': function(event){
         var order_id = $(event.currentTarget).closest(".order_row").data('id');
-        Orders.update({_id: order_id}, {$set: {order_status:'accepted'}});
+        Meteor.call('updateOrderStatus', order_id, "accepted",function(error, result) {
+            if (error) return alert(error.reason);
+            else console.log("status updated to accepted");
+        });
+        //Orders.update({_id: order_id}, {$set: {order_status:'accepted'}});
     },
     'click button#reject_but': function(event){
         event.preventDefault();
@@ -78,7 +86,14 @@ Template.orderListPage.events({
     },
     'click a.yes-btn': function(event){
         console.log($(".order_table").closest(".order_row"));
-        Orders.update({_id: lastReject}, {$set: {order_status:'rejected'}});
+
+        Meteor.call('updateOrderStatus', lastReject, "rejected",function(error, result) {
+            if (error) return alert(error.reason);
+            else console.log("status updated to rejected");
+        });
+        //Orders.update({_id: lastReject}, {$set: {order_status:'rejected'}});
+
+
         lastReject = "";
         event.preventDefault();
         $('.cd-popup').removeClass('is-visible');

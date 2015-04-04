@@ -93,6 +93,11 @@ Meteor.methods({
 
         return  Orders.insert(params);
     }
+    ,
+    updateOrderStatus: function(id, status){
+
+        Orders.update({_id: id}, {$set: {order_status: status}});
+    }
 });
 
 var OrderParamsSchema = new SimpleSchema({

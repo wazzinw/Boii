@@ -123,7 +123,6 @@ Template.menuPage.events({
     },
 
 
-
     //open food category
     'click button.food-menu': function(event){
         console.log("food menu clicked");
@@ -176,7 +175,7 @@ Template.menuPage.events({
         var params = {
             restaurant_id: Restaurants.findOne({name: rest.name})._id,
             orderItems: cartList
-        }
+        };
 
         Meteor.call('createOrder', params, function(error, result){
             if(!error){
@@ -230,7 +229,7 @@ Template.menuPage.events({
         var user = Meteor.user();
         console.log("add button clicked");
         var rest = Restaurants.findOne({_id: user.profile.restaurant_id});
-
+        var menu_id;
         options = {};
         options.name = $('#name-input').val();
         options.pic_url = pic_url;
@@ -246,21 +245,21 @@ Template.menuPage.events({
         }else options.promotion = false;
 
         if($('#type-drink').is(':checked')){
-
-
             options.type = "drink";
         }else{
-
             options.type = "food";
         }
 
-        var menu_id = Menus.insert(options, function(error){
-            console.log(error);
+        Meteor.call('menuInsert', options, function(error) {
+            if (error) return alert(error.reason);
+            else{
+               alert("SUCCESSFULLY UPDATED");
+
+            }
         });
 
-        console.log("menu_id: "+ menu_id);
 
-        Restaurants.update({_id: rest._id}, { $push: { menu: menu_id }});
+        //console.log("after: "+ menu_id);
 
         window.alert(options.name+" is added");
         $('#cd-shadow-layer').removeClass('is-visible');
@@ -389,20 +388,16 @@ Template.menuPage.onRendered(function(){
 
         //$(this).closest('li').remove();
         var id = $(event.currentTarget).closest('li').data('id');
-        console.log("id: "+ id);
-        //Restaurants.update({_id: Meteor.user().profile.restaurant_id}, )
-        Menus.remove({_id: id});
+        console.log("id: " + id);
 
-        var menuArray = rest.menu;
-        var index = menuArray.indexOf(id);
-        console.log("index: "+ index);
+        //Menus.remove({_id: id});
+       Meteor.call('menuDelete', id, function(error) {
+            if (error) return alert(error.reason);
+        });
 
-        if (index > -1) {
-            menuArray.splice(index, 1);
-            console.log("remove id")
-        }
 
-        Restaurants.update({_id: Meteor.user().profile.restaurant_id}, { $set: { menu: menuArray }});
+
+        //Restaurants.update({_id: Meteor.user().profile.restaurant_id}, { $set: { menu: menuArray }});
 
     });
 

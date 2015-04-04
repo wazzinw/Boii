@@ -79,8 +79,18 @@ Template.cafeRegisterPage.events({
         option.updated_at = new Date();
         option.pic_url = pic_url;
 
+        var restID = Meteor.call('restaurantInsert', option, function(error, result) {
+            if (error) return alert(error.reason);
+            else{
+                window.alert(option.name+" is added");
+                console.log("New restaurant id: "+ restID);
+                Meteor.users.update( { _id: Meteor.userId() }, { $set: { 'profile.restaurant_id': restID}} );
+                Router.go('cafeInfoPage');
+            }
+        });
 
-        var restID = Restaurants.insert(option, function(error){
+
+      /*  var restID = Restaurants.insert(option, function(error){
             if(error) {
                 console.log(error);
             } else {
@@ -90,12 +100,12 @@ Template.cafeRegisterPage.events({
 
                 Router.go('cafeInfoPage');
 
-            }
+
 
         });
 
 
-
+*/
 
 
     },

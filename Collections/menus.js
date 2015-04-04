@@ -1,5 +1,49 @@
 Menus = new Mongo.Collection('menus');
 
+Meteor.methods({
+    menuInsert: function(menuAttributes) {
+      //  check(Meteor.userId(), String);
+        //var user = Meteor.user();
+
+        var menuID = Menus.insert(menuAttributes);
+
+        var restID = Meteor.user().profile.restaurant_id;
+
+        Meteor.call('addMenuID', restID, menuID,function(error) {
+            if (error) return alert(error.reason);
+            else console.log("restaurant updated");
+        });
+
+    },
+
+    menuDelete: function(id){
+       // check(id, String);
+
+        console.log("removed"+ Menus.remove({_id: id}));
+
+        var menuArray = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id}).menu;
+        var index = menuArray.indexOf(id);
+        console.log("index: "+ index);
+        console.log("before: "+ menuArray.length);
+
+        if (index > -1) {
+            menuArray.splice(index, 1);
+            console.log("after: "+ menuArray.length);
+
+            Meteor.call('deleteMenuID', id,menuArray,function(error) {
+                if (error) return alert(error.reason);
+                else alert("SUCCESSFULLY UPDATED!!!!");
+            });
+        }
+        else console.log("id not found");
+
+
+    },
+
+    menuUpdate: function(){
+
+    }
+});
 
 Menus.attachSchema( new SimpleSchema({
     name: {
