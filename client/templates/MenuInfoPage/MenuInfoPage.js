@@ -2,6 +2,8 @@
  * Created by wazzinw on 4/4/15 AD.
  */
 
+Meteor.subscribe("Images");
+
 Template.menuInfo.onRendered(function(){
     //edit item
     $('#edit_item_butt').on('click', function(){

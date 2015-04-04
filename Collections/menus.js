@@ -32,7 +32,7 @@ Meteor.methods({
 
             Meteor.call('deleteMenuID', id,menuArray,function(error) {
                 if (error) return alert(error.reason);
-                else alert("SUCCESSFULLY UPDATED!!!!");
+                else console.log("SUCCESSFULLY UPDATED!!!!");
             });
         }
         else console.log("id not found");

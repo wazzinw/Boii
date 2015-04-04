@@ -20,15 +20,20 @@
             }
         }
     });
+    Meteor.publish('Images', function() {
+
+    return Images.find();
+    });
+
 
     Images.allow({
         insert: function(userId, doc) {
             // only allow posting if you are logged in
             return !! userId;
         },
-        download: function(userId, doc) {
+        download: function() {
             // only allow posting if you are logged in
-            return !! userId;
+            return true;
         },
         update: function(userId, doc) {
             // only allow posting if you are logged in
@@ -41,7 +46,4 @@
 
     });
 
-    Meteor.publish("images", function() {
-    return Images.find();
-    });
 

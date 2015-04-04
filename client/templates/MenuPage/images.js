@@ -1,7 +1,10 @@
-    /**
+/**
  * Created by wazzinw on 3/23/15 AD.
  */
 
+    if(Meteor.isClient){
+        Meteor.subscribe('Images');
+    }
 
 var imageStore = new FS.Store.S3("imageStore");
 
@@ -19,9 +22,9 @@ Images = new FS.Collection('images', {
             // only allow posting if you are logged in
             return !! userId;
         },
-        download: function(userId, doc) {
+        download: function() {
             // only allow posting if you are logged in
-            return !! userId;
+            return true
         },
         update: function(userId, doc) {
             // only allow posting if you are logged in
@@ -34,6 +37,3 @@ Images = new FS.Collection('images', {
 
     });
 
-    if(Meteor.isClient){
-        Meteor.subscribe('images');
-    }

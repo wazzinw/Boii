@@ -2,6 +2,8 @@
  * Created by wazzinw on 3/25/15 AD.
  */
 
+Meteor.subscribe("Images");
+
 Template.cafeInfoPage.events({
 
     "click #regis-button": function () {
