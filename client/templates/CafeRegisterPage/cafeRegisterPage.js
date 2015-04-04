@@ -3,8 +3,16 @@
  */
 var pic_url = "";
 
-Template.cafeRegisterPage.onRendered(function(){
 
+
+Template.cafeRegisterPage.onRendered(function(){
+    console.log("user "+ Meteor.user());
+
+    if(Meteor.user().profile.restaurant_id){
+        Router.go("cafeInfoPage");
+    }else{
+        console.log("No restaurant registered");
+    }
     //preview image
 
     function preview(input) {
@@ -73,18 +81,25 @@ Template.cafeRegisterPage.events({
 
 
         var restID = Restaurants.insert(option, function(error){
-            if(error) console.log(error);
-            else window.alert(option.name+" is added");
+            if(error) {
+                console.log(error);
+            } else {
+                window.alert(option.name+" is added");
+                console.log("New restaurant id: "+ restID);
+                Meteor.users.update( { _id: Meteor.userId() }, { $set: { 'profile.restaurant_id': restID}} );
+
+                Router.go('cafeInfoPage');
+
+            }
 
         });
 
 
-        console.log("New restaurant id: "+ restID);
-        Meteor.users.update( { _id: Meteor.userId() }, { $set: { 'profile.restaurant_id': restID}} );
+
+       //Router.go('cafeInfoPage',option);
 
 
-
-       // this.redirect("cafeInfoPage");
+       //this.redirect("cafeInfoPage");
 
 
     },

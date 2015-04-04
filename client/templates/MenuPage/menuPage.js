@@ -115,7 +115,8 @@ Template.menuPage.events({
         Session.set('cart', cart )
         console.log("Cart: " + Session.get('cart').toString());
 
-    },'click button.food-menu': function(event){
+    },
+    'click button.food-menu': function(event){
         console.log("food menu clicked");
 
         var id = $(event.currentTarget).closest('.food-item').data('id');
@@ -239,16 +240,10 @@ Template.menuPage.events({
         }else options.promotion = false;
 
         if($('#type-drink').is(':checked')){
-            /* $('#drink-list').append('<li class="drink-item"><button class="to_basket" id="menu"><h3>'
-             + $('#name-input').val() +'</h3><h4>฿'
-             + $('#price-input').val()
-             +'</h4></button></li>'); */
+
             options.type = "drink";
         }else{
-            /* $('#food-list').append('<li class="food-item"><button class="to_basket" id="menu"><h3>'
-             + $('#name-input').val()
-             +'</h3><h4>฿'+ $('#price-input').val()
-             +'</h4></button></li>');*/
+
             options.type = "food";
         }
 
@@ -263,6 +258,12 @@ Template.menuPage.events({
         window.alert(options.name+" is added");
         $('#cd-shadow-layer').removeClass('is-visible');
         $('#add_item').removeClass('speed-in');
+
+     //clear input value
+        $("#name-input").val('');
+        $('#validTill').val('');
+        $('#price-input').val('');
+
 
     }
 
@@ -321,9 +322,7 @@ Template.menuPage.onRendered(function(){
     //     $('.cd-cart-total span').text(newTotal + ' Baht');
     //     $(this).closest('li').remove(); 
     // });
-    Meteor.call("getEnvironment", function (result) {
-        console.log("result");
-    });
+
 
     //choose category
     $food_butt.on('click',function(){
@@ -346,8 +345,15 @@ Template.menuPage.onRendered(function(){
             $('#drink-list').find('.menu').css('active','disabled');
             $('#drink-list').find('h4').text('').append('<button class="edit-item-btn">Edit</button>');
             $('#edit_item_butt').text('Done').css('background', 'green');
+
             $('.edit-item-btn').on('click', function(){
                 toggle_panel_visibility($add_item, $shadow_layer, $('body'));
+                $("#name-input").val('');
+                $('#validTill').val('');
+                $('#price-input').val('');
+                $('#promotion');
+                $('#type-drink');
+
             });
         }else{
             $('#drink-list').find('h4').text('$50');
@@ -370,7 +376,7 @@ Template.menuPage.onRendered(function(){
     
     //delete item from panel
     $('.delete-btn').on('click', function(){
-
+        console.log("delete button clicked");
         var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
 
         //$(this).closest('li').remove();

@@ -6,20 +6,24 @@ if(Meteor.isServer){
 
     });
 
-    Meteor.publish('customers', function() {
-        return Customers.find();
-    });
 
     /*Meteor.publish('staff', function() {
         return Staff.find();
     });*/
 
     Meteor.publish('menus', function() {
-        return Menus.find();
+        if (this.userId) {
+            var restID = Meteor.users.findOne({_id: this.userId}).profile.restaurant_id;
+            var restName = Restaurants.findOne({_id: restID}).name;
+        }
+        return Menus.find({restaurant_name: restName});
     });
 
     Meteor.publish('restaurants', function() {
-        return Restaurants.find();
+        if (this.userId) {
+            var restID = Meteor.users.findOne({_id: this.userId}).profile.restaurant_id;
+        }
+        return Restaurants.find({_id: restID});
     });
 
     Meteor.publish('orders', function() {

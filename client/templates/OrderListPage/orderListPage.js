@@ -8,7 +8,7 @@ Template.menuPage.onRendered(function(){
     if(Meteor.user().profile.restaurant_id==null){
         this.redirect("cafeRegisterPage");
     }else{
-        console.log("Registered")
+        console.log("Registered");
         // this.next();
     }
 });

@@ -2,7 +2,10 @@
  * Created by wazzinw on 3/27/15 AD.
  */
 
-
+//#order to date
+//total income
+//#menu
+//favourite menu
 
 
 Template.restDashboardPage.helpers({
