@@ -1,5 +1,6 @@
 <template name = "menuPage">
 
+
     <div class="center">
         <div class="pageheader">
             <h1>Menu</h1>
@@ -30,7 +31,7 @@
             <ul id="food-list">
                 {{#each foodMenu}}
                 <li id="item" class="food-item" data-id={{_id}}>
-                    <button type="button" class="menu">
+                    <button type="button" class="food-menu">
                         <h3>{{name}}</h3>
                         <h4>฿ {{price}}</h4>
                     </button>
@@ -43,9 +44,9 @@
                 <button id="delete_item_butt" type="button">Delete</button>
             </div>
         </div>
-        
-        
+
     </div>
+
 
 
     <!-- CART  -->
@@ -73,7 +74,9 @@
         </div> <!-- cd-cart-total -->
         <a href="#0" class="checkout-btn">Checkout</a><br>
         <a href="#0" class="close-cart-btn">Close Cart</a>
-    </div> <!-- cd-cart -->
+    </div>
+
+        <!-- cd-cart -->
 
 
     <!-- ADD ITEM -->
@@ -94,7 +97,6 @@
             <button id="cancel-add-butt">Cancel</button>
         </div> 
     </div>
-
 
 
 </template>

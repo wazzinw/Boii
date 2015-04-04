@@ -322,12 +322,6 @@ html{
     font-weight: bold;
     display: none;
 }
-.edit-item-btn{
-    width: 100px;
-    background: #24A8AF;
-    color: white;
-    border-radius: 5px;
-}
 
 /*----------------------------Menu Button Panel----------------------------------*/
 
@@ -348,20 +342,15 @@ html{
     width: 300px;
     background: #24A8FF;
 }
-#edit_item_butt{
-    width: 100px;
-    margin-left: 30px;
-    background: #24A8AF;
-}
 #delete_item_butt{
     margin-left: 30px;
     width: 100px;
     background: #D9534F;
 }
-#add_item_butt:hover, #edit_item_butt:hover, #delete_item_butt:hover{
+#add_item_butt:hover, #delete_item_butt:hover{
     cursor: pointer;
 }
-#add_item_butt:active, #edit_item_butt:active, #delete_item_butt:active{
+#add_item_butt:active, #delete_item_butt:active{
     background: #1A699F;
 }
 /*---------------------------------CART------------------------------------------*/
@@ -582,7 +571,7 @@ html{
 }
 
 /*------------------------------Menu Info----------------------------------------*/
-    
+
 .item-info{
     width: 40%;
     margin: auto;
@@ -597,21 +586,43 @@ html{
 }
 .item-info #info-btn-panel{
     margin: auto;
-    width: 25%;
+    width: 50%;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 .item-info button{
-    width: 100%;
     height: 50px;
     font-size: 20px;
+    color: white;
+    border-radius: 5px;
+    width: 40%;
+    margin: 15px;
 }
 .item-info h3{
-    margin-left: 2em;
+    margin-left: 4em;
+    font-size: 20px;
+}
+.item-info img{
+    height: 200px;
+    width: 200px;
+    position: relative;
+    right: 2em;
+}
+#edit_item_butt{
+    background: #24A8AF;  
+}
+#back_item_butt{
+    background: #FA5858;
+}
+#edit_item_butt:active{
+    background: #76F9F5;
+}
+#back_item_butt:active{
+    background: #FDA2A2;
 }
 
 /*------------------------------Order--------------------------------------------*/
- 
+
 .showorder{
     margin: 0 auto;
     height: 800px;

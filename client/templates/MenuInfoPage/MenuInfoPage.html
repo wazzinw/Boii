@@ -2,25 +2,25 @@
 <template name = "menuInfo">
     <div class="item-info">
         {{>menuItem}}
-        <div id="info-btn-panel"><button class = "btn btn-primary" id="edit_item_butt" type="button">Edit</button></div>
+        <div id="info-btn-panel"><button id="edit_item_butt" type="button">Edit</button><a href={{pathFor 'menuPage'}}><button id="back_item_butt" type="button">back</button></a></div>
     </div>
 
 </template>
 
 <template name = "menuItem">
 
-   <h2 class = "text-uppercase"><strong>{{name}}</strong></h2>
+    <h2 class = "text-uppercase"><strong>{{name}}</strong></h2>
 
     {{#if pic_url}}
     <h3><img id="preview_image" src= {{pic_url}}></h3>
     {{else}}
-        <img id="preview_image" src= "/default_coffee.jpg">
+    <h3><img id="preview_image" src= "/default_coffee.jpg"></h3>
     {{/if}}
 
 
     {{#with promotion}}
-        <h3 >Promotion status: {{promotion}}</h3>
-        <h3 >Valid Until: {{valid_until}}</h3>
+    <h3 >Promotion status: True</h3>
+    <h3 >Valid Until: {{valid_until}}</h3>
     {{/with}}
 
     <h3 >Price: {{price}}</h3>
@@ -33,25 +33,25 @@
 
 <!-- EDIT ITEM
 <div id="edit_item">
-    <h1>Edit Menu</h1>
+<h1>Edit Menu</h1>
 
-    <img id="preview_image" src= "/default_coffee.jpg">
+<img id="preview_image" src= "/default_coffee.jpg">
 
-    <div class="detail">
-        <p class="browsepic">Picture:<input multiple class = "file fileInput" id="item-image" type="file"/></p>
+<div class="detail">
+<p class="browsepic">Picture:<input multiple class = "file fileInput" id="item-image" type="file"/></p>
 
-        <p class="type">Type: <input id="type-drink" type="radio" name="type" checked="checked"/>Drink
-            <input id="type-food" type="radio" name="type"/>Food</p>
+<p class="type">Type: <input id="type-drink" type="radio" name="type" checked="checked"/>Drink
+<input id="type-food" type="radio" name="type"/>Food</p>
 
-        <p>Promotion: <input type="checkbox" id="promotion" value=true></p>
-        <p>Valid Until: <input type="date" id = "validTill"></p>
-        <p>Name: <input id="name-input" type="text"/></p>
-        <p>Price: <input id="price-input" type="text"/></p>
-    </div>
+<p>Promotion: <input type="checkbox" id="promotion" value=true></p>
+<p>Valid Until: <input type="date" id = "validTill"></p>
+<p>Name: <input id="name-input" type="text"/></p>
+<p>Price: <input id="price-input" type="text"/></p>
+</div>
 
-    <div class="add_button">
-        <button id="add-to-save-butt">Save</button>
-        <button id="cancel-add-butt">Cancel</button>
-    </div>
+<div class="add_button">
+<button id="add-to-save-butt">Save</button>
+<button id="cancel-add-butt">Cancel</button>
+</div>
 
 </div> -->

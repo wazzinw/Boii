@@ -20,25 +20,30 @@ Template.menuPage.helpers({
         var rest;
         if(userAvailable()){
             var user = Meteor.user();
-            rest = Restaurants.findOne({_id: user.profile.restaurant_id});
+            //rest = Restaurants.findOne({_id: user.profile.restaurant_id});
+            rest = Restaurants.find().fetch();
+            console.log("HELLOOOOOOOOO");
         }
         else{
             console.log("food: no user found");
         }
 
-        return Menus.find({restaurant_name: rest.name , type: "food"});
+        return Menus.find({restaurant_name: rest[0].name , type: "food"});
     },
 
     drinkMenu: function(){
         var rest;
         if(userAvailable()){
             var user = Meteor.user();
-            rest = Restaurants.findOne({_id: user.profile.restaurant_id});
+            //rest = Restaurants.findOne({_id: user.profile.restaurant_id});
+            rest = Restaurants.find().fetch();
+            console.log("HELLOOOOOOOOO");
+
         }else{
             console.log("drink: no user found");
         }
 
-        return Menus.find({restaurant_name: rest.name   , type: "drink"});
+        return Menus.find({restaurant_name: rest[0].name   , type: "drink"});
     },
 
     cartItems: function(){
@@ -113,7 +118,7 @@ Template.menuPage.events({
             cart[id] = 1;
         }
 
-        Session.set('cart', cart )
+        Session.set('cart', cart );
         console.log("Cart: " + Session.get('cart').toString());
     },
 
