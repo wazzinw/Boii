@@ -313,8 +313,8 @@ html{
     height: 35px;
     width: 35px;
     position: relative;
-    right: 20px;
-    bottom: 40px;
+    left: 180px;
+    bottom: 150px;
     border-radius: 20px;
     font-size: 20px;
     background: red;
@@ -786,16 +786,30 @@ html{
 }
 #bill_but{
     background: #EC900F;
-    width: 200px;
-    margin: 5px;
 }
-/*---------------------------------Report--------------------------------------*/
+/*---------------------------------Report----------------------------------------*/
+
 #show-report{
-    height: 800px;
-    max-width: 1200px;
     min-width: 900px;
-    border: 1px solid black;
-    margin: 0 auto;
+    margin: 0px 50px 50px 50px;
+    padding: 20px;
+    background-color: #FFFFF0;
+}
+.report{
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+.report h1{
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+.report select{
+    width: 300px;
+    margin-bottom: 20px;
+}
+.report input{
+    margin-left: 2em;
+    text-align: center;
 }
 
 /*------------------------------Register Center----------------------------------*/

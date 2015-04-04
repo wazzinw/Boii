@@ -3,32 +3,37 @@
     <div class="pageheader">
         <h1>Report</h1>
     </div>
-    <div class="report">
-        <h1>Orders by Date</h1>
-        <select id="orderMonthSelector" class="form-control">
-            <option value="1" selected>January</option >
-            <option value="2" >Febuary</option>
-            <option value="3" >March</option>
-            <option value="4" >April</option>
-            <option value="5" >May</option>
-            <option value="6" >June</option>
-            <option value="7" >July</option>
-            <option value="8" >August</option>
-            <option value="9" >September</option>
-            <option value="10" >October</option>
-            <option value="11" >November</option>
-            <option value="12" >December</option>
-        </select>
-        <div class="ct-chart" id="orderByDate"></div>
+    <div id="show-report">
+        
+        
+        <div class="report">
+            <h1>Orders by Date</h1>
+            <select id="orderMonthSelector" class="form-control">
+                <option value="1" selected>January</option >
+                <option value="2" >Febuary</option>
+                <option value="3" >March</option>
+                <option value="4" >April</option>
+                <option value="5" >May</option>
+                <option value="6" >June</option>
+                <option value="7" >July</option>
+                <option value="8" >August</option>
+                <option value="9" >September</option>
+                <option value="10" >October</option>
+                <option value="11" >November</option>
+                <option value="12" >December</option>
+            </select>
+            
+            <div class="ct-chart" id="orderByDate" data-x-axis="Day" data-y-axis="My y-axis-title">
+            </div>
+            
+        </div>
+
+        <div class="report">
+            <h1>Orders vs time</h1>
+            <p>Choose Date:<input type="text" class="form-conmtrol" id="orderTimeDatepicker" data-date-format="dd/mm/yyyy" placeholder="dd/mm/yy"></p>
+
+            <div class="ct-chart" id="orderByTime"></div>
+            
+        </div>
     </div>
-
-    <div class="report">
-        <h1>Orders vs time</h1>
-        <input type="text" class="form-conmtrol" id="orderTimeDatepicker" data-date-format="dd/mm/yyyy">
-
-        <div class="ct-chart" id="orderByTime"></div>
-    </div>
-
-
-
 </template>
