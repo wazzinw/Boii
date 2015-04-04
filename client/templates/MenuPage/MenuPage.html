@@ -1,5 +1,5 @@
-
 <template name = "menuPage">
+<<<<<<< HEAD
 
             <div class="center">
                 <div class="pageheader">
@@ -61,65 +61,59 @@
 
 
                 </div>
-            </div>
 
 
-             <!-- CART  -->
-            <div id="cd-shadow-layer"></div>
-            <div id="cd-cart">
-                
-                <h2>Cart</h2>
-                <ul class="cd-cart-items" id="cd-cart-item" >
-                    {{#each cartItems}}
-                        <li class="item" data-id={{_id}}>
-                            <span class="cd-qty">
-                                {{quantity}}x
-                            </span>
-                            <span class="cd-name">
-                                {{name}}
-                            </span>
-                            <div class="cd-price">
-                                ฿ {{price}}
-                            </div>
-                           <a href="#0" class="cd-item-remove"><span>Remove</span></a>
-                        </li>
-                    {{/each}}
-                </ul>
-                
-
-                <div class="cd-cart-total">
-                    <p>Total <span>฿ {{totalPrice}}</span></p>
-                </div> <!-- cd-cart-total -->
-
-                <a href="#0" class="checkout-btn">Checkout</a><br>
-                <a href="#0" class="close-cart-btn">Close Cart</a>
-            </div> <!-- cd-cart -->
-
-
-            <!-- ADD ITEM -->
-            <div id="add_item">
-                <h1>New Menu</h1>
-                <img id="preview_image" src= "/default_coffee.jpg">
-
-                <div class="detail">
-                    <p class="browsepic">Picture:<input multiple class = "file fileInput" id="item-image" type="file"/></p>
-
-                    <p class="type">Type: <input id="type-drink" type="radio" name="type" checked="checked"/>Drink
-                        <input id="type-food" type="radio" name="type"/>Food</p>
-
-                    <p>Promotion: <input type="checkbox" id="promotion" value=true></p>
-                    <p>Valid Until: <input type="date" id = "validTill"></p>
-                    <p>Name: <input id="name-input" type="text"/></p>
-                    <p>Price: <input id="price-input" type="text"/></p>
+    </div>
+    
+    
+    <!-- CART  -->
+    <div id="cd-shadow-layer"></div>
+    <div id="cd-cart">
+        <h2>Cart</h2>
+        <ul class="cd-cart-items" id="cd-cart-item" >
+            {{#each cartItems}}
+            <li class="item" data-id={{_id}}>
+                <span class="cd-qty">
+                    {{quantity}}x
+                </span>
+                <span class="cd-name">
+                    {{name}}
+                </span>
+                <div class="cd-price">
+                    ฿ {{price}}
                 </div>
 
-                <div class="add_button">
-                    <button id="add-to-save-butt">Add</button>
-                    <button id="cancel-add-butt">Cancel</button>
-                </div> 
-            </div>
-
-
-
-
+                <a href="#0" class="cd-item-remove"><span>Remove</span></a>
+            </li>
+            {{/each}}
+        </ul>
+        <div class="cd-cart-total">
+            <p>Total <span>฿ {{totalPrice}}</span></p>
+        </div> <!-- cd-cart-total -->
+        <a href="#0" class="checkout-btn">Checkout</a><br>
+        <a href="#0" class="close-cart-btn">Close Cart</a>
+    </div> <!-- cd-cart -->
+    
+    
+    <!-- ADD ITEM -->
+    <div id="add_item">
+        <h1>New Menu</h1>
+        <img id="preview_image" src= "/default_coffee.jpg">
+        <div class="detail">
+            <p class="browsepic">Picture:<input multiple class = "file fileInput" id="item-image" type="file"/></p>
+            <p class="type">Type: <input id="type-drink" type="radio" name="type" checked="checked"/>Drink
+                <input id="type-food" type="radio" name="type"/>Food</p>
+            <p>Promotion: <input type="checkbox" id="promotion" value=true></p>
+            <p>Valid Until: <input type="date" id = "validTill"></p>
+            <p>Name: <input id="name-input" type="text"/></p>
+            <p>Price: <input id="price-input" type="text"/></p>
+        </div>
+        <div class="add_button">
+            <button id="add-to-save-butt">Add</button>
+            <button id="cancel-add-butt">Cancel</button>
+        </div> 
+    </div>
+    
+    
+</div>
 </template>

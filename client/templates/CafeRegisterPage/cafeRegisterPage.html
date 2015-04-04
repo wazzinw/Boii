@@ -4,33 +4,35 @@
 
     <div class="insert">
 
-        <div id="register-center">
-                <h1>Register</h1>
-                <h2> Cafe Information</h2>
+        <div class="center" id="register-center">
+            <div class="pageheader">
+                <h1>Register Restaurant</h1>
+            </div>
+            <h2> Cafe Information</h2>
 
             <form class = "form-horizontal" id="cafe-info">
 
-                    <div class = "form-group">
-                        <img id="preview_image" src= "/default_coffee.jpg">
 
-                        <p class="browsepic">Picture:<input multiple class = "file fileInput" id="item-image" type="file"/></p>
+                <div class = "form-group">
+                    <img id="preview_image" src= "/default_coffee.jpg">
 
-                        <p>Cafe Name:<input id="name" placeholder="MK" type="text"/>
-                        Email:    <input type="email" id="email" placeholder="boii@mail.com"></p>
-                    </div>
+                    <p class="browsepic">Picture:<input multiple class = "file fileInput" id="item-image" type="file"/></p>
+                    <p>Cafe Name:<input id="name" placeholder="MK" type="text"/>
+                        <span>Email:    <input type="email" id="email" placeholder="boii@mail.com"></span></p>
+                </div>
                 <h2> Address</h2>
-                    <div class = "form-group">
-                        <p>Address Number:<input id="number" type="text"/></p>
-                        <p>Floor:         <input id="floor"  type="text"/></p>
-                        <p>Building:      <input id="building" type="text"/></p>
-                        <p>Street/Soi:    <input id="street" type="text"/></p>
-                        <p>Sub-District:  <input id="subDist" type="text"/></p>
-                        <p>District:      <input id="dist" type="text"/></p>
-                        <p>Province:      <input id="province" type="text"/></p>
-                        <p>Country:       <input id="country" type="text"/></p>
-                        <p>Postal Code:   <input id="post" type="text"/></p>
-                        <p>Phone number:  <input id="phone" type="text"/></p>
-                    </div>
+                <div class = "form-group">
+                    <p>Address Number:<input id="number" type="text"/>
+                        <span>Floor:<input id="floor"  type="text"/></span></p>
+                    <p>Building:<input id="building" type="text"/>
+                        <span>Street/Soi:<input id="street" type="text"/></span></p>
+                    <p>Sub-District:<input id="subDist" type="text"/>
+                        <span>District:<input id="dist" type="text"/></span></p>
+                    <p>Province:<input id="province" type="text"/>
+                        <span>Country:<input id="country" type="text"/></span></p>
+                    <p>Postal Code:<input id="post" type="text"/>
+                        <span>Phone number:<input id="phone" type="text"/></span></p>
+                </div>
 
                 <h2>iBeacon</h2>
                 <div class = "form-group">
@@ -39,10 +41,10 @@
                 </div>
             </form>
 
-        <div id="buttons">
-            <button class = "btn btn-primary" type="button" id="regis-button">Register</button>
-            <a href={{pathFor 'cafeInfoPage'}}><button class = "btn btn-danger" type="button" id="back-button">Back</button></a>
-        </div>
+            <div id="buttons">
+                <a href={{pathFor 'cafeInfoPage'}}><button class = "btn btn-primary" type="button" id="regis-button">Register</button></a>
+                <a href={{pathFor 'cafeInfoPage'}}><button class = "btn btn-danger" type="button" id="back-button">Back</button></a>
+            </div>
         </div>
 
 

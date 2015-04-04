@@ -1,11 +1,4 @@
 html{
-
-
-
-    background-image: url("/bg1.jpg");
-
-}
-body{
     margin: auto;
     padding: 0px;
     min-width: 900px;
@@ -13,7 +6,6 @@ body{
     line-height: 1em;
     background-color: white;
     font-family: Lato;
-    max-width: 1200px;
 }
 #mainpage-header{
     height: 70px;
@@ -28,10 +20,14 @@ body{
     text-shadow: 3px 2px 20px #333333;
     color: #F1F5F8;
 }
+#boii-logo{
+    margin-left: 10px;
+    max-height: 50px;
+}
 #logo{
     margin-top: 10px;
     margin-left: 10px;
-    max-height: 50px;
+    max-height: 100px;
 }
 #contact {
     float: right;
@@ -44,7 +40,9 @@ body{
     font-weight: bold;
     border: 5px solid #F0F1F1;  
 }
-/*------------------------------MENU BAR---------------------------------------------*/
+
+/*------------------------------MENU BAR-----------------------------------------*/
+
 #mainpage-menu{
     height: 60px;
     font-size: 20px;
@@ -72,34 +70,41 @@ body{
     float: right;
 }
 .main_div{
-    border: 1px solid #919394;
+    border-top: 1px solid #919394;
     padding: 5px;
+    margin: auto;
+    width: 100%;
 }
 .main_div h1{
     text-align: center;
     text-shadow: 3px 2px 50px #9FC7F1;
     color: #67696B;
 }
+.container{
+    width: 100%;
+}
+
 /*------------------------------------OVERVIEW-----------------------------------*/
 
 #overview{
-    height: 450px;
     background: #CDEBFF;
     box-shadow: 30px 90px 100px 0px #FFFFFF inset, -30px -30px 100px 0px #FFFFFF inset;
+    padding-bottom: 50px;
 }
-
 .summary_table{
     margin: 50px 50px;
     text-align: center;
     font-size: 20px;
     margin: auto;
+
 }
-.summary_table td{
-    width: 500px;
+.summary_table li{
+    width: 300px;
     padding-top: 20px;
+    display: inline-block;
 }
 .summary_table p{
-    width: 300px;
+    width: 28functions0px;
     height: 50px;
     margin: auto;
     margin-top: 1em;
@@ -110,26 +115,31 @@ body{
 .summary_table #logo{
     box-shadow: 10px 0px 20px 5px #FFFFFF, -10px -0px 20px 5px #FFFFFF;
 }
+
 /*------------------------------------FEATURES-----------------------------------*/
+
 #features{
-    height: 400px;
     background: #FCBC8E;
     box-shadow: 10px 90px 100px 0px #FFFFFF inset,-10px -30px 100px 0px #FFFFFF inset,30px 30px 100px 0px #FDCC82 inset, -30px -30px 100px 0px #FDCC82 inset;
+    padding-bottom: 50px;
 }
 .features_table{
     margin: 50px 50px;
     text-align: center;
-    font-size: 22px;
+    font-size: 20px;
 }
-.features_table td{
-    width: 500px;
-    height: 50px;
+.features_table li{
+    width: 300px;
+    display: inline-block;
+    margin: auto;
 }   
 .features_table h3{
     font-weight: bold;
     text-decoration: underline;
 }
-/*------------------------------------CAFE LIST-----------------------------------*/
+
+/*------------------------------------CAFE LIST----------------------------------*/
+
 #cafelist{
     height: auto;
     background-color: #9AFF8F;
@@ -139,7 +149,7 @@ body{
     display: inline-block;
     margin: 50px 20px;
     text-align: center;
-    width: 300px;
+    width: 200px;
 }
 #cafelist img{
     max-height: 150px;
@@ -148,63 +158,35 @@ body{
 #cafelist h3{
     margin-top: 5px;
 }
-/*------------------------------Register Center---------------------------------------------*/
-#register-center{
-    height: auto;
-    padding: 10px;
-    background-color: white;
-    padding-bottom: 50px;
-}
-#register-center td{
-    padding: 5px 10px;
-    font-weight: 550;
-}
-#register-center input{
-    margin-left: 20px;
-    height: 25px;
-    font-size: 20px;
-    width: 200px;
-}
-#register-center h1{
-    text-align: center;
-    height: 50px;
-}
-#register-center h2{
-    border-bottom: 1px solid black;
-    padding-bottom: 5px;
-}
-#buttons{
-    width: 800px;
-    margin: auto;
-}
-#buttons button{
-    height: 100px;
-    width: 200px;
-    border-radius: 10px;
-    margin: 20px;
-    font-size: 30px;
-    font-weight: 600;
-    margin-left: 80px;
-}
-#buttons button:hover{
-    cursor: pointer;
-    box-shadow: 0px -5px 10px 1px #919394 inset;
-}
-#buttons button:active{
-    background: #ACB4BA;
-}
-/*------------------------------Center---------------------------------------------*/
+
+/*------------------------------Center-------------------------------------------*/
+
 .center{
     padding: 10px;
-    background-color: white;
+    background-color: #E9F8FF;
+    box-shadow: 10px 90px 100px 0px #FFFFFF inset,-10px -30px 100px 0px #FFFFFF inset,30px 30px 100px 0px #E9F8FF inset, -30px -30px 100px 0px #E9F8FF inset;
 }
 .pageheader{
     text-align: center;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: bolder;
+    letter-spacing: -1px; 
+    text-transform: uppercase; 
+    text-shadow: 1px 1px 0 #000;
+    margin: 10px 0 24px; 
+    background: #03A7FF;
+    color: #EEF9FF;
+    height: 50px;
+    border-radius: 10px;
 }
-/*---------------------------------MENU--------------------------------------*/
+.pageheader h1{
+    line-height: 50px;
+}
+
+/*---------------------------------MENU------------------------------------------*/
+
 #menu-panel{
-    height: 850px;
+    height: 750px;
     border: 1px solid black;
     background-color: #FFFFF0;
     border-radius: 10px;
@@ -224,7 +206,7 @@ body{
     height: 60px;
     font-size: 20px;
     font-weight: bolder;
-    border-radius: 10px;
+    border-radius: 5px;
     background: #24A8FF;
     color: #EEF9FF;
     border: none;
@@ -244,11 +226,14 @@ body{
     color: #FFFFFF;
     border-radius: 10px;
 }
-/*---------------------------------MENU LIST--------------------------------------*/
+
+
+/*---------------------------------MENU LIST-------------------------------------*/
+
 #drink-list,  #food-list{
     list-style: none;
     height: 600px;
-    max-width: 1440px;
+    max-width: 1000px;
     overflow: auto;
     position: absolute;
     margin: auto;
@@ -283,7 +268,7 @@ body{
 #drink-list .menu:active, #food-list .menu:active{
     background: #2870F6;
 }
- #food-list{
+#food-list{
     list-style: none;
     height: 600px;
     max-width: 1440px;
@@ -352,8 +337,8 @@ body{
 /*---------------------------------Menu Button Panel--------------------------------------*/
 .btn-panel{
     position: relative;
-    top: 80%;
-    left: 40%;
+    top: 75%;
+    left: 35%;
     width: 100%;
 }
 .btn-panel button{
@@ -774,17 +759,73 @@ body{
     border: 1px solid black;
     margin: 0 auto;
 }
-/*---------------------------------Info Panel--------------------------------------*/
+
+/*------------------------------Register Center----------------------------------*/
+
+#register-center td{
+    padding: 5px 10px;
+    font-weight: 550;
+}
+#register-center input{
+    margin-left: 20px;
+    height: 25px;
+    font-size: 20px;
+    width: 200px;
+    line-height: 25px;
+}
+#register-center h2{
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+.form-group p{
+    margin-left: 40px;
+}
+.form-group span{
+    margin-left: 100px;
+}
+#buttons{
+    width: 550px;
+    margin: auto;
+}
+#buttons button{
+    height: 80px;
+    width: 150px;
+    border-radius: 5px;
+    margin: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 80px;
+}
+#buttons button:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 1px #ECECEC inset;
+}
+#buttons button:active{
+    background: #ACB4BA;
+}
+#cre-new-res{
+    width: 500px;
+    margin: auto;
+    margin-top: 20px;
+}
+#new-res-button{
+    height: 80px;
+    width: 500px;
+    font-size: 20px;
+    margin: auto;
+}
+
+/*---------------------------------Info Panel------------------------------------*/
 
 #info-panel{
     margin: 0 auto;
-    height: 800px;
+    height: auto;
     min-width: 850px;
     max-width: 1200px;
     border: 1px solid black;
     background-color: #FFFFF0;
     border-radius: 10px;
-    overflow: auto;
+    padding-bottom: 20px;
 }
 #info-panel h2{
     border-bottom: 1px solid black;
@@ -811,13 +852,14 @@ body{
     border-radius: 10px;
     font-size: 20px;
     position: relative;
-    left: 450px;
-    top: 30px;
+    margin-top: 20px;
+    left: 45%;
 }
 
-/*---------------------------------FOOTER--------------------------------------*/
+/*---------------------------------FOOTER----------------------------------------*/
+
 .footer{
-    position: relative;
+    margin: auto;
     background-color: #2D94EE;
     box-shadow: 30px 30px 100px 0px #FFFFFF inset, -30px -30px 100px 0px #FFFFFF inset;
     border: 1px solid #919394;

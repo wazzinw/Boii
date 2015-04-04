@@ -4,8 +4,6 @@
 
     <div class="show-info">
         {{>restaurant_info}}
-
-
     </div>
 
 
@@ -13,7 +11,6 @@
 </template>
 
 <template name="restaurant_info">
-    <h1>Restaurants</h1>
 
     <div class="center">
         <div class="pageheader">
@@ -67,7 +64,7 @@
             {{#if findRestaurant}}
             <button id="edit_info_butt" type="button">Edit</button>
             {{else}}
-            <a href={{pathFor 'cafeRegisterPage'}}><button class = "btn btn-primary" type="button" id="new-res-button">New Restaurant</button></a>
+            <div id="cre-new-res"><a href={{pathFor 'cafeRegisterPage'}}><button class = "btn btn-primary" type="button" id="new-res-button">New Restaurant</button></a></div>
             {{/if}}
         </div>
 

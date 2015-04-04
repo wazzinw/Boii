@@ -40,7 +40,7 @@ Template.cafeRegisterPage.onRendered(function(){
 Template.cafeRegisterPage.events({
 
     "click #regis-button": function () {
-        console.log('register clicked');
+        //console.log('register clicked');
         var option = {};
         var address = {};
         var phone ={};
@@ -49,17 +49,17 @@ Template.cafeRegisterPage.events({
         option.email = $('#email').val();
 
 
-            address.number = $('#number').val();
-            address.floor = $('#floor').val();
-            address.building= $('#building').val();
-            address.street= $('#street').val();
-            address.subDistrict= $('#subDist').val();
-            address.district= $('#dist').val();
-            address.province=  $('#province').val();
-            address.country= $('#country').val();
-            address.postalCode= $('#post').val();
+        address.number = $('#number').val();
+        address.floor = $('#floor').val();
+        address.building= $('#building').val();
+        address.street= $('#street').val();
+        address.subDistrict= $('#subDist').val();
+        address.district= $('#dist').val();
+        address.province=  $('#province').val();
+        address.country= $('#country').val();
+        address.postalCode= $('#post').val();
 
-            //console.log(address);
+        console.log(address);
 
         option.address = [];
         option.address.push(address);
@@ -96,10 +96,6 @@ Template.cafeRegisterPage.events({
 
 
 
-       //Router.go('cafeInfoPage',option);
-
-
-       //this.redirect("cafeInfoPage");
 
 
     },
