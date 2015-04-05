@@ -16,14 +16,21 @@
 
             <ul id="drink-list">
                 {{#each drinkMenu}}
-                <li id= "item" class="drink-item" data-id={{_id}}>
-                    <button type="button" class="menu">
+                <li id= "item" class="drink-item" data-id="{{_id}}" >
+
+
+                    <button type="button" class="menu" data-available="{{available}}">
                         <h3>{{name}}</h3>
                         <h4>฿ {{price}}</h4>
                     </button>
                     <p><a href = "{{pathFor 'menuInfo'}}" class="btn btn-link">Details</a></p>
                     <button type="button" class="delete-btn">X</button>
+                    {{#if available}}
+                    <div id="not-avail-shadow" class="invisible"></div>
+                    {{else}}
                     <div id="not-avail-shadow"></div>
+                    {{/if}}
+
                 </li>
                 {{/each}}
             </ul>
@@ -31,8 +38,8 @@
 
             <ul id="food-list">
                 {{#each foodMenu}}
-                <li id="item" class="food-item" data-id={{_id}}>
-                    <button type="button" class="food-menu">
+                <li id="item" class="food-item" data-id={{_id}} >
+                    <button type="button" class="food-menu" data-available="{{available}}">
                         <h3>{{name}}</h3>
                         <h4>฿ {{price}}</h4>
                     </button>

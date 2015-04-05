@@ -31,16 +31,16 @@ var OrdersSchema = new SimpleSchema({
     },
     updated_at: {
         type: Date,
-        label: "updated ordered date and time",
+        label: "updated ordered date and time"
     },
     created_at: {
         type: Date,
         label: "ordered date and time",
-        denyUpdate: true,
+        denyUpdate: true
     },
     order_status: {
         type: String,
-        label: "status of the order { 'billed','ready', 'accepted', 'rejected', 'approving'} ",
+        label: "status of the order { 'billed','ready', 'accepted', 'rejected', 'approving'} "
         // allowedValues: ['billed', 'ready', 'accepted','rejected','accepted','approving']
     }
 });
