@@ -34,7 +34,7 @@ Template.menuEdit.events({
         var menuId = $('#title').data('id');
         console.log("current menu id = " + menuId);
         var restId = Meteor.user().profile.restaurant_id;
-       var currentMenu = Menus.findOne({_id: menuId});
+        var currentMenu = Menus.findOne({_id: menuId});
 
         options = {};
         options.name = $('#name').val();
@@ -55,6 +55,7 @@ Template.menuEdit.events({
         if ($('#promotion').is(':checked')) {
             options.promotion = true;
         } else options.promotion = false;
+
 
         console.log(options);
 

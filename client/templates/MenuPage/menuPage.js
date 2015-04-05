@@ -238,7 +238,7 @@ Template.menuPage.events({
         options.restaurant_name = rest.name;
         options.created_at = new Date();
         options.updated_at = new Date();
-
+        
 
         if($('#promotion').is(':checked')){
             options.promotion = true;
@@ -415,12 +415,14 @@ Template.menuPage.onRendered(function(){
         preview(this);
     });
 
-    if($('#avail option').val() === "1"){
+    
+    if($('#avail option').val() == "1"){
         $('#not-avail-shadow').removeClass('invisible');
     }else{
         $('#not-avail-shadow').addClass('invisibleee');
     }
 
+    
     function toggle_panel_visibility ($lateral_panel, $background_layer, $body) {
         $lateral_panel.addClass('speed-in').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',                         function(){
             $body.addClass('overflow-hidden');});
