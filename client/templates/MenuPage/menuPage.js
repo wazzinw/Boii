@@ -253,7 +253,7 @@ Template.menuPage.events({
         Meteor.call('menuInsert', options, function(error) {
             if (error) return alert(error.reason);
             else{
-               alert("SUCCESSFULLY UPDATED");
+                alert("SUCCESSFULLY UPDATED");
 
             }
         });
@@ -265,7 +265,7 @@ Template.menuPage.events({
         $('#cd-shadow-layer').removeClass('is-visible');
         $('#add_item').removeClass('speed-in');
 
-     //clear input value
+        //clear input value
         $("#name-input").val('');
         $('#validTill').val('');
         $('#price-input').val('');
@@ -351,7 +351,7 @@ Template.menuPage.onRendered(function(){
         console.log("id: " + id);
 
         //Menus.remove({_id: id});
-       Meteor.call('menuDelete', id, function(error) {
+        Meteor.call('menuDelete', id, function(error) {
             if (error) return alert(error.reason);
         });
 
@@ -414,6 +414,12 @@ Template.menuPage.onRendered(function(){
     $('#item-image').on('change', function(){
         preview(this);
     });
+
+    if($('#avail option').val() === "1"){
+        $('#not-avail-shadow').removeClass('invisible');
+    }else{
+        $('#not-avail-shadow').addClass('invisibleee');
+    }
 
     function toggle_panel_visibility ($lateral_panel, $background_layer, $body) {
         $lateral_panel.addClass('speed-in').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',                         function(){
