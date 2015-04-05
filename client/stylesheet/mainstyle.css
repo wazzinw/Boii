@@ -829,7 +829,7 @@ html{
 
 #register-center td{
     padding: 5px 10px;
-    font-weight: 550;
+    font-weight: 600;
 }
 #register-center input{
     margin-left: 20px;
@@ -899,7 +899,7 @@ html{
 }
 #info-panel td{
     padding: 5px 10px;
-    font-weight: 550;
+    font-weight: 600;
 }
 #info-panel table{
     min-width: 900px;

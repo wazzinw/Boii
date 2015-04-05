@@ -1,0 +1,73 @@
+
+<template name = "cafeEdit">
+        <h1 id = "title">Edit Cafe Information</h1>
+
+
+        <form class="form-horizontal">
+            <div>
+                {{#if pic_url}}
+                <img id="preview_image" src= "{{pic_url}}">
+                {{else}}
+                    <img id="preview_image" src= "/default_coffee.jpg">
+                {{/if}}
+                <br>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="Pic">Logo</label>
+                <div class="col-xs-4">
+                    <input multiple class = "file fileInput form-control" id="item-image" type="file" />
+                </div>
+                <br>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="name">Cafe Name</label>
+                <div class="col-xs-4">
+                    <input name="name" id="name" type="text" value="{{name}}" placeholder="Name of cafe" class="form-control"/>
+                </div>
+                <br>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="email">Email</label>
+                <div class="col-xs-4">
+                    <input type="email" id="email" value ="{{email}}" class="form-control"/>
+                </div>
+                <br>
+            </div>
+
+
+            <h2> Address</h2>
+            <div class = "form-group">
+                <p>Address Number:<input id="number" type="text" value="{{address.[0].number}}"/>
+                    <span>Floor:<input id="floor"  type="text" value="{{address.[0].floor}}"/></span></p>
+                <p>Building:<input id="building" type="text" value="{{address.[0].building}}"/>
+                    <span>Street/Soi:<input id="street" type="text" value="{{address.[0].street}}"/></span></p>
+                <p>Sub-District:<input id="subDist" type="text" value="{{address.[0].subDistrict}}"/>
+                    <span>District:<input id="dist" type="text" value="{{address.[0].district}}"/></span></p>
+                <p>Province:<input id="province" type="text" value="{{address.[0].province}}"/>
+                    <span>Country:<input id="country" type="text" value="{{address.[0].country}}"/></span></p>
+                <p>Postal Code:<input id="post" type="text" value="{{address.[0].postalCode}}"/>
+                    <span>Phone number:<input id="phone" type="text" value = "{{phone_numbers.[0].number}}"/></span></p>
+            </div>
+
+            <h2>iBeacon</h2>
+            <div class = "form-group">
+                <p>Major ID:<input id="major" type="text" value = "{{beacon_major}}"/></p>
+                <p>Minor ID:<input id="minor"  type="text" value="{{beacon_minor}}"/></p>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <a class="btn btn-primary submit" id="save-btn">Save</a>
+                    <a class="btn btn-danger delete" href= {{pathFor 'cafeInfoPage'}}>Back</a>
+                </div>
+            </div>
+
+        </form>
+
+</template>

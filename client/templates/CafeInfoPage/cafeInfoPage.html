@@ -15,7 +15,6 @@
     <div class="center">
         <div class="pageheader">
             <h1>Cafe Information</h1>
-
         </div>
         <div id="info-panel">
 
@@ -42,7 +41,7 @@
                 <tr><td class = "title">Logo:</td><td><p><img id="preview_image" src= {{pic_url}}></p></td></tr>
                 <tr><td class="title">Cafe Name:</td><td><p id="cafe-name">{{name}}</p></td></tr>
                 <tr><td class="title">Email:</td><td><p id="cafe-email">{{email}}</p></td></tr>
-                <tr><td class="title">Contact:</td><td><p id="cafe-contact">{{phone_numbers.number}}</p></td>
+                <tr><td class="title">Contact:</td><td><p id="cafe-contact">{{phone_numbers.[0].number}}</p></td>
                 </tr>
                 <tr>
                     <td class="title">Address Number:</td><td><p id="cafe-add-num">{{address.[0].number}}</p></td>
@@ -62,7 +61,7 @@
                 {{/with}}
             </table>
             {{#if findRestaurant}}
-            <button id="edit_info_butt" type="button">Edit</button>
+            <a href="{{pathFor 'cafeEdit'}}" class ="btn btn-default" id="edit_info_butt">Edit</a>
             {{else}}
             <div id="cre-new-res"><a href={{pathFor 'cafeRegisterPage'}}><button class = "btn btn-primary" type="button" id="new-res-button">New Restaurant</button></a></div>
             {{/if}}
