@@ -244,11 +244,15 @@ Template.menuPage.events({
             options.promotion = true;
         }else options.promotion = false;
 
-        if($('#type-drink').is(':checked')){
+        console.log($('#type').val());
+
+        if($('#type').val() == "1"){
             options.type = "drink";
         }else{
             options.type = "food";
         }
+
+        options.available = true;
 
         Meteor.call('menuInsert', options, function(error) {
             if (error) return alert(error.reason);
@@ -307,7 +311,7 @@ Template.menuPage.onRendered(function(){
     });
 
     //edit item
-    $('#edit_item_butt').on('click', function(){
+ /*   $('#edit_item_butt').on('click', function(){
         if($('#edit_item_butt').text() === 'Edit'){
             $('#drink-list').find('.menu').prop('disabled',true);
             $('#drink-list').find('.menu').css('active','disabled');
@@ -328,7 +332,7 @@ Template.menuPage.onRendered(function(){
             $('#edit_item_butt').text('Edit').css('background', '#24A8AF');
             $('#drink-list').find('.menu').prop('disabled',false);
         }
-    });
+    });*/
 
     //delete item from panel UI
     $('#delete_item_butt').on('click', function(){
@@ -366,7 +370,8 @@ Template.menuPage.onRendered(function(){
     //open add item pop-up
     $add_item_butt.on('click', function(event){
         event.preventDefault();
-        toggle_panel_visibility($add_item, $shadow_layer, $('body'));  
+        toggle_panel_visibility($add_item, $shadow_layer, $('body'));
+
     });
 
 
@@ -417,9 +422,10 @@ Template.menuPage.onRendered(function(){
 
     
     if($('#avail option').val() == "1"){
+
         $('#not-avail-shadow').removeClass('invisible');
     }else{
-        $('#not-avail-shadow').addClass('invisibleee');
+        $('#not-avail-shadow').addClass('invisible');
     }
 
     

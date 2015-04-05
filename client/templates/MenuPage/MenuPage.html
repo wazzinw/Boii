@@ -86,8 +86,18 @@
         <img id="preview_image" src= "/default_coffee.jpg">
         <div class="detail">
             <p class="browsepic">Picture:<input multiple class = "file fileInput" id="item-image" type="file"/></p>
-            <p class="type">Type: <input id="type-drink" type="radio" name="type" checked="checked"/>Drink
-                <input id="type-food" type="radio" name="type"/>Food</p>
+
+            <div class="type">
+                <label class="col-sm-2 control-label" for="type">Type</label>
+            <div class="col-xs-4">
+                <select class="form-control" name="type" id="type">
+                    <option value="1">Drink</option>
+                    <option value="2">Food</option>
+                </select>
+            </div>
+            </div>
+            <br>
+
             <p>Promotion: <input type="checkbox" id="promotion" value=true></p>
             <p>Valid Until: <input type="date" id = "validTill"></p>
             <p>Name: <input id="name-input" type="text"/></p>

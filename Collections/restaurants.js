@@ -26,7 +26,14 @@ Meteor.methods({
         Restaurants.update({_id: id},
             { $push: { menu: menu_id }});
 
+    },
+
+    restaurantUpdate: function(id,restAttributes) {
+        //check(Meteor.userId(), String);
+        console.log(restAttributes);
+        Restaurants.update({_id: id}, {$set: restAttributes});
     }
+
 });
 
 

@@ -4,7 +4,7 @@
 
 var pic_url;
 
-Template.menuEdit.helpers({
+Template.cafeEdit.helpers({
 
     'FormatDate':function(date) {
         return moment(date).format("YYYY-MM-DD");
@@ -12,7 +12,7 @@ Template.menuEdit.helpers({
 
 });
 
-Template.menuEdit.events({
+Template.cafeEdit.events({
     'change .fileInput': function (event, template) {
         FS.Utility.eachFile(event, function(file){
             var fileObject = new FS.File(file);
@@ -31,13 +31,11 @@ Template.menuEdit.events({
     'click #save-btn': function(event,template){
 
         console.log("Submit form");
-        var menuId = $('#title').data('id');
-        console.log("current menu id = " + menuId);
-        var restId = Meteor.user().profile.restaurant_id;
-        var currentMenu = Menus.findOne({_id: menuId});
 
-        options = {};
-        options.name = $('#name').val();
+        var restId = Meteor.user().profile.restaurant_id;
+        var currentRest = Restaurants.findOne({_id: restId});
+
+        var options = {};
 
         if(pic_url){
             console.log("pic url = "+ pic_url);
@@ -45,28 +43,48 @@ Template.menuEdit.events({
         }
 
 
-        options.valid_until = $('#validTill').val();
-        options.price = $('#price').val();
+        var address = {};
+        var phone ={};
+
+        options.name = $('#name').val();
+        options.email = $('#email').val();
+
+
+        address.number = $('#number').val();
+        address.floor = $('#floor').val();
+        address.building= $('#building').val();
+        address.street= $('#street').val();
+        address.subDistrict= $('#subDist').val();
+        address.district= $('#dist').val();
+        address.province=  $('#province').val();
+        address.country= $('#country').val();
+        address.postalCode= $('#post').val();
+
+        console.log(address);
+
+        options.address = [];
+        options.address.push(address);
+
+        phone.type = "work";
+        phone.number = $('#phone').val();
+
+
+        options.phone_numbers = [];
+        options.phone_numbers.push(phone);
+
+        options.beacon_major = $('#major').val();
+        options.beacon_minor = $('#minor').val();
         options.updated_at = new Date();
 
-        if($('#avail').val() == "1"){
-            options.available = true;
-        }else{
-            options.available = false;
-        }
-
-        if ($('#promotion').is(':checked')) {
-            options.promotion = true;
-        } else options.promotion = false;
 
 
         console.log(options);
 
-        Meteor.call('menuUpdate', options, menuId, function (error) {
+        Meteor.call('restaurantUpdate',restId, options, function (error) {
             if (error) return alert(error.reason);
             else {
                 window.alert("SUCCESSFULLY UPDATED");
-                Router.go('menuInfo', currentMenu);
+                Router.go('cafeInfoPage');
 
             }
         });
@@ -76,7 +94,7 @@ Template.menuEdit.events({
 
 });
 
-Template.menuEdit.onRendered(function(){
+Template.cafeEdit.onRendered(function(){
 
     function preview(input) {
         if (input.files && input.files[0]) {

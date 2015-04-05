@@ -95,7 +95,11 @@ Menus.attachSchema( new SimpleSchema({
     updated_at: {
         type: Date,
         label: "time of update"
+    },
 
+    available: {
+        type: Boolean,
+        label: "menu availability"
     }
 
 })
