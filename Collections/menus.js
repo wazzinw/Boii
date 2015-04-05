@@ -40,7 +40,11 @@ Meteor.methods({
 
     },
 
-    menuUpdate: function(){
+    menuUpdate: function(menuAttributes,menuId){
+        console.log("Updating Menu");
+        console.log(menuAttributes);
+        Menus.update({_id: menuId}, {$set: menuAttributes});
+
 
     }
 });

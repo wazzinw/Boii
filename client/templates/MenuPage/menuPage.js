@@ -292,46 +292,6 @@ Template.menuPage.onRendered(function(){
 
 
 
-    //add item to cart
-    /*  $('#drink-list').on('click', 'button', function () {
-        var item_name = $(this).find('h3').text(),
-            item_price = $(this).find('h4').text(),
-            count = 0;
-        for(i = 0; i <= cart_length; i++) {
-            if($('#item'+i).find('.cd-name').text() === item_name){
-                var val = parseInt($('#item'+i).find('.cd-qty').text(),10);
-                var newVal = val+1;
-                $('#item'+i).find('.cd-qty').text(newVal+'x');
-                count++;
-                var total = parseInt($('.cd-cart-total span').text(),10);
-                var newTotal = total+parseInt(item_price.substr(1),10);
-                $('.cd-cart-total span').text(newTotal+' Baht');
-            }
-        }
-        if(count == 0)
-        {
-            var qty = 0; 
-            $cart_list.append('<li class="item"><span class="cd-qty">' + (++qty) + 'x</span><span class="cd-name">' + item_name + '</span><div class="cd-price">' + item_price + '</div><a href="#0" class="cd-item-remove"><span>Remove</span></a></li>');
-            $('li').last().attr('id', 'item'+(cart_length++) );
-            var total = parseInt($('.cd-cart-total span').text(),10);
-            var newTotal = total+parseInt(item_price.substr(1),10);
-            $('.cd-cart-total span').text(newTotal+' Baht');
-        }
-    });
-*/
-
-    //remove item from cart
-    // $('#cd-cart-item').on('click','a', function(){          
-    //     var total = parseInt($('.cd-cart-total span').text(),10);
-    //     var price = parseInt($(this).closest('li').find('.cd-price').text().substr(1),10);
-    //     var qty = parseInt($(this).closest('li').find('.cd-qty').text(),10);
-    //     var newTotal = total-(price*qty);
-    //     $('.cd-cart-total span').text(newTotal + ' Baht');
-    //     $(this).closest('li').remove(); 
-    // });
-
-
-
     //choose category
     $food_butt.on('click',function(){
         $drink_butt.removeClass('selected');
