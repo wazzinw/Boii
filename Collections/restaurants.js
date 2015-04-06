@@ -4,8 +4,10 @@ Meteor.methods({
     restaurantInsert: function(restAttributes) {
         //check(Meteor.userId(), String);
         var user = Meteor.user();
-        var restId = Restaurants.insert(restAttributes);
-        return restId
+        var id = Restaurants.insert(restAttributes);
+        console.log(id);
+        Meteor.users.update( { _id: Meteor.userId() }, { $set: { "profile.restaurant_id" : id}} );
+
          },
 
     deleteMenuID: function(id, newArray){
@@ -20,7 +22,7 @@ Meteor.methods({
 
     addMenuID: function(id, menu_id){
        // check(id, String);
-        //check(menu_id, String);
+       //check(menu_id, String);
 
         console.log("menu_id: "+ menu_id);
         Restaurants.update({_id: id},
@@ -40,12 +42,14 @@ Meteor.methods({
 var PhoneSchema = new SimpleSchema({
     type: {
         type: String,
-        max: 100
+        max: 100,
+        allowedValues: ['work', 'home']
     },
     number: {
         type: String,
         max: 20,
-        min:8
+        min: 8,
+        regEx: /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{2,3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/
 
     }
 });
@@ -53,11 +57,11 @@ var PhoneSchema = new SimpleSchema({
 var AddressSchema = new SimpleSchema({
     number: {
         type: String,
-        max: 5
+        max: 10
     },
     floor: {
         type: String,
-        max: 5
+        max: 3
     },
     building: {
         type: String,
@@ -73,6 +77,7 @@ var AddressSchema = new SimpleSchema({
         type: String,
         max: 100
     },
+
     district: {
         type: String,
         max: 100
@@ -106,20 +111,26 @@ RestaurantsSchema =  new SimpleSchema({
 
     beacon_major: {
         type: String,
+        min: 0,
+        max: 65535,
         label: "majorID of iBeacon",
         optional: true
     },
 
     beacon_minor: {
-        type: String,
+        type: Number,
         label: "minorID of iBeacon",
+        min: 0,
+        max: 65535,
         optional: true
 
     },
 
     email: {
         type: String,
-        label: "Restaurant Email"
+        label: "Restaurant Email",
+        regEx: SimpleSchema.RegEx.Email
+
     },
 
     address: {
@@ -142,7 +153,9 @@ RestaurantsSchema =  new SimpleSchema({
 
     created_at: {
         type: Date,
-        label: "time of creation"
+        label: "time of creation",
+        denyUpdate: true
+
 
     },
     updated_at: {

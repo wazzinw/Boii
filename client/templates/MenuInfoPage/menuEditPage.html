@@ -5,7 +5,12 @@
     
     <form class="form-horizontal">
         <div>
+            {{#if pic_url}}
             <img id="preview_image" src= "{{pic_url}}">
+            {{else}}
+                <img id="preview_image" src= "/default_coffee.jpg">
+
+            {{/if}}
             <br>
         </div>
 
@@ -63,8 +68,13 @@
             <label class="col-sm-2 control-label" for="price">Availability</label>
             <div class="col-xs-4">
                 <select class="form-control" name="avail" id="avail">
+                    {{#if avaiable}}
                     <option value="1">Available</option>
                     <option value="2">Not Available</option>
+                    {{else}}
+                        <option value="1">Available</option>
+                        <option value="2" selected>Not Available</option>
+                    {{/if}}
                 </select>
             </div>
         </div>

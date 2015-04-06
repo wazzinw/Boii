@@ -180,6 +180,8 @@ Template.menuPage.events({
         Meteor.call('createOrder', params, function(error, result){
             if(!error){
                 Session.set('cart', {});
+                console.log("new order created");
+                Router.go('orderListPage');
             }
         });
     },

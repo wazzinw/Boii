@@ -43,7 +43,13 @@
                         <h3>{{name}}</h3>
                         <h4>฿ {{price}}</h4>
                     </button>
-                    <p><a href = "{{pathFor 'menuInfo'}}" class="btn btn-link">Details</a></p><button type="button" class="delete-btn">X</button>
+                    <p><a href = "{{pathFor 'menuInfo'}}" class="btn btn-link">Details</a></p>
+                    <button type="button" class="delete-btn">X</button>
+                    {{#if available}}
+                        <div id="not-avail-shadow" class="invisible"></div>
+                    {{else}}
+                        <div id="not-avail-shadow"></div>
+                    {{/if}}
                 </li>
                 {{/each}}
             </ul>
@@ -107,8 +113,8 @@
 
             <p>Promotion: <input type="checkbox" id="promotion" value=true></p>
             <p>Valid Until: <input type="date" id = "validTill"></p>
-            <p>Name: <input id="name-input" type="text"/></p>
-            <p>Price: <input id="price-input" type="text"/></p>
+            <p>Name: <input id="name-input" type="text" placeholder="Coffee"/></p>
+            <p>Price: <input id="price-input" type="text" placeholder="20"/></p>
         </div>
         <div class="add_button">
             <button id="add-to-save-butt">Add</button>

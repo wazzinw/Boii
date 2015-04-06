@@ -17,7 +17,7 @@
                 {{#each orders}}
                 <tr class="order_row" data-id={{_id}}>
                     <td class="order_code"><p id="code">{{confirm_code}}</p></td>
-                    <td class="order_time"><p id="time">{{created_at.getHours}}:{{created_at.getMinutes}}</p></td>
+                    <td class="order_time"><p id="time">{{formatTime created_at}}</p></td>
                     <td class="order_date"><p id="date">{{created_at.toDateString}}</p></td>
 
                     <td class="order_items">

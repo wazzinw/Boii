@@ -49,6 +49,9 @@ Template.orderListPage.helpers({
     },
     isApproving: function(order_status){
         return order_status ==='approving';
+    },
+    formatTime: function(time){
+        return moment(time).format('LTS');
     }
 });
 

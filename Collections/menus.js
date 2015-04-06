@@ -53,6 +53,7 @@ Menus.attachSchema( new SimpleSchema({
     name: {
         type: String,
         label: "name of menu"
+
     },
 
     pic_url: {
@@ -74,22 +75,29 @@ Menus.attachSchema( new SimpleSchema({
 
     price: {
         type: Number,
-        label: "price of the product"
+        label: "price of the product",
+        min: 0,
+        max: 1000000
     },
 
     type: {
         type: String,
-        label: "food/drink"
+        label: "food/drink",
+        allowedValues: ["food", "drink"]
+
     },
 
     restaurant_name: {
         type: String,
-        label: "name of restaurant"
+        label: "name of restaurant",
+        max: 50
     },
 
     created_at: {
         type: Date,
-        label: "time of creation"
+        label: "time of creation",
+        denyUpdate: true
+
 
     },
     updated_at: {
