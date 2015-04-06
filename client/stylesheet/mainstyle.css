@@ -230,7 +230,9 @@ html{
 
 
 /*---------------------------------MENU LIST-------------------------------------*/
-
+.invisible{
+    display: none;
+}
 #drink-list,  #food-list{
     list-style: none;
     height: 600px;
@@ -261,7 +263,7 @@ html{
     bottom: 40px;
 }
 /*#drink-list input, #food-list input{
-    color: black;
+color: black;
 }*/
 #drink-list .menu:hover, #food-list .menu:hover{
     cursor: pointer;
@@ -497,6 +499,16 @@ html{
     border-radius: 5px;
     background: rgba(67, 87, 121, 0.6);
     z-index: 2;
+
+}
+#not-avail-shadow.invisible{
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    top: 20px;
+    border-radius: 5px;
+    background: rgba(67, 87, 121, 0.6);
+    z-index: 2;
     display: none;
 }
 
@@ -633,6 +645,36 @@ html{
 #back_item_butt:active{
     background: #FDA2A2;
 }
+
+/*------------------------------Edit Item----------------------------------------*/
+
+.edit-panel{
+    width: 40%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    background-color: #FFFFF0;
+    border-radius: 10px;
+}
+.form-group{
+    margin-left: 50px;
+}
+.edit-panel a{
+    height: 50px;
+    margin-left: 10%;
+    width: 100px;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.col-xs-4{
+    width: 300px;
+    margin-left: 0px;
+}
+
 
 /*------------------------------Order--------------------------------------------*/
 

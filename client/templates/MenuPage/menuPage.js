@@ -20,9 +20,7 @@ Template.menuPage.helpers({
         var rest;
         if(userAvailable()){
             var user = Meteor.user();
-            //rest = Restaurants.findOne({_id: user.profile.restaurant_id});
             rest = Restaurants.find().fetch();
-            console.log("HELLOOOOOOOOO");
         }
         else{
             console.log("food: no user found");
@@ -97,6 +95,9 @@ Template.menuPage.helpers({
 
         return sum;
     }
+
+
+
 });
 
 Template.menuPage.events({
@@ -107,7 +108,6 @@ Template.menuPage.events({
         console.log("drink menu clicked");
 
         var id = $(event.currentTarget).closest('.drink-item').data('id');
-
         console.log(id);
 
         var cart = Session.get('cart') || {};
@@ -279,6 +279,14 @@ Template.menuPage.events({
 
 });
 
+    function checkAvail(){
+
+            //var menuArray = Menus.find();
+
+
+    }
+
+
 Template.menuPage.onRendered(function(){
     var $menu_navigation = $('#main-nav'),
         $cart_trigger = $('#cd-cart-trigger'),
@@ -420,13 +428,6 @@ Template.menuPage.onRendered(function(){
         preview(this);
     });
 
-    
-    if($('#avail option').val() == "1"){
-
-        $('#not-avail-shadow').removeClass('invisible');
-    }else{
-        $('#not-avail-shadow').addClass('invisible');
-    }
 
     
     function toggle_panel_visibility ($lateral_panel, $background_layer, $body) {
