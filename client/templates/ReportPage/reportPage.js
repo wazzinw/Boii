@@ -30,7 +30,7 @@ var orderByDate = function(month){
         var date = order.created_at.getDate();
         data.series[0][date-1]++;
     });
-    new Chartist.Bar('#orderByD ate', data);
+    new Chartist.Bar('#orderByDate', data);
 }
 
 

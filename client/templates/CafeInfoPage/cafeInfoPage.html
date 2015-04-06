@@ -38,7 +38,13 @@
 
             <table id="cafe-info">
                 {{#with findRestaurant}}
-                <tr><td class = "title">Logo:</td><td><p><img id="preview_image" src= {{pic_url}}></p></td></tr>
+                <tr>
+                    {{#if pic_url}}
+                    <td class = "title">Logo:</td><td><p><img id="preview_image" src= {{pic_url}}></p></td>
+                    {{else}}
+                    <td class = "title">Logo:</td><td><p><img id="preview_image" src= {{pic_url}}></p></td>
+                    {{/if}}
+                </tr>
                 <tr><td class="title">Cafe Name:</td><td><p id="cafe-name">{{name}}</p></td></tr>
                 <tr><td class="title">Email:</td><td><p id="cafe-email">{{email}}</p></td></tr>
                 <tr><td class="title">Contact:</td><td><p id="cafe-contact">{{phone_numbers.[0].number}}</p></td>
@@ -58,6 +64,10 @@
                     <td class="title">Country:</td><td><p id="cafe-country">{{address.[0].country}}</p></td>
                     <td class="title">Post Code:</td><td><p id="cafe-postcode">{{address.[0].postalCode}}</p></td>
                 </tr>
+                    <tr>
+                        <td class="title">MajorID:</td><td><p id="cafe-province">{{beacon_major}}</p></td>
+                        <td class="title">MinorID:</td><td><p id="cafe-country">{{beacon_minor}}</p></td>
+                    </tr>
                 {{/with}}
             </table>
             {{#if findRestaurant}}

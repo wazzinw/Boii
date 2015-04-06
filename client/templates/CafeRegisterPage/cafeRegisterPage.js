@@ -79,12 +79,13 @@ Template.cafeRegisterPage.events({
         option.updated_at = new Date();
         option.pic_url = pic_url;
 
-        var restID = Meteor.call('restaurantInsert', option, function(error, result) {
-            if (error) return alert(error.reason);
+       Meteor.call('restaurantInsert', option, function(error, result) {
+            if (error){
+                window.alert(error.reason);
+            }
             else{
                 window.alert(option.name+" is added");
-                console.log("New restaurant id: "+ restID);
-                Meteor.users.update( { _id: Meteor.userId() }, { $set: { 'profile.restaurant_id': restID}} );
+                //console.log("New restaurant id: "+ restID);
                 Router.go('cafeInfoPage');
             }
         });

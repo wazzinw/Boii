@@ -83,6 +83,17 @@ html{
 .container{
     width: 100%;
 }
+.badge{
+    background-color: #D9534F;
+    color: #fff;
+    min-height: 13px;
+    display: block;
+    position: absolute;
+    top: 92px;
+    height: 16px;
+    left: 85px;
+
+}
 
 /*------------------------------------OVERVIEW-----------------------------------*/
 
@@ -407,7 +418,7 @@ color: black;
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
     border-radius: 50%;
-    background: url("/remove.png") center center;
+    background: url('/remove.png') center center;
     background-size: 40px 40px;
     background-repeat: no-repeat;
     height: 50px;
@@ -501,16 +512,7 @@ color: black;
     z-index: 2;
 
 }
-#not-avail-shadow.invisible{
-    position: absolute;
-    width: 200px;
-    height: 100px;
-    top: 20px;
-    border-radius: 5px;
-    background: rgba(67, 87, 121, 0.6);
-    z-index: 2;
-    display: none;
-}
+
 
 /*---------------------------------Add ITEM--------------------------------------*/
 #add_item{
@@ -818,6 +820,7 @@ color: black;
 .order_action{
     width: 300px;
 }
+
 .item_button button{
     width: 100px;
     height: 80px;
