@@ -254,7 +254,7 @@ Template.menuPage.events({
         options.restaurant_name = rest.name;
         options.created_at = new Date();
         options.updated_at = new Date();
-
+        
 
         if($('#promotion').is(':checked')){
             options.promotion = true;
@@ -443,6 +443,7 @@ Template.menuPage.onRendered(function(){
     $('#item-image').on('change', function(){
         preview(this);
     });
+
 
 
 

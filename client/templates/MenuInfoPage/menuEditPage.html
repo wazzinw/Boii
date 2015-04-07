@@ -1,100 +1,102 @@
 
 <template name="menuEdit">
-    <h1 id = "title" data-id={{_id}}>Edit Menu</h1>
+    <div class="pageheader">
+        <h1 id = "title" data-id={{_id}}>Edit Menu</h1>
+    </div>
 
-    
-    <form class="form-horizontal">
-        <div>
-            {{#if pic_url}}
-            <img id="preview_image" src= "{{pic_url}}">
-            {{else}}
+    <div class="edit-panel">
+        <form class="form-horizontal">
+            <div>
+                {{#if pic_url}}
+                <img id="preview_image" src= "{{pic_url}}">
+                {{else}}
                 <img id="preview_image" src= "/default_coffee.jpg">
 
-            {{/if}}
-            <br>
-        </div>
-
-
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="Pic">Picture</label>
-            <div class="col-xs-4">
-                <input multiple class = "file fileInput form-control" id="item-image" type="file" />
-            </div>
-            <br>
-        </div>
-
-        
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="type">Type</label>
-            <div class="col-xs-4">
-                <p class="form-control-static">{{type}}</p>
-            </div>
-            <br>
-        </div>
-
-
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="name">Name</label>
-            <div class="col-xs-4">
-                <input name="name" id="name" type="text" value="{{name}}" placeholder="Name of menu" class="form-control"/>
-            </div>
-            <br>
-        </div>
-
-
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="promotion">Promotion</label>
-            <div class="col-xs-4">
-                {{#if promotion}}
-                <input name="promotion" id="promotion" type="checkbox" checked />
-                {{else}}
-                <input name="promotion" id="promotion" type="checkbox" />
                 {{/if}}
+                <br>
             </div>
-            <br>
-        </div>
 
 
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="price">Valid Until</label>
-            <div class="col-xs-4">
-                <input name="validTill" id="validTill" type="date" value="{{FormatDate valid_until}}" class="form-control"/>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="Pic">Picture</label>
+                <div class="col-xs-4">
+                    <input multiple class = "file fileInput form-control" id="item-image" type="file" />
+                </div>
+                <br>
             </div>
-            <br>
-        </div>
-        
-        
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="price">Availability</label>
-            <div class="col-xs-4">
-                <select class="form-control" name="avail" id="avail">
-                    {{#if avaiable}}
-                    <option value="1">Available</option>
-                    <option value="2">Not Available</option>
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="type">Type</label>
+                <div class="col-xs-4">
+                    <p class="form-control-static">{{type}}</p>
+                </div>
+                <br>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="name">Name</label>
+                <div class="col-xs-4">
+                    <input name="name" id="name" type="text" value="{{name}}" placeholder="Name of menu" class="form-control"/>
+                </div>
+                <br>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="promotion">Promotion</label>
+                <div class="col-xs-4">
+                    {{#if promotion}}
+                    <input name="promotion" id="promotion" type="checkbox" checked />
                     {{else}}
+                    <input name="promotion" id="promotion" type="checkbox" />
+                    {{/if}}
+                </div>
+                <br>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="price">Valid Until</label>
+                <div class="col-xs-4">
+                    <input name="validTill" id="validTill" type="date" value="{{FormatDate valid_until}}" class="form-control"/>
+                </div>
+                <br>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="price">Availability</label>
+                <div class="col-xs-4">
+                    <select class="form-control" name="avail" id="avail">
+                        {{#if avaiable}}
+                        <option value="1">Available</option>
+                        <option value="2">Not Available</option>
+                        {{else}}
                         <option value="1">Available</option>
                         <option value="2" selected>Not Available</option>
-                    {{/if}}
-                </select>
+                        {{/if}}
+                    </select>
+                </div>
             </div>
-        </div>
 
-        
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="price">Price</label>
-            <div class="col-xs-4">
-                <input name="price" id="price" type="text" value="{{price}}" placeholder="Price of menu" class="form-control"/>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="price">Price</label>
+                <div class="col-xs-4">
+                    <input name="price" id="price" type="text" value="{{price}}" placeholder="Price of menu" class="form-control"/>
+                </div>
+                <br>
             </div>
-            <br>
-        </div>
 
 
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <a class="btn btn-primary submit" id="save-btn">Save</a>
-                <a class="btn btn-danger delete" href= {{pathFor 'menuInfo'}}>Back</a>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <a class="btn btn-primary submit" id="save-btn">Save</a>
+                    <a class="btn btn-danger delete" href= {{pathFor 'menuInfo'}}>Back</a>
+                </div>
             </div>
-        </div>
+        </form>
+    </div>
 
-    </form>
 </template>

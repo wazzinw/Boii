@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3757415f-3c7c-4f1f-be06-ad4d897b43a6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html" afterPath="$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/layout/layout.html" afterPath="$PROJECT_DIR$/client/templates/layout/layout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/MenuInfoPage/MenuInfoPage.html" afterPath="$PROJECT_DIR$/client/templates/MenuInfoPage/MenuInfoPage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/stylesheet/mainstyle.css" afterPath="$PROJECT_DIR$/client/stylesheet/mainstyle.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/MenuInfoPage/menuEditPage.html" afterPath="$PROJECT_DIR$/client/templates/MenuInfoPage/menuEditPage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/MenuInfoPage/menuEditPage.js" afterPath="$PROJECT_DIR$/client/templates/MenuInfoPage/menuEditPage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/MenuPage/menuPage.js" afterPath="$PROJECT_DIR$/client/templates/MenuPage/menuPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="boii.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +33,7 @@
       <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/templates/layout/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.8333333" vertical-offset="283" max-vertical-offset="960">
+            <state vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="960">
               <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
               <folding />
             </state>
@@ -43,28 +43,28 @@
       <file leaf-file-name="mainstyle.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/stylesheet/mainstyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1050" max-vertical-offset="14475">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1440" max-vertical-offset="14985">
               <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuPage.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MenuPage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19940916" vertical-offset="495" max-vertical-offset="2025">
+            <state vertical-scroll-proportion="-5.625" vertical-offset="495" max-vertical-offset="2025">
               <caret line="42" column="46" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menuPage.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="menuPage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/templates/MenuPage/menuPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="2145">
-              <caret line="103" column="5" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.4436519" vertical-offset="4339" max-vertical-offset="5040">
+              <caret line="447" column="0" selection-start-line="447" selection-start-column="0" selection-end-line="447" selection-end-column="0" />
               <folding>
                 <element signature="e#733#829#0" expanded="false" />
                 <element signature="e#1011#1423#0" expanded="false" />
@@ -72,20 +72,10 @@
                 <element signature="e#1451#1988#0" expanded="false" />
                 <element signature="e#2013#2050#0" expanded="false" />
                 <element signature="e#2079#2532#0" expanded="false" />
-                <element signature="e#2567#7451#0" expanded="false" />
                 <element signature="e#3942#4950#0" expanded="false" />
                 <element signature="e#5025#5453#0" expanded="false" />
                 <element signature="e#5526#5986#0" expanded="false" />
-                <element signature="e#6064#7448#0" expanded="false" />
                 <element signature="n#!!block;n#checkAvail#0" expanded="false" />
-                <element signature="e#8584#9574#0" expanded="false" />
-                <element signature="e#9657#10008#0" expanded="false" />
-                <element signature="e#10084#10627#0" expanded="false" />
-                <element signature="e#10706#10816#0" expanded="false" />
-                <element signature="e#10902#11001#0" expanded="false" />
-                <element signature="e#11044#11552#0" expanded="false" />
-                <element signature="e#11856#12364#0" expanded="false" />
-                <element signature="e#12432#12462#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -148,8 +138,8 @@
         <option value="$PROJECT_DIR$/client/templates/layout/layout.js" />
         <option value="$PROJECT_DIR$/client/templates/layout/layout.html" />
         <option value="$PROJECT_DIR$/client/stylesheet/mainstyle.css" />
-        <option value="$PROJECT_DIR$/client/templates/MenuPage/menuPage.js" />
         <option value="$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html" />
+        <option value="$PROJECT_DIR$/client/templates/MenuPage/menuPage.js" />
       </list>
     </option>
   </component>
@@ -185,6 +175,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -299,7 +290,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -340,10 +330,14 @@
       <ConfigurationWrapper RunnerId="Basic" />
       <method />
     </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <method />
     </configuration>
-    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -351,10 +345,6 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="Chrome" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="NodeJSRemoteDebug" factoryName="Node.js Remote Debug">
@@ -374,11 +364,11 @@
       </meteor-runner-state>
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="NodeWebKit" factoryName="Node-webkit">
       <option name="name" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
@@ -481,8 +471,6 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20611285" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3196159" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -490,7 +478,9 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3196159" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -706,7 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7061341" vertical-offset="0" max-vertical-offset="701">
           <caret line="33" column="3" selection-start-line="22" selection-start-column="0" selection-end-line="33" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -721,7 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="701">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -781,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08559201" vertical-offset="0" max-vertical-offset="701">
           <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -858,7 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28212702" vertical-offset="94" max-vertical-offset="1185">
           <caret line="19" column="81" selection-start-line="19" selection-start-column="81" selection-end-line="19" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -882,16 +868,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/layout/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8333333" vertical-offset="283" max-vertical-offset="960">
+        <state vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="960">
           <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.625" vertical-offset="495" max-vertical-offset="2025">
+          <caret line="42" column="46" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/MenuPage/menuPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="2145">
-          <caret line="103" column="5" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.4436519" vertical-offset="4339" max-vertical-offset="5040">
+          <caret line="447" column="0" selection-start-line="447" selection-start-column="0" selection-end-line="447" selection-end-column="0" />
           <folding>
             <element signature="e#733#829#0" expanded="false" />
             <element signature="e#1011#1423#0" expanded="false" />
@@ -899,29 +893,11 @@
             <element signature="e#1451#1988#0" expanded="false" />
             <element signature="e#2013#2050#0" expanded="false" />
             <element signature="e#2079#2532#0" expanded="false" />
-            <element signature="e#2567#7451#0" expanded="false" />
             <element signature="e#3942#4950#0" expanded="false" />
             <element signature="e#5025#5453#0" expanded="false" />
             <element signature="e#5526#5986#0" expanded="false" />
-            <element signature="e#6064#7448#0" expanded="false" />
             <element signature="n#!!block;n#checkAvail#0" expanded="false" />
-            <element signature="e#8584#9574#0" expanded="false" />
-            <element signature="e#9657#10008#0" expanded="false" />
-            <element signature="e#10084#10627#0" expanded="false" />
-            <element signature="e#10706#10816#0" expanded="false" />
-            <element signature="e#10902#11001#0" expanded="false" />
-            <element signature="e#11044#11552#0" expanded="false" />
-            <element signature="e#11856#12364#0" expanded="false" />
-            <element signature="e#12432#12462#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19940916" vertical-offset="495" max-vertical-offset="2025">
-          <caret line="42" column="46" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
