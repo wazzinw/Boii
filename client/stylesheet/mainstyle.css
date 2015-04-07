@@ -83,7 +83,7 @@ html{
 .container{
     width: 100%;
 }
-.badge{
+#order-noti{
     background-color: #D9534F;
     color: #fff;
     min-height: 13px;
@@ -94,6 +94,7 @@ html{
     left: 85px;
 
 }
+
 
 /*------------------------------------OVERVIEW-----------------------------------*/
 

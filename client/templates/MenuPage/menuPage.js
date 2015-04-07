@@ -7,6 +7,13 @@ var cart_length = 0;
 Cart = new Mongo.Collection(null);
 var pic_url = "";
 
+function toggle_panel_visibility ($lateral_panel, $background_layer, $body) {
+    $lateral_panel.addClass('speed-in').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',                         function(){
+        $body.addClass('overflow-hidden');});
+    $background_layer.addClass('is-visible');
+    //}
+}
+
 
 function userAvailable() {
     // use Meteor.user() since it's available
@@ -98,6 +105,7 @@ Template.menuPage.helpers({
 
 
 
+
 });
 
 Template.menuPage.events({
@@ -106,6 +114,9 @@ Template.menuPage.events({
     //open drink category
     'click button.menu': function(event){
         console.log("drink menu clicked");
+        event.preventDefault();
+        toggle_panel_visibility($('#cd-cart'), $('#cd-shadow-layer'), $('body'));
+        $('#cd-shadow-layer').removeClass('is-visible');
 
         var id = $(event.currentTarget).closest('.drink-item').data('id');
         console.log(id);
@@ -126,6 +137,9 @@ Template.menuPage.events({
     //open food category
     'click button.food-menu': function(event){
         console.log("food menu clicked");
+        event.preventDefault();
+        toggle_panel_visibility($('#cd-cart'), $('#cd-shadow-layer'), $('body'));
+        $('#cd-shadow-layer').removeClass('is-visible');
 
         var id = $(event.currentTarget).closest('.food-item').data('id');
 
@@ -432,13 +446,6 @@ Template.menuPage.onRendered(function(){
 
 
 
-    function toggle_panel_visibility ($lateral_panel, $background_layer, $body) {
-        $lateral_panel.addClass('speed-in').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',                         function(){
-            $body.addClass('overflow-hidden');});
-        $background_layer.addClass('is-visible');
-        //}
-    }
-
     function preview(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -456,5 +463,4 @@ Template.menuPage.onRendered(function(){
 
 
 });
-
 

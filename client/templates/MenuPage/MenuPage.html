@@ -9,9 +9,11 @@
 
         <div id="menu-panel">
             <ul class="category">
-                <li><button id="drink-butt" class="selected" type="button">Drink</button></li>
+                <li><button id="drink-butt" type="button" class="selected">Drink</button></li>
                 <li><button id="food-butt" type="button">Food</button></li>
-                <button id="cd-cart-trigger" class="cart" type="button">Cart</button>
+                <button id="cd-cart-trigger" class="cart" type="button">
+                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Cart
+                </button>
             </ul>
 
             <ul id="drink-list">
@@ -36,7 +38,7 @@
             </ul>
 
 
-            <ul id="food-list">
+            <ul id="food-list" class="invisible">
                 {{#each foodMenu}}
                 <li id="item" class="food-item" data-id={{_id}} >
                     <button type="button" class="food-menu" data-available="{{available}}">
@@ -53,6 +55,7 @@
                 </li>
                 {{/each}}
             </ul>
+
             <div class="btn-panel">
                 <button id="add_item_butt" type="button">Add Item</button>
                 <button id="delete_item_butt" type="button">Delete</button>
