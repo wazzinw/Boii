@@ -21,7 +21,7 @@ Meteor.methods({
     },
 
     addMenuID: function(id, menu_id){
-       // check(id, String);
+       //check(id, String);
        //check(menu_id, String);
 
         console.log("menu_id: "+ menu_id);
