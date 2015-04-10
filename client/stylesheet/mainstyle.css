@@ -5,7 +5,7 @@ html{
     font-size: 16px;
     line-height: 1em;
     background-color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Lato, Arial, Helvetica, sans-serif;
 }
 #mainpage-header{
     height: 70px;
@@ -81,7 +81,7 @@ color: aliceblue;
 .container{
     width: 100%;
     padding: 0px;
-    background: url("texture_whitepaper.jpg");
+    background: url("/texture_whitepaper.jpg");
 }
 .container:after, .container:before{
     content: none;
@@ -104,7 +104,7 @@ color: aliceblue;
 /*------------------------------------OVERVIEW-----------------------------------*/
 
 #overview{
-    background: url("texture_bluewood.jpg");
+    background: url("/texture_bluewood.jpg");
     color: aliceblue;
     padding-top: 30px;
     height: auto;
@@ -162,7 +162,7 @@ max-height: 150px;
 /*------------------------------------FEATURES-----------------------------------*/
 
 #features{
-    background: url("texture_whitepaper.jpg");
+    background: url("/texture_whitepaper.jpg");
     color: #215877;
 }
 .features_table{
@@ -171,20 +171,23 @@ max-height: 150px;
     padding: 0px 40px;
 }
 .features_table li{
-    width: 300px;
     display: inline-block;
     margin: auto;
+    /*background-color: white;*/
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+
 }   
 .features_table h3{
     font-weight: bold;
-    text-decoration: underline;
+
 }
 
 /*------------------------------------CAFE LIST----------------------------------*/
 
 #cafelist{
     height: auto;
-    background: url("texture_cyantiles.jpg");
+    background: url("/texture_cyantiles.jpg");
 }
 #cafelist ul{
     margin: 0 auto;
@@ -423,7 +426,7 @@ color: black;
     font-weight: bold;
     text-transform: uppercase;
     margin: 1em 0;
-    text-decoration: underline
+
 }
 #cd-cart .cd-cart-items {
     padding: 0;
@@ -570,7 +573,7 @@ color: black;
     margin: 0 auto;
     width: 200px;
     margin-bottom: 50px;
-    text-decoration: underline;
+
 }
 .browsepic input{
     width: 70%;
@@ -896,6 +899,7 @@ color: black;
 }
 .report h1{
     margin-bottom: 20px;
+
 }
 .report select{
     width: 300px;
@@ -1008,7 +1012,7 @@ color: black;
 
 .footer{
     margin: auto;
-    background: url("texture_bluepaper.jpg");
+    background: url("/texture_bluepaper.jpg");
     color: aliceblue;
     border: 1px solid #919394;
     padding: 20px;
