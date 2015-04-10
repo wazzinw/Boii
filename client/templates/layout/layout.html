@@ -10,7 +10,6 @@
             {{#if currentUser}}
             <ul>
                 <li><a href={{pathFor 'orderListPage'}}>Order<span class="badge" id="order-noti">{{newOrder}}</span></a></li>
-
                 <li><a href={{pathFor 'menuPage'}}> Menu </a></li>
                 <li><a href={{pathFor 'reportPage'}}> Report </a></li>
                 <li><a href={{pathFor 'cafeInfoPage'}}> Cafe Information </a></li>
@@ -41,6 +40,7 @@
         {{>yield}}
     </div>
 
+<!--
     <div class="footer">
         <div class="foottext">
             <p>ICE Senior Project</p>
@@ -51,5 +51,19 @@
             </a>
         </div>
     </div>
+-->
+
+	<div class="footer">
+		<div class="fblogo">
+			<a href="http://www.facebook.com">
+				<img src="https://www.facebook.com/images/fb_icon_325x325.png"/>
+			</a>
+		</div>
+		<div class="foottext">
+			<h1>Boii</h1>
+			<h3>Call Center: 02-4567890</h3>
+		</div>
+	</div>
+
 
 </template>
