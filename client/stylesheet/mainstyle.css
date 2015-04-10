@@ -5,63 +5,60 @@ html{
     font-size: 16px;
     line-height: 1em;
     background-color: white;
-    font-family: Lato;
+    font-family: Arial, Helvetica, sans-serif;
 }
 #mainpage-header{
     height: 70px;
-    background-color: #2D94EE;
+    background: url("bg3.jpg");
+}
+#logo-div{
+    width: 220px;
+    float: left;
 }
 #mainpage-header span{
     font-size: 40px;
-    margin-left: 40px;
+    margin-left: 20px;
     position: relative;
-    top: 15px;
-    font-weight: bold;
+    top: 10px;
     text-shadow: 3px 2px 20px #333333;
-    color: #F1F5F8;
+    color: aliceblue;
 }
 #boii-logo{
     margin-left: 10px;
     max-height: 50px;
 }
-#logo{
-    margin-top: 10px;
-    margin-left: 10px;
-    max-height: 100px;
-}
-#contact {
-    float: right;
-    font-size: 18px;
-    padding: 10px 40px;
-    margin-top: 10px;
-    background-color: #D6DEE0;
-    border-radius: 100px 0px 0px 100px;
-    color: #153BFA;
-    font-weight: bold;
-    border: 5px solid #F0F1F1;  
-}
+/*#contact {
+float: right;
+font-size: 18px;
+padding: 10px 40px;
+margin-top: 10px;
+margin-right: 10px;
+background: url("texture_bluewood.jpg");
+border-radius: 100px 0px 0px 100px;
+border: 5px solid #F0F1F1;
+color: aliceblue;
+}*/
 
 /*------------------------------MENU BAR-----------------------------------------*/
 
 #mainpage-menu{
-    height: 60px;
     font-size: 20px;
+    height: 70px;
     font-weight: bold;
     text-shadow: 3px 2px 30px #333333;
-    background: #7C818C;
-    border: 1px solid #A8A8A8;
-    box-shadow: 0px 30px 30px 0px #B0B8C6 inset;
+    line-height: 40px;
 }
 #mainpage-menu li{
     display: inline-block;
     padding: 20px 30px;
 }
 #mainpage-menu a{
-    color: #F0F1F4;
+    color: aliceblue;
     text-decoration: none;
 }
-#mainpage-menu a:hover{
-    color: #F90;
+#mainpage-menu a:hover, #mainpage-header span:hover{
+    color: #617783;
+    text-decoration: none;
 }
 #mainpage-menu li:first-child {
     margin-left: -40px;
@@ -70,75 +67,103 @@ html{
     float: right;
 }
 .main_div{
-    border-top: 1px solid #919394;
-    padding: 5px;
-    margin: auto;
+    /*border-top: 1px solid #919394;*/
     width: 100%;
+    padding-bottom: 50px;
 }
 .main_div h1{
     text-align: center;
-    text-shadow: 3px 2px 50px #9FC7F1;
-    color: #67696B;
+    margin: 0px;
+    padding: 40px 0px 20px 0px;
 }
 .container{
     width: 100%;
+    padding: 0px;
+    background: url("texture_whitepaper.jpg");
+}
+.container:after, .container:before{
+    content: none;
 }
 #order-noti{
     background-color: #D9534F;
-    color: #fff;
-    min-height: 13px;
-    display: block;
-    position: absolute;
-    top: 92px;
-    height: 16px;
-    left: 85px;
-
+    color: aliceblue;
 }
-
-
+#mainpage-menu span{
+    position: absolute;
+    top: 25px;
+    left: 240px;
+    max-height: 15px;
+    font-size: 13px;
+    line-height: 7px;
+}
+#signIn .form-group{
+    margin-left: 0px;
+}
 /*------------------------------------OVERVIEW-----------------------------------*/
 
 #overview{
-    background: #CDEBFF;
-    box-shadow: 30px 90px 100px 0px #FFFFFF inset, -30px -30px 100px 0px #FFFFFF inset;
-    padding-bottom: 50px;
+    background: url("texture_bluewood.jpg");
+    color: aliceblue;
+    padding-top: 30px;
+    height: auto;
+    font-size: 16px;
 }
-.summary_table{
-    margin: 50px 50px;
-    text-align: center;
-    font-size: 20px;
+#overview ul{
+    margin: 0 auto;
+}
+#overview ul li{
+    display: inline-block;
+    height: 315px;
     margin: auto;
+    vertical-align: middle;
+}
+#overview ul li:last-child{
+    min-width: 300px;
+    max-width: 800px;
+    height: 315px;
+    padding: 50px 10em;
+}
+#overview-content span{
+    font-weight: bold;
+}
+/*
+
+.summary_table{
+margin: 50px 50px;
+text-align: center;
+font-size: 20px;
+margin: auto;
 
 }
 .summary_table li{
-    width: 300px;
-    padding-top: 20px;
-    display: inline-block;
+width: 300px;
+padding-top: 20px;
+display: inline-block;
 }
 .summary_table p{
-    width: 28functions0px;
-    height: 50px;
-    margin: auto;
-    margin-top: 1em;
+width: 28functions0px;
+height: 50px;
+margin: auto;
+margin-top: 1em;
 }
 .summary_table span{
-    font-weight: bold;
+font-weight: bold;
 }
 .summary_table #logo{
-    box-shadow: 10px 0px 20px 5px #FFFFFF, -10px -0px 20px 5px #FFFFFF;
-}
+box-shadow: 5px 0px 2px 2px #FFFFFF, -5px -0px 2px 2px #FFFFFF;
+max-height: 150px;
+}*/
 
 /*------------------------------------FEATURES-----------------------------------*/
 
 #features{
-    background: #FCBC8E;
-    box-shadow: 10px 90px 100px 0px #FFFFFF inset,-10px -30px 100px 0px #FFFFFF inset,30px 30px 100px 0px #FDCC82 inset, -30px -30px 100px 0px #FDCC82 inset;
-    padding-bottom: 50px;
+    background: url("texture_whitepaper.jpg");
+    color: #215877;
 }
 .features_table{
-    margin: 50px 50px;
     text-align: center;
     font-size: 20px;
+    padding: 0px 40px;
 }
 .features_table li{
     width: 300px;
@@ -154,8 +179,10 @@ html{
 
 #cafelist{
     height: auto;
-    background-color: #9AFF8F;
-    box-shadow: 10px 90px 100px 0px #FFFFFF inset,-10px -30px 100px 0px #FFFFFF inset,30px 30px 100px 0px #61FF4F inset, -30px -30px 100px 0px #61FF4F inset;
+    background: url("texture_cyantiles.jpg");
+}
+#cafelist ul{
+    margin: 0 auto;
 }
 #cafelist ul li{
     display: inline-block;
@@ -975,20 +1002,19 @@ color: black;
 
 .footer{
     margin: auto;
-    background-color: #2D94EE;
-    box-shadow: 30px 30px 100px 0px #FFFFFF inset, -30px -30px 100px 0px #FFFFFF inset;
+    background: url("texture_bluepaper.jpg");
+    color: aliceblue;
     border: 1px solid #919394;
+    padding: 20px;
 }
 .foottext{
-    position: relative;
-    bottom: 60px;
-    left: 200px;
+    margin: auto;
+    font-size: 20px;
+    width: 500px;
+    text-align: center;
 }
 .fblogo img{
-    max-height: 100px;
-    position: relative;
-    left: 60px;
-    top: 70px;
+    max-height: 60px;
     border: 3px solid white;
     border-radius: 10px;
 }

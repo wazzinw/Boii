@@ -1,16 +1,13 @@
 
 <template name = "layout">
-	<div id="mainpage-header">
-		<div>
-			<img id="boii-logo" src="/dish.png" />
-			<span>BOII</span>
-			<a id="contact">Contact Support: 02-1661215 </a>
-		</div>
-	</div>
-	
-	<div id="mainpage-menu">
+    <div id="mainpage-header">
+        <div id="logo-div">
+            <img id="boii-logo" src="/dish.png" />
+            <a href="/"><span>BOII</span></a>
+        </div>
+        <div id="mainpage-menu">
 
-	{{#if currentUser}}
+            {{#if currentUser}}
             <ul>
                 <li><a href={{pathFor 'orderListPage'}}>Order<span class="badge" id="order-noti">{{newOrder}}</span></a></li>
 
@@ -20,39 +17,39 @@
                 <li class="login-out"><a href={{pathFor 'entrySignOut'}}> Log Out </a></li>
 
             </ul>
-	{{else}}
+            {{else}}
 
 
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="#overview"> Overview </a></li>
-				<li><a href="#features"> Features </a></li>
-				<li><a href="#cafe"> Cafe with Us </a></li>
+            <ul>
+                <li><a href="#overview"> Overview </a></li>
+                <li><a href="#features"> Features </a></li>
+                <li><a href="#cafelist"> Cafe with Us </a></li>
                 <li class="login-out"><a href="/sign-in"> Log in </a></li>
             </ul>
 
 
-	{{/if}}
-			</div>
+            {{/if}}
+        </div>
+        <!--<a id="contact">Contact Support: 02-1661215 </a>-->
+    </div>
 
 
 
-	<div class="container">
-		{{>yield}}
-	</div>
 
-	<div class="footer">
-		<div class="fblogo">
-			<a href="http://www.facebook.com">
-				<img src="https://www.facebook.com/images/fb_icon_325x325.png"/>
-			</a>
-		</div>
-		<div class="foottext">
-			<h1>ICE Senior Project</h1>
-			<h2>Faculty of Engineering, Chulalongkorn University</h2>
-			<h3>Call Center: 02-4567890</h3>
-			<a href="http://www.google.co.th"> Privacy Policy </a>
-		</div>
-	</div>
+
+    <div class="container">
+        {{>yield}}
+    </div>
+
+    <div class="footer">
+        <div class="foottext">
+            <p>ICE Senior Project</p>
+            <p>Faculty of Engineering, Chulalongkorn University</p>
+            <p>Call Center: 02-4567890</p>
+            <a class="fblogo" href="http://www.facebook.com">
+                <img src="https://www.facebook.com/images/fb_icon_325x325.png"/>
+            </a>
+        </div>
+    </div>
 
 </template>
