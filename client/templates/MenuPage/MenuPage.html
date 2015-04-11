@@ -25,7 +25,7 @@
                         <h3>{{name}}</h3>
                         <h4>฿ {{price}}</h4>
                     </button>
-                    <p><a href = "{{pathFor 'menuInfo'}}" class="btn btn-link">Details</a></p>
+                    <p><a href = "{{pathFor 'menuInfo'}}" class="btn btn-link" id="item-detail">Details</a></p>
                     <button type="button" class="delete-btn">X</button>
                     {{#if available}}
                     <div id="not-avail-shadow" class="invisible"></div>
@@ -45,12 +45,12 @@
                         <h3>{{name}}</h3>
                         <h4>฿ {{price}}</h4>
                     </button>
-                    <p><a href = "{{pathFor 'menuInfo'}}" class="btn btn-link">Details</a></p>
+                    <p><a href = "{{pathFor 'menuInfo'}}" class="btn btn-link" id="item-detail">Details</a></p>
                     <button type="button" class="delete-btn">X</button>
                     {{#if available}}
-                        <div id="not-avail-shadow" class="invisible"></div>
+                    <div id="not-avail-shadow" class="invisible"></div>
                     {{else}}
-                        <div id="not-avail-shadow"></div>
+                    <div id="not-avail-shadow"></div>
                     {{/if}}
                 </li>
                 {{/each}}
@@ -93,7 +93,7 @@
         <a href="#0" class="close-cart-btn">Close Cart</a>
     </div>
 
-        <!-- cd-cart -->
+    <!-- cd-cart -->
 
 
     <!-- ADD ITEM -->
@@ -104,17 +104,17 @@
             <p class="browsepic">Picture:<input multiple class = "file fileInput" id="item-image" type="file"/></p>
 
             <div class="type">
-                <label class="col-sm-2 control-label" for="type">Type</label>
-            <div class="col-xs-4">
-                <select class="form-control" name="type" id="type">
-                    <option value="1">Drink</option>
-                    <option value="2">Food</option>
-                </select>
+                <p class="col-sm-2 control-label" for="type">Type:</p>
+                <div class="col-xs-4" id="type-select">
+                    <select class="form-control" name="type">
+                        <option value="1">Drink</option>
+                        <option value="2">Food</option>
+                    </select>
+                </div>
             </div>
+            <div>
+                <p id="label-promotion">Promotion: <input type="checkbox" id="promotion" value=true></p>
             </div>
-            <br>
-
-            <p>Promotion: <input type="checkbox" id="promotion" value=true></p>
             <p>Valid Until: <input type="date" id = "validTill"></p>
             <p>Name: <input id="name-input" type="text" placeholder="Coffee"/></p>
             <p>Price: <input id="price-input" type="text" placeholder="20"/></p>

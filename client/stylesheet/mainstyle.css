@@ -218,7 +218,7 @@ max-height: 150px;
     text-transform: uppercase; 
     text-shadow: 1px 1px 0 #000;
     margin: 10px 0 24px; 
-    background: url("texture_cyantiles.jpg");
+    background: url("texture_bluepaper.jpg");
     color: aliceblue;
     height: 50px;
     border-radius: 5px;
@@ -291,7 +291,7 @@ max-height: 150px;
     display: inline-block;
     margin: 20px;
 }
-#drink-list .menu, #food-list .menu{
+#drink-list .menu, #food-list .food-menu{
     width: 200px;
     height: 100px;
     padding-top: 12px;
@@ -303,61 +303,28 @@ max-height: 150px;
     position: relative;
     height: 50px;
     bottom: 1em;
+    font-size: 16px;
+    line-height: 25px;
 }
 #drink-list h4,#food-list h4{
     position: relative;
     bottom: 40px;
+    font-size: 15px;
 }
-/*#drink-list input, #food-list input{
-color: black;
-}*/
 #drink-list .menu:hover, #food-list .menu:hover{
     cursor: pointer;
 }
 #drink-list .menu:active, #food-list .menu:active{
     background: #2870F6;
 }
-#food-list{
-    list-style: none;
-    height: 600px;
-    max-width: 1440px;
-    overflow: auto;
-    position: absolute;
-    margin: auto;
-}
-#food-list li{
-    display: inline-block;
-    margin: 20px;
-}
-#food-list .food-menu{
-    width: 200px;
-    height: 100px;
-    padding-top: 12px;
-    border-radius: 20px;
-    background: #001034;
-    color: #FFFFFF;
-}
-#food-list .food-item h3{
-    position: relative;
-    height: 50px;
-    bottom: 1em;
-}
-#food-list h4{
-    position: relative;
-    bottom: 40px;
-}
-
-#food-list.invisible{
-    display: none;
-}
-#drink-list.invisible{
-    display: none;
-}
 #item p{
     position: relative;
     bottom: 30px;
     width: 50px;
     z-index: 3;
+}
+#item-detail{
+    color: aliceblue;
 }
 .delete-btn{
     height: 35px;
@@ -390,7 +357,7 @@ color: black;
 }
 #add_item_butt{
     width: 300px;
-    background: #8FC0C0;
+    background: #144060;
 }
 #delete_item_butt{
     margin-left: 30px;
@@ -558,10 +525,10 @@ color: black;
     margin:auto;
     padding-top: 50px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    z-index: 3 ;
-    background: white;
+    z-index: 3;
+    background: url("texture_whitepaper.jpg");
     display: none;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 #add_item.speed-in{
     display:block;
@@ -572,28 +539,54 @@ color: black;
     margin-bottom: 50px;
     text-decoration: underline;
 }
+.browsepic{
+    margin-top: 20px;
+    width: 600px;
+    height: 30px;
+}
 .browsepic input{
-    width: 70%;
+    width: 400px;
     border: 1px solid black;
+    position: relative;
+    bottom: 30px;
+    left: 70px;
+}
+#type-select{
+    padding: 0px;
+    position: relative;
+    right: 23px;
+    width: 150px;
 }
 .detail {
     margin-left: 10%;
-    font-size: 25px;
+    font-size: 20px;
 }
 .detail input{
     height: 30px;
     margin-left: 20px;
     font-size: 20px;
 }
+.type{
+    height: 40px;
+    width: 600px;
+}
+.type p{
+    padding: 0px;
+}
+#label-promotion{
+    width: 600px;
+}
+#label-promotion input{
+    position: relative;
+    top: 3px;
+    height: 20px;
+    width: 20px;
+}
 #name-input{
     width: 300px;
 }
 #price-input{
     margin-left: 30px;
-}
-#descrpt-input{
-    margin-left: 30px;
-    font-size: 15px;
 }
 .detail button{
     font-size: 20px;
@@ -612,17 +605,19 @@ color: black;
 }
 .add_button {
     margin: 0 auto;
-    width: 335px;
-    padding-bottom: 20px;
+    width: 300px;
+    padding: 20px 0px;
 }
 .add_button button{
-    width: 150px;
-    height: 80px;
-    font-size: 30px;
-    border-radius: 10px;
+    width: 100px;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 5px;
+    background: #144060;
+    color: aliceblue;
 }
 #cancel-add-butt{
-    margin-left: 30px;
+    margin-left: 50px;
 }
 #preview_image{
     display: block;
@@ -821,7 +816,7 @@ color: black;
     border-top-left-radius: 10px;
     padding: 15px 0px;
     background: url("texture_bluewood.jpg");
-    color: #FFFFFF;
+    color: aliceblue;
     height: 40px;
 }
 .order_table{
@@ -829,10 +824,11 @@ color: black;
     width: 100%;
 }
 .order_table th{
-    text-align: center
+    text-align: center;
 }
 .order_table tr{
     outline: 1px solid;
+    color: #215877;
 }
 .order_code{
     width: 100px;
@@ -994,7 +990,7 @@ color: black;
 #edit_info_butt{
     width: 150px;
     height: 60px;
-    background: #8FC0C0;
+    background: #144060;
     color: white;
     border-radius: 5px;
     font-size: 20px;
