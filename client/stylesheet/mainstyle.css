@@ -130,6 +130,8 @@ color: aliceblue;
 #overview-content{
     max-width: 400px;
     min-width: 200px;
+    position: relative;
+    bottom: 40px;
 }
 /*
 
@@ -173,8 +175,6 @@ max-height: 150px;
 .features_table li{
     display: inline-block;
     margin: auto;
-    /*background-color: white;*/
-    font-family: Lato, Arial, Helvetica, sans-serif;
     font-size: 18px;
 
 }   
@@ -187,7 +187,8 @@ max-height: 150px;
 
 #cafelist{
     height: auto;
-    background: url("/texture_cyantiles.jpg");
+    background: url("/texture_lightblue.jpg");
+    color: #215877;
 }
 #cafelist ul{
     margin: 0 auto;
@@ -961,21 +962,21 @@ max-height: 150px;
     margin: auto;
 }
 
-/*---------------------------------Info Panel------------------------------------*/
+/*----------------------------Cafe Info Panel------------------------------------*/
 
 #info-panel{
     margin: 0 auto;
     height: auto;
     min-width: 850px;
     max-width: 1200px;
-    border: 1px solid black;
+    border: 1px solid #215877;
     background-color: #FFFFF0;
     border-radius: 10px;
     padding-bottom: 20px;
     color: #215877;
 }
 #info-panel h2{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #215877;
     padding-bottom: 5px;
     margin-left: 10px;
 }
@@ -1001,6 +1002,39 @@ max-height: 150px;
     position: relative;
     margin-top: 20px;
     left: 45%;
+    line-height: 40px;
+}
+
+/*----------------------------Cafe Info Panel------------------------------------*/
+
+#cafe-edit-panel{
+    margin: 0 auto;
+    height: auto;
+    min-width: 850px;
+    max-width: 1200px;
+    border: 1px solid #215877;
+    background-color: #FFFFF0;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    color: #215877;
+    padding: 20px;
+}
+#cafe-edit-panel h2{
+    margin-left: 55px;
+    border-bottom: 1px solid #215877;
+}
+#edit-btn-panel{
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 20px;
+}
+#cancel-edit{
+    margin-left: 50px;
+}
+#edit-btn-panel a{
+    width: 150px;
+    height: 60px;
     line-height: 40px;
 }
 
