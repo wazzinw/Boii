@@ -89,6 +89,9 @@ color: aliceblue;
 #order-noti{
     background-color: #D9534F;
     color: aliceblue;
+    padding-top: 4px;
+    padding-bottom: 5px;
+
 }
 #mainpage-menu span{
     position: absolute;
