@@ -1,60 +1,72 @@
 <template name="mainPage">
-<div class="main">
+    <div class="main">
 
-    <!-- OVERVIEW -->
-    <div class="main_div" id="overview">
-        <h1>Overview</h1>
-        <div id="summary">
-            <table class="summary_table">
-                <tr>
-                    <td>
-                        <img id="logo" src="/cloudIcon.png" /><p>
-                        <span>Online cafe platform</span> that allows you to mange your restaurant from anywhere</p>
-                    </td>
-                    <td>
-                        <img id="logo" src="/byod.png" /><p>Allow your customer to order from their own smart device <span>(BYOD)</span></p>
-                    </td>
-                    <td>
-                        <img id="logo" src="/graph.png" /><p>Provide full <span>features</span> to operate a good quality and service cafe</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img id="logo" src="/easyUI.png" /><p><span>Easy and simple user interface</span> for new startup to use cafe management system</p>
-                    </td>
-                    <td>
-                        <img id="logo" src="/free.jpg" /><p><span>Free</span> registration and no application for customer on their smart device</p>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>    
-    <!--FEATURE -->
-    <div class="main_div" id="features">
-        <h1>Features</h1>
-        <table class="features_table">
-            <tr>
-                <td><h3>Order</h3> Table to show and manage incoming order</td>
-                <td><h3>Menu</h3> Make order and changes to your menu</td>
-                <td><h3>Report</h3> Summarize your sale and other detail for further business development</td>
-            </tr>
-            <tr>
-                <td><h3>Employee</h3> Assign and manage your employee to operate your cafe</td>
-                <td><h3>Cafe</h3> Manage your cafe information</td>    
-            </tr>
-        </table>
-    </div> 
-    <!--CAFE LIST-->
-    <div class="main_div" id="cafelist">
-        <h1>Cafe with Us</h1>
-        <div class="lish-cafe">
+
+        <!-- OVERVIEW -->
+
+        <div class="row main_div" id="overview">
             <ul>
+                    <li class="col-xs-7"><iframe id="boii-video" width="560" height="315" src="https://www.youtube.com/embed/ZK3CyI9nRlE?showinfo=0&controls=0&modestbranding=0&rel=0&iv_load_policy=3&autoplay=1" frameborder="0" allowfullscreen></iframe></li>
+                <li class="col-xs-5">
+                    <div id="overview-content">
+                    <h2>Restaurant Management System</h2>
+                    <p><span>An Online cafe platform</span>
+                        that allows you to manage your store on the go.
+                        Allow customers to order from their own smart devices
+                        <span>(BYOD). </span> Variety of <span>features and functions</span>
+                        to ensure high service quality. <span>Simple user interface</span>
+                        for new startup to use cafe management system <span>Free</span>
+                        registration and integrate with applications for customer on their smart device
+                    </p>
+                    <a href="/sign-up" class="btn btn-primary btn-lg">Join now!</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--    <h1>Restaurant Management System</h1> -->
+        <!--    <ul class="summary_table">
+<li>
+<img id="logo" src="/cloudIcon.png" /><p>
+<span>Online cafe platform</span> that allows you to mange your restaurant from anywhere</p>
+</li>
+<li>
+<img id="logo" src="/byod.png" /><p>Allow your customer to order from their own smart device <span>(BYOD)</span></p>
+</li>
+<li>
+<img id="logo" src="/graph.png" /><p>Provide full <span>features and functions</span> to operate a good quality service cafe</p>
+</li>
+<li>
+<img id="logo" src="/easyUI.png" /><p><span>Easy and simple user interface</span> for new startup to use cafe management system</p>
+</li>
+<li>
+<img id="logo" src="/free.jpg" /><p><span>Free</span> registration and no application for customer on their smart device</p>
+</li>
+</ul>-->  
+
+
+        <!--FEATURE -->
+        <div class="row main_div" id="features">
+            <h1>Features</h1>
+            <ul class="features_table">
+                <li class="col-xs-3"><img id="logo" src="/pencils.svg" /><h3>Cafe</h3> Create your new restaurant and manage your cafe online</li>
+                <li class="col-xs-3"><img id="logo" src="/clipboard.svg" /><h3>Menu</h3> Create and customize your menus at real-time</li>
+                <li class="col-xs-3"><img id="logo" src="/paper-bag.svg" /><h3>Order</h3>Visualize incoming orders from both applications and store</li>
+                <li class="col-xs-3"><img id="logo" src="/map.svg" /><h3>Report</h3> Summarize your sale and track cafe activities for future business development</li>
+
+            </ul>
+        </div>
+
+
+        <!--CAFE LIST-->
+        <div class="main_div" id="cafelist">
+            <h1>Cafe with Us</h1>
+            <ul class="lish-cafe">
                 <li><img src="https://lh6.googleusercontent.com/--ncDuIWvGK8/AAAAAAAAAAI/AAAAAAAAADc/p1Yqr4N05rA/photo.jpg" /><h3>Starbucks</h3></li>
                 <li><img src="http://www.parttimejobeasy.com/wp-content/uploads/2014/01/Cafe-Amazon111.jpg" /><h3>Amazon</h3></li>
                 <li><img src="http://upic.me/i/ub/coffee.jpg" /><h3>Car Cha's Bua </h3></li>    
             </ul>
         </div>
-    </div>
 
-</div>
+
+    </div>
 </template>

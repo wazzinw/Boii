@@ -20,4 +20,30 @@
             }
         }
     });
+    Meteor.publish('Images', function() {
+
+    return Images.find();
+    });
+
+
+    Images.allow({
+        insert: function(userId, doc) {
+            // only allow posting if you are logged in
+            return !! userId;
+        },
+        download: function() {
+            // only allow posting if you are logged in
+            return true;
+        },
+        update: function(userId, doc) {
+            // only allow posting if you are logged in
+            return !! userId; },
+
+        remove: function(userId, doc) {
+            // only allow posting if you are logged in
+            return false
+        }
+
+    });
+
 

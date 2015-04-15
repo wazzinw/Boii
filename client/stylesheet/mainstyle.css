@@ -1,69 +1,64 @@
 html{
-
-
-
-    background-image: url("/bg1.jpg");
-
-}
-body{
     margin: auto;
     padding: 0px;
     min-width: 900px;
     font-size: 16px;
     line-height: 1em;
     background-color: white;
-    font-family: Lato;
-    max-width: 1200px;
+    font-family: Lato, Arial, Helvetica, sans-serif;
 }
 #mainpage-header{
     height: 70px;
-    background-color: #2D94EE;
+    background: url("bg3.jpg");
+}
+#logo-div{
+    width: 220px;
+    float: left;
 }
 #mainpage-header span{
     font-size: 40px;
-    margin-left: 40px;
+    margin-left: 20px;
     position: relative;
-    top: 15px;
-    font-weight: bold;
+    top: 10px;
     text-shadow: 3px 2px 20px #333333;
-    color: #F1F5F8;
+    color: aliceblue;
 }
-#logo{
-    margin-top: 10px;
+#boii-logo{
     margin-left: 10px;
     max-height: 50px;
 }
-#contact {
-    float: right;
-    font-size: 18px;
-    padding: 10px 40px;
-    margin-top: 10px;
-    background-color: #D6DEE0;
-    border-radius: 100px 0px 0px 100px;
-    color: #153BFA;
-    font-weight: bold;
-    border: 5px solid #F0F1F1;  
-}
-/*------------------------------MENU BAR---------------------------------------------*/
+/*#contact {
+float: right;
+font-size: 18px;
+padding: 10px 40px;
+margin-top: 10px;
+margin-right: 10px;
+background: url("texture_bluewood.jpg");
+border-radius: 100px 0px 0px 100px;
+border: 5px solid #F0F1F1;
+color: aliceblue;
+}*/
+
+/*------------------------------MENU BAR-----------------------------------------*/
+
 #mainpage-menu{
-    height: 60px;
     font-size: 20px;
+    height: 70px;
     font-weight: bold;
     text-shadow: 3px 2px 30px #333333;
-    background: #7C818C;
-    border: 1px solid #A8A8A8;
-    box-shadow: 0px 30px 30px 0px #B0B8C6 inset;
+    line-height: 40px;
 }
 #mainpage-menu li{
     display: inline-block;
     padding: 20px 30px;
 }
 #mainpage-menu a{
-    color: #F0F1F4;
+    color: aliceblue;
     text-decoration: none;
 }
-#mainpage-menu a:hover{
-    color: #F90;
+#mainpage-menu a:hover, #mainpage-header span:hover{
+    color: #617783;
+    text-decoration: none;
 }
 #mainpage-menu li:first-child {
     margin-left: -40px;
@@ -72,74 +67,140 @@ body{
     float: right;
 }
 .main_div{
-    border: 1px solid #919394;
+  /*  border-top: 1px solid #919394;*/
     padding: 5px;
+    margin: auto;
+    width: 100%;
+    padding-bottom: 50px;
 }
 .main_div h1{
     text-align: center;
-    text-shadow: 3px 2px 50px #9FC7F1;
-    color: #67696B;
+    margin: 0px;
+    padding: 40px 0px 20px 0px;
+}
+.container{
+    width: 100%;
+    padding: 0px;
+    background: url("/texture_whitepaper.jpg");
+}
+.container:after, .container:before{
+    content: none;
+}
+#order-noti{
+    background-color: #D9534F;
+    color: aliceblue;
+    padding-top: 4px;
+    padding-bottom: 5px;
+
+}
+#mainpage-menu span{
+    position: absolute;
+    top: 25px;
+    left: 240px;
+    max-height: 15px;
+    font-size: 13px;
+    line-height: 7px;
+}
+#signIn .form-group{
+    margin-left: 0px;
 }
 /*------------------------------------OVERVIEW-----------------------------------*/
 
 #overview{
-    height: 450px;
-    background: #CDEBFF;
-    box-shadow: 30px 90px 100px 0px #FFFFFF inset, -30px -30px 100px 0px #FFFFFF inset;
+    background: url("/texture_bluewood.jpg");
+    color: aliceblue;
+    padding-top: 30px;
+    height: auto;
+    font-size: 16px;
 }
-
-.summary_table{
-    margin: 50px 50px;
-    text-align: center;
-    font-size: 20px;
+#overview ul{
+    margin: 0 auto;
+}
+#overview ul li{
+    display: inline-block;
+    height: 315px;
     margin: auto;
+    vertical-align: middle;
 }
-.summary_table td{
-    width: 500px;
-    padding-top: 20px;
+#overview ul li:last-child{
+    width: auto;
+    height: 315px;
+    padding: 30px 0px 30px 30px;
 }
-.summary_table p{
-    width: 300px;
-    height: 50px;
-    margin: auto;
-    margin-top: 1em;
-}
-.summary_table span{
+#overview-content span{
     font-weight: bold;
 }
-.summary_table #logo{
-    box-shadow: 10px 0px 20px 5px #FFFFFF, -10px -0px 20px 5px #FFFFFF;
+#overview-content{
+    max-width: 400px;
+    min-width: 200px;
+    position: relative;
+    bottom: 40px;
 }
+/*
+
+.summary_table{
+margin: 50px 50px;
+text-align: center;
+font-size: 20px;
+margin: auto;
+
+}
+.summary_table li{
+width: 300px;
+padding-top: 20px;
+display: inline-block;
+}
+.summary_table p{
+width: 28functions0px;
+height: 50px;
+margin: auto;
+margin-top: 1em;
+}
+.summary_table span{
+font-weight: bold;
+}
+.summary_table #logo{
+box-shadow: 5px 0px 2px 2px #FFFFFF, -5px -0px 2px 2px #FFFFFF;
+max-height: 150px;
+}*/
+
 /*------------------------------------FEATURES-----------------------------------*/
+
 #features{
-    height: 400px;
-    background: #FCBC8E;
-    box-shadow: 10px 90px 100px 0px #FFFFFF inset,-10px -30px 100px 0px #FFFFFF inset,30px 30px 100px 0px #FDCC82 inset, -30px -30px 100px 0px #FDCC82 inset;
+    background: url("/texture_whitepaper.jpg");
+    color: #215877;
 }
 .features_table{
-    margin: 50px 50px;
     text-align: center;
-    font-size: 22px;
+    font-size: 20px;
+    padding: 0px 40px;
 }
-.features_table td{
-    width: 500px;
-    height: 50px;
+.features_table li{
+    display: inline-block;
+    margin: auto;
+    font-size: 18px;
+
 }   
 .features_table h3{
     font-weight: bold;
-    text-decoration: underline;
+
 }
-/*------------------------------------CAFE LIST-----------------------------------*/
+
+/*------------------------------------CAFE LIST----------------------------------*/
+
 #cafelist{
     height: auto;
-    background-color: #9AFF8F;
-    box-shadow: 10px 90px 100px 0px #FFFFFF inset,-10px -30px 100px 0px #FFFFFF inset,30px 30px 100px 0px #61FF4F inset, -30px -30px 100px 0px #61FF4F inset;
+    background: url("/texture_lightblue.jpg");
+    color: #215877;
+}
+#cafelist ul{
+    margin: 0 auto;
 }
 #cafelist ul li{
     display: inline-block;
-    margin: 50px 20px;
+    margin: 20px 20px 0px 20px;
     text-align: center;
-    width: 300px;
+    width: 200px;
 }
 #cafelist img{
     max-height: 150px;
@@ -148,72 +209,46 @@ body{
 #cafelist h3{
     margin-top: 5px;
 }
-/*------------------------------Register Center---------------------------------------------*/
-#register-center{
-    height: auto;
-    padding: 10px;
-    background-color: white;
-    padding-bottom: 50px;
-}
-#register-center td{
-    padding: 5px 10px;
-    font-weight: 550;
-}
-#register-center input{
-    margin-left: 20px;
-    height: 25px;
-    font-size: 20px;
-    width: 200px;
-}
-#register-center h1{
-    text-align: center;
-    height: 50px;
-}
-#register-center h2{
-    border-bottom: 1px solid black;
-    padding-bottom: 5px;
-}
-#buttons{
-    width: 800px;
-    margin: auto;
-}
-#buttons button{
-    height: 100px;
-    width: 200px;
-    border-radius: 10px;
-    margin: 20px;
-    font-size: 30px;
-    font-weight: 600;
-    margin-left: 80px;
-}
-#buttons button:hover{
-    cursor: pointer;
-    box-shadow: 0px -5px 10px 1px #919394 inset;
-}
-#buttons button:active{
-    background: #ACB4BA;
-}
-/*------------------------------Center---------------------------------------------*/
+
+/*------------------------------Center-------------------------------------------*/
+
 .center{
     padding: 10px;
-    background-color: white;
+    background: url("texture_whitepaper.jpg");
+    padding-bottom: 20px;
 }
 .pageheader{
     text-align: center;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: bolder;
+    letter-spacing: -1px; 
+    text-transform: uppercase; 
+    text-shadow: 1px 1px 0 #000;
+    margin: 10px 0 24px; 
+    background: url("texture_bluepaper.jpg");
+    color: aliceblue;
+    height: 50px;
+    border-radius: 5px;
 }
-/*---------------------------------MENU--------------------------------------*/
+.pageheader h1{
+    line-height: 50px;
+}
+
+/*---------------------------------MENU------------------------------------------*/
+
 #menu-panel{
-    height: 850px;
+    height: 750px;
     border: 1px solid black;
-    background-color: #FFFFF0;
-    border-radius: 10px;
+    background-color: white;
+    border-radius: 5px;
     margin: auto;
+    max-width: 1200px;
 }
 .category{
     margin: auto;
-    background: #24A8FF;
+    background: url("texture_bluewood.jpg");
     padding: 10px;
+    border-radius: 5px;
 }
 .category li{
     display: inline;
@@ -224,9 +259,9 @@ body{
     height: 60px;
     font-size: 20px;
     font-weight: bolder;
-    border-radius: 10px;
-    background: #24A8FF;
-    color: #EEF9FF;
+    border-radius: 5px;
+    background: url("texture_bluewood.jpg");
+    color: aliceblue;
     border: none;
 }
 .category button:hover{
@@ -240,15 +275,21 @@ body{
 }
 #cd-cart-trigger{
     float: right;
-    background-color: #1F2121;
-    color: #FFFFFF;
+    background: #1F2121;
+    color: aliceblue;
     border-radius: 10px;
 }
-/*---------------------------------MENU LIST--------------------------------------*/
+
+
+/*---------------------------------MENU LIST-------------------------------------*/
+
+.invisible{
+    display: none;
+}
 #drink-list,  #food-list{
     list-style: none;
     height: 600px;
-    max-width: 1440px;
+    max-width: 1000px;
     overflow: auto;
     position: absolute;
     margin: auto;
@@ -257,25 +298,25 @@ body{
     display: inline-block;
     margin: 20px;
 }
-#drink-list .menu, #food-list .menu{
+#drink-list .menu, #food-list .food-menu{
     width: 200px;
     height: 100px;
     padding-top: 12px;
-    border-radius: 20px;
-    background: #001034;
+    border-radius: 5px;
+    background: #2B5165;
     color: #FFFFFF;
 }
 #drink-list h3, #food-list h3{
     position: relative;
     height: 50px;
     bottom: 1em;
+    font-size: 16px;
+    line-height: 25px;
 }
 #drink-list h4,#food-list h4{
     position: relative;
     bottom: 40px;
-}
-#drink-list input, #food-list input{
-    color: black;
+    font-size: 15px;
 }
 #drink-list .menu:hover, #food-list .menu:hover{
     cursor: pointer;
@@ -283,68 +324,21 @@ body{
 #drink-list .menu:active, #food-list .menu:active{
     background: #2870F6;
 }
- #food-list{
-    list-style: none;
-    height: 600px;
-    max-width: 1440px;
-    overflow: auto;
-    position: absolute;
-    margin: auto;
-}
-#food-list li{
-    display: inline-block;
-    margin: 20px;
-}
-#food-list .food-menu{
-    width: 200px;
-    height: 100px;
-    padding-top: 12px;
-    border-radius: 20px;
-    background: #001034;
-    color: #FFFFFF;
-}
-#food-list .food-item h3{
+#item p{
     position: relative;
-    height: 50px;
-    bottom: 1em;
+    bottom: 30px;
+    width: 50px;
+    z-index: 3;
 }
-#food-list h4{
-    position: relative;
-    bottom: 40px;
-}
-#food-list .food-item button:hover{
-    background: #00416D;
-    cursor: pointer;
-}
-#food-list .food-item button:active{
-    background: #2870F6;
-}
-
-
-
-
-#food-list.invisible{
-    display: none;
-}
-#drink-list.invisible{
-    display: none;
-}
-.item-name{    
-    font-size: 16px;
-    width: 150px;
-    text-align: center;
-}
-.item-price{
-    font-size: 16px;
-    width: 80px;
-    text-align: center;
+#item-detail{
+    color: aliceblue;
 }
 .delete-btn{
     height: 35px;
     width: 35px;
     position: relative;
-    right: 20px;
-    bottom: 40px;
+    left: 180px;
+    bottom: 150px;
     border-radius: 20px;
     font-size: 20px;
     background: red;
@@ -352,49 +346,38 @@ body{
     font-weight: bold;
     display: none;
 }
-.edit-item-btn{
-    width: 100px;
-    background: grey;
-    color: white;
-    border-radius: 5px;
-}
 
+/*----------------------------Menu Button Panel----------------------------------*/
 
-/*---------------------------------Menu Button Panel--------------------------------------*/
 .btn-panel{
     position: relative;
-    top: 80%;
-    left: 40%;
+    top: 75%;
+    left: 35%;
     width: 100%;
 }
 .btn-panel button{
     height: 80px;
-    color: #FFFFFF;
-    border-radius: 10px;
+    color: aliceblue;
+    border-radius: 5px;
     font-size: 20px;
     font-weight: bold;
 }
 #add_item_butt{
     width: 300px;
-    background: #24A8FF;
-}
-#edit_item_butt{
-    width: 100px;
-    margin-left: 30px;
-    background: #5CB85C;;
+    background: #144060;
 }
 #delete_item_butt{
     margin-left: 30px;
     width: 100px;
-    background: #D9534F;;
+    background: #D9534F;
 }
-#add_item_butt:hover, #edit_item_butt:hover, #delete_item_butt:hover{
+#add_item_butt:hover, #delete_item_butt:hover{
     cursor: pointer;
 }
-#add_item_butt:active, #edit_item_butt:active, #delete_item_butt:active{
+#add_item_butt:active, #delete_item_butt:active{
     background: #1A699F;
 }
-/*---------------------------------CART--------------------------------------*/
+/*---------------------------------CART------------------------------------------*/
 #cd-cart {
     position: fixed;
     top: 0;
@@ -414,7 +397,7 @@ body{
     font-weight: bold;
     text-transform: uppercase;
     margin: 1em 0;
-    text-decoration: underline
+
 }
 #cd-cart .cd-cart-items {
     padding: 0;
@@ -444,7 +427,7 @@ body{
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
     border-radius: 50%;
-    background: url("/remove.png") center center;
+    background: url('/remove.png') center center;
     background-size: 40px 40px;
     background-repeat: no-repeat;
     height: 50px;
@@ -510,7 +493,7 @@ body{
 #cd-cart.speed-in {
     right: 0;
 }
-/*---------------------------------Shadow Layer--------------------------------------*/
+/*-----------------------------Shadow Layer--------------------------------------*/
 #cd-shadow-layer {
     position: fixed;
     min-height: 100%;
@@ -522,12 +505,24 @@ body{
     z-index: 2;
     display: none;
 }
-#cd-shadow-layer.is-visible {
+#cd-shadow-layer.is-visible, #not-avail-shadow.is-visible{
     display: block;
     -webkit-animation: cd-fade-in 0.3s;
     -moz-animation: cd-fade-in 0.3s;
     animation: cd-fade-in 0.3s;
 }
+#not-avail-shadow{
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    top: 20px;
+    border-radius: 5px;
+    background: rgba(67, 87, 121, 0.6);
+    z-index: 2;
+
+}
+
+
 /*---------------------------------Add ITEM--------------------------------------*/
 #add_item{
     position: relative;
@@ -537,10 +532,10 @@ body{
     margin:auto;
     padding-top: 50px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    z-index: 3 ;
-    background: white;
+    z-index: 3;
+    background: url("texture_whitepaper.jpg");
     display: none;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 #add_item.speed-in{
     display:block;
@@ -549,30 +544,56 @@ body{
     margin: 0 auto;
     width: 200px;
     margin-bottom: 50px;
-    text-decoration: underline;
+
+}
+.browsepic{
+    margin-top: 20px;
+    width: 600px;
+    height: 30px;
 }
 .browsepic input{
-    width: 70%;
+    width: 400px;
     border: 1px solid black;
+    position: relative;
+    bottom: 30px;
+    left: 70px;
+}
+#type-select{
+    padding: 0px;
+    position: relative;
+    right: 23px;
+    width: 150px;
 }
 .detail {
     margin-left: 10%;
-    font-size: 25px;
+    font-size: 20px;
 }
 .detail input{
     height: 30px;
     margin-left: 20px;
     font-size: 20px;
 }
+.type{
+    height: 40px;
+    width: 600px;
+}
+.type p{
+    padding: 0px;
+}
+#label-promotion{
+    width: 600px;
+}
+#label-promotion input{
+    position: relative;
+    top: 3px;
+    height: 20px;
+    width: 20px;
+}
 #name-input{
     width: 300px;
 }
 #price-input{
     margin-left: 30px;
-}
-#descrpt-input{
-    margin-left: 30px;
-    font-size: 15px;
 }
 .detail button{
     font-size: 20px;
@@ -591,17 +612,19 @@ body{
 }
 .add_button {
     margin: 0 auto;
-    width: 335px;
-    padding-bottom: 20px;
+    width: 300px;
+    padding: 20px 0px;
 }
 .add_button button{
-    width: 150px;
-    height: 80px;
-    font-size: 30px;
-    border-radius: 10px;
+    width: 100px;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 5px;
+    background: #144060;
+    color: aliceblue;
 }
 #cancel-add-butt{
-    margin-left: 30px;
+    margin-left: 50px;
 }
 #preview_image{
     display: block;
@@ -610,15 +633,102 @@ body{
     max-height: 200px;
     max-width: 250px;
 }
-/*------------------------------Order---------------------------------------------*/
+
+/*------------------------------Menu Info----------------------------------------*/
+
+.item-info{
+    width: 40%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    background-color: #FFFFF0;
+    border-radius: 10px;
+}
+.item-info h2{
+    text-align: center;
+    margin: 30px 0px;
+}
+.item-info #info-btn-panel{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.item-info a{
+    height: 50px;
+    margin-left: 20%;
+    width: 100px;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px;  
+}
+.item-info h3{
+    margin-left: 4em;
+    font-size: 20px;
+}
+.item-info img{
+    height: 200px;
+    width: 200px;
+    position: relative;
+    right: 2em;
+}   
+#edit_item_butt{
+    background: #24A8AF;  
+}
+#back_item_butt{
+    background: #FA5858;
+}
+#edit_item_butt:active{
+    background: #76F9F5;
+}
+#back_item_butt:active{
+    background: #FDA2A2;
+}
+.item-info span{
+    margin-left: 1em;
+    font-weight: bold;
+}
+
+/*------------------------------Edit Item----------------------------------------*/
+
+.edit-panel{
+    width: 40%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    background-color: #FFFFF0;
+    border-radius: 10px;
+    padding: 20px;
+}
+.form-group{
+    margin-left: 50px;
+}
+.edit-panel a{
+    height: 50px;
+    margin-left: 10%;
+    width: 100px;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.col-xs-4{
+    width: 300px;
+    margin-left: 0px;
+}
+
+
+/*------------------------------Order--------------------------------------------*/
+
 .showorder{
     margin: 0 auto;
     height: 800px;
     min-width: 850px;
     max-width: 1200px;
     border: 1px solid black;
-    background-color: #FFFFF0;
-    border-radius: 10px;
+    background: white;
+    border-radius: 5px;
     overflow: auto;
 }
 .cd-popup {
@@ -675,14 +785,6 @@ body{
     transition: background-color 0.2s ease 0s;
     text-decoration: none;
 }
-/*.img-replace {
-    display: inline-block;
-    overflow: hidden;
-    text-indent: 100%;
-    color: transparent;
-    white-space: nowrap;
-}*/
-
 .cd-buttons{
     margin: 0px;
     padding: 0px;
@@ -695,19 +797,16 @@ body{
     transform: translateY(-40px);
     transition-property: transform;
     transition-duration: 0.3s;
-
     position: relative;
     width: 90%;
     max-width: 400px;
-    height: 190px;
+    height: 130px;
     margin: 4em auto;
     background: none repeat scroll 0% 0% #FFF;
     border-radius: 0.25em 0.25em 0.4em 0.4em;
     text-align: center;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-    transform: translateY(-40px);
-    transition-property: transform;
-    transition-duration: 0.3s;
+
 }
 
 .cd-popup-container p{
@@ -716,14 +815,15 @@ body{
 }
 .is-visible .cd-popup-container {
     transform: translateY(0);
+    top: 30%;
 }
-/*------------------------------Order Table---------------------------------------------*/
+/*------------------------------Order Table--------------------------------------*/
 #table-header{
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     padding: 15px 0px;
-    background: #24A8FF;
-    color: #FFFFFF;
+    background: url("texture_bluewood.jpg");
+    color: aliceblue;
     height: 40px;
 }
 .order_table{
@@ -731,10 +831,11 @@ body{
     width: 100%;
 }
 .order_table th{
-    text-align: center
+    text-align: center;
 }
 .order_table tr{
     outline: 1px solid;
+    color: #215877;
 }
 .order_code{
     width: 100px;
@@ -754,6 +855,7 @@ body{
 .order_action{
     width: 300px;
 }
+
 .item_button button{
     width: 100px;
     height: 80px;
@@ -776,39 +878,114 @@ body{
 #reject_but{
     background: #D9534F;
 }
+#ready_but{
+    background: green;
+}
 #bill_but{
     background: #EC900F;
-    width: 200px;
-    margin: 5px;
 }
-/*---------------------------------Report--------------------------------------*/
+/*---------------------------------Report----------------------------------------*/
+
 #show-report{
-    height: 800px;
-    max-width: 1200px;
     min-width: 900px;
-    border: 1px solid black;
-    margin: 0 auto;
+    margin: 0px 50px;
+    padding: 20px;
+    background-color: #FFFFF0;
+    color: #215877;
 }
-/*---------------------------------Info Panel--------------------------------------*/
+.report{
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+.report h1{
+    margin-bottom: 20px;
+
+}
+.report select{
+    width: 300px;
+    margin-bottom: 20px;
+}
+.report input{
+    margin-left: 2em;
+    text-align: center;
+}
+
+/*------------------------------Register Center----------------------------------*/
+
+#register-center td{
+    padding: 5px 10px;
+    font-weight: 600;
+}
+#register-center input{
+    margin-left: 20px;
+    height: 25px;
+    font-size: 20px;
+    width: 200px;
+    line-height: 25px;
+}
+#register-center h2{
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+.form-group p{
+    margin-left: 40px;
+}
+.form-group span{
+    margin-left: 100px;
+}
+#buttons{
+    width: 550px;
+    margin: auto;
+}
+#buttons button{
+    height: 80px;
+    width: 150px;
+    border-radius: 5px;
+    margin: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 80px;
+}
+#buttons button:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 1px #ECECEC inset;
+}
+#buttons button:active{
+    background: #ACB4BA;
+}
+#cre-new-res{
+    width: 500px;
+    margin: auto;
+    margin-top: 20px;
+}
+#new-res-button{
+    height: 80px;
+    width: 500px;
+    font-size: 20px;
+    margin: auto;
+}
+
+/*----------------------------Cafe Info Panel------------------------------------*/
 
 #info-panel{
     margin: 0 auto;
-    height: 800px;
+    height: auto;
     min-width: 850px;
     max-width: 1200px;
-    border: 1px solid black;
+    border: 1px solid #215877;
     background-color: #FFFFF0;
     border-radius: 10px;
-    overflow: auto;
+    padding-bottom: 20px;
+    color: #215877;
 }
 #info-panel h2{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #215877;
     padding-bottom: 5px;
     margin-left: 10px;
 }
 #info-panel td{
     padding: 5px 10px;
-    font-weight: 550;
+    font-weight: 600;
 }
 #info-panel table{
     min-width: 900px;
@@ -819,34 +996,68 @@ body{
     font-size: 18px;
 }
 #edit_info_butt{
-    width: 200px;
-    height: 80px;
-    background: #24A8AF;
-    color: #FFFFFF;
-    border-radius: 10px;
+    width: 150px;
+    height: 60px;
+    background: #144060;
+    color: white;
+    border-radius: 5px;
     font-size: 20px;
     position: relative;
-    left: 450px;
-    top: 30px;
+    margin-top: 20px;
+    left: 45%;
+    line-height: 40px;
 }
 
-/*---------------------------------FOOTER--------------------------------------*/
+/*----------------------------Cafe Info Panel------------------------------------*/
+
+#cafe-edit-panel{
+    margin: 0 auto;
+    height: auto;
+    min-width: 850px;
+    max-width: 1200px;
+    border: 1px solid #215877;
+    background-color: #FFFFF0;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    color: #215877;
+    padding: 20px;
+}
+#cafe-edit-panel h2{
+    margin-left: 55px;
+    border-bottom: 1px solid #215877;
+}
+#edit-btn-panel{
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 20px;
+}
+#cancel-edit{
+    margin-left: 50px;
+}
+#edit-btn-panel a{
+    width: 150px;
+    height: 60px;
+    line-height: 40px;
+}
+
+/*---------------------------------FOOTER----------------------------------------*/
+
 .footer{
-    position: relative;
-    background-color: #2D94EE;
-    box-shadow: 30px 30px 100px 0px #FFFFFF inset, -30px -30px 100px 0px #FFFFFF inset;
+    margin: auto;
+    background: url("/texture_bluepaper.jpg");
+    color: aliceblue;
     border: 1px solid #919394;
+    padding: 20px;
 }
 .foottext{
-    position: relative;
-    bottom: 60px;
-    left: 200px;
+    margin: auto;
+    font-size: 20px;
+    width: 500px;
+    text-align: center;
 }
 .fblogo img{
-    max-height: 100px;
-    position: relative;
-    left: 60px;
-    top: 70px;
+    max-height: 60px;
     border: 3px solid white;
     border-radius: 10px;
 }

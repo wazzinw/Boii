@@ -2,46 +2,53 @@
  * Created by wazzinw on 2/21/15 AD.
  */
 var cart = [];
-var order ={};
+var order = {};
 var cart_length = 0;
 Cart = new Mongo.Collection(null);
 var pic_url = "";
+
+function toggle_panel_visibility ($lateral_panel, $background_layer, $body) {
+    $lateral_panel.addClass('speed-in').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',                         function(){
+        $body.addClass('overflow-hidden');});
+    $background_layer.addClass('is-visible');
+    //}
+}
 
 
 function userAvailable() {
     // use Meteor.user() since it's available
     if (Meteor.user())
         return Meteor.user().profile;
-
 }
 
 
 Template.menuPage.helpers({
     foodMenu: function(){
-
         var rest;
         if(userAvailable()){
             var user = Meteor.user();
-            rest = Restaurants.findOne({_id: user.profile.restaurant_id});
+            rest = Restaurants.find().fetch();
         }
         else{
             console.log("food: no user found");
         }
 
-        return Menus.find({restaurant_name: rest.name ,type: "food"});
+        return Menus.find({restaurant_name: rest[0].name , type: "food"});
     },
 
     drinkMenu: function(){
         var rest;
         if(userAvailable()){
             var user = Meteor.user();
-            rest = Restaurants.findOne({_id: user.profile.restaurant_id});
-        }
-        else{
-            console.log("food: no user found");
+            //rest = Restaurants.findOne({_id: user.profile.restaurant_id});
+            rest = Restaurants.find().fetch();
+            console.log("HELLOOOOOOOOO");
+
+        }else{
+            console.log("drink: no user found");
         }
 
-        return Menus.find({restaurant_name: rest.name  , type:"drink"});
+        return Menus.find({restaurant_name: rest[0].name   , type: "drink"});
     },
 
     cartItems: function(){
@@ -95,15 +102,25 @@ Template.menuPage.helpers({
 
         return sum;
     }
+
+
+
+
 });
 
 Template.menuPage.events({
+
+
+    //open drink category
     'click button.menu': function(event){
         console.log("drink menu clicked");
+        event.preventDefault();
+        toggle_panel_visibility($('#cd-cart'), $('#cd-shadow-layer'), $('body'));
+        $('#cd-shadow-layer').removeClass('is-visible');
 
         var id = $(event.currentTarget).closest('.drink-item').data('id');
-
         console.log(id);
+
         var cart = Session.get('cart') || {};
 
         if ( cart[id] ){
@@ -112,11 +129,17 @@ Template.menuPage.events({
             cart[id] = 1;
         }
 
-        Session.set('cart', cart )
+        Session.set('cart', cart );
         console.log("Cart: " + Session.get('cart').toString());
+    },
 
-    },'click button.food-menu': function(event){
+
+    //open food category
+    'click button.food-menu': function(event){
         console.log("food menu clicked");
+        event.preventDefault();
+        toggle_panel_visibility($('#cd-cart'), $('#cd-shadow-layer'), $('body'));
+        $('#cd-shadow-layer').removeClass('is-visible');
 
         var id = $(event.currentTarget).closest('.food-item').data('id');
 
@@ -137,7 +160,7 @@ Template.menuPage.events({
     },
 
 
-
+    //send order to order page
     'click a.checkout-btn': function(event){
         var cart = Session.get('cart');
 
@@ -166,15 +189,18 @@ Template.menuPage.events({
         var params = {
             restaurant_id: Restaurants.findOne({name: rest.name})._id,
             orderItems: cartList
-        }
+        };
 
         Meteor.call('createOrder', params, function(error, result){
             if(!error){
                 Session.set('cart', {});
+                console.log("new order created");
+                Router.go('orderListPage');
             }
         });
     },
 
+    //remove item from cart
     'click .cd-item-remove': function(event){
         //remove the select row out of cart
         console.log("remove button clicked");
@@ -196,7 +222,7 @@ Template.menuPage.events({
 
     },
 
-
+    //get picture
     'change .fileInput': function (event, template) {
         FS.Utility.eachFile(event, function(file){
             var fileObject = new FS.File(file);
@@ -209,21 +235,17 @@ Template.menuPage.events({
 
                     pic_url =  '/cfs/files/images/' + fileObject._id;
                 }
-
             });
-
-
         })
-
     }, 
 
 
-
+    //add item to menu panel
     'click #add-to-save-butt': function(e,t){
         var user = Meteor.user();
         console.log("add button clicked");
         var rest = Restaurants.findOne({_id: user.profile.restaurant_id});
-
+        var menu_id;
         options = {};
         options.name = $('#name-input').val();
         options.pic_url = pic_url;
@@ -232,49 +254,58 @@ Template.menuPage.events({
         options.restaurant_name = rest.name;
         options.created_at = new Date();
         options.updated_at = new Date();
-
+        
 
         if($('#promotion').is(':checked')){
             options.promotion = true;
         }else options.promotion = false;
 
-        if($('#type-drink').is(':checked')){
-            /* $('#drink-list').append('<li class="drink-item"><button class="to_basket" id="menu"><h3>'
-             + $('#name-input').val() +'</h3><h4>฿'
-             + $('#price-input').val()
-             +'</h4></button></li>'); */
+        console.log($('#type').val());
+
+        if($('#type').val() == "1"){
             options.type = "drink";
         }else{
-            /* $('#food-list').append('<li class="food-item"><button class="to_basket" id="menu"><h3>'
-             + $('#name-input').val()
-             +'</h3><h4>฿'+ $('#price-input').val()
-             +'</h4></button></li>');*/
             options.type = "food";
         }
 
-        var menu_id = Menus.insert(options, function(error){
-            console.log(error);
+        options.available = true;
+
+        Meteor.call('menuInsert', options, function(error) {
+            if (error) return alert(error.reason);
+            else{
+                alert("SUCCESSFULLY UPDATED");
+
+            }
         });
 
-        console.log("menu_id: "+ menu_id);
 
-        Restaurants.update({_id: rest._id}, { $push: { menu: menu_id }});
+        //console.log("after: "+ menu_id);
 
         window.alert(options.name+" is added");
         $('#cd-shadow-layer').removeClass('is-visible');
         $('#add_item').removeClass('speed-in');
 
+        //clear input value
+        $("#name-input").val('');
+        $('#validTill').val('');
+        $('#price-input').val('');
+
+
     }
 
 });
 
-Template.menuPage.onRendered(function(){
+    function checkAvail(){
 
-    //if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
-    //var $L = 1200,
+            //var menuArray = Menus.find();
+
+
+    }
+
+
+Template.menuPage.onRendered(function(){
     var $menu_navigation = $('#main-nav'),
         $cart_trigger = $('#cd-cart-trigger'),
-        //	$hamburger_icon = $('#cd-hamburger-menu'),
         $lateral_cart = $('#cd-cart'),
         $shadow_layer = $('#cd-shadow-layer'),
         $add_item = $('#add_item'),
@@ -287,44 +318,6 @@ Template.menuPage.onRendered(function(){
         cart_length = 0,
         i;
 
-
-    //add item to cart
-  /*  $('#drink-list').on('click', 'button', function () {
-        var item_name = $(this).find('h3').text(),
-            item_price = $(this).find('h4').text(),
-            count = 0;
-        for(i = 0; i <= cart_length; i++) {
-            if($('#item'+i).find('.cd-name').text() === item_name){
-                var val = parseInt($('#item'+i).find('.cd-qty').text(),10);
-                var newVal = val+1;
-                $('#item'+i).find('.cd-qty').text(newVal+'x');
-                count++;
-                var total = parseInt($('.cd-cart-total span').text(),10);
-                var newTotal = total+parseInt(item_price.substr(1),10);
-                $('.cd-cart-total span').text(newTotal+' Baht');
-            }
-        }
-        if(count == 0)
-        {
-            var qty = 0; 
-            $cart_list.append('<li class="item"><span class="cd-qty">' + (++qty) + 'x</span><span class="cd-name">' + item_name + '</span><div class="cd-price">' + item_price + '</div><a href="#0" class="cd-item-remove"><span>Remove</span></a></li>');
-            $('li').last().attr('id', 'item'+(cart_length++) );
-            var total = parseInt($('.cd-cart-total span').text(),10);
-            var newTotal = total+parseInt(item_price.substr(1),10);
-            $('.cd-cart-total span').text(newTotal+' Baht');
-        }
-    });
-*/
-
-    //remove item from cart
-    // $('#cd-cart-item').on('click','a', function(){          
-    //     var total = parseInt($('.cd-cart-total span').text(),10);
-    //     var price = parseInt($(this).closest('li').find('.cd-price').text().substr(1),10);
-    //     var qty = parseInt($(this).closest('li').find('.cd-qty').text(),10);
-    //     var newTotal = total-(price*qty);
-    //     $('.cd-cart-total span').text(newTotal + ' Baht');
-    //     $(this).closest('li').remove(); 
-    // });
 
 
     //choose category
@@ -340,51 +333,60 @@ Template.menuPage.onRendered(function(){
         $('#drink-list').removeClass('invisible');
         $('#food-list').addClass('invisible');
     });
-    
+
     //edit item
-    $('#edit_item_butt').on('click', function(){
+ /*   $('#edit_item_butt').on('click', function(){
         if($('#edit_item_butt').text() === 'Edit'){
+            $('#drink-list').find('.menu').prop('disabled',true);
+            $('#drink-list').find('.menu').css('active','disabled');
             $('#drink-list').find('h4').text('').append('<button class="edit-item-btn">Edit</button>');
-            $('#edit_item_butt').text('Done');
+            $('#edit_item_butt').text('Done').css('background', 'green');
+
+            $('.edit-item-btn').on('click', function(){
+                toggle_panel_visibility($add_item, $shadow_layer, $('body'));
+                $("#name-input").val('');
+                $('#validTill').val('');
+                $('#price-input').val('');
+                $('#promotion');
+                $('#type-drink');
+
+            });
         }else{
             $('#drink-list').find('h4').text('$50');
-            $('#edit_item_butt').text('Edit');
+            $('#edit_item_butt').text('Edit').css('background', '#24A8AF');
+            $('#drink-list').find('.menu').prop('disabled',false);
+        }
+    });*/
 
+    //delete item from panel UI
+    $('#delete_item_butt').on('click', function(){
+        if($('#delete_item_butt').text() === 'Delete'){
+            $('.delete-btn').css('display','inherit');
+            $('#delete_item_butt').text('Done').css('background', 'green');
+        }else{
+            $('.delete-btn').css('display','none');
+            $('#delete_item_butt').text('Delete').css('background', '#D9534F');
         }
     });
 
     //delete item from panel
-    $('#delete_item_butt').on('click', function(){
-        if($('#delete_item_butt').text() === 'Delete'){
-            $('.delete-btn').css('display','inherit');
-            $('#delete_item_butt').text('Done');
-        }else{
-            $('.delete-btn').css('display','none');
-            $('#delete_item_butt').text('Delete');
-        }
     $('.delete-btn').on('click', function(){
-
+        console.log("delete button clicked");
         var rest = Restaurants.findOne({_id: Meteor.user().profile.restaurant_id});
 
         //$(this).closest('li').remove();
         var id = $(event.currentTarget).closest('li').data('id');
-        console.log("id: "+ id);
-        //Restaurants.update({_id: Meteor.user().profile.restaurant_id}, )
-        Menus.remove({_id: id});
+        console.log("id: " + id);
 
-        var menuArray = rest.menu;
-        var index = menuArray.indexOf(id);
-        console.log("index: "+ index);
-
-        if (index > -1) {
-            menuArray.splice(index, 1);
-            console.log("remove id")
-        }
+        //Menus.remove({_id: id});
+        Meteor.call('menuDelete', id, function(error) {
+            if (error) return alert(error.reason);
+        });
 
 
-        Restaurants.update({_id: Meteor.user().profile.restaurant_id}, { $set: { menu: menuArray }});
 
-    });
+        //Restaurants.update({_id: Meteor.user().profile.restaurant_id}, { $set: { menu: menuArray }});
+
     });
 
 
@@ -392,7 +394,8 @@ Template.menuPage.onRendered(function(){
     //open add item pop-up
     $add_item_butt.on('click', function(event){
         event.preventDefault();
-        toggle_panel_visibility($add_item, $shadow_layer, $('body'));  
+        toggle_panel_visibility($add_item, $shadow_layer, $('body'));
+
     });
 
 
@@ -403,7 +406,6 @@ Template.menuPage.onRendered(function(){
     });
     $shadow_layer.on('click', function(){
         $shadow_layer.removeClass('is-visible');
-        // firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
         if( $lateral_cart.hasClass('speed-in') ) {
             $lateral_cart.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
                 $('body').removeClass('overflow-hidden');
@@ -426,7 +428,6 @@ Template.menuPage.onRendered(function(){
     //close lateral cart
     $('.close-cart-btn').on('click', function(){
         $shadow_layer.removeClass('is-visible');
-        // firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
         if( $lateral_cart.hasClass('speed-in') ) {
             $lateral_cart.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
                 $('body').removeClass('overflow-hidden');
@@ -438,65 +439,29 @@ Template.menuPage.onRendered(function(){
         }
     });
 
-    /*	//move #main-navigation inside header on laptop
-	//insert #main-navigation after header on mobile
-	move_navigation( $menu_navigation, $L);
-	$(window).on('resize', function(){
-		move_navigation( $menu_navigation, $L);
-		if( $(window).width() >= $L && $menu_navigation.hasClass('speed-in')) {
-			$menu_navigation.removeClass('speed-in');
-			$shadow_layer.removeClass('is-visible');
-			$('body').removeClass('overflow-hidden');
-		}
-	});*/
+    //preview image
+    $('#item-image').on('change', function(){
+        preview(this);
+    });
 
 
 
-//preview image
-$('#item-image').on('change', function(){
-    preview(this);
-});
 
-function toggle_panel_visibility ($lateral_panel, $background_layer, $body) {
-    /*if( $lateral_panel.hasClass('speed-in') ) {
-		// firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
-		$lateral_panel.removeClass('speed-in').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', 
-        function(){
-			$body.removeClass('overflow-hidden');});
-		$background_layer.removeClass('is-visible');
-	} else {*/
-    $lateral_panel.addClass('speed-in').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',                         function(){
-        $body.addClass('overflow-hidden');});
-    $background_layer.addClass('is-visible');
-    //}
-}
-/*function move_navigation( $navigation, $MQ) {
-	if ( $(window).width() >= $MQ ) {
-		$navigation.detach();
-		$navigation.appendTo('header');
-	} else {
-		$navigation.detach();
-		$navigation.insertAfter('header');
-	}
-}*/
-function preview(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
+    function preview(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
-        reader.onload = function (e) {
-            $('#preview_image')
-                .attr('src', e.target.result)
-                .width(250)
-                .height(200);
-        };
+            reader.onload = function (e) {
+                $('#preview_image')
+                    .attr('src', e.target.result)
+                    .width(250)
+                    .height(200);
+            };
 
-        reader.readAsDataURL(input.files[0]);
+            reader.readAsDataURL(input.files[0]);
+        }
     }
-}
-
-
 
 
 });
-
 

@@ -1,59 +1,73 @@
 <template name = "orderListPage">
- <div class="center">
-                <div class="pageheader">
-                    <h1>Order</h1>
-                </div>
-                <div class="showorder">
-                    <table class="order_table">
-                        <tr id="table-header">
-                            <th class="order_code">Code</th>
-                            <th class="order_time">Time</th>
-                            <th class="order_date">Date</th>
-                            <th class="order_items">Items</th>
-                            <th class="order_qty">Qty</th>
-                            <th class="order_action">Action</th>
-                        </tr>
-                    
-                        {{#each orders}}
-                        <tr class="order_row" data-id={{_id}}>
-                            <td class="order_code"><p id="code">{{confirm_code}}</p></td>
-                            <td class="order_time"><p id="time">{{created_at.getHours}}:{{created_at.getMinutes}}</p></td>
-                            <td class="order_date"><p id="date">{{created_at.toDateString}}</p></td>
-
-                            <td class="order_items">
-                                {{#each orderItems}}
-                                    {{#with menuWithOrderItemId this }}
-                                        <p id="item1_name">{{name}}</p>
-                                    {{/with}}
-                                {{/each}}
-                            </td>
-
-                            <td class="order_qty">
-                            {{#each orderItems}}
-                                {{#with orderItemWithId this}}
-                                <p id="item1_num">{{quantity}}</p>
-                                {{/with}}
-                            {{/each}}
-                            </td>
-                            <td class="order_action"><div class="item_button">
-                                {{#if isAccepted order_status}}
-                                <button type="button" id="bill_but">Bill</button>
-                                {{/if}}
-
-                                {{#if isApproving order_status}}
-                                <button type="button" id="accept_but">Accept</button>
-                                <button type="button" id="reject_but">Reject</button> 
-                                {{/if}}
-
-                                {{#if isAccepted order_status}}
-                                <button type="button" id="ready_but">Ready</button>
-                                {{/if}}
-                                </div>
-                            </td>
-                        </tr> 
-                        {{/each}}
-                    </table>
-                </div>
+    <div class="center">
+        <div class="pageheader">
+            <h1>Order</h1>
         </div>
+        <div class="showorder">
+            <table class="order_table">
+                <tr id="table-header">
+                    <th class="order_code">Code</th>
+                    <th class="order_time">Time</th>
+                    <th class="order_date">Date</th>
+                    <th class="order_items">Items</th>
+                    <th class="order_qty">Qty</th>
+                    <th class="order_action">Action</th>
+                </tr>
+
+                {{#each orders}}
+                <tr class="order_row" data-id={{_id}}>
+                    <td class="order_code"><p id="code">{{confirm_code}}</p></td>
+                    <td class="order_time"><p id="time">{{formatTime created_at}}</p></td>
+                    <td class="order_date"><p id="date">{{created_at.toDateString}}</p></td>
+
+                    <td class="order_items">
+                        {{#each orderItems}}
+                        {{#with menuWithOrderItemId this }}
+                        <p id="item1_name">{{name}}</p>
+                        {{/with}}
+                        {{/each}}
+                    </td>
+
+                    <td class="order_qty">
+                        {{#each orderItems}}
+                        {{#with orderItemWithId this}}
+                        <p id="item1_num">{{quantity}}</p>
+                        {{/with}}
+                        {{/each}}
+                    </td>
+                    <td class="order_action"><div class="item_button">
+                        {{#if isAccepted order_status}}
+                        <button type="button" id="bill_but">Bill</button>
+                        {{/if}}
+
+                        {{#if isApproving order_status}}
+                        <button type="button" id="accept_but">Accept</button>
+                        <button type="button" id="reject_but">Reject</button> 
+                        {{/if}}
+
+                        {{#if isAccepted order_status}}
+                        <button type="button" id="ready_but">Ready</button>
+                        {{/if}}
+                        </div>
+                    </td>
+                </tr> 
+                {{/each}}
+            </table>
+            
+            <div class="cd-popup" role="alert">
+                <div class="cd-popup-container">
+                    <p>Are you sure you want to reject this order?</p>
+                    <ul class="cd-buttons">
+                        <li><a class="yes-btn" href="#0">Yes</a></li>
+                        <li><a class="no-btn" href="#0">No</a></li>
+                    </ul>
+                    <a href="#0" class="cd-popup-close">X</a>
+                </div> <!-- cd-popup-container -->
+            </div> <!-- cd-popup -->
+            
+        </div>
+
+    </div>
+
 
 </template>

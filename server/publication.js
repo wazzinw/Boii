@@ -3,22 +3,28 @@ if(Meteor.isServer){
 
     Meteor.startup(function(){
         Router.onBeforeAction(Iron.Router.bodyParser.urlencoded({extended: false}));
+
     });
 
-    Meteor.publish('customers', function() {
-        return Customers.find();
+    Meteor.users.allow({
+        update: function (userId, user) {
+            return userId === user._id;
+        }
     });
-
-    /*Meteor.publish('staff', function() {
-        return Staff.find();
-    });*/
 
     Meteor.publish('menus', function() {
-        return Menus.find();
+        if (this.userId) {
+            var restID = Meteor.users.findOne({_id: this.userId}).profile.restaurant_id;
+            var restName = Restaurants.findOne({_id: restID}).name;
+        }
+        return Menus.find({restaurant_name: restName});
     });
 
     Meteor.publish('restaurants', function() {
-        return Restaurants.find();
+        if (this.userId) {
+            var restID = Meteor.users.findOne({_id: this.userId}).profile.restaurant_id;
+        }
+        return Restaurants.find({_id: restID});
     });
 
     Meteor.publish('orders', function() {
@@ -26,13 +32,15 @@ if(Meteor.isServer){
         if (this.userId) {
             var restID = Meteor.users.findOne({_id: this.userId}).profile.restaurant_id;
         }
-        if(restID) return Orders.find({restaurant_id: restID}, {limit: 10, sort: {updated_at: -1}});
+       if(restID)
+            return Orders.find({restaurant_id: restID}, {limit: 10, sort: {updated_at: -1}});
         else return Orders.find();
 
     });
 
 
     Meteor.publish('orderItems', function() {
+
         return OrderItems.find({});
     });
 
@@ -44,7 +52,12 @@ if(Meteor.isServer){
 
 
 
+<<<<<<< HEAD
     Push.addListener('message', function(notification) {
         // Called on every message
         console.log(notification);
     });
+=======
+
+
+>>>>>>> 7797c797fd1b9af7e97888b818ed61278cb803c3

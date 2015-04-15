@@ -31,17 +31,17 @@ var OrdersSchema = new SimpleSchema({
     },
     updated_at: {
         type: Date,
-        label: "updated ordered date and time",
+        label: "updated ordered date and time"
     },
     created_at: {
         type: Date,
         label: "ordered date and time",
-        denyUpdate: true,
+        denyUpdate: true
     },
     order_status: {
         type: String,
         label: "status of the order { 'billed','ready', 'accepted', 'rejected', 'approving'} ",
-        // allowedValues: ['billed', 'ready', 'accepted','rejected','accepted','approving']
+        allowedValues: ['billed', 'ready', 'accepted','rejected','approving']
     }
 });
 
@@ -104,9 +104,11 @@ Meteor.methods({
     },
     markOrderBilled: function(orderId) {
         
+    },
+    updateOrderStatus: function(id, status){
+
+        Orders.update({_id: id}, {$set: {order_status: status}});
     }
-
-
 });
 
 var OrderParamsSchema = new SimpleSchema({
