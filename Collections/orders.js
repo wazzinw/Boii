@@ -106,10 +106,18 @@ Meteor.methods({
         
     },
     updateOrderStatus: function(id, status){
+        var order = Orders.findOne({_id: id});
 
-        Orders.update({_id: id}, {$set: {order_status: status}});
+        if (order) {
+            Orders.update({_id: id}, {$set: {order_status: status}});
+            Meteor.call('pushOrderUpdate', order._id);
+        }
     }
 });
+
+var updateOrderStatus = function(id, status) {
+
+}
 
 var OrderParamsSchema = new SimpleSchema({
     restaurant_id:{

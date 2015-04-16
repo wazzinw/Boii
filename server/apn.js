@@ -1,7 +1,7 @@
 
 Meteor.methods({
-	'pushOrderUpdate': function(){
-		var apn = Meteor.npmRequire('apn')
+	'pushOrderUpdate': function(id){
+	var apn = Meteor.npmRequire('apn')
 		var path = Meteor.npmRequire('path')
 		console.log(process.cwd())
 		var appRootPath = "../../../../../"
@@ -13,15 +13,23 @@ Meteor.methods({
 		}
 		var apnConnection = new apn.Connection(options)
 
-		var myDevice = new apn.Device("3fa36d95e69e522a0b11856c22a72da26524aee304965c3ded59c5850598e902");
-		
-		var note = new apn.Notification();
-		note.sound = "default";
-		note.alert = "Hi boat";
-		note.payload = {'order_id': 'adsfjkh23r8offdf', 'order_status':'accepted'};
+		//Get user of current order
+		var order = Orders.findOne({_id: id});
+		if (order) {
+			//Set deviceToken
+			var user = Meteor.users.findOne({_id: order.customer_id});
 
-		apnConnection.pushNotification(note, myDevice);
+			if (user) {
+				console.log("Sending push to deviceToken="+user.profile.deviceToken);
+				var myDevice = new apn.Device(user.profile.deviceToken);		
+				//Send push notification
+				var note = new apn.Notification();
+				note.sound = "default";
+				note.alert = "Order " + order.confirm_code + " has been " + order.order_status ;
+				note.payload = {'order_id': order._id, 'order_status': order.order_status};
 
-		return "HEllO"
+				apnConnection.pushNotification(note, myDevice);
+			}
+		}
 	}
 });

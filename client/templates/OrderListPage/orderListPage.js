@@ -78,6 +78,13 @@ Template.orderListPage.events({
         lastReject = $(event.currentTarget).closest(".order_row").data('id');
         $('.cd-popup').addClass('is-visible');
     },
+    'click button#ready_but': function(event){
+        var order_id = $(event.currentTarget).closest(".order_row").data('id');
+        Meteor.call('updateOrderStatus', order_id, "ready",function(error, result) {
+            if (error) return alert(error.reason);
+            else console.log("status updated to ready");
+        });
+    },
     'click a.cd-popup-close': function(event){
         event.preventDefault();
         $('.cd-popup').removeClass('is-visible');
@@ -95,7 +102,6 @@ Template.orderListPage.events({
             else console.log("status updated to rejected");
         });
         //Orders.update({_id: lastReject}, {$set: {order_status:'rejected'}});
-
 
         lastReject = "";
         event.preventDefault();

@@ -51,13 +51,8 @@ if(Meteor.isServer){
 };
 
 
+    // Push.addListener('message', function(notification) {
+    //     // Called on every message
+    //     console.log(notification);
+    // });
 
-<<<<<<< HEAD
-    Push.addListener('message', function(notification) {
-        // Called on every message
-        console.log(notification);
-    });
-=======
-
-
->>>>>>> 7797c797fd1b9af7e97888b818ed61278cb803c3
