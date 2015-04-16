@@ -43,15 +43,16 @@
                 <br>
             </div>
 
-
+            {{#if promotion}}
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="promotion">Promotion</label>
                 <div class="col-xs-4">
-                    {{#if promotion}}
+
                     <input name="promotion" id="promotion" type="checkbox" checked />
-                    {{else}}
-                    <input name="promotion" id="promotion" type="checkbox" />
-                    {{/if}}
+
+                        <!--<label class="col-sm-2 control-label" for="validTill">Valid Until</label>-->
+                        <!--<input name="validTill" id="validTill" type="date" value="{{FormatDate valid_until}}" class="form-control"/>-->
+
                 </div>
                 <br>
             </div>
@@ -65,12 +66,37 @@
                 <br>
             </div>
 
+            {{else}}
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="promotion">Promotion</label>
+                    <div class="col-xs-4">
+
+                        <input name="promotion" id="promotion" type="checkbox"/>
+
+                        <!--<label class="col-sm-2 control-label" for="validTill">Valid Until</label>-->
+                        <!--<input name="validTill" id="validTill" type="date" value="{{FormatDate valid_until}}" class="form-control"/>-->
+
+                    </div>
+                    <br>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="price">Valid Until</label>
+                    <div class="col-xs-4">
+                        <input name="validTill" id="validTill" type="date"  class="form-control"/>
+                    </div>
+                    <br>
+                </div>
+              {{/if}}
+
+
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="price">Availability</label>
                 <div class="col-xs-4">
                     <select class="form-control" name="avail" id="avail">
-                        {{#if avaiable}}
-                        <option value="1">Available</option>
+                        {{#if available}}
+                        <option value="1" selected>Available</option>
                         <option value="2">Not Available</option>
                         {{else}}
                         <option value="1">Available</option>

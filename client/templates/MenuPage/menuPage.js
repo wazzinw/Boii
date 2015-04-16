@@ -249,7 +249,7 @@ Template.menuPage.events({
         options = {};
         options.name = $('#name-input').val();
         options.pic_url = pic_url;
-        options.valid_until = $('#validTill').val();
+
         options.price = $('#price-input').val();
         options.restaurant_name = rest.name;
         options.created_at = new Date();
@@ -258,11 +258,15 @@ Template.menuPage.events({
 
         if($('#promotion').is(':checked')){
             options.promotion = true;
-        }else options.promotion = false;
+            options.valid_until = $('#validTill').val();
+        }else{
+            options.promotion = false;
+            options.valid_until = "";
+        }
 
-        console.log($('#type').val());
+        console.log("Valid till: "+options.valid_until);
 
-        if($('#type').val() == "1"){
+        if($('#type').val() === "1"){
             options.type = "drink";
         }else{
             options.type = "food";
