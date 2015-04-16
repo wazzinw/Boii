@@ -92,13 +92,32 @@ Meteor.methods({
 
 
         return  Orders.insert(params);
-    }
-    ,
-    updateOrderStatus: function(id, status){
+    },
+    markOrderReady: function(orderId) {
 
-        Orders.update({_id: id}, {$set: {order_status: status}});
+    },
+    markOrderAccepted: function(orderId) {
+
+    },
+    markOrderRejected: function(orderId) {
+
+    },
+    markOrderBilled: function(orderId) {
+        
+    },
+    updateOrderStatus: function(id, status){
+        var order = Orders.findOne({_id: id});
+
+        if (order) {
+            Orders.update({_id: id}, {$set: {order_status: status}});
+            Meteor.call('pushOrderUpdate', order._id);
+        }
     }
 });
+
+var updateOrderStatus = function(id, status) {
+
+}
 
 var OrderParamsSchema = new SimpleSchema({
     restaurant_id:{

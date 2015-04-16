@@ -1,0 +1,11 @@
+{
+	"aps":
+	{
+		"alert":
+		{
+			"action-loc-key": "Open",
+			"body": "Hello, world!"
+		},
+		"badge": 2
+	}
+}

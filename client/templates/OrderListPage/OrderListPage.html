@@ -36,7 +36,13 @@
                         {{/each}}
                     </td>
                     <td class="order_action"><div class="item_button">
-                        {{#if isAccepted order_status}}
+                        {{#if isAccepted order_status }}
+                        <button type="button" id="bill_but">Bill</button>
+                        <button type="button" id="ready_but">Ready</button>
+
+                        {{/if}}
+                        
+                        {{#if isReady order_status }}
                         <button type="button" id="bill_but">Bill</button>
                         {{/if}}
 
@@ -45,9 +51,6 @@
                         <button type="button" id="reject_but">Reject</button> 
                         {{/if}}
 
-                        {{#if isAccepted order_status}}
-                        <button type="button" id="ready_but">Ready</button>
-                        {{/if}}
                         </div>
                     </td>
                 </tr> 

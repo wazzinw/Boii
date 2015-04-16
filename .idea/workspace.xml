@@ -2,13 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3757415f-3c7c-4f1f-be06-ad4d897b43a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/loading/loading.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/npm-container/.npm/package/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/npm-container/.npm/package/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/apn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/private/apn_push_format" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/private/boii_aps_cer.pem" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/private/boii_aps_key.pem" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config.push.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/npm-container/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/npm-container/.npm/package/npm-shrinkwrap.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/npm-container/package.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html" afterPath="$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/CafeRegisterPage/cafeRegisterPage.js" afterPath="$PROJECT_DIR$/client/templates/CafeRegisterPage/cafeRegisterPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/loading/loading.html" afterPath="$PROJECT_DIR$/client/templates/loading/loading.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/MenuInfoPage/menuEditPage.html" afterPath="$PROJECT_DIR$/client/templates/MenuInfoPage/menuEditPage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/MenuPage/menuPage.js" afterPath="$PROJECT_DIR$/client/templates/MenuPage/menuPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/OrderListPage/OrderListPage.html" afterPath="$PROJECT_DIR$/client/templates/OrderListPage/OrderListPage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/api_route.js" afterPath="$PROJECT_DIR$/lib/api_route.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Collections/customers.js" afterPath="$PROJECT_DIR$/Collections/customers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/OrderListPage/orderListPage.js" afterPath="$PROJECT_DIR$/client/templates/OrderListPage/orderListPage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Collections/orders.js" afterPath="$PROJECT_DIR$/Collections/orders.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/packages" afterPath="$PROJECT_DIR$/.meteor/packages" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/publication.js" afterPath="$PROJECT_DIR$/server/publication.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/user_config.js" afterPath="$PROJECT_DIR$/server/user_config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/versions" afterPath="$PROJECT_DIR$/.meteor/versions" />
     </list>
     <ignored path="boii.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,17 +49,17 @@
       <file leaf-file-name="MenuPage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.25" vertical-offset="1446" max-vertical-offset="2025">
-              <caret line="116" column="18" selection-start-line="116" selection-start-column="18" selection-end-line="116" selection-end-column="18" />
+            <state vertical-scroll-proportion="-9.833333" vertical-offset="1399" max-vertical-offset="2070">
+              <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menuEditPage.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="menuEditPage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/templates/MenuInfoPage/menuEditPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.009280742" vertical-offset="1234" max-vertical-offset="1995">
+            <state vertical-scroll-proportion="0.16666667" vertical-offset="1234" max-vertical-offset="1995">
               <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding />
             </state>
@@ -66,10 +80,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menuEditPage.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="menuEditPage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/templates/MenuInfoPage/menuEditPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="690">
+            <state vertical-scroll-proportion="0.26153848" vertical-offset="1" max-vertical-offset="690">
               <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="e#209#1928#0" expanded="false" />
@@ -134,9 +148,9 @@
         <option value="$PROJECT_DIR$/client/templates/CafeRegisterPage/cafeRegisterPage.js" />
         <option value="$PROJECT_DIR$/client/templates/loading/loading.js" />
         <option value="$PROJECT_DIR$/client/templates/loading/loading.html" />
-        <option value="$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html" />
         <option value="$PROJECT_DIR$/client/templates/MenuPage/menuPage.js" />
         <option value="$PROJECT_DIR$/client/templates/MenuInfoPage/menuEditPage.html" />
+        <option value="$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html" />
       </list>
     </option>
   </component>
@@ -880,8 +894,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/MenuPage/MenuPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.25" vertical-offset="1446" max-vertical-offset="2025">
-          <caret line="116" column="18" selection-start-line="116" selection-start-column="18" selection-end-line="116" selection-end-column="18" />
+        <state vertical-scroll-proportion="-9.833333" vertical-offset="1399" max-vertical-offset="2070">
+          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/MenuInfoPage/menuEditPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16666667" vertical-offset="1234" max-vertical-offset="1995">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -900,19 +922,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/MenuInfoPage/menuEditPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="690">
+        <state vertical-scroll-proportion="0.26153848" vertical-offset="1" max-vertical-offset="690">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="e#209#1928#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/MenuInfoPage/menuEditPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.009280742" vertical-offset="1234" max-vertical-offset="1995">
-          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

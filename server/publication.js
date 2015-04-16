@@ -51,6 +51,8 @@ if(Meteor.isServer){
 };
 
 
-
-
+    // Push.addListener('message', function(notification) {
+    //     // Called on every message
+    //     console.log(notification);
+    // });
 
