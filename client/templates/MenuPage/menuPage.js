@@ -277,7 +277,7 @@ Template.menuPage.events({
         Meteor.call('menuInsert', options, function(error) {
             if (error) return alert(error.reason);
             else{
-                alert("SUCCESSFULLY UPDATED");
+                window.alert(options.name+" is added");
 
             }
         });
@@ -285,7 +285,7 @@ Template.menuPage.events({
 
         //console.log("after: "+ menu_id);
 
-        window.alert(options.name+" is added");
+
         $('#cd-shadow-layer').removeClass('is-visible');
         $('#add_item').removeClass('speed-in');
 
@@ -293,18 +293,23 @@ Template.menuPage.events({
         $("#name-input").val('');
         $('#validTill').val('');
         $('#price-input').val('');
+        $('#promotion :checked').removeAttr('checked');
 
+
+    },
+
+    'click #promotion': function(event){
+
+            if($('#promotion').is(':checked')) {
+                $('#valid-panel').removeClass('invisible');
+            }else{
+                $('#valid-panel').addClass('invisible');
+            }
 
     }
 
 });
 
-    function checkAvail(){
-
-            //var menuArray = Menus.find();
-
-
-    }
 
 
 Template.menuPage.onRendered(function(){

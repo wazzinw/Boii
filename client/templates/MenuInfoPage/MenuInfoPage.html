@@ -16,21 +16,20 @@
     <h2 class = "text-uppercase"><strong>{{name}}</strong></h2>
 
     {{#if pic_url}}
-    <h3><img id="preview_image" src= {{pic_url}}></h3>
+    <img id="menu-image" src= {{pic_url}}>
     {{else}}
-    <h3><img id="preview_image" src= "/default_coffee.jpg"></h3>
+    <img id="menu-image" src= "/default_coffee.jpg">
     {{/if}}
 
+
+    <h3>Type <span>{{type}}</span></h3>
+    <h3>Price <span>{{price}} Baht</span></h3>
 
     {{#if promotion}}
-    <h3>Promotion status: <span>True</span></h3>
-    <h3 >Valid Until: <span>{{FormatDate valid_until}}</span></h3>
+        <h3>Promotion status<span>True</span></h3>
+        <h3 >Valid Until<span>{{FormatDate valid_until}}</span></h3>
     {{/if}}
-
-    <h3 >Price: <span>{{price}} Baht</span></h3>
-    <h3 >Type: <span>{{type}}</span></h3>
-
-
+    <h3>Available<span>{{#if available}}Yes{{else}}No{{/if}}</span></h3>
 
 </template>
 

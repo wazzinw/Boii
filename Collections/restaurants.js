@@ -65,7 +65,8 @@ var AddressSchema = new SimpleSchema({
     },
     building: {
         type: String,
-        max: 100
+        max: 100,
+        optional: true
     },
 
     street: {

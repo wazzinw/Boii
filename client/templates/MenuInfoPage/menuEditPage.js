@@ -72,7 +72,18 @@ Template.menuEdit.events({
         });
 
 
+    },
+
+    'click #promotion': function(event){
+
+        if($('#promotion').is(':checked')) {
+            $('#valid-panel').removeClass('invisible');
+        }else{
+            $('#valid-panel').addClass('invisible');
+        }
+
     }
+
 
 });
 

@@ -82,6 +82,7 @@ Template.cafeRegisterPage.events({
        Meteor.call('restaurantInsert', option, function(error, result) {
             if (error){
                 window.alert(error.reason);
+                Router.go('cafeRegisterPage');
             }
             else{
                 window.alert(option.name+" is added");

@@ -6,7 +6,14 @@ Template.loading.helpers({
 
     checkRest: function(){
 
-        return Restaurants.findOne(Meteor.user().profile.restaurant_id);
+        if(Restaurants.findOne(Meteor.user().profile.restaurant_id)){
+            console.log("found restaurant");
+
+            return true;
+        }
+        return false;
+
+
 
     },
     goCafeInfo: function(){
