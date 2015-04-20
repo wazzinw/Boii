@@ -20,7 +20,7 @@ Meteor.methods({
 			var user = Meteor.users.findOne({_id: order.customer_id});
 
 			if (user) {
-				console.log("Sending push to deviceToken="+user.profile.deviceToken);
+				console.log("Sending push to deviceToken="+user.profile.deviceToken+ " with status="+order.order_status);
 				var myDevice = new apn.Device(user.profile.deviceToken);		
 				//Send push notification
 				var note = new apn.Notification();
