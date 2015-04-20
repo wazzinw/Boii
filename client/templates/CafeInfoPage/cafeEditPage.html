@@ -23,18 +23,18 @@
 
 
             <div class="col-md-offset-4 form-group">
-                <label class="col-sm-2 control-label" for="name">Cafe Name:</label>
+                <label class="col-sm-2 control-label req" for="name">Cafe Name:</label>
                 <div class="col-xs-4">
-                    <input name="name" id="name" type="text" value="{{name}}" placeholder="Name of cafe" class="form-control"/>
+                    <input name="name" id="name" type="text" value="{{name}}" placeholder="Name of cafe" class="form-control" required/>
                 </div>
                 <br>
             </div>
 
 
             <div class="col-md-offset-4 form-group">
-                <label class="col-sm-2 control-label" for="email">Email:</label>
+                <label class="col-sm-2 control-label req" for="email">Email:</label>
                 <div class="col-xs-4">
-                    <input type="email" id="email" value ="{{email}}" class="form-control"/>
+                    <input type="email" id="email" value ="{{email}}" class="form-control" required/>
                 </div>
                 <br>
             </div>
@@ -42,81 +42,81 @@
 
             <h2> Address</h2>
             <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label" >Address Number: </label>
+                <label class="col-sm-5 control-label req" >Address Number: </label>
                 <div class="col-sm-6">
-                    <input id="number" type="text" value="{{address.[0].number}}" class="form-control" />
+                    <input id="number" type="text" value="{{address.[0].number}}" class="form-control" required />
                 </div>
             </div>
 
             <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label">Floor:</label>
+                <label class="col-sm-5 control-label req">Floor:</label>
                 <div class="col-sm-6">
-                    <input id="floor"  type="text" value="{{address.[0].floor}}" class="form-control" />
+                    <input id="floor"  type="text" value="{{address.[0].floor}}" class="form-control" required/>
                 </div>
             </div>
 
             <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label">Building:</label>
+                <label class="col-sm-5 control-label req">Building:</label>
                 <div class="col-sm-6">
-                    <input id="building" type="text" value="{{address.[0].building}}" class="form-control" />
+                    <input id="building" type="text" value="{{address.[0].building}}" class="form-control" required/>
                 </div>
             </div>
 
             <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label">Street/Soi:</label>
+                <label class="col-sm-5 control-label req">Street/Soi:</label>
                 <div class="col-sm-6">
-                    <input id="street" type="text" value="{{address.[0].street}}" class="form-control" />
+                    <input id="street" type="text" value="{{address.[0].street}}" class="form-control" required/>
                 </div>
             </div>
 
 
-            <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label">Sub-District:</label>
+            <div class = "col-sm-5 form-group req">
+                <label class="col-sm-5 control-label req">Sub-District:</label>
                 <div class="col-sm-6">
-                    <input id="subDist" type="text" value="{{address.[0].subDistrict}}" class="form-control" />
+                    <input id="subDist" type="text" value="{{address.[0].subDistrict}}" class="form-control" required/>
                 </div>
             </div>
 
 
 
             <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label">District:</label>
+                <label class="col-sm-5 control-label req">District:</label>
                 <div class="col-sm-6">
-                    <input id="dist" type="text" value="{{address.[0].district}}" class="form-control" />
+                    <input id="dist" type="text" value="{{address.[0].district}}" class="form-control" required/>
+                </div>
+                <br>
+            </div>
+
+
+            <div class = "col-sm-5 form-group req">
+                <label class="col-sm-5 control-label req">Province:</label>
+                <div class="col-sm-6">
+                    <input id="province" type="text" value="{{address.[0].province}}" class="form-control" required/>
+                </div>
+            </div>
+
+
+            <div class = "col-sm-5 form-group ">
+                <label class="col-sm-5 control-label req">Country:</label>
+                <div class="col-sm-6">
+                    <input id="country" type="text" value="{{address.[0].country}}" class="form-control" required />
                 </div>
                 <br>
             </div>
 
 
             <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label">Province:</label>
+                <label class="col-sm-5 control-label req">Postal Code:</label>
                 <div class="col-sm-6">
-                    <input id="province" type="text" value="{{address.[0].province}}" class="form-control" />
+                    <input id="post" type="text" value="{{address.[0].postalCode}}" class="form-control" required/>
                 </div>
             </div>
 
 
             <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label">Country:</label>
+                <label class="col-sm-5 control-label req">Phone Number:</label>
                 <div class="col-sm-6">
-                    <input id="country" type="text" value="{{address.[0].country}}" class="form-control" />
-                </div>
-                <br>
-            </div>
-
-
-            <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label">Postal Code:</label>
-                <div class="col-sm-6">
-                    <input id="post" type="text" value="{{address.[0].postalCode}}" class="form-control" />
-                </div>
-            </div>
-
-
-            <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label">Phone Number:</label>
-                <div class="col-sm-6">
-                    <input id="phone" type="text" value = "{{phone_numbers.[0].number}}" class="form-control" />
+                    <input id="phone" type="text" value = "{{phone_numbers.[0].number}}" class="form-control" required />
                 </div>
             </div>
 

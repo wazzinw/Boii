@@ -249,7 +249,7 @@ Template.menuPage.events({
         options = {};
         options.name = $('#name-input').val();
         options.pic_url = pic_url;
-        options.valid_until = $('#validTill').val();
+
         options.price = $('#price-input').val();
         options.restaurant_name = rest.name;
         options.created_at = new Date();
@@ -258,11 +258,15 @@ Template.menuPage.events({
 
         if($('#promotion').is(':checked')){
             options.promotion = true;
-        }else options.promotion = false;
+            options.valid_until = $('#validTill').val();
+        }else{
+            options.promotion = false;
+            options.valid_until = "";
+        }
 
-        console.log($('#type').val());
+        console.log("Valid till: "+options.valid_until);
 
-        if($('#type').val() == "1"){
+        if($('#type').val() === "1"){
             options.type = "drink";
         }else{
             options.type = "food";
@@ -273,7 +277,7 @@ Template.menuPage.events({
         Meteor.call('menuInsert', options, function(error) {
             if (error) return alert(error.reason);
             else{
-                alert("SUCCESSFULLY UPDATED");
+                window.alert(options.name+" is added");
 
             }
         });
@@ -281,7 +285,7 @@ Template.menuPage.events({
 
         //console.log("after: "+ menu_id);
 
-        window.alert(options.name+" is added");
+
         $('#cd-shadow-layer').removeClass('is-visible');
         $('#add_item').removeClass('speed-in');
 
@@ -289,18 +293,23 @@ Template.menuPage.events({
         $("#name-input").val('');
         $('#validTill').val('');
         $('#price-input').val('');
+        $('#promotion :checked').removeAttr('checked');
 
+
+    },
+
+    'click #promotion': function(event){
+
+            if($('#promotion').is(':checked')) {
+                $('#valid-panel').removeClass('invisible');
+            }else{
+                $('#valid-panel').addClass('invisible');
+            }
 
     }
 
 });
 
-    function checkAvail(){
-
-            //var menuArray = Menus.find();
-
-
-    }
 
 
 Template.menuPage.onRendered(function(){

@@ -553,10 +553,10 @@ max-height: 150px;
 }
 .browsepic input{
     width: 400px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     position: relative;
     bottom: 30px;
-    left: 70px;
+    left: 60px;
 }
 #type-select{
     padding: 0px;
@@ -565,13 +565,13 @@ max-height: 150px;
     width: 150px;
 }
 .detail {
-    margin-left: 10%;
+    margin-left: 150px;
     font-size: 20px;
 }
 .detail input{
     height: 30px;
     margin-left: 20px;
-    font-size: 20px;
+    font-size: 15px;
 }
 .type{
     height: 40px;
@@ -590,10 +590,17 @@ max-height: 150px;
     width: 20px;
 }
 #name-input{
-    width: 300px;
+    width: 200px;
+    margin-left: 25px;
 }
 #price-input{
-    margin-left: 30px;
+    margin-left: 32px;
+    width: 200px;
+}
+
+.req:before{
+    content:"*";
+    color:red;
 }
 .detail button{
     font-size: 20px;
@@ -612,6 +619,7 @@ max-height: 150px;
 }
 .add_button {
     margin: 0 auto;
+    margin-left: 190px;
     width: 300px;
     padding: 20px 0px;
 }
@@ -624,14 +632,18 @@ max-height: 150px;
     color: aliceblue;
 }
 #cancel-add-butt{
-    margin-left: 50px;
+    margin-left: 30px;
 }
 #preview_image{
     display: block;
     margin: auto;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     max-height: 200px;
     max-width: 250px;
+}
+
+select#type {
+    margin-left: 10px;
 }
 
 /*------------------------------Menu Info----------------------------------------*/
@@ -651,8 +663,9 @@ max-height: 150px;
 }
 .item-info #info-btn-panel{
     width: 100%;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 20px;
+    margin-left: 50px;
 }
 .item-info a{
     height: 50px;
@@ -668,15 +681,17 @@ max-height: 150px;
 }
 .item-info img{
     height: 200px;
-    width: 200px;
+    width: 250px;
     position: relative;
     right: 2em;
+    margin-left: 160px;
 }   
 #edit_item_butt{
     background: #24A8AF;  
 }
 #back_item_butt{
     background: #FA5858;
+    margin-left: 20px;
 }
 #edit_item_butt:active{
     background: #76F9F5;
@@ -688,6 +703,8 @@ max-height: 150px;
     margin-left: 1em;
     font-weight: bold;
 }
+
+
 
 /*------------------------------Edit Item----------------------------------------*/
 
@@ -919,13 +936,14 @@ max-height: 150px;
 #register-center input{
     margin-left: 20px;
     height: 25px;
-    font-size: 20px;
+    font-size: 15px;
     width: 200px;
     line-height: 25px;
 }
 #register-center h2{
     border-bottom: 1px solid black;
     padding-bottom: 5px;
+    margin-left: 10px;
 }
 .form-group p{
     margin-left: 40px;
@@ -963,6 +981,12 @@ max-height: 150px;
     width: 500px;
     font-size: 20px;
     margin: auto;
+}
+
+.form-group.required .control-label:before {
+    content:"*";
+    color:red;
+
 }
 
 /*----------------------------Cafe Info Panel------------------------------------*/
