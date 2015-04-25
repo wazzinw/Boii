@@ -27,7 +27,12 @@ Meteor.methods({
 					//Send push notification
 					var note = new apn.Notification();
 					note.sound = "default";
-					note.alert = "Order " + order.confirm_code + " has been " + order.order_status ;
+					if( order.order_status === "ready") {
+						note.alert = "Order " + order.confirm_code + " is ready" ;
+					} else {
+						note.alert = "Order " + order.confirm_code + " has been " + order.order_status ;
+					}
+
 					note.payload = {'order_id': order._id, 'order_status': order.order_status};
 
 					apnConnection.pushNotification(note, myDevice);
