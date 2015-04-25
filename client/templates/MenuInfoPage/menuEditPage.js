@@ -77,9 +77,9 @@ Template.menuEdit.events({
     'click #promotion': function(event){
 
         if($('#promotion').is(':checked')) {
-            $('#valid-panel').removeClass('invisible');
+            $('#valid-div').removeClass('invisible');
         }else{
-            $('#valid-panel').addClass('invisible');
+            $('#valid-div').addClass('invisible');
         }
 
     }

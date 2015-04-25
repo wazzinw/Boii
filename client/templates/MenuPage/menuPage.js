@@ -102,10 +102,6 @@ Template.menuPage.helpers({
 
         return sum;
     }
-
-
-
-
 });
 
 Template.menuPage.events({
@@ -264,9 +260,9 @@ Template.menuPage.events({
             options.valid_until = "";
         }
 
-        console.log("Valid till: "+options.valid_until);
+        //console.log("Valid till: "+options.valid_until);
 
-        if($('#type').val() === "1"){
+        if($('#type-select').val() === "1"){
             options.type = "drink";
         }else{
             options.type = "food";
@@ -278,13 +274,10 @@ Template.menuPage.events({
             if (error) return alert(error.reason);
             else{
                 window.alert(options.name+" is added");
-
             }
         });
 
-
         //console.log("after: "+ menu_id);
-
 
         $('#cd-shadow-layer').removeClass('is-visible');
         $('#add_item').removeClass('speed-in');
@@ -307,7 +300,6 @@ Template.menuPage.events({
             }
 
     }
-
 });
 
 
@@ -327,8 +319,6 @@ Template.menuPage.onRendered(function(){
         cart_length = 0,
         i;
 
-
-
     //choose category
     $food_butt.on('click',function(){
         $drink_butt.removeClass('selected');
@@ -342,30 +332,6 @@ Template.menuPage.onRendered(function(){
         $('#drink-list').removeClass('invisible');
         $('#food-list').addClass('invisible');
     });
-
-    //edit item
- /*   $('#edit_item_butt').on('click', function(){
-        if($('#edit_item_butt').text() === 'Edit'){
-            $('#drink-list').find('.menu').prop('disabled',true);
-            $('#drink-list').find('.menu').css('active','disabled');
-            $('#drink-list').find('h4').text('').append('<button class="edit-item-btn">Edit</button>');
-            $('#edit_item_butt').text('Done').css('background', 'green');
-
-            $('.edit-item-btn').on('click', function(){
-                toggle_panel_visibility($add_item, $shadow_layer, $('body'));
-                $("#name-input").val('');
-                $('#validTill').val('');
-                $('#price-input').val('');
-                $('#promotion');
-                $('#type-drink');
-
-            });
-        }else{
-            $('#drink-list').find('h4').text('$50');
-            $('#edit_item_butt').text('Edit').css('background', '#24A8AF');
-            $('#drink-list').find('.menu').prop('disabled',false);
-        }
-    });*/
 
     //delete item from panel UI
     $('#delete_item_butt').on('click', function(){
@@ -398,15 +364,11 @@ Template.menuPage.onRendered(function(){
 
     });
 
-
-
     //open add item pop-up
     $add_item_butt.on('click', function(event){
         event.preventDefault();
         toggle_panel_visibility($add_item, $shadow_layer, $('body'));
-
     });
-
 
     //close add item pop-up
     $('#cancel-add-butt').on('click', function(event){
@@ -425,7 +387,6 @@ Template.menuPage.onRendered(function(){
             $add_item.removeClass('speed-in');
         }
     });
-
 
     //open cart
     $cart_trigger.on('click', function(event){
@@ -455,7 +416,6 @@ Template.menuPage.onRendered(function(){
 
 
 
-
     function preview(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -470,7 +430,5 @@ Template.menuPage.onRendered(function(){
             reader.readAsDataURL(input.files[0]);
         }
     }
-
-
 });
 

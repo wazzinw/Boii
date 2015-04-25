@@ -1,148 +1,159 @@
 <template name="cafeEdit">
 
-    <form class="form-horizontal jumbotron">
-
-        <div id="cafe-edit-panel">
-            <div>
-                {{#if pic_url}}
-                <img id="preview_image" src= "{{pic_url}}">
-                {{else}}
-                <img id="preview_image" src= "/default_coffee.jpg">
-                {{/if}}
-                <br>
+    <form>
+        <div class="center">
+            <div class="pageheader">
+                <h1>Edit Cafe</h1>
             </div>
-
-
-            <div class="col-md-offset-4 form-group">
-                <label class="col-sm-2 control-label" for="Pic">Logo:</label>
-                <div class="col-xs-4">
-                    <input multiple class = "file fileInput form-control" id="item-image" type="file" />
-                </div>
-                <br>
-            </div>
-
-
-            <div class="col-md-offset-4 form-group">
-                <label class="col-sm-2 control-label req" for="name">Cafe Name:</label>
-                <div class="col-xs-4">
-                    <input name="name" id="name" type="text" value="{{name}}" placeholder="Name of cafe" class="form-control" required/>
-                </div>
-                <br>
-            </div>
-
-
-            <div class="col-md-offset-4 form-group">
-                <label class="col-sm-2 control-label req" for="email">Email:</label>
-                <div class="col-xs-4">
-                    <input type="email" id="email" value ="{{email}}" class="form-control" required/>
-                </div>
-                <br>
-            </div>
-
-
-            <h2> Address</h2>
-            <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label req" >Address Number: </label>
-                <div class="col-sm-6">
-                    <input id="number" type="text" value="{{address.[0].number}}" class="form-control" required />
-                </div>
-            </div>
-
-            <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label req">Floor:</label>
-                <div class="col-sm-6">
-                    <input id="floor"  type="text" value="{{address.[0].floor}}" class="form-control" required/>
-                </div>
-            </div>
-
-            <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label req">Building:</label>
-                <div class="col-sm-6">
-                    <input id="building" type="text" value="{{address.[0].building}}" class="form-control" required/>
-                </div>
-            </div>
-
-            <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label req">Street/Soi:</label>
-                <div class="col-sm-6">
-                    <input id="street" type="text" value="{{address.[0].street}}" class="form-control" required/>
-                </div>
-            </div>
-
-
-            <div class = "col-sm-5 form-group req">
-                <label class="col-sm-5 control-label req">Sub-District:</label>
-                <div class="col-sm-6">
-                    <input id="subDist" type="text" value="{{address.[0].subDistrict}}" class="form-control" required/>
-                </div>
-            </div>
-
-
-
-            <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label req">District:</label>
-                <div class="col-sm-6">
-                    <input id="dist" type="text" value="{{address.[0].district}}" class="form-control" required/>
-                </div>
-                <br>
-            </div>
-
-
-            <div class = "col-sm-5 form-group req">
-                <label class="col-sm-5 control-label req">Province:</label>
-                <div class="col-sm-6">
-                    <input id="province" type="text" value="{{address.[0].province}}" class="form-control" required/>
-                </div>
-            </div>
-
-
-            <div class = "col-sm-5 form-group ">
-                <label class="col-sm-5 control-label req">Country:</label>
-                <div class="col-sm-6">
-                    <input id="country" type="text" value="{{address.[0].country}}" class="form-control" required />
-                </div>
-                <br>
-            </div>
-
-
-            <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label req">Postal Code:</label>
-                <div class="col-sm-6">
-                    <input id="post" type="text" value="{{address.[0].postalCode}}" class="form-control" required/>
-                </div>
-            </div>
-
-
-            <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label req">Phone Number:</label>
-                <div class="col-sm-6">
-                    <input id="phone" type="text" value = "{{phone_numbers.[0].number}}" class="form-control" required />
-                </div>
-            </div>
-
-
-            <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label">Major ID:</label>
-                <div class="col-sm-6">
-                    <input id="major" type="text" value = "{{beacon_major}}" class="form-control" />
-                </div>
-            </div>
-
-            <div class = "col-sm-5 form-group">
-                <label class="col-sm-5 control-label">Minor ID:</label>
-                <div class="col-sm-6">
-                    <input id="minor" type="text" value = "{{beacon_minor}}" class="form-control" />
+            <div id="cafe-edit-panel">
+                <!--Preview Cafe Image-->
+                <div>
+                    {{#if pic_url}}
+                    <img id="preview_image" src= "{{pic_url}}">
+                    {{else}}
+                    <img id="preview_image" src= "/default_coffee.jpg">
+                    {{/if}}
+                    <br>
                 </div>
 
-            </div>
-            <br><br>
-            <div class="form-group">
-                <div class="col-sm-offset-4 col-sm-10" id="edit-btn-panel">
-                    <a class="btn btn-lg btn-primary submit" id="save-btn">Save</a>
-                    <a class="btn btn-lg btn-danger delete" href= {{pathFor 'cafeInfoPage'}} id="cancel-edit">Back</a>
+                <div id="cafe-owner-info">
+                    <!--Logo Input-->
+                    <div class="col-md-offset-4 form-group owner-info">
+                        <label class="col-sm-2 control-label" for="Pic">Logo:</label>
+                        <div class="col-xs-4">
+                            <input multiple class = "file fileInput form-control " id="item-image" type="file" />
+                        </div>
+                        <br>
+                    </div>
+
+                    <!--Cafe Name Input-->
+                    <div class="col-md-offset-4 form-group owner-info">
+                        <label class="col-sm-2 control-label req" for="name">Cafe Name:</label>
+                        <div class="col-xs-4">
+                            <input name="name" id="name" type="text" value="{{name}}" placeholder="Name of cafe" class="form-control" required/>
+                        </div>
+                        <br>
+                    </div>
+
+                    <!--Email Input-->
+                    <div class="col-md-offset-4 form-group owner-info">
+                        <label class="col-sm-2 control-label req" for="email">Email:</label>
+                        <div class="col-xs-4">
+                            <input type="email" id="email" value ="{{email}}" class="form-control" required/>
+                        </div>
+                        <br>
+</div>
+                </div>
+
+                <h2>Address</h2>
+                <!--Address Number Input-->
+                <div class = "col-sm-5 form-group">
+                    <label class="col-sm-5 control-label req" >Address Number: </label>
+                    <div class="col-sm-6">
+                        <input id="number" type="text" value="{{address.[0].number}}" class="form-control" required />
+                    </div>
+                </div>
+
+                <!--Floor Input-->
+                <div class = "col-sm-5 form-group">
+                    <label class="col-sm-5 control-label req">Floor:</label>
+                    <div class="col-sm-6">
+                        <input id="floor"  type="text" value="{{address.[0].floor}}" class="form-control" required/>
+                    </div>
+                </div>
+
+                <!--Building Input-->
+                <div class = "col-sm-5 form-group">
+                    <label class="col-sm-5 control-label req">Building:</label>
+                    <div class="col-sm-6">
+                        <input id="building" type="text" value="{{address.[0].building}}" class="form-control" required/>
+                    </div>
+                </div>
+
+                <!--Street Input-->
+                <div class = "col-sm-5 form-group">
+                    <label class="col-sm-5 control-label req">Street/Soi:</label>
+                    <div class="col-sm-6">
+                        <input id="street" type="text" value="{{address.[0].street}}" class="form-control" required/>
+                    </div>
+                </div>
+
+                <!--Sub-district Input-->
+                <div class = "col-sm-5 form-group req">
+                    <label class="col-sm-5 control-label req">Sub-District:</label>
+                    <div class="col-sm-6">
+                        <input id="subDist" type="text" value="{{address.[0].subDistrict}}" class="form-control" required/>
+                    </div>
+                </div>
+
+                <!--District Input-->
+                <div class = "col-sm-5 form-group">
+                    <label class="col-sm-5 control-label req">District:</label>
+                    <div class="col-sm-6">
+                        <input id="dist" type="text" value="{{address.[0].district}}" class="form-control" required/>
+                    </div>
+                    <br>
+                </div>
+
+                <!--Province Input-->
+                <div class = "col-sm-5 form-group req">
+                    <label class="col-sm-5 control-label req">Province:</label>
+                    <div class="col-sm-6">
+                        <input id="province" type="text" value="{{address.[0].province}}" class="form-control" required/>
+                    </div>
+                </div>
+
+                <!--Country Input-->
+                <div class = "col-sm-5 form-group ">
+                    <label class="col-sm-5 control-label req">Country:</label>
+                    <div class="col-sm-6">
+                        <input id="country" type="text" value="{{address.[0].country}}" class="form-control" required />
+                    </div>
+                    <br>
+                </div>
+
+                <!--Postal Code Input-->
+                <div class = "col-sm-5 form-group">
+                    <label class="col-sm-5 control-label req">Postal Code:</label>
+                    <div class="col-sm-6">
+                        <input id="post" type="text" value="{{address.[0].postalCode}}" class="form-control" required/>
+                    </div>
+                </div>
+
+                <!--Phone Input-->
+                <div class = "col-sm-5 form-group">
+                    <label class="col-sm-5 control-label req">Phone Number:</label>
+                    <div class="col-sm-6">
+                        <input id="phone" type="text" value = "{{phone_numbers.[0].number}}" class="form-control" required />
+                    </div>
+                </div>
+
+                <!--Major Input-->
+                <div class = "col-sm-5 form-group">
+                    <label class="col-sm-5 control-label">Major ID:</label>
+                    <div class="col-sm-6">
+                        <input id="major" type="text" value = "{{beacon_major}}" class="form-control" />
+                    </div>
+                </div>
+
+                <!--Minor Input-->
+                <div class = "col-sm-5 form-group">
+                    <label class="col-sm-5 control-label">Minor ID:</label>
+                    <div class="col-sm-6">
+                        <input id="minor" type="text" value = "{{beacon_minor}}" class="form-control" />
+                    </div>
+
+                </div>
+                <br><br>
+
+                <!--Button Panel-->
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-10" id="edit-btn-panel">
+                        <a class="btn btn-lg btn-primary submit" id="save-btn">Save</a>
+                        <a class="btn btn-lg btn-danger delete" href= {{pathFor 'cafeInfoPage'}} id="cancel-edit">Back</a>
+                    </div>
                 </div>
             </div>
         </div>
-
     </form>
 </template>

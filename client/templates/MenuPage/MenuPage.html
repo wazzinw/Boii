@@ -16,11 +16,10 @@
                 </button>
             </ul>
 
+<!--            Drink Panel-->
             <ul id="drink-list">
                 {{#each drinkMenu}}
                 <li id= "item" class="drink-item" data-id="{{_id}}" >
-
-
                     <button type="button" class="menu" data-available="{{available}}">
                         <h3>{{name}}</h3>
                         <h4>฿ {{price}}</h4>
@@ -32,12 +31,11 @@
                     {{else}}
                     <div id="not-avail-shadow"></div>
                     {{/if}}
-
                 </li>
                 {{/each}}
             </ul>
 
-
+<!--            Food Panel-->
             <ul id="food-list" class="invisible">
                 {{#each foodMenu}}
                 <li id="item" class="food-item" data-id={{_id}} >
@@ -61,9 +59,7 @@
                 <button id="delete_item_butt" type="button">Delete</button>
             </div>
         </div>
-
     </div>
-
 
 
     <!-- CART  -->
@@ -93,39 +89,39 @@
         <a href="#0" class="close-cart-btn">Close Cart</a>
     </div>
 
-    <!-- cd-cart -->
-
 
     <!-- ADD ITEM -->
     <div id="add_item">
-        <h1>New Menu</h1>
-        <img id="preview_image" src= "/default_coffee.jpg">
-        <div class="detail">
-            <p class="browsepic">Picture<input multiple class = "file fileInput" id="item-image" type="file"/></p>
-
-            <div class="type">
-                <p class="col-sm-2 control-label" for="type">Type</p>
-                <div class="col-xs-4" id="type-select">
-                    <select name="type" id="type">
-                        <option value="1">Drink</option>
-
-                        <option value="2">Food</option>
-                    </select>
-                </div>
+        <div>
+            <div id="add-item-header">
+                <h1>New Menu</h1>
             </div>
-
-            <p class="req">Name<input id="name-input" type="text" placeholder="Coffee" required/></p>
-            <p class="req">Price<input id="price-input" type="text" placeholder="20" required/></p>
-
             <div>
-                <p id="label-promotion">Promotion<input type="checkbox" id="promotion" value=true ></p>
+                <img id="preview_image" src= "/default_coffee.jpg">
             </div>
-            <p id="valid-panel" class="invisible">Valid Until<input type="date" id ="validTill" ></p>
+            <div>
+                <p id="picture-label">Picture:</p><input multiple class=" file fileInput form-control" id="item-image" type="file"/>
+            </div>
+            <div id="food-drink-div">
+                <p>Type:
+                    <select name="type" id="type-select">
+                        <option value="1">Drink</option>
+                        <option value="2">Food</option>
+                    </select></p>
+            </div>
+            <div>
+                <p class="req">Name:<input id="name-input" type="text" placeholder="Coffee" required/></p>
+                <p class="req">Price:<input id="price-input" type="text" placeholder="20" required/></p>
+            </div>
+            <div>
+                <p id="label-promotion">Promotion:<input type="checkbox" id="promotion" value=true ></p>
+            </div>
+            <p id="valid-panel" class="invisible">Valid Until:<input type="date" id ="validTill" ></p>
+            <div class="add_button">
+                <button id="add-to-save-butt">Add</button>
+                <button id="cancel-add-butt">Cancel</button>
+            </div> 
         </div>
-        <div class="add_button">
-            <button id="add-to-save-butt">Add</button>
-            <button id="cancel-add-butt">Cancel</button>
-        </div> 
     </div>
 
 

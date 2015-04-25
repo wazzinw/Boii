@@ -1,14 +1,18 @@
 
 <template name = "menuInfo">
-    <div class="item-info">
-        {{>menuItem}}
-        <div id="info-btn-panel">
-            <a href = "{{pathFor 'menuEdit'}}" id="edit_item_butt" class = "btn btn-default">Edit</a>
-            <a href="{{pathFor 'menuPage'}}" id="back_item_butt" class="btn btn-default">Back</a>
 
+    <div class="center">
+        <div class="pageheader">
+            <h1 id = "title" data-id={{_id}}>Menu Info</h1>
         </div>
+        <div class="item-info">
+            {{>menuItem}}
+            <div id="info-btn-panel">
+                <a href = "{{pathFor 'menuEdit'}}" id="edit_item_butt" class = "btn btn-default">Edit</a>
+                <a href="{{pathFor 'menuPage'}}" id="back_item_butt" class="btn btn-default">Back</a>
+            </div>
         </div>
-
+    </div>
 </template>
 
 <template name = "menuItem">
@@ -16,21 +20,24 @@
     <h2 class = "text-uppercase"><strong>{{name}}</strong></h2>
 
     {{#if pic_url}}
-    <img id="menu-image" src= {{pic_url}}>
+    <div id="item-info-preview">
+        <img id="preview_image" src= {{pic_url}}>
+    </div>
     {{else}}
-    <img id="menu-image" src= "/default_coffee.jpg">
+    <div id="item-info-preview">
+        <img id="preview_image" src= "/default_coffee.jpg">
+    </div>
     {{/if}}
 
-
-    <h3>Type <span>{{type}}</span></h3>
-    <h3>Price <span>{{price}} Baht</span></h3>
-
-    {{#if promotion}}
-        <h3>Promotion status<span>True</span></h3>
-        <h3 >Valid Until<span>{{FormatDate valid_until}}</span></h3>
-    {{/if}}
-    <h3>Available<span>{{#if available}}Yes{{else}}No{{/if}}</span></h3>
-
+    <div id="item-info-item-detail">
+        <h3>Type: <span>{{type}}</span></h3>
+        <h3>Price: <span>{{price}} Baht</span></h3>
+        {{#if promotion}}
+        <h3>Promotion status: <span>True</span></h3>
+        <h3 >Valid Until: <span>{{FormatDate valid_until}}</span></h3>
+        {{/if}}
+        <h3>Available: <span>{{#if available}}Yes{{else}}No{{/if}}</span></h3>
+    </div>
 </template>
 
 

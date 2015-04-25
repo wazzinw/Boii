@@ -27,20 +27,7 @@ html{
     margin-left: 10px;
     max-height: 50px;
 }
-/*#contact {
-float: right;
-font-size: 18px;
-padding: 10px 40px;
-margin-top: 10px;
-margin-right: 10px;
-background: url("texture_bluewood.jpg");
-border-radius: 100px 0px 0px 100px;
-border: 5px solid #F0F1F1;
-color: aliceblue;
-}*/
-
 /*------------------------------MENU BAR-----------------------------------------*/
-
 #mainpage-menu{
     font-size: 20px;
     height: 70px;
@@ -67,7 +54,7 @@ color: aliceblue;
     float: right;
 }
 .main_div{
-  /*  border-top: 1px solid #919394;*/
+    /*  border-top: 1px solid #919394;*/
     padding: 5px;
     margin: auto;
     width: 100%;
@@ -91,7 +78,6 @@ color: aliceblue;
     color: aliceblue;
     padding-top: 4px;
     padding-bottom: 5px;
-
 }
 #mainpage-menu span{
     position: absolute;
@@ -105,7 +91,6 @@ color: aliceblue;
     margin-left: 0px;
 }
 /*------------------------------------OVERVIEW-----------------------------------*/
-
 #overview{
     background: url("/texture_bluewood.jpg");
     color: aliceblue;
@@ -136,36 +121,7 @@ color: aliceblue;
     position: relative;
     bottom: 40px;
 }
-/*
-
-.summary_table{
-margin: 50px 50px;
-text-align: center;
-font-size: 20px;
-margin: auto;
-
-}
-.summary_table li{
-width: 300px;
-padding-top: 20px;
-display: inline-block;
-}
-.summary_table p{
-width: 28functions0px;
-height: 50px;
-margin: auto;
-margin-top: 1em;
-}
-.summary_table span{
-font-weight: bold;
-}
-.summary_table #logo{
-box-shadow: 5px 0px 2px 2px #FFFFFF, -5px -0px 2px 2px #FFFFFF;
-max-height: 150px;
-}*/
-
 /*------------------------------------FEATURES-----------------------------------*/
-
 #features{
     background: url("/texture_whitepaper.jpg");
     color: #215877;
@@ -179,15 +135,11 @@ max-height: 150px;
     display: inline-block;
     margin: auto;
     font-size: 18px;
-
 }   
 .features_table h3{
     font-weight: bold;
-
 }
-
 /*------------------------------------CAFE LIST----------------------------------*/
-
 #cafelist{
     height: auto;
     background: url("/texture_lightblue.jpg");
@@ -209,9 +161,7 @@ max-height: 150px;
 #cafelist h3{
     margin-top: 5px;
 }
-
 /*------------------------------Center-------------------------------------------*/
-
 .center{
     padding: 10px;
     background: url("texture_whitepaper.jpg");
@@ -233,9 +183,7 @@ max-height: 150px;
 .pageheader h1{
     line-height: 50px;
 }
-
 /*---------------------------------MENU------------------------------------------*/
-
 #menu-panel{
     height: 750px;
     border: 1px solid black;
@@ -279,27 +227,24 @@ max-height: 150px;
     color: aliceblue;
     border-radius: 10px;
 }
-
-
 /*---------------------------------MENU LIST-------------------------------------*/
-
 .invisible{
     display: none;
 }
 #drink-list,  #food-list{
     list-style: none;
-    height: 600px;
-    max-width: 1000px;
+    height: 550px;
+    max-width: 1200px;
     overflow: auto;
     position: absolute;
-    margin: auto;
+    text-align: center;
 }
 #drink-list li, #food-list li{
     display: inline-block;
-    margin: 20px;
+    margin: 20px 20px 20px 0px;
 }
 #drink-list .menu, #food-list .food-menu{
-    width: 200px;
+    width: 180px;
     height: 100px;
     padding-top: 12px;
     border-radius: 5px;
@@ -337,7 +282,7 @@ max-height: 150px;
     height: 35px;
     width: 35px;
     position: relative;
-    left: 180px;
+    left: 90px;
     bottom: 150px;
     border-radius: 20px;
     font-size: 20px;
@@ -345,10 +290,9 @@ max-height: 150px;
     color: white;
     font-weight: bold;
     display: none;
+    z-index: 3;
 }
-
 /*----------------------------Menu Button Panel----------------------------------*/
-
 .btn-panel{
     position: relative;
     top: 75%;
@@ -397,7 +341,6 @@ max-height: 150px;
     font-weight: bold;
     text-transform: uppercase;
     margin: 1em 0;
-
 }
 #cd-cart .cd-cart-items {
     padding: 0;
@@ -502,7 +445,7 @@ max-height: 150px;
     left: 0;
     background: rgba(67, 87, 121, 0.6);
     cursor: pointer;
-    z-index: 2;
+    z-index: 4;
     display: none;
 }
 #cd-shadow-layer.is-visible, #not-avail-shadow.is-visible{
@@ -513,81 +456,61 @@ max-height: 150px;
 }
 #not-avail-shadow{
     position: absolute;
-    width: 200px;
+    width: 180px;
     height: 100px;
     top: 20px;
     border-radius: 5px;
     background: rgba(67, 87, 121, 0.6);
     z-index: 2;
-
 }
-
-
 /*---------------------------------Add ITEM--------------------------------------*/
 #add_item{
     position: relative;
     top: -800px;
     width: 50%;
-    min-width: 600px;
-    margin:auto;
-    padding-top: 50px;
+    width: 600px;
+    margin: auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    z-index: 3;
+    z-index: 4;
     background: url("texture_whitepaper.jpg");
     display: none;
     border-radius: 5px;
+    padding: 10px 0px;
+    font-size: 20px;
 }
 #add_item.speed-in{
     display:block;
 }
-#add_item h1{
-    margin: 0 auto;
-    width: 200px;
-    margin-bottom: 50px;
-
+#add-item-header{
+    text-align: center;
 }
-.browsepic{
+#add_item div{
+    width: 300px;
+    margin: auto;   
+}
+#preview_image{
+    display: block;
+    margin: auto;
+    max-height: 200px;
+    max-width: 200px;
+}
+#picture-label{
     margin-top: 20px;
-    width: 600px;
-    height: 30px;
 }
-.browsepic input{
-    width: 400px;
-    /*border: 1px solid black;*/
-    position: relative;
-    bottom: 30px;
-    left: 60px;
+#item-image{
+    padding: 4px;
+    font-size: 16px;
 }
-#type-select{
-    padding: 0px;
-    position: relative;
-    right: 23px;
-    width: 150px;
+#food-drink-div p{
+    margin-top: 10px;
 }
-.detail {
-    margin-left: 150px;
-    font-size: 20px;
-}
-.detail input{
-    height: 30px;
-    margin-left: 20px;
-    font-size: 15px;
-}
-.type{
-    height: 40px;
-    width: 600px;
-}
-.type p{
-    padding: 0px;
-}
-#label-promotion{
-    width: 600px;
+#food-drink-div select{
+    margin-left: 32px;
 }
 #label-promotion input{
-    position: relative;
-    top: 3px;
     height: 20px;
     width: 20px;
+    margin-left: 20px;
 }
 #name-input{
     width: 200px;
@@ -597,31 +520,18 @@ max-height: 150px;
     margin-left: 32px;
     width: 200px;
 }
-
 .req:before{
     content:"*";
     color:red;
 }
-.detail button{
-    font-size: 20px;
+#valid-panel input{
+    height: 25px;
     margin-left: 10px;
-    margin-right: 10px;
-    height: 45px;
-    width: 100px;
-}
-.detail span{
-    position: relative;
-    top: -30px;
-}
-.type input{
-    width: 20px;
-    height: 20px;
 }
 .add_button {
     margin: 0 auto;
-    margin-left: 190px;
-    width: 300px;
     padding: 20px 0px;
+    text-align: center;
 }
 .add_button button{
     width: 100px;
@@ -634,25 +544,10 @@ max-height: 150px;
 #cancel-add-butt{
     margin-left: 30px;
 }
-#preview_image{
-    display: block;
-    margin: auto;
-    /*border: 1px solid black;*/
-    max-height: 200px;
-    max-width: 250px;
-}
-
-select#type {
-    margin-left: 10px;
-}
-
 /*------------------------------Menu Info----------------------------------------*/
-
 .item-info{
-    width: 40%;
+    width: 600px;
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
     border: 1px solid black;
     background-color: #FFFFF0;
     border-radius: 10px;
@@ -663,53 +558,50 @@ select#type {
 }
 .item-info #info-btn-panel{
     width: 100%;
-    margin-top: 40px;
+    text-align: center;
     margin-bottom: 20px;
-    margin-left: 50px;
 }
 .item-info a{
     height: 50px;
-    margin-left: 20%;
     width: 100px;
     font-size: 20px;
     color: white;
-    border-radius: 5px;  
+    border-radius: 5px;
+}
+.item-info a:hover{
+    color: aliceblue;
 }
 .item-info h3{
-    margin-left: 4em;
     font-size: 20px;
+}
+#item-info-preview{
+    text-align: center;
 }
 .item-info img{
     height: 200px;
     width: 250px;
-    position: relative;
-    right: 2em;
-    margin-left: 160px;
-}   
+}  
+#item-info-item-detail{
+    width: 300px;
+    margin: 20px auto;
+}
 #edit_item_butt{
-    background: #24A8AF;  
+    background: #144060;  
 }
 #back_item_butt{
-    background: #FA5858;
+    background: #144060;
     margin-left: 20px;
 }
-#edit_item_butt:active{
-    background: #76F9F5;
-}
-#back_item_butt:active{
-    background: #FDA2A2;
+#edit_item_butt:active,#back_item_butt:active{
+    background: #1A699F;
 }
 .item-info span{
     margin-left: 1em;
     font-weight: bold;
 }
-
-
-
 /*------------------------------Edit Item----------------------------------------*/
-
 .edit-panel{
-    width: 40%;
+    width: 600px;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -718,26 +610,45 @@ select#type {
     border-radius: 10px;
     padding: 20px;
 }
-.form-group{
-    margin-left: 50px;
+#edit-menu-detail-panel{
+    width: 350px;
+    margin: auto;
 }
-.edit-panel a{
+#edit-menu-detail-panel input{
+    width: 200px;
+}
+#edit-menu-detail-panel label{
+    width: 105px;
+    text-align: left;
+}
+#edit-menu-detail-panel select{
+    width: 200px;
+}
+#edit-menu-btn-panel a{
     height: 50px;
-    margin-left: 10%;
     width: 100px;
     font-size: 20px;
     color: white;
     border-radius: 5px;
     margin-top: 20px;
 }
-.col-xs-4{
-    width: 300px;
-    margin-left: 0px;
+#edit-menu-btn-panel{
+    text-align: center;
 }
-
-
+#promotion{
+    width: 20px;
+}
+#save-btn{
+    background: #144060;
+}
+#edit-menu-back-btn{
+    margin-left: 20px;
+    background: #144060;
+}
+#save-btn:active, #edit-menu-back-btn:active{
+    background: #1A699F;
+}
 /*------------------------------Order--------------------------------------------*/
-
 .showorder{
     margin: 0 auto;
     height: 800px;
@@ -752,7 +663,6 @@ select#type {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s 0s, visibility 0s 0.3s;
-
     position: fixed;
     left: 0px;
     top: 0px;
@@ -765,7 +675,6 @@ select#type {
     visibility: visible;
     transition: opacity 0.3s 0s, visibility 0s 0s;
 }
-
 .cd-buttons{
     list-style: outside none none;
     margin: 0px;
@@ -809,7 +718,6 @@ select#type {
     font: inherit;
     vertical-align: baseline;
 }
-
 .cd-popup-container {
     transform: translateY(-40px);
     transition-property: transform;
@@ -823,9 +731,8 @@ select#type {
     border-radius: 0.25em 0.25em 0.4em 0.4em;
     text-align: center;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-
+    top: 30%;
 }
-
 .cd-popup-container p{
     padding: 3em 1em;
     color: #8F9CB5;
@@ -872,7 +779,6 @@ select#type {
 .order_action{
     width: 300px;
 }
-
 .item_button button{
     width: 100px;
     height: 80px;
@@ -902,7 +808,6 @@ select#type {
     background: #EC900F;
 }
 /*---------------------------------Report----------------------------------------*/
-
 #show-report{
     min-width: 900px;
     margin: 0px 50px;
@@ -916,7 +821,6 @@ select#type {
 }
 .report h1{
     margin-bottom: 20px;
-
 }
 .report select{
     width: 300px;
@@ -926,9 +830,7 @@ select#type {
     margin-left: 2em;
     text-align: center;
 }
-
 /*------------------------------Register Center----------------------------------*/
-
 #register-center td{
     padding: 5px 10px;
     font-weight: 600;
@@ -982,15 +884,11 @@ select#type {
     font-size: 20px;
     margin: auto;
 }
-
 .form-group.required .control-label:before {
     content:"*";
     color:red;
-
 }
-
 /*----------------------------Cafe Info Panel------------------------------------*/
-
 #info-panel{
     margin: 0 auto;
     height: auto;
@@ -1031,12 +929,15 @@ select#type {
     left: 45%;
     line-height: 40px;
 }
+#logo-image-cafe img{
+    width: 300px;
+    height: 250px;
+}
 
-/*----------------------------Cafe Info Panel------------------------------------*/
-
+/*----------------------------Cafe Edit Panel------------------------------------*/
 #cafe-edit-panel{
     margin: 0 auto;
-    height: auto;
+    height: 800px;
     min-width: 850px;
     max-width: 1200px;
     border: 1px solid #215877;
@@ -1046,8 +947,15 @@ select#type {
     color: #215877;
     padding: 20px;
 }
+.owner-info{
+    margin: 0px;
+    height: 50px;
+}
+#cafe-owner-info{
+    height: 150px;
+}
 #cafe-edit-panel h2{
-    margin-left: 55px;
+    margin: 0px 0px 20px 20px;
     border-bottom: 1px solid #215877;
 }
 #edit-btn-panel{
@@ -1064,9 +972,11 @@ select#type {
     height: 60px;
     line-height: 40px;
 }
-
+#cafe-edit-panel{
+    width: 300;
+    height: 250;
+}
 /*---------------------------------FOOTER----------------------------------------*/
-
 .footer{
     margin: auto;
     background: url("/texture_bluepaper.jpg");
