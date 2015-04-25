@@ -87,7 +87,7 @@ Template.cafeRegisterPage.events({
             else{
                 window.alert(option.name+" is added");
                 //console.log("New restaurant id: "+ restID);
-                Router.go('loading');
+                location.reload();
             }
         });
 

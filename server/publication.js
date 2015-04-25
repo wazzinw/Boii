@@ -33,7 +33,7 @@ if(Meteor.isServer){
             var restID = Meteor.users.findOne({_id: this.userId}).profile.restaurant_id;
         }
        if(restID)
-            return Orders.find({restaurant_id: restID}, {limit: 10, sort: {updated_at: -1}});
+            return Orders.find({restaurant_id: restID}, {sort: {updated_at: -1}});
         else return Orders.find();
 
     });
