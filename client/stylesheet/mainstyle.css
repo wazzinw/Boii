@@ -183,7 +183,7 @@ html{
 .pageheader h1{
     line-height: 50px;
 }
-/*---------------------------------MENU------------------------------------------*/
+/*---------------------------------MENU Tab------------------------------------------*/
 #menu-panel{
     height: 750px;
     border: 1px solid black;
@@ -237,11 +237,12 @@ html{
     max-width: 1200px;
     overflow: auto;
     position: absolute;
-    text-align: center;
+    text-align: left;
 }
 #drink-list li, #food-list li{
     display: inline-block;
-    margin: 20px 20px 20px 0px;
+    margin: 20px 20px 0px 20px;
+    height: 100px;
 }
 #drink-list .menu, #food-list .food-menu{
     width: 180px;
@@ -274,6 +275,7 @@ html{
     bottom: 30px;
     width: 50px;
     z-index: 3;
+    margin: 0px;
 }
 #item-detail{
     color: aliceblue;
@@ -491,8 +493,8 @@ html{
 #preview_image{
     display: block;
     margin: auto;
-    max-height: 200px;
-    max-width: 200px;
+    height: 100%;
+    width: 100%;
 }
 #picture-label{
     margin-top: 20px;
@@ -575,12 +577,11 @@ html{
     font-size: 20px;
 }
 #item-info-preview{
-    text-align: center;
+    margin: auto;
+    height: 230px;
+    width: 200px;
+    
 }
-.item-info img{
-    height: 200px;
-    width: 250px;
-}  
 #item-info-item-detail{
     width: 300px;
     margin: 20px auto;
@@ -929,15 +930,16 @@ html{
     left: 45%;
     line-height: 40px;
 }
-#logo-image-cafe img{
-    width: 300px;
-    height: 250px;
+#logo-image-cafe{
+    width: 200px;
+    height: 200px;
+    margin: auto;
 }
 
 /*----------------------------Cafe Edit Panel------------------------------------*/
 #cafe-edit-panel{
     margin: 0 auto;
-    height: 800px;
+    height: 850px;
     min-width: 850px;
     max-width: 1200px;
     border: 1px solid #215877;

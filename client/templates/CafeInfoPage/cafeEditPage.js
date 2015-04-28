@@ -103,7 +103,7 @@ Template.cafeEdit.onRendered(function(){
             reader.onload = function (e) {
                 $('#preview_image')
                     .attr('src', e.target.result)
-                    .width(250)
+                    .width(200)
                     .height(200);
             };
 

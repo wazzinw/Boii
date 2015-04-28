@@ -419,12 +419,12 @@ Template.menuPage.onRendered(function(){
     function preview(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
-
+            var d = new Data();
             reader.onload = function (e) {
                 $('#preview_image')
                     .attr('src', e.target.result)
-                    .width(250)
-                    .height(200);
+                    .width(200)
+                    .height(230);
             };
 
             reader.readAsDataURL(input.files[0]);
