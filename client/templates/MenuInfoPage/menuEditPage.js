@@ -67,7 +67,7 @@ Template.menuEdit.events({
             else {
                 window.alert("SUCCESSFULLY UPDATED");
                 Router.go('menuInfo', currentMenu);
-
+                location.reload();
             }
         });
 
@@ -96,8 +96,8 @@ Template.menuEdit.onRendered(function(){
             reader.onload = function (e) {
                 $('#preview_image')
                     .attr('src', e.target.result)
-                    .width(250)
-                    .height(200);
+                    .width(200)
+                    .height(230);
             };
 
             reader.readAsDataURL(input.files[0]);

@@ -21,7 +21,11 @@
 
     {{#if pic_url}}
     <div id="item-info-preview">
+        
         <img id="preview_image" src= {{pic_url}}>
+        <script>
+            $('#preview_image').load();
+        </script>
     </div>
     {{else}}
     <div id="item-info-preview">
