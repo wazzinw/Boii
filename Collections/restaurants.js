@@ -119,7 +119,7 @@ RestaurantsSchema =  new SimpleSchema({
     },
 
     beacon_minor: {
-        type: Number,
+        type: String,
         label: "minorID of iBeacon",
         min: 0,
         max: 65535,
