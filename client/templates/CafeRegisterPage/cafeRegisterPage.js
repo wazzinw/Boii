@@ -78,6 +78,7 @@ Template.cafeRegisterPage.events({
         option.created_at = new Date();
         option.updated_at = new Date();
         option.pic_url = pic_url;
+        option.require_beacon = $('#requireBeacon').val()
 
        Meteor.call('restaurantInsert', option, function(error, result) {
             if (error){

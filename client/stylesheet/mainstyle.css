@@ -493,8 +493,8 @@ html{
 #preview_image{
     display: block;
     margin: auto;
-    height: 100%;
-    width: 100%;
+    height: 200px;
+    width: 300px;
 }
 #picture-label{
     margin-top: 20px;
@@ -832,16 +832,21 @@ html{
     text-align: center;
 }
 /*------------------------------Register Center----------------------------------*/
+#register-center {
+    padding-bottom: 200px;
+}
+
 #register-center td{
+
     padding: 5px 10px;
     font-weight: 600;
 }
 #register-center input{
     margin-left: 20px;
-    height: 25px;
+    /*height: 25px;*/
     font-size: 15px;
-    width: 200px;
-    line-height: 25px;
+    width: 240px;
+    /*line-height: 25px;*/
 }
 #register-center h2{
     border-bottom: 1px solid black;
@@ -854,18 +859,39 @@ html{
 .form-group span{
     margin-left: 100px;
 }
-#buttons{
-    width: 550px;
-    margin: auto;
+/*#buttons{*/
+    /*width: 550px;*/
+/*}*/
+/*#buttons button{*/
+    /*height: 80px;*/
+    /*width: 150px;*/
+    /*border-radius: 5px;*/
+    /*/!*margin: 20px;*!/*/
+    /*font-size: 20px;*/
+    /*font-weight: 600;*/
+    /*margin-left: 80px;*/
+/*}*/
+form#cafe-info{
+    padding-bottom: 400px;
 }
-#buttons button{
+#regis-button{
     height: 80px;
     width: 150px;
     border-radius: 5px;
-    margin: 20px;
+    /*margin: 20px;*/
     font-size: 20px;
     font-weight: 600;
-    margin-left: 80px;
+    margin-left: 450px;
+    line-height: 55px;
+}
+#back-button{
+    height: 80px;
+    width: 150px;
+    border-radius: 5px;
+    /*margin: 20px;*/
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 55px;
 }
 #buttons button:hover{
     cursor: pointer;
@@ -888,6 +914,11 @@ html{
 .form-group.required .control-label:before {
     content:"*";
     color:red;
+}
+
+#requireBeacon{
+    margin-left: 20px;
+    width: 240px;
 }
 /*----------------------------Cafe Info Panel------------------------------------*/
 #info-panel{
