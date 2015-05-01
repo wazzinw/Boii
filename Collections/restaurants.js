@@ -17,19 +17,14 @@ Meteor.methods({
         Restaurants.update(
             {_id: id},
             { $set: { menu: newArray }});
-
     },
-
     addMenuID: function(id, menu_id){
        //check(id, String);
        //check(menu_id, String);
-
         console.log("menu_id: "+ menu_id);
         Restaurants.update({_id: id},
             { $push: { menu: menu_id }});
-
     },
-
     restaurantUpdate: function(id,restAttributes) {
         //check(Meteor.userId(), String);
         console.log(restAttributes);
@@ -50,7 +45,6 @@ var PhoneSchema = new SimpleSchema({
         max: 20,
         min: 8,
         regEx: /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{2,3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/
-
     }
 });
 
@@ -68,22 +62,18 @@ var AddressSchema = new SimpleSchema({
         max: 100,
         optional: true
     },
-
     street: {
         type: String,
         max: 100
     },
-
     subDistrict: {
         type: String,
         max: 100
     },
-
     district: {
         type: String,
         max: 100
     },
-
     province: {
         type: String,
         max: 50
@@ -103,13 +93,11 @@ RestaurantsSchema =  new SimpleSchema({
         type: String,
         label: "Restaurant name"
     },
-
     pic_url: {
         type: String,
         label: "reference to the picture url",
         optional: true
     },
-
     beacon_major: {
         type: String,
         min: 0,
@@ -117,54 +105,46 @@ RestaurantsSchema =  new SimpleSchema({
         label: "majorID of iBeacon",
         optional: true
     },
-
     beacon_minor: {
         type: String,
         label: "minorID of iBeacon",
         min: 0,
         max: 65535,
         optional: true
-
     },
-
     email: {
         type: String,
         label: "Restaurant Email",
         regEx: SimpleSchema.RegEx.Email
 
     },
-
     address: {
         type: [AddressSchema],
         label: "Address"
     },
-
-
     phone_numbers:{
         type: [PhoneSchema],
         label: "Contact"
-
     },
-
     menu:{
         type: [String],
         label: "reference to menuID",
         optional: true
     },
-
     created_at: {
         type: Date,
         label: "time of creation",
         denyUpdate: true
-
-
     },
     updated_at: {
         type: Date,
         label: "time of update"
 
+    },
+    require_beacon: {
+        type: Boolean,
+        label: "Require Beacon"
     }
-
 });
 
 Restaurants.attachSchema(RestaurantsSchema);
