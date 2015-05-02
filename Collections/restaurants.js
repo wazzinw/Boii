@@ -144,6 +144,12 @@ RestaurantsSchema =  new SimpleSchema({
     require_beacon: {
         type: Boolean,
         label: "Require Beacon"
+    },
+
+    ad_phrase:{
+        type: String,
+        label: "Advertisement Phrase when in range of iBeacon",
+        optional: true
     }
 });
 

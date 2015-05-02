@@ -833,7 +833,7 @@ html{
 }
 /*------------------------------Register Center----------------------------------*/
 #register-center {
-    padding-bottom: 200px;
+    padding-bottom: 300px;
 }
 
 #register-center td{
@@ -920,6 +920,13 @@ form#cafe-info{
     margin-left: 20px;
     width: 240px;
 }
+
+textarea#adPhrase {
+    margin-left: 20px;
+    width: 400px;
+    height: 100px;
+    margin-top: 10px;
+}
 /*----------------------------Cafe Info Panel------------------------------------*/
 #info-panel{
     margin: 0 auto;
@@ -970,13 +977,13 @@ form#cafe-info{
 /*----------------------------Cafe Edit Panel------------------------------------*/
 #cafe-edit-panel{
     margin: 0 auto;
-    height: 850px;
+    height: 1000px;
     min-width: 850px;
     max-width: 1200px;
     border: 1px solid #215877;
     background-color: #FFFFF0;
     border-radius: 10px;
-    padding-bottom: 20px;
+    /*margin-bottom: 200px;*/
     color: #215877;
     padding: 20px;
 }

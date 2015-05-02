@@ -42,10 +42,33 @@
                             <input type="email" id="email" value ="{{email}}" class="form-control" required/>
                         </div>
                         <br>
-</div>
-                </div>
+                    </div>
 
-                <h2>Address</h2>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Order Option:</label>
+                        <div class="col-xs-4">
+                            <select class="form-control" id="requireBeacon">
+                                {{#if require_beacon}}
+                                <option value=1 selected>Allow order only when in range</option>
+                                <option value=2>Allow menu order anywhere</option>
+                                {{else}}
+                                    <option value=1>Allow order only when in range</option>
+                                    <option value=2 selected>Allow menu order anywhere</option>
+                                {{/if}}
+                            </select>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="col-md-offset-4 form-group owner-info">
+                        <label class="col-sm-2 control-label">Advertisement Phrase:</label>
+                        <div class="col-xs-4">
+                            <textarea id="adPhrase" value="{{ad_phrase}}" placeholder="Advertisement phrase to display on mobile application"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+                <br>
+                <h2 class="col-md-12">Address</h2>
                 <!--Address Number Input-->
                 <div class = "col-sm-5 form-group">
                     <label class="col-sm-5 control-label req" >Address Number: </label>
@@ -79,7 +102,7 @@
                 </div>
 
                 <!--Sub-district Input-->
-                <div class = "col-sm-5 form-group req">
+                <div class = "col-sm-5 form-group">
                     <label class="col-sm-5 control-label req">Sub-District:</label>
                     <div class="col-sm-6">
                         <input id="subDist" type="text" value="{{address.[0].subDistrict}}" class="form-control" required/>
@@ -96,7 +119,7 @@
                 </div>
 
                 <!--Province Input-->
-                <div class = "col-sm-5 form-group req">
+                <div class = "col-sm-5 form-group">
                     <label class="col-sm-5 control-label req">Province:</label>
                     <div class="col-sm-6">
                         <input id="province" type="text" value="{{address.[0].province}}" class="form-control" required/>
@@ -104,7 +127,7 @@
                 </div>
 
                 <!--Country Input-->
-                <div class = "col-sm-5 form-group ">
+                <div class = "col-sm-5 form-group">
                     <label class="col-sm-5 control-label req">Country:</label>
                     <div class="col-sm-6">
                         <input id="country" type="text" value="{{address.[0].country}}" class="form-control" required />
