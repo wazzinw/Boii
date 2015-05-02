@@ -205,6 +205,7 @@ if (Meteor.isServer) {
                     var limit, skip;
                     var query = this.params.query;
                     var filter = {};
+                    console.log(query)
 
                     if ( query.limit ) {
                         limit = parseInt(query.limit);
@@ -215,7 +216,7 @@ if (Meteor.isServer) {
                         console.log('default');
                     }
 
-                    if( query.beacon_major && query.beacon_minor) {
+                    if( query.beacon_major || query.beacon_minor) {
                         filter.beacon_major = query.beacon_major;
                         filter.beacon_minor = query.beacon_minor;
                     }
