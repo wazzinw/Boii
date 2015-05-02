@@ -45,11 +45,25 @@
                     <td class = "title">Logo:</td><td><p><img id="preview_image" src= "/default_coffee.jpg"></p></td>
                     {{/if}}
                 </tr>
-                <tr><td class="title">Cafe Name:</td><td><p id="cafe-name">{{name}}</p></td></tr>
-                <tr><td class="title">Email:</td><td><p id="cafe-email">{{email}}</p></td></tr>
-                <tr><td class="title">Contact:</td><td><p id="cafe-contact">{{phone_numbers.[0].number}}</p></td>
+                <tr><td class="title">Cafe Name:</td><td><p id="cafe-name">{{name}}</p></td>
+                    <td class="title">Order Option:</td><td>
+                      {{#if require_beacon}}
+                        <p id="require-beacon">Allow order only when in range</p>
+                        {{else}}
+                    <p id="require-beacon">Allow menu order anywhere</p>
+                {{/if}}
+
+                </td>
                 </tr>
-                <tr>
+                <tr><td class="title">Email:</td><td><p id="cafe-email">{{email}}</p></td>
+                <td class="title">Contact:</td><td><p id="cafe-contact">{{phone_numbers.[0].number}}</p></td>
+                </tr>
+                {{#if ad_phrase}}
+                <tr><td class="title">Advertisement Phrase:</td><td><p id="ad-phrase">{{ad_phrase}}</p></td></tr>
+                {{/if}}
+
+
+                    <tr>
                     <td class="title">Address Number:</td><td><p id="cafe-add-num">{{address.[0].number}}</p></td>
                     <td class="title">Floor:</td><td><p id="cafe-floor">{{address.[0].floor}}</p></td>
                     <td class="title">Building:</td><td><p id="cafe-building">{{address.[0].building}}</p></td>

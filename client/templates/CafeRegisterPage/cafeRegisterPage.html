@@ -21,30 +21,52 @@
                 </div>
 
                 <div class="col-md-offset-4 form-group">
+
                     <label class="col-sm-2 control-label" for="Pic">Logo:</label>
                     <div class="col-xs-6">
                         <input multiple class="form-control" id="item-image" type="file"/>
                     </div>
-                    <br>
+
                 </div>
 
-                <div class="col-md-offset-4 form-group required" >
-                    <label class="col-sm-2 control-label" for="name">Cafe Name:</label>
-                    <div class="col-xs-4">
+
+                <div class="col-md-offset-4 col-sm-5 form-group required" >
+                    <label class="col-sm-5 control-label" for="name">Cafe Name:</label>
+                    <div class="col-sm-6">
                         <input name="name" id="name" type="text"  placeholder="Name of cafe" class="form-control" required/>
                     </div>
-                    <br>
                 </div>
 
-                <div class="col-md-offset-4 form-group required">
-                    <label class="col-sm-2 control-label" for="email">Email:</label>
-                    <div class="col-xs-4">
+
+                <div class="col-md-sm-5 form-group required">
+                    <label class="col-sm-5 control-label" for="email">Email:</label>
+                    <div class="col-sm-6">
                         <input type="email" id="email" class="form-control" required/>
                     </div>
-                    <br>
                 </div>
 
-                <h2> Address</h2>
+                <div class = "col-sm-5 form-group required">
+                    <label class="col-sm-5 control-label" >Order Option</label>
+                    <div class="col-sm-6">
+                        <!--<input id="requireBeacon" type="text" placeholder="1" class="form-control" required/>-->
+                        <select class="form-control" id="requireBeacon">
+                            <option value=1 selected>Allow order only when in range</option>
+                            <option value=2>Allow menu order anywhere</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class = "col-sm-12 form-group">
+                    <label class="col-sm-2 control-label" >Advertisement Phrase</label>
+                    <div class="col-sm-6">
+                        <textarea id="adPhrase" placeholder="Advertisement phrase to display on mobile application"></textarea>
+
+                    </div>
+                </div>
+
+
+                <h2 class="col-sm-12"> Address</h2>
                 <div class = "col-sm-5 form-group required">
                     <label class="col-sm-5 control-label" >Address Number:</label>
                     <div class="col-sm-6">
@@ -138,14 +160,18 @@
                     <div class="col-sm-6">
                         <input id="minor" type="text" placeholder="beacon minor" class="form-control" />
                     </div>
+                </div>
+                <div class="col-sm-12">
+                    <a class = "btn btn-primary" type="submit" id="regis-button">Register</a>
+                    <a href="{{pathFor 'cafeInfoPage'}}" class="btn btn-danger"  id="back-button">Back</a>
 
                 </div>
+
+
             </form>
 
-            <div id="buttons">
-                <a href={{pathFor 'cafeInfoPage'}}><button class = "btn btn-primary" type="submit" id="regis-button">Register</button></a>
-                <a href={{pathFor 'cafeInfoPage'}}><button class = "btn btn-danger" type="button" id="back-button">Back</button></a>
-            </div>
+
+
         </div>
 
 

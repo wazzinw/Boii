@@ -13,11 +13,16 @@ if(Meteor.isServer){
     });
 
     Meteor.publish('menus', function() {
-        if (this.userId) {
-            var restID = Meteor.users.findOne({_id: this.userId}).profile.restaurant_id;
-            var restName = Restaurants.findOne({_id: restID}).name;
+        try {
+            if (this.userId) {
+                var restID = Meteor.users.findOne({_id: this.userId}).profile.restaurant_id;
+                var restName = Restaurants.findOne({_id: restID}).name;
+            }
+            return Menus.find({restaurant_name: restName});
+        } catch (e){
+            console.log(e);
         }
-        return Menus.find({restaurant_name: restName});
+
     });
 
     Meteor.publish('restaurants', function() {

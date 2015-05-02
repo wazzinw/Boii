@@ -204,6 +204,8 @@ if (Meteor.isServer) {
                     var total = Restaurants.find({}).count();
                     var limit, skip;
                     var query = this.params.query;
+                    var filter = {};
+                    console.log(query)
 
                     if ( query.limit ) {
                         limit = parseInt(query.limit);
@@ -213,12 +215,21 @@ if (Meteor.isServer) {
                         limit = 5;
                         console.log('default');
                     }
+
+                    if( query.beacon_major || query.beacon_minor) {
+                        filter.beacon_major = query.beacon_major;
+                        filter.beacon_minor = query.beacon_minor;
+                    }
+
+                    if( query.id ) filter._id = query.id;
+                    
+
                     if ( query.skip ) {
                         skip = parseInt(query.skip);
                     } else {
                         skip = 0;
                     }
-                    var restaurants = Restaurants.find({}, {sort : {name: -1}, limit : limit, skip: skip }).fetch();
+                    var restaurants = Restaurants.find(filter, {sort : {name: -1}, limit : limit, skip: skip }).fetch();
 
                     if(restaurants){
                         return {
