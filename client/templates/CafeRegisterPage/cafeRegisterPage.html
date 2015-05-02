@@ -1,7 +1,6 @@
 
 <template name="cafeRegisterPage">
 
-
     <div class="insert">
 
         <div class="center" id="register-center">
@@ -13,20 +12,24 @@
 
             <form class = "form-horizontal" id="cafe-info">
                 <div>
-                        <img id="preview_image" src= "/default_coffee.jpg">
+                    {{#if pic_url}}
+                    <p id="logo-image-cafe"><img id="preview_image" src= "{{pic_url}}"></p>
+                    {{else}}
+                    <p id="logo-image-cafe"><img id="preview_image" src= "/default_coffee.jpg"></p>
+                    {{/if}}
                     <br>
                 </div>
 
                 <div class="col-md-offset-4 form-group">
-                    <label class="col-sm-2 control-label" for="Pic">Logo</label>
+                    <label class="col-sm-2 control-label" for="Pic">Logo:</label>
                     <div class="col-xs-6">
-                        <input multiple class="form-control" id="cafe-logo" type="file"/>
+                        <input multiple class="form-control" id="item-image" type="file"/>
                     </div>
                     <br>
                 </div>
 
                 <div class="col-md-offset-4 form-group required" >
-                    <label class="col-sm-2 control-label" for="name">Cafe Name</label>
+                    <label class="col-sm-2 control-label" for="name">Cafe Name:</label>
                     <div class="col-xs-4">
                         <input name="name" id="name" type="text"  placeholder="Name of cafe" class="form-control" required/>
                     </div>
@@ -34,7 +37,7 @@
                 </div>
 
                 <div class="col-md-offset-4 form-group required">
-                    <label class="col-sm-2 control-label" for="email">Email</label>
+                    <label class="col-sm-2 control-label" for="email">Email:</label>
                     <div class="col-xs-4">
                         <input type="email" id="email" class="form-control" required/>
                     </div>
@@ -43,7 +46,7 @@
 
                 <h2> Address</h2>
                 <div class = "col-sm-5 form-group required">
-                    <label class="col-sm-5 control-label" >Address Number</label>
+                    <label class="col-sm-5 control-label" >Address Number:</label>
                     <div class="col-sm-6">
                         <input id="number" type="text" placeholder="1" class="form-control" required/>
                     </div>
@@ -57,14 +60,14 @@
                 </div>
 
                 <div class = "col-sm-5 form-group required">
-                    <label class="col-sm-5 control-label">Building</label>
+                    <label class="col-sm-5 control-label">Building:</label>
                     <div class="col-sm-6">
                         <input id="building" type="text" placeholder="Siam Center" class="form-control" required/>
                     </div>
                 </div>
 
                 <div class = "col-sm-5 form-group required">
-                    <label class="col-sm-5 control-label">Street/Soi</label>
+                    <label class="col-sm-5 control-label">Street/Soi:</label>
                     <div class="col-sm-6">
                         <input id="street" type="text" placeholder="Phrayathai" class="form-control" required/>
                     </div>
@@ -72,7 +75,7 @@
 
 
                 <div class = "col-sm-5 form-group required">
-                    <label class="col-sm-5 control-label">Sub-District</label>
+                    <label class="col-sm-5 control-label">Sub-District:</label>
                     <div class="col-sm-6">
                         <input id="subDist" type="text" placeholder="Patumwan" class="form-control" required/>
                     </div>
@@ -81,7 +84,7 @@
 
 
                 <div class = "col-sm-5 form-group required">
-                    <label class="col-sm-5 control-label">District</label>
+                    <label class="col-sm-5 control-label">District:</label>
                     <div class="col-sm-6">
                         <input id="dist" type="text"  placeholder="Patumwan" class="form-control" required/>
                     </div>
@@ -90,7 +93,7 @@
 
 
                 <div class = "col-sm-5 form-group required">
-                    <label class="col-sm-5 control-label">Province</label>
+                    <label class="col-sm-5 control-label">Province:</label>
                     <div class="col-sm-6">
                         <input id="province" type="text" placeholder="Bangkok" class="form-control" required/>
                     </div>
@@ -98,7 +101,7 @@
 
 
                 <div class = "col-sm-5 form-group required">
-                    <label class="col-sm-5 control-label">Country</label>
+                    <label class="col-sm-5 control-label">Country:</label>
                     <div class="col-sm-6">
                         <input id="country" type="text" placeholder="Thailand"  class="form-control" required/>
                     </div>
@@ -107,7 +110,7 @@
 
 
                 <div class = "col-sm-5 form-group required">
-                    <label class="col-sm-5 control-label">Postal Code</label>
+                    <label class="col-sm-5 control-label">Postal Code:</label>
                     <div class="col-sm-6">
                         <input id="post" type="text" placeholder="12134"  class="form-control" required/>
                     </div>
@@ -115,7 +118,7 @@
 
 
                 <div class = "col-sm-5 form-group required">
-                    <label class="col-sm-5 control-label">Phone Number</label>
+                    <label class="col-sm-5 control-label">Phone Number:</label>
                     <div class="col-sm-6">
                         <input id="phone" type="text" placeholder="081-0987897" class="form-control" required />
                     </div>
@@ -124,14 +127,14 @@
 
 
                 <div class = "col-sm-5 form-group">
-                    <label class="col-sm-5 control-label">Major ID</label>
+                    <label class="col-sm-5 control-label">Major ID:</label>
                     <div class="col-sm-6">
                         <input id="major" type="text" placeholder="beacon major" class="form-control" />
                     </div>
                 </div>
 
                 <div class = "col-sm-5 form-group">
-                    <label class="col-sm-5 control-label">Minor ID</label>
+                    <label class="col-sm-5 control-label">Minor ID:</label>
                     <div class="col-sm-6">
                         <input id="minor" type="text" placeholder="beacon minor" class="form-control" />
                     </div>
