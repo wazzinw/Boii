@@ -81,8 +81,13 @@ Template.orderListPage.events({
     'click button#ready_but': function(event){
         var order_id = $(event.currentTarget).closest(".order_row").data('id');
         Meteor.call('updateOrderStatus', order_id, "ready",function(error, result) {
-            if (error) return alert(error.reason);
-            else console.log("status updated to ready");
+            if (error) {
+                return alert(error.reason);
+            }
+            else {
+                console.log("status updated to ready");
+                //$('#ready_but').css('background','grey');
+            }
         });
     },
     'click a.cd-popup-close': function(event){
