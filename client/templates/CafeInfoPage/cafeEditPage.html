@@ -62,7 +62,7 @@
                     <div class="col-md-offset-4 form-group owner-info">
                         <label class="col-sm-2 control-label">Advertisement Phrase:</label>
                         <div class="col-xs-4">
-                            <textarea id="adPhrase" value="{{ad_phrase}}" placeholder="Advertisement phrase to display on mobile application"></textarea>
+                            <textarea id="adPhrase"  placeholder="Advertisement phrase to display on mobile application">{{ad_phrase}}</textarea>
                         </div>
 
                     </div>
@@ -173,7 +173,7 @@
                 <div class="form-group">
                     <div class="col-sm-offset-4 col-sm-10" id="edit-btn-panel">
                         <a class="btn btn-lg btn-primary submit" id="save-btn">Save</a>
-                        <a class="btn btn-lg btn-danger delete" href= {{pathFor 'cafeInfoPage'}} id="cancel-edit">Back</a>
+                        <a class="btn btn-lg btn-danger delete" href= "{{pathFor 'cafeInfoPage'}}" id="cancel-edit">Back</a>
                     </div>
                 </div>
             </div>

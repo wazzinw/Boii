@@ -75,7 +75,10 @@ Template.cafeEdit.events({
         options.beacon_major = $('#major').val();
         options.beacon_minor = $('#minor').val();
         options.updated_at = new Date();
+        options.ad_phrase = $('#adPhrase').val();
 
+        if($('#requireBeacon').val()==1) options.require_beacon = true;
+        else options.require_beacon = false;
 
 
         console.log(options);
