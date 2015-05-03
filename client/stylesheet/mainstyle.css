@@ -493,8 +493,8 @@ html{
 #preview_image{
     display: block;
     margin: auto;
-    height: 200px;
-    width: 300px;
+    height: 100%;
+    width: 100%;
 }
 #picture-label{
     margin-top: 20px;
