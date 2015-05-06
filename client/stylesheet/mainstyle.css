@@ -945,16 +945,18 @@ textarea#adPhrase {
     margin-left: 10px;
 }
 #info-panel td{
-    padding: 5px 10px;
+    padding: 20px 10px;
     font-weight: 600;
 }
 #info-panel table{
     min-width: 900px;
     margin-left: 40px;
+    width: 90%;
 }
 #info-panel .title{
     font-weight: bold;
     font-size: 18px;
+    width: 200px;
 }
 #edit_info_butt{
     width: 150px;
