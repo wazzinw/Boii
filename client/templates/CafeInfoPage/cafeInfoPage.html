@@ -39,9 +39,9 @@
                 {{#with findRestaurant}}
                 <tr>
                     {{#if pic_url}}
-                    <td class = "title">Logo:</td><td><p id="logo-image-cafe"><img id="preview_image" src= {{pic_url}}></p></td>
+                    <td class = "title">Logo:</td><td><p id="logo-image-cafe-info"><img id="preview_image" src= {{pic_url}}></p></td>
                     {{else}}
-                    <td class = "title">Logo:</td><td><p><img id="preview_image" src= "/default_coffee.jpg"></p></td>
+                    <td class = "title">Logo:</td><td><p id="logo-image-cafe-info"><img id="preview_image" src= "/default_coffee.jpg"></p></td>
                     {{/if}}
                 </tr>
                 <tr><td class="title">Cafe Name:</td><td><p id="cafe-name">{{name}}</p></td></tr>

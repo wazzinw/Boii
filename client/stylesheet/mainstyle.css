@@ -990,6 +990,12 @@ textarea#adPhrase {
     height: 200px;
     margin: auto;
 }
+#logo-image-cafe-info{
+    width: 200px;
+    height: 200px;
+    margin: 0px;
+}
+
 
 /*----------------------------Cafe Edit Panel------------------------------------*/
 #cafe-edit-panel{
