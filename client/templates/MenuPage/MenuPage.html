@@ -20,10 +20,18 @@
             <ul id="drink-list">
                 {{#each drinkMenu}}
                 <li id= "item" class="drink-item" data-id="{{_id}}" >
-                    <button type="button" class="menu" data-available="{{available}}">
+                {{#if promotion}}
+                    <button type="button" id="promotion-drink" class="menu" data-available="{{available}}">
                         <h3>{{name}}</h3>
                         <h4>฿ {{price}}</h4>
                     </button>
+                {{else}}
+                    <button type="button" id="normal-drink" class="menu" data-available="{{available}}">
+                        <h3>{{name}}</h3>
+                        <h4>฿ {{price}}</h4>
+                    </button>
+                {{/if}}
+
                     <p><a href = "{{pathFor 'menuInfo'}}" class="btn btn-link" id="item-detail">Details</a></p>
                     <button type="button" class="delete-btn">X</button>
                     {{#if available}}
@@ -38,12 +46,21 @@
 <!--            Food Panel-->
             <ul id="food-list" class="invisible">
                 {{#each foodMenu}}
-                <li id="item" class="food-item" data-id={{_id}} >
-                    <button type="button" class="food-menu" data-available="{{available}}">
-                        <h3>{{name}}</h3>
-                        <h4>฿ {{price}}</h4>
-                    </button>
+                <li id="item" class="food-item" data-id={{_id}}>
+                    {{#if promotion}}
+                        <button type="button" id="promotion-food" class="food-menu" data-available="{{available}}">
+                            <h3>{{name}}</h3>
+                            <h4>฿ {{price}}</h4>
+                        </button>
+                    {{else}}
+                        <button type="button" id="normal-food" class="food-menu" data-available="{{available}}">
+                            <h3>{{name}}</h3>
+                            <h4>฿ {{price}}</h4>
+                        </button>
+                    {{/if}}
+
                     <p><a href = "{{pathFor 'menuInfo'}}" class="btn btn-link" id="item-detail">Details</a></p>
+
                     <button type="button" class="delete-btn">X</button>
                     {{#if available}}
                     <div id="not-avail-shadow" class="invisible"></div>

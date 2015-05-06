@@ -18,7 +18,7 @@ if(Meteor.isServer){
                 var restID = Meteor.users.findOne({_id: this.userId}).profile.restaurant_id;
                 var restName = Restaurants.findOne({_id: restID}).name;
             }
-            return Menus.find({restaurant_name: restName});
+            return Menus.find({restaurant_name: restName}, {sort: {promotion: -1}});
         } catch (e){
             console.log(e);
         }
