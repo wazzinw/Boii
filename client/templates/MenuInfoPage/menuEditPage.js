@@ -67,7 +67,7 @@ Template.menuEdit.events({
             else {
                 window.alert("SUCCESSFULLY UPDATED");
                 Router.go('menuInfo', currentMenu);
-                location.reload();
+                //location.reload();
             }
         });
 

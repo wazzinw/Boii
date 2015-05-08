@@ -254,7 +254,7 @@ html{
     background: #2B5165;
     color: #FFFFFF;
 }
-#drink-list #promotion-drink, #promotion-list #normal-food{
+#drink-list #promotion-drink, #food-list #promotion-food{
     width: 180px;
     height: 100px;
     padding-top: 12px;
